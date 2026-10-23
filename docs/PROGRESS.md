@@ -125,8 +125,19 @@ on `PATH`.
 - A second run found nothing due and stayed asleep; a wake drill woke the agent and removed its file;
   `verify` and `rank --check` passed on the copy. The real repository and the real state folder were not touched.
 
-What this does not cover is Hermes itself (its gateway and its clock) and a push to GitHub from the scheduler's
-account; both wait for the setup in [`deploy/hermes/HERMES-SETUP.md`](../deploy/hermes/HERMES-SETUP.md).
+What the rehearsal did not cover was Hermes itself and a push to GitHub from the scheduler's account. The first
+is covered by the next section; the second is covered the first time the real job pushes.
+
+## Wired into Hermes
+
+Later the same day, with the owner's go-ahead, the job was created in Hermes from
+[`deploy/hermes/HERMES-SETUP.md`](../deploy/hermes/HERMES-SETUP.md): `maeh-showcase-nightly`, `0 1 * * *`, the
+shim installed byte for byte, the repository's skill trusted, results delivered to the same targets as the
+owner's other status job. `hermes cron doctor` found no issues. Hermes's own scheduler then ran the job once,
+with nothing due: its record read "Script gate returned `wakeAgent=false` - agent skipped" (no model call, no
+message), the job's last-run record said `noop`, and the repository was untouched. The first real night is
+01:00 on 2026-10-24, which freezes 2026-10-23. The wake and failure drills (section 7 of the setup guide) have
+not been run, and Hermes's `timezone` was left unset (the settle guard makes a one-hour drift harmless).
 
 ## Verification
 
@@ -140,8 +151,8 @@ MAEH_BROWSER_TESTS=1 node --test test/site-browser.test.mjs    real-browser chec
 
 ## Still to do
 
-1. Wire the nightly job into Hermes from [`deploy/hermes/HERMES-SETUP.md`](../deploy/hermes/HERMES-SETUP.md).
-   Until then nothing freezes new days on its own; the first night to freeze is 2026-10-23, at 01:00 on the 24th.
+1. Watch the first real night, 01:00 on 2026-10-24: `node scripts/nightly.mjs --status` should then show 17
+   frozen days, and the site should gain the 23rd. Optionally run the two drills in the setup guide.
 2. Firefox and Safari have not been tried (neither was available where this was built). The real-browser
    checks ran in Chrome, locally and on the CI runner, and once by hand in Edge (`MAEH_CHROME` points the test
    driver at another Chromium-based browser); all six passed in each.
