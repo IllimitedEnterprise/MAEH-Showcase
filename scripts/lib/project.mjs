@@ -110,6 +110,25 @@ const side = t.enum("long", "short", "unknown");
 const pair = t.object({ symbol: t.symbol, n: t.int, net: t.money });
 const extreme = t.nullable(t.object({ symbol: t.symbol, net: t.money, r: t.nullable(t.num) }));
 
+const comp = t.object({ ret: t.unit, pf: t.unit, dd: t.unit, win: t.unit, cred: t.unit });
+const standing = t.object({
+  key: t.key, label: t.str, rank: t.nullable(t.int), score: t.nullable(t.num), n: t.int, net: t.money,
+  retPct: t.nullable(t.num), qualified: t.bool, why: t.array(t.line), comp: t.nullable(comp),
+});
+const miniRow = t.object({ key: t.key, rank: t.nullable(t.int), score: t.nullable(t.num), n: t.int, net: t.money });
+const crownRef = t.nullable(t.object({ key: t.key, label: t.str, score: t.num, net: t.money }));
+const basis = t.enum("nightly", "catchup", "backfilled", "mixed");
+const streak = t.object({ cur: t.int, best: t.int, bestFrom: t.nullable(t.date), bestTo: t.nullable(t.date) });
+const tallyRow = t.object({ key: t.key, label: t.str, day: t.int, week: t.int, month: t.int, points: t.int, streak });
+const award = t.object({
+  kind: t.enum("day", "week", "month"), period: t.str, start: t.date, end: t.date, key: t.key, label: t.str,
+  score: t.num, net: t.money, n: t.int, partialPeriod: t.bool, basis,
+});
+const periodBlock = t.object({
+  kind: t.enum("week", "month"), period: t.str, start: t.date, end: t.date, through: t.date, complete: t.bool,
+  provisional: t.bool, rows: t.array(standing), leader: crownRef, crown: crownRef,
+});
+
 export const hoursShape = {
   basis: t.enum("entry-of-closes"),
   zone: t.str,
@@ -188,18 +207,89 @@ export const SCHEMAS = {
     perAccount: t.array(t.object({ key: t.key, label: t.str, status: t.enum("ok", "quiet", "partial", "unverified"), n: t.int, net: t.money })),
     hours: t.object(hoursShape),
   }),
-  /* One period's standings: the rows of the leaderboard and the crown, if one was earned. */
+  /* One day's standings: the rows of the leaderboard and the crown, if one was earned. */
   stars: t.object({
     schema: t.enum(1),
     date: t.date,
     rules: t.str,
-    rows: t.array(t.object({
-      key: t.key, label: t.str, rank: t.nullable(t.int), score: t.nullable(t.num), n: t.int, net: t.money,
-      retPct: t.nullable(t.num), qualified: t.bool, why: t.array(t.line),
-      comp: t.nullable(t.object({ ret: t.unit, pf: t.unit, dd: t.unit, win: t.unit, cred: t.unit })),
-    })),
-    crown: t.nullable(t.object({ key: t.key, label: t.str, score: t.num, net: t.money })),
+    rows: t.array(standing),
+    crown: crownRef,
     withheld: t.array(t.object({ key: t.key, reason: t.line })),
+  }),
+
+  /* --- derived: everything below is rebuilt from the frozen days, never edited --- */
+  leaderboard: t.object({
+    schema: t.enum(1),
+    rules: t.str,
+    asOf: t.nullable(t.date),
+    day: t.nullable(t.object({ date: t.date, rows: t.array(standing), crown: crownRef })),
+    week: t.nullable(periodBlock),
+    month: t.nullable(periodBlock),
+    tally: t.array(tallyRow),
+  }),
+  crowns: t.object({
+    schema: t.enum(1),
+    rules: t.str,
+    awards: t.array(award),
+    periods: t.array(t.object({
+      kind: t.enum("week", "month"), period: t.str, start: t.date, end: t.date, partialPeriod: t.bool, basis,
+      crown: crownRef,
+    })),
+    tally: t.array(tallyRow),
+  }),
+  history: t.object({
+    schema: t.enum(1),
+    date: t.date,
+    rules: t.str,
+    day: t.object({ rows: t.array(miniRow), crown: crownRef }),
+    week: t.nullable(t.object({ period: t.str, through: t.date, complete: t.bool, rows: t.array(miniRow), leader: crownRef, crown: crownRef })),
+    month: t.nullable(t.object({ period: t.str, through: t.date, complete: t.bool, rows: t.array(miniRow), leader: crownRef, crown: crownRef })),
+    tally: t.array(t.object({ key: t.key, points: t.int, day: t.int, week: t.int, month: t.int })),
+  }),
+  account: t.object({
+    schema: t.enum(1),
+    key: t.key,
+    label: t.str,
+    fundedDate: t.date,
+    asOf: t.nullable(t.date),
+    rules: t.str,
+    totals: t.object({
+      days: t.int, activeDays: t.int, n: t.int, wins: t.int, losses: t.int, breakevens: t.int, winRatePct: t.nullable(t.num),
+      net: t.money, grossWin: t.money, grossLoss: t.money, profitFactor: t.nullable(t.num), retPct: t.nullable(t.num),
+      maxDrawdown: t.money, ddPct: t.nullable(t.num), streaks: t.object({ maxWins: t.int, maxLosses: t.int }),
+    }),
+    bestDay: t.nullable(t.object({ date: t.date, net: t.money })),
+    worstDay: t.nullable(t.object({ date: t.date, net: t.money })),
+    crowns: t.object({ day: t.int, week: t.int, month: t.int, points: t.int, streak: streak, awards: t.array(t.object({ kind: t.enum("day", "week", "month"), period: t.str })) }),
+    form: t.array(t.object({
+      date: t.date, status: t.enum("ok", "quiet", "partial", "unverified", "prefunding"), n: t.int, net: t.nullable(t.money),
+      score: t.nullable(t.num), rank: t.nullable(t.int), crowned: t.bool,
+    })),
+    pairs: t.array(t.object({ symbol: t.symbol, n: t.int, net: t.money })),
+    hours: t.object({ basis: t.enum("entry-of-closes"), buckets: t.array(t.object({ h: t.hour, n: t.int })), earlier: t.int, unknown: t.int, total: t.int }),
+  }),
+  index: t.object({
+    schema: t.enum(1),
+    zone: t.str,
+    seasonStart: t.date,
+    tip: t.nullable(t.object({ seq: t.int, date: t.date, sha256: t.hex64 })),
+    days: t.array(t.object({
+      date: t.date, seq: t.int, kind: t.enum("nightly", "catchup", "backfilled"), status: t.enum("complete", "partial"),
+      sha256: t.hex64, n: t.int, net: t.money, crown: t.nullable(t.key),
+    })),
+    gaps: t.array(t.date),
+    accounts: t.array(t.object({ key: t.key, label: t.str, fundedDate: t.date })),
+  }),
+  series: t.object({
+    schema: t.enum(1),
+    seasonStart: t.date,
+    days: t.array(t.object({
+      date: t.date,
+      desk: t.object({ n: t.int, net: t.money, cum: t.money }),
+      accounts: t.map(t.key, t.object({
+        status: t.enum("ok", "quiet", "partial", "unverified", "prefunding"), n: t.int, net: t.nullable(t.money), cum: t.nullable(t.money),
+      })),
+    })),
   }),
 };
 
