@@ -94,6 +94,15 @@ export function scanFile(file, content) {
   return findings;
 }
 
+/* Only the secret shapes: for files that are not published data (code, docs, config), where a
+ * URL or a time is fine but a token never is. Used over the whole git history. */
+const SECRET_ONLY = SHAPES.filter(([, what]) => /password|bearer|API key|key or token|private key|GitHub token/.test(what));
+
+export function scanSecrets(file, content) {
+  const body = String(content);
+  return SECRET_ONLY.filter(([regex]) => regex.test(body)).map(([, what]) => ({ file, path: "$", rule: "secret", detail: `looks like ${what}` }));
+}
+
 /* `files` is a Map or object of relative path -> text. */
 export function scanFiles(files) {
   const entries = files instanceof Map ? [...files.entries()] : Object.entries(files);

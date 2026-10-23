@@ -15,9 +15,9 @@ import { stateDir as defaultStateDir } from "./runtime.mjs";
 import { dayPath, sealDay } from "./seal.mjs";
 import { dayWindow } from "./time.mjs";
 
-export function loadContext(root, env = process.env) {
+export function loadContext(root, env = process.env, { withAccounts = true } = {}) {
   const season = loadSeason(root);
-  const allow = loadAccounts(root);
+  const allow = withAccounts ? loadAccounts(root) : [];
   const rulesFor = (version) => {
     try { return loadRules(root, version); } catch { return null; }
   };

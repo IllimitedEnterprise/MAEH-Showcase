@@ -32,6 +32,8 @@ export function createGit({ gitPath, cwd, env = process.env, run = spawnSync }) 
   const lines = (text) => text.split(/\r?\n/).filter((line) => line !== "");
 
   return {
+    gitPath,
+    cwd,
     exec,
     isRepo: () => exec(["rev-parse", "--is-inside-work-tree"], { allowFail: true }).stdout.trim() === "true",
     branch: () => exec(["rev-parse", "--abbrev-ref", "HEAD"]).stdout.trim(),
