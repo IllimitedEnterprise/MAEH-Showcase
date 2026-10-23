@@ -179,7 +179,7 @@
   .hero { grid-template-columns: minmax(0, 1fr) 340px; align-items: center; padding: 34px 36px; }
 }
 
-.hero-main { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-width: 0; }
+.hero-main { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-width: 0; container-type: inline-size; }
 
 .hero-figure {
   display: flex;
@@ -191,6 +191,14 @@
   line-height: 1;
   letter-spacing: -0.045em;
   overflow-wrap: anywhere;
+}
+
+/* The figure is sized by the column it sits in, not by the window: between a tablet and a wide screen
+ * the hero is two columns, and a window-sized figure would run into the Star card. 16 % of the column
+ * leaves room for figures up to six em wide (+116,987.35); the bounds keep it at least 52 px (48 is the
+ * rule for a hero figure) and at most 116 px. */
+@supports (font-size: 1cqw) {
+  .hero-figure { font-size: clamp(3.25rem, 16cqw, 7.25rem); }
 }
 
 .hero-figure.gain { text-shadow: 0 0 44px var(--gain-glow); }
