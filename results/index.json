@@ -3,9 +3,9 @@
   "zone": "Europe/Berlin",
   "seasonStart": "2026-10-07",
   "tip": {
-    "seq": 16,
-    "date": "2026-10-22",
-    "sha256": "f9735eeeb1d7de378441cf2cf1daf66ed754afb84e1005dbb7a2227ece84f7fe"
+    "seq": 17,
+    "date": "2026-10-23",
+    "sha256": "12d9a906c207ebb6df1bdc8e3d5c5b6b7f96c43985a1f8a0626c5e15584343ec"
   },
   "days": [
     {
@@ -167,6 +167,16 @@
       "n": 224,
       "net": 8173.58,
       "crown": "M9-L-Mix"
+    },
+    {
+      "date": "2026-10-23",
+      "seq": 17,
+      "kind": "nightly",
+      "status": "complete",
+      "sha256": "12d9a906c207ebb6df1bdc8e3d5c5b6b7f96c43985a1f8a0626c5e15584343ec",
+      "n": 241,
+      "net": -12717.33,
+      "crown": null
     }
   ],
   "gaps": [],

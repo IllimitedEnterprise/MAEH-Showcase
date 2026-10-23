@@ -3,15 +3,15 @@
   "key": "M9-Y-SINGLE",
   "label": "M9-Y-SINGLE",
   "fundedDate": "2026-10-21",
-  "asOf": "2026-10-22",
+  "asOf": "2026-10-23",
   "rules": "v1",
   "totals": {
-    "days": 2,
-    "activeDays": 1,
-    "n": 4,
+    "days": 3,
+    "activeDays": 2,
+    "n": 6,
     "wins": 3,
     "losses": 1,
-    "breakevens": 0,
+    "breakevens": 2,
     "winRatePct": 75,
     "net": 493.58,
     "grossWin": 498.91,
@@ -30,8 +30,8 @@
     "net": 493.58
   },
   "worstDay": {
-    "date": "2026-10-22",
-    "net": 493.58
+    "date": "2026-10-23",
+    "net": 0
   },
   "crowns": {
     "day": 0,
@@ -190,12 +190,21 @@
       "score": 60.44,
       "rank": 4,
       "crowned": false
+    },
+    {
+      "date": "2026-10-23",
+      "status": "ok",
+      "n": 2,
+      "net": 0,
+      "score": 52.08,
+      "rank": null,
+      "crowned": false
     }
   ],
   "pairs": [
     {
       "symbol": "EURJPY",
-      "n": 4,
+      "n": 6,
       "net": 493.58
     }
   ],
@@ -220,7 +229,7 @@
       },
       {
         "h": "04:00",
-        "n": 1
+        "n": 2
       },
       {
         "h": "05:00",
@@ -240,7 +249,7 @@
       },
       {
         "h": "09:00",
-        "n": 1
+        "n": 2
       },
       {
         "h": "10:00",
@@ -301,6 +310,6 @@
     ],
     "earlier": 0,
     "unknown": 0,
-    "total": 4
+    "total": 6
   }
 }

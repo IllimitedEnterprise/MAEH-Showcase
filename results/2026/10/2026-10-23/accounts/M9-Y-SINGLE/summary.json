@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "key": "M9-Y-SINGLE",
+  "label": "M9-Y-SINGLE",
+  "status": "ok",
+  "reasons": [],
+  "source": "api",
+  "currency": "EUR",
+  "funding": 50000,
+  "n": 2,
+  "wins": 0,
+  "losses": 0,
+  "breakevens": 2,
+  "winRatePct": null,
+  "grossWin": 0,
+  "grossLoss": 0,
+  "net": 0,
+  "profitFactor": null,
+  "retPct": 0,
+  "maxDrawdown": 0,
+  "ddPct": 0,
+  "streaks": {
+    "maxWins": 0,
+    "maxLosses": 0
+  },
+  "r": {
+    "count": 2,
+    "sum": 0
+  },
+  "best": null,
+  "worst": null,
+  "pairs": [
+    {
+      "symbol": "EURJPY",
+      "n": 2,
+      "net": 0
+    }
+  ],
+  "chain": {
+    "ok": null,
+    "gap": null
+  }
+}

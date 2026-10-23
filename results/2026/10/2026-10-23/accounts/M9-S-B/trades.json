@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "key": "M9-S-B",
+  "trades": [
+    {
+      "i": 1,
+      "symbol": "XAGUSD",
+      "side": "long",
+      "net": -842.64,
+      "r": -1.08
+    },
+    {
+      "i": 2,
+      "symbol": "XAGUSD",
+      "side": "long",
+      "net": -3173.17,
+      "r": -1.06
+    },
+    {
+      "i": 3,
+      "symbol": "XAGUSD",
+      "side": "long",
+      "net": -2990.19,
+      "r": -0.944
+    }
+  ]
+}

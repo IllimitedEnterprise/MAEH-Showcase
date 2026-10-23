@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "key": "M9-P-SINGLE",
+  "label": "M9-P-SINGLE",
+  "status": "ok",
+  "reasons": [],
+  "source": "api",
+  "currency": "EUR",
+  "funding": 50000,
+  "n": 3,
+  "wins": 0,
+  "losses": 1,
+  "breakevens": 2,
+  "winRatePct": 0,
+  "grossWin": 0,
+  "grossLoss": 181.09,
+  "net": -181.09,
+  "profitFactor": 0,
+  "retPct": -0.362,
+  "maxDrawdown": 181.09,
+  "ddPct": 0.362,
+  "streaks": {
+    "maxWins": 0,
+    "maxLosses": 1
+  },
+  "r": {
+    "count": 3,
+    "sum": -0.996
+  },
+  "best": null,
+  "worst": {
+    "symbol": "GBPUSD",
+    "net": -181.09,
+    "r": -0.996
+  },
+  "pairs": [
+    {
+      "symbol": "GBPUSD",
+      "n": 3,
+      "net": -181.09
+    }
+  ],
+  "chain": {
+    "ok": null,
+    "gap": null
+  }
+}

@@ -3,26 +3,26 @@
   "key": "M9-S-B",
   "label": "M9-S-B",
   "fundedDate": "2026-10-21",
-  "asOf": "2026-10-22",
+  "asOf": "2026-10-23",
   "rules": "v1",
   "totals": {
-    "days": 2,
-    "activeDays": 1,
-    "n": 2,
+    "days": 3,
+    "activeDays": 2,
+    "n": 5,
     "wins": 2,
-    "losses": 0,
+    "losses": 3,
     "breakevens": 0,
-    "winRatePct": 100,
-    "net": 2295.07,
+    "winRatePct": 40,
+    "net": -4710.93,
     "grossWin": 2295.07,
-    "grossLoss": 0,
-    "profitFactor": null,
-    "retPct": 4.59,
-    "maxDrawdown": 0,
-    "ddPct": 0,
+    "grossLoss": 7006,
+    "profitFactor": 0.33,
+    "retPct": -9.422,
+    "maxDrawdown": 7006,
+    "ddPct": 14.012,
     "streaks": {
       "maxWins": 2,
-      "maxLosses": 0
+      "maxLosses": 3
     }
   },
   "bestDay": {
@@ -30,8 +30,8 @@
     "net": 2295.07
   },
   "worstDay": {
-    "date": "2026-10-22",
-    "net": 2295.07
+    "date": "2026-10-23",
+    "net": -7006
   },
   "crowns": {
     "day": 0,
@@ -190,13 +190,22 @@
       "score": 58.33,
       "rank": null,
       "crowned": false
+    },
+    {
+      "date": "2026-10-23",
+      "status": "ok",
+      "n": 3,
+      "net": -7006,
+      "score": 38.46,
+      "rank": 3,
+      "crowned": false
     }
   ],
   "pairs": [
     {
       "symbol": "XAGUSD",
-      "n": 2,
-      "net": 2295.07
+      "n": 5,
+      "net": -4710.93
     }
   ],
   "hours": {
@@ -232,11 +241,11 @@
       },
       {
         "h": "07:00",
-        "n": 0
+        "n": 1
       },
       {
         "h": "08:00",
-        "n": 0
+        "n": 2
       },
       {
         "h": "09:00",
@@ -301,6 +310,6 @@
     ],
     "earlier": 0,
     "unknown": 0,
-    "total": 2
+    "total": 5
   }
 }

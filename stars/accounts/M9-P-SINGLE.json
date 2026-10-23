@@ -3,26 +3,26 @@
   "key": "M9-P-SINGLE",
   "label": "M9-P-SINGLE",
   "fundedDate": "2026-10-21",
-  "asOf": "2026-10-22",
+  "asOf": "2026-10-23",
   "rules": "v1",
   "totals": {
-    "days": 2,
-    "activeDays": 1,
-    "n": 4,
+    "days": 3,
+    "activeDays": 2,
+    "n": 7,
     "wins": 3,
-    "losses": 0,
-    "breakevens": 1,
-    "winRatePct": 100,
-    "net": 271.21,
+    "losses": 1,
+    "breakevens": 3,
+    "winRatePct": 75,
+    "net": 90.12,
     "grossWin": 271.21,
-    "grossLoss": 0,
-    "profitFactor": null,
-    "retPct": 0.542,
-    "maxDrawdown": 0,
-    "ddPct": 0,
+    "grossLoss": 181.09,
+    "profitFactor": 1.5,
+    "retPct": 0.18,
+    "maxDrawdown": 181.09,
+    "ddPct": 0.362,
     "streaks": {
       "maxWins": 3,
-      "maxLosses": 0
+      "maxLosses": 1
     }
   },
   "bestDay": {
@@ -30,8 +30,8 @@
     "net": 271.21
   },
   "worstDay": {
-    "date": "2026-10-22",
-    "net": 271.21
+    "date": "2026-10-23",
+    "net": -181.09
   },
   "crowns": {
     "day": 0,
@@ -190,13 +190,22 @@
       "score": 59.6,
       "rank": 5,
       "crowned": false
+    },
+    {
+      "date": "2026-10-23",
+      "status": "ok",
+      "n": 3,
+      "net": -181.09,
+      "score": 47.87,
+      "rank": 1,
+      "crowned": false
     }
   ],
   "pairs": [
     {
       "symbol": "GBPUSD",
-      "n": 4,
-      "net": 271.21
+      "n": 7,
+      "net": 90.12
     }
   ],
   "hours": {
@@ -204,7 +213,7 @@
     "buckets": [
       {
         "h": "00:00",
-        "n": 0
+        "n": 1
       },
       {
         "h": "01:00",
@@ -220,7 +229,7 @@
       },
       {
         "h": "04:00",
-        "n": 0
+        "n": 1
       },
       {
         "h": "05:00",
@@ -240,7 +249,7 @@
       },
       {
         "h": "09:00",
-        "n": 0
+        "n": 1
       },
       {
         "h": "10:00",
@@ -301,6 +310,6 @@
     ],
     "earlier": 0,
     "unknown": 0,
-    "total": 4
+    "total": 7
   }
 }

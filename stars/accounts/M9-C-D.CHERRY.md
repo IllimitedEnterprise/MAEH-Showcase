@@ -1,15 +1,15 @@
 # M9-C-D.CHERRY
 
-Account report as of 2026-10-22. Rules v1. Demo account; not advice.
+Account report as of 2026-10-23. Rules v1. Demo account; not advice.
 
 | | |
 |---|---|
-| Days on the desk | 16 (14 with closes) |
-| Closes | 336 (182 won, 109 lost, 45 even) |
-| Net | +393.12 |
-| Win rate | 62.5% |
-| Profit factor | 1.02 |
-| Return on funding | 0.786% |
+| Days on the desk | 17 (15 with closes) |
+| Closes | 362 (191 won, 121 lost, 50 even) |
+| Net | -729.07 |
+| Win rate | 61.2% |
+| Profit factor | 0.96 |
+| Return on funding | -1.458% |
 | Max drawdown | 3463.81 (6.928%) |
 | Longest runs | 15 wins, 11 losses |
 | Best day | 2026-10-22 (+2082.56) |
@@ -23,6 +23,7 @@ Day crowns 3, week crowns 1, month crowns 0: 8 points. Current day-crown streak 
 
 | Date | Status | Closes | Net | Score | Rank | Crown |
 |---|---|---:|---:|---:|---:|---|
+| 2026-10-23 | ok | 26 | -1122.19 | 32.46 | 4 |  |
 | 2026-10-22 | ok | 31 | +2082.56 | 85.58 | 2 |  |
 | 2026-10-21 | ok | 14 | -795.64 | 35.87 | 3 |  |
 | 2026-10-20 | ok | 29 | -673.75 | 45.14 | 3 |  |
@@ -36,14 +37,13 @@ Day crowns 3, week crowns 1, month crowns 0: 8 points. Current day-crown streak 
 | 2026-10-12 | ok | 20 | +161.20 | 59.9 | 2 |  |
 | 2026-10-11 | ok | 3 | -9.63 | 50.86 | 1 |  |
 | 2026-10-10 | quiet | 0 | 0.00 | - | - |  |
-| 2026-10-09 | ok | 44 | -1560.31 | 23.63 | 4 |  |
 
 ## Pairs
 
-USDCAD x55 (-869.13), GBPJPY x46 (+3567.20), AUDNZD x45 (+710.30), EURJPY x45 (+713.31), GBPUSD x44 (+1092.51), USDJPY x43 (-3416.93), EURGBP x41 (-647.92), AUDJPY x7 (-99.09), GBPAUD x7 (-288.05), GBPNZD x1 (-247.75), NZDCAD x1 (-121.33), NZDUSD x1 (0.00)
+USDCAD x59 (-765.66), GBPJPY x53 (+3463.29), USDJPY x49 (-4162.87), AUDNZD x47 (+638.61), GBPUSD x47 (+911.42), EURJPY x46 (+713.31), EURGBP x44 (-770.95), AUDJPY x7 (-99.09), GBPAUD x7 (-288.05), GBPNZD x1 (-247.75), NZDCAD x1 (-121.33), NZDUSD x1 (0.00)
 
 ## When it enters
 
-Trades per local entry hour, over every frozen day (336 closes; 46 opened on an earlier day, 1 with no entry record).
+Trades per local entry hour, over every frozen day (362 closes; 49 opened on an earlier day, 1 with no entry record).
 
-00:00 x27, 01:00 x4, 02:00 x11, 03:00 x18, 04:00 x19, 05:00 x8, 06:00 x9, 07:00 x9, 08:00 x28, 09:00 x18, 10:00 x14, 11:00 x12, 12:00 x15, 13:00 x15, 14:00 x20, 15:00 x14, 16:00 x18, 17:00 x7, 18:00 x7, 19:00 x10, 20:00 x3, 21:00 x2, 22:00 x1
+00:00 x28, 01:00 x4, 02:00 x12, 03:00 x18, 04:00 x22, 05:00 x8, 06:00 x9, 07:00 x9, 08:00 x29, 09:00 x21, 10:00 x14, 11:00 x14, 12:00 x17, 13:00 x17, 14:00 x23, 15:00 x16, 16:00 x19, 17:00 x7, 18:00 x7, 19:00 x11, 20:00 x4, 21:00 x2, 22:00 x1

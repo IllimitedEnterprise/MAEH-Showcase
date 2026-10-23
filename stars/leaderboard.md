@@ -1,51 +1,51 @@
 # Star leaderboard
 
-As of 2026-10-22. Rules v1: see [RULES.md](RULES.md).
+As of 2026-10-23. Rules v1: see [RULES.md](RULES.md).
 
-## Day 2026-10-22
+## Day 2026-10-23
 
-Star of the day: **M9-L-Mix** (score 86.17).
-
-| Rank | Account | Score | Closes | Net | Return |
-|---:|---|---:|---:|---:|---:|
-| 1 | [M9-L-Mix](accounts/M9-L-Mix.md) | 86.17 | 31 | +1908.27 | 3.817% |
-| 2 | [M9-C-D.CHERRY](accounts/M9-C-D.CHERRY.md) | 85.58 | 31 | +2082.56 | 4.165% |
-| 3 | [M9-B-D.CHERRY](accounts/M9-B-D.CHERRY.md) | 65.47 | 32 | +624.82 | 1.25% |
-| 4 | [M9-Y-SINGLE](accounts/M9-Y-SINGLE.md) | 60.44 | 4 | +493.58 | 0.987% |
-| 5 | [M9-P-SINGLE](accounts/M9-P-SINGLE.md) | 59.6 | 4 | +271.21 | 0.542% |
-| 6 | [M9-C-CHERRY](accounts/M9-C-CHERRY.md) | 58.51 | 59 | +400.20 | 0.8% |
-| 7 | [M9-B-CHERRY](accounts/M9-B-CHERRY.md) | 54.77 | 61 | +97.87 | 0.196% |
-| - | [M9-S-B](accounts/M9-S-B.md) | 58.33 | 2 | +2295.07 | 4.59% |
-
-## Week 2026-W43 (leading, through 2026-10-22)
-
-Leading: **M9-C-D.CHERRY** (score 58.82). Not a crown until the period closes.
+No Star of the day.
 
 | Rank | Account | Score | Closes | Net | Return |
 |---:|---|---:|---:|---:|---:|
-| 1 | [M9-C-D.CHERRY](accounts/M9-C-D.CHERRY.md) | 58.82 | 93 | +626.26 | 1.253% |
-| 2 | [M9-B-D.CHERRY](accounts/M9-B-D.CHERRY.md) | 52.92 | 97 | -81.20 | -0.162% |
-| 3 | [M9-B-CHERRY](accounts/M9-B-CHERRY.md) | 32.38 | 236 | -2129.91 | -4.26% |
-| 4 | [M9-C-CHERRY](accounts/M9-C-CHERRY.md) | 22.49 | 234 | -4728.68 | -9.457% |
-| - | [M9-L-Mix](accounts/M9-L-Mix.md) | 68.18 | 31 | +1908.27 | 3.817% |
-| - | [M9-P-SINGLE](accounts/M9-P-SINGLE.md) | 52.89 | 4 | +271.21 | 0.542% |
-| - | [M9-Y-SINGLE](accounts/M9-Y-SINGLE.md) | 53.02 | 4 | +493.58 | 0.987% |
-| - | [M9-S-B](accounts/M9-S-B.md) | 52.16 | 2 | +2295.07 | 4.59% |
+| 1 | [M9-P-SINGLE](accounts/M9-P-SINGLE.md) | 47.87 | 3 | -181.09 | -0.362% |
+| 2 | [M9-B-D.CHERRY](accounts/M9-B-D.CHERRY.md) | 40.32 | 29 | -519.54 | -1.039% |
+| 3 | [M9-S-B](accounts/M9-S-B.md) | 38.46 | 3 | -7006.00 | -14.012% |
+| 4 | [M9-C-D.CHERRY](accounts/M9-C-D.CHERRY.md) | 32.46 | 26 | -1122.19 | -2.244% |
+| 5 | [M9-B-CHERRY](accounts/M9-B-CHERRY.md) | 31.62 | 63 | -409.57 | -0.819% |
+| 6 | [M9-C-CHERRY](accounts/M9-C-CHERRY.md) | 19.34 | 65 | -1374.64 | -2.749% |
+| 7 | [M9-L-Mix](accounts/M9-L-Mix.md) | 15.04 | 50 | -2104.30 | -4.209% |
+| - | [M9-Y-SINGLE](accounts/M9-Y-SINGLE.md) | 52.08 | 2 | 0.00 | 0% |
 
-## Month 2026-10 (leading, through 2026-10-22)
+## Week 2026-W43 (leading, through 2026-10-23)
 
-Leading: **M9-C-D.CHERRY** (score 57.35). Not a crown until the period closes.
+Leading: **M9-C-D.CHERRY** (score 51.4). Not a crown until the period closes.
 
 | Rank | Account | Score | Closes | Net | Return |
 |---:|---|---:|---:|---:|---:|
-| 1 | [M9-C-D.CHERRY](accounts/M9-C-D.CHERRY.md) | 57.35 | 336 | +393.12 | 0.786% |
-| 2 | [M9-C-CHERRY](accounts/M9-C-CHERRY.md) | 49.09 | 669 | +1748.55 | 3.497% |
-| 3 | [M9-B-D.CHERRY](accounts/M9-B-D.CHERRY.md) | 42.45 | 340 | -2651.28 | -5.303% |
-| 4 | [M9-B-CHERRY](accounts/M9-B-CHERRY.md) | 41.97 | 708 | -2409.58 | -4.819% |
-| - | [M9-L-Mix](accounts/M9-L-Mix.md) | 57.35 | 31 | +1908.27 | 3.817% |
-| - | [M9-P-SINGLE](accounts/M9-P-SINGLE.md) | 51 | 4 | +271.21 | 0.542% |
-| - | [M9-Y-SINGLE](accounts/M9-Y-SINGLE.md) | 51.02 | 4 | +493.58 | 0.987% |
-| - | [M9-S-B](accounts/M9-S-B.md) | 50.62 | 2 | +2295.07 | 4.59% |
+| 1 | [M9-C-D.CHERRY](accounts/M9-C-D.CHERRY.md) | 51.4 | 119 | -495.93 | -0.992% |
+| 2 | [M9-B-D.CHERRY](accounts/M9-B-D.CHERRY.md) | 48.55 | 126 | -600.74 | -1.201% |
+| 3 | [M9-B-CHERRY](accounts/M9-B-CHERRY.md) | 28.52 | 299 | -2539.48 | -5.079% |
+| 4 | [M9-C-CHERRY](accounts/M9-C-CHERRY.md) | 20.63 | 299 | -6103.32 | -12.207% |
+| - | [M9-L-Mix](accounts/M9-L-Mix.md) | 50.32 | 81 | -196.03 | -0.392% |
+| - | [M9-P-SINGLE](accounts/M9-P-SINGLE.md) | 53.37 | 7 | +90.12 | 0.18% |
+| - | [M9-Y-SINGLE](accounts/M9-Y-SINGLE.md) | 54.34 | 6 | +493.58 | 0.987% |
+| - | [M9-S-B](accounts/M9-S-B.md) | 45.08 | 5 | -4710.93 | -9.422% |
+
+## Month 2026-10 (leading, through 2026-10-23)
+
+Leading: **M9-C-D.CHERRY** (score 53.99). Not a crown until the period closes.
+
+| Rank | Account | Score | Closes | Net | Return |
+|---:|---|---:|---:|---:|---:|
+| 1 | [M9-C-D.CHERRY](accounts/M9-C-D.CHERRY.md) | 53.99 | 362 | -729.07 | -1.458% |
+| 2 | [M9-C-CHERRY](accounts/M9-C-CHERRY.md) | 44.39 | 734 | +373.91 | 0.748% |
+| 3 | [M9-B-D.CHERRY](accounts/M9-B-D.CHERRY.md) | 40.53 | 369 | -3170.82 | -6.342% |
+| 4 | [M9-B-CHERRY](accounts/M9-B-CHERRY.md) | 40.2 | 771 | -2819.15 | -5.638% |
+| - | [M9-L-Mix](accounts/M9-L-Mix.md) | 52.76 | 81 | -196.03 | -0.392% |
+| - | [M9-P-SINGLE](accounts/M9-P-SINGLE.md) | 51.26 | 7 | +90.12 | 0.18% |
+| - | [M9-Y-SINGLE](accounts/M9-Y-SINGLE.md) | 51.51 | 6 | +493.58 | 0.987% |
+| - | [M9-S-B](accounts/M9-S-B.md) | 48.7 | 5 | -4710.93 | -9.422% |
 
 ## All-time crowns
 

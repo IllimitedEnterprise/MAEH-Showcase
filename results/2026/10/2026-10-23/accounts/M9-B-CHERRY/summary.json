@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "key": "M9-B-CHERRY",
+  "label": "M9-B-CHERRY",
+  "status": "ok",
+  "reasons": [],
+  "source": "api",
+  "currency": "EUR",
+  "funding": 50000,
+  "n": 63,
+  "wins": 11,
+  "losses": 33,
+  "breakevens": 19,
+  "winRatePct": 25,
+  "grossWin": 2503.83,
+  "grossLoss": 2913.4,
+  "net": -409.57,
+  "profitFactor": 0.86,
+  "retPct": -0.819,
+  "maxDrawdown": 1974.29,
+  "ddPct": 3.949,
+  "streaks": {
+    "maxWins": 5,
+    "maxLosses": 5
+  },
+  "r": {
+    "count": 62,
+    "sum": -12.775
+  },
+  "best": {
+    "symbol": "EURAUD",
+    "net": 1609.54,
+    "r": 4.406
+  },
+  "worst": {
+    "symbol": "USDJPY",
+    "net": -241.32,
+    "r": -0.997
+  },
+  "pairs": [
+    {
+      "symbol": "GBPJPY",
+      "n": 9,
+      "net": -293.57
+    },
+    {
+      "symbol": "EURUSD",
+      "n": 6,
+      "net": -253.33
+    },
+    {
+      "symbol": "GBPAUD",
+      "n": 6,
+      "net": 95.71
+    },
+    {
+      "symbol": "USDJPY",
+      "n": 6,
+      "net": -553.08
+    },
+    {
+      "symbol": "AUDJPY",
+      "n": 5,
+      "net": -63.61
+    },
+    {
+      "symbol": "EURCAD",
+      "n": 4,
+      "net": -156.4
+    },
+    {
+      "symbol": "USDCHF",
+      "n": 4,
+      "net": -273.29
+    },
+    {
+      "symbol": "EURAUD",
+      "n": 3,
+      "net": 1711.05
+    },
+    {
+      "symbol": "GBPNZD",
+      "n": 3,
+      "net": -327.28
+    },
+    {
+      "symbol": "GBPUSD",
+      "n": 3,
+      "net": -43.69
+    },
+    {
+      "symbol": "NZDCAD",
+      "n": 3,
+      "net": -101.28
+    },
+    {
+      "symbol": "USDCAD",
+      "n": 3,
+      "net": 20.3
+    },
+    {
+      "symbol": "AUDNZD",
+      "n": 2,
+      "net": -52.87
+    },
+    {
+      "symbol": "EURGBP",
+      "n": 2,
+      "net": -40.61
+    },
+    {
+      "symbol": "EURJPY",
+      "n": 2,
+      "net": 0
+    },
+    {
+      "symbol": "NZDUSD",
+      "n": 2,
+      "net": -77.62
+    }
+  ],
+  "chain": {
+    "ok": null,
+    "gap": null
+  }
+}

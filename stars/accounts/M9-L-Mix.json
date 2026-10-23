@@ -3,26 +3,26 @@
   "key": "M9-L-Mix",
   "label": "M9-L-Mix",
   "fundedDate": "2026-10-21",
-  "asOf": "2026-10-22",
+  "asOf": "2026-10-23",
   "rules": "v1",
   "totals": {
-    "days": 2,
-    "activeDays": 1,
-    "n": 31,
-    "wins": 21,
-    "losses": 4,
-    "breakevens": 6,
-    "winRatePct": 84,
-    "net": 1908.27,
-    "grossWin": 2129.64,
-    "grossLoss": 221.37,
-    "profitFactor": 9.62,
-    "retPct": 3.817,
-    "maxDrawdown": 216.04,
-    "ddPct": 0.432,
+    "days": 3,
+    "activeDays": 2,
+    "n": 81,
+    "wins": 36,
+    "losses": 32,
+    "breakevens": 13,
+    "winRatePct": 52.9,
+    "net": -196.03,
+    "grossWin": 3814.55,
+    "grossLoss": 4010.58,
+    "profitFactor": 0.95,
+    "retPct": -0.392,
+    "maxDrawdown": 2286.88,
+    "ddPct": 4.574,
     "streaks": {
       "maxWins": 15,
-      "maxLosses": 2
+      "maxLosses": 5
     }
   },
   "bestDay": {
@@ -30,8 +30,8 @@
     "net": 1908.27
   },
   "worstDay": {
-    "date": "2026-10-22",
-    "net": 1908.27
+    "date": "2026-10-23",
+    "net": -2104.3
   },
   "crowns": {
     "day": 1,
@@ -195,58 +195,67 @@
       "score": 86.17,
       "rank": 1,
       "crowned": true
+    },
+    {
+      "date": "2026-10-23",
+      "status": "ok",
+      "n": 50,
+      "net": -2104.3,
+      "score": 15.04,
+      "rank": 7,
+      "crowned": false
     }
   ],
   "pairs": [
     {
-      "symbol": "GBPJPY",
-      "n": 5,
-      "net": 574.44
-    },
-    {
       "symbol": "AUDUSD",
-      "n": 4,
-      "net": -110.07
+      "n": 14,
+      "net": -619.92
     },
     {
-      "symbol": "EURJPY",
-      "n": 4,
-      "net": 507.77
+      "symbol": "GBPJPY",
+      "n": 12,
+      "net": 447.17
     },
     {
       "symbol": "EURUSD",
-      "n": 4,
-      "net": 0
-    },
-    {
-      "symbol": "GBPUSD",
-      "n": 3,
-      "net": 274.8
-    },
-    {
-      "symbol": "USDCHF",
-      "n": 3,
-      "net": 157.8
+      "n": 10,
+      "net": -262.3
     },
     {
       "symbol": "USDJPY",
-      "n": 3,
-      "net": 423.2
+      "n": 9,
+      "net": -312.46
     },
     {
       "symbol": "AUDJPY",
-      "n": 2,
-      "net": 71
+      "n": 8,
+      "net": -314.25
+    },
+    {
+      "symbol": "USDCHF",
+      "n": 7,
+      "net": -73.2
+    },
+    {
+      "symbol": "EURJPY",
+      "n": 6,
+      "net": 810.29
+    },
+    {
+      "symbol": "GBPUSD",
+      "n": 6,
+      "net": 93.71
     },
     {
       "symbol": "USDCAD",
-      "n": 2,
-      "net": 60.18
+      "n": 6,
+      "net": 168.76
     },
     {
       "symbol": "NZDUSD",
-      "n": 1,
-      "net": -50.85
+      "n": 3,
+      "net": -133.83
     }
   ],
   "hours": {
@@ -254,7 +263,7 @@
     "buckets": [
       {
         "h": "00:00",
-        "n": 0
+        "n": 3
       },
       {
         "h": "01:00",
@@ -262,7 +271,7 @@
       },
       {
         "h": "02:00",
-        "n": 0
+        "n": 2
       },
       {
         "h": "03:00",
@@ -270,7 +279,7 @@
       },
       {
         "h": "04:00",
-        "n": 6
+        "n": 13
       },
       {
         "h": "05:00",
@@ -282,43 +291,43 @@
       },
       {
         "h": "07:00",
-        "n": 1
+        "n": 2
       },
       {
         "h": "08:00",
-        "n": 7
+        "n": 9
       },
       {
         "h": "09:00",
-        "n": 2
+        "n": 6
       },
       {
         "h": "10:00",
-        "n": 1
+        "n": 3
       },
       {
         "h": "11:00",
-        "n": 0
+        "n": 8
       },
       {
         "h": "12:00",
-        "n": 3
+        "n": 4
       },
       {
         "h": "13:00",
-        "n": 3
+        "n": 7
       },
       {
         "h": "14:00",
-        "n": 2
+        "n": 6
       },
       {
         "h": "15:00",
-        "n": 0
+        "n": 3
       },
       {
         "h": "16:00",
-        "n": 1
+        "n": 3
       },
       {
         "h": "17:00",
@@ -334,11 +343,11 @@
       },
       {
         "h": "20:00",
-        "n": 0
+        "n": 1
       },
       {
         "h": "21:00",
-        "n": 1
+        "n": 2
       },
       {
         "h": "22:00",
@@ -349,8 +358,8 @@
         "n": 0
       }
     ],
-    "earlier": 0,
+    "earlier": 5,
     "unknown": 1,
-    "total": 31
+    "total": 81
   }
 }
