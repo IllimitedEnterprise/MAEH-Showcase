@@ -107,7 +107,10 @@ export function mergeCloses({ apiRows = null, ledgerRows = null }) {
   for (const [key, close] of api?.map ?? []) {
     if (ledger?.map.has(key)) {
       both += 1;
-      merged.set(key, { ...close, source: "both" });
+      // The live row wins, but a field it lacks is taken from the ledger's: neither source's
+      // knowledge of R or of the entry time is thrown away because the other did not have it.
+      const other = ledger.map.get(key);
+      merged.set(key, { ...close, r: close.r ?? other.r, openSec: close.openSec ?? other.openSec, source: "both" });
     } else {
       if (ledger) onlyApi += 1;
       merged.set(key, close);

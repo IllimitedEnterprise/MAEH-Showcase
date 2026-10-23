@@ -12,7 +12,7 @@
  *             4 committed but not pushed
  *             5 environment, git or configuration problem */
 
-import { mkdirSync } from "node:fs";
+import { existsSync, mkdirSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { checkDerived } from "./derived.mjs";
 import { createGit } from "./git.mjs";
@@ -69,6 +69,13 @@ export async function runNightly(options) {
   mkdirSync(ctx.stateDir, { recursive: true });
   let nowSec = Math.floor(now() / 1000);
   health = ctx.season.healthWakeDays.includes(WEEKDAY_NAMES[weekdayOf(localDate(nowSec, zone))]);
+  // A wake drill: an empty file named force-wake in the state folder wakes the agent once, then is removed.
+  const forceWake = join(ctx.stateDir, "force-wake");
+  if (!argv.status && existsSync(forceWake)) {
+    health = true;
+    rmSync(forceWake, { force: true });
+    say("wake drill: the force-wake file was found and removed");
+  }
 
   let gitInfo;
   try {

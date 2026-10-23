@@ -27,6 +27,9 @@ Pages. The code is plain Node (version 22 or newer) with no dependencies.
   derived files.
 - `node scripts/nightly.mjs --status` shows the last frozen day, any gaps and the
   last run.
+- `node scripts/nightly.mjs --dry-run` reads and renders but writes nothing.
+- `node scripts/nightly.mjs` runs the whole job; it is safe to repeat, because a
+  frozen day is never frozen twice.
 - `node scripts/nightly.mjs --retry-push` pushes commits that were made but not
   pushed yet.
 - `node scripts/nightly.mjs --accept-partial YYYY-MM-DD --reason "text"` seals a day
@@ -43,7 +46,7 @@ Public files carry account labels, per-trade rows (symbol, side, net result, R) 
 trade counts per entry hour. They never carry tickets, comments, volume, prices,
 broker logins, server names, paths, ports, harness ids, strategy names, equity or
 floating figures, or raw error text. `scripts/lib/project.mjs` builds every public
-object from an allowlist, and `node scripts/verify.mjs --privacy` scans the files.
+object from an allowlist, and `node scripts/verify.mjs --all` scans the files again.
 
 ## Layout
 

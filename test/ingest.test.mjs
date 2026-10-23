@@ -60,6 +60,17 @@ test("merging: both sources agree, the API row wins and keeps R", () => {
   assert.ok(merged.closes.every((close) => close.source === "both"));
 });
 
+test("merging: a field the live row lacks (R, entry time) is taken from the ledger's; one it has is kept", () => {
+  const merged = mergeCloses({
+    apiRows: [api(1, 100, 10, { r: null, openedAt: null }), api(2, 200, 5, { r: 2, openedAt: 150 })],
+    ledgerRows: [{ ...ledger(1, 100, 10), r: 0.4, openedAt: 70 }, { ...ledger(2, 200, 5), r: 9, openedAt: 60 }],
+  });
+  const first = merged.closes.find((close) => close.ticket === 1);
+  const second = merged.closes.find((close) => close.ticket === 2);
+  assert.deepEqual([first.r, first.openSec], [0.4, 70]);
+  assert.deepEqual([second.r, second.openSec], [2, 150], "values the live row has are not overwritten");
+});
+
 test("merging: a close only the ledger has is kept and counted as attention", () => {
   const merged = mergeCloses({ apiRows: [api(1, 100, 10)], ledgerRows: [ledger(1, 100, 10), ledger(9, 300, 4)] });
   assert.equal(merged.closes.length, 2);

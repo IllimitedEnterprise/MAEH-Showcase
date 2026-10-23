@@ -8,6 +8,7 @@ import { runNightly } from "../scripts/lib/nightly.mjs";
 import { dayWindow } from "../scripts/lib/time.mjs";
 import { errorsOf, formatFinding, verifyRoot } from "../scripts/lib/verify.mjs";
 import { RULES } from "./helpers/days.mjs";
+import { hermesWakes, hermesWouldRedact } from "./helpers/hermes.mjs";
 import { profile, progressPayload, startFakeHarness } from "./helpers/fake-harness.mjs";
 import { gitAvailable, makeRepo, writeLedger } from "./helpers/repo.mjs";
 
@@ -31,10 +32,16 @@ async function night(repo, { argv = {}, now = () => NOW, sleep = noSleep, scenar
   const fake = harnessUp ? await startFakeHarness({ accounts: ROSTER, progress: OK_PROGRESS, ...scenario }) : null;
   const env = { ...repo.env, MAEH_HARNESS_URL: fake ? fake.url : "http://127.0.0.1:9" };
   try {
-    return await runNightly({
+    const result = await runNightly({
       root: repo.root, argv, env, now, sleep,
       makeClient: (url) => createHarness({ baseUrl: url, retryDelaysMs: [], timeoutMs: 3_000, sleep: noSleep }),
     });
+    // The contract with the scheduler, checked on the output of EVERY scenario in this file.
+    assert.equal(hermesWakes(result.text), result.final.wakeAgent, "Hermes's wake gate must agree with wakeAgent");
+    assert.ok(!hermesWouldRedact(result.text), "nothing the Hermes redactor targets may appear in stdout");
+    assert.ok(result.text.split("\n").length <= 31, "at most 30 lines");
+    assert.ok(!/[^\x09\x0A\x20-\x7E]/.test(result.text), "ASCII only");
+    return result;
   } finally {
     await fake?.close();
   }
