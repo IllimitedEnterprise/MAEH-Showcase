@@ -3,7 +3,7 @@
 
 import { html, join, raw } from "./lib/html.mjs";
 import { styleData } from "./lib/dom.mjs";
-import { DASH, KIND_LABEL, STATUS_LABEL, int, money, one, pct, profitFactor, tidyReason, tone, two } from "./lib/fmt.mjs";
+import { DASH, KIND_LABEL, STATUS_LABEL, int, money, one, pct, profitFactor, tidyCounts, tone, two } from "./lib/fmt.mjs";
 import { href } from "./lib/router.mjs";
 import { entityClass, labelOf } from "./lib/model.mjs";
 import { clamp } from "./lib/scale.mjs";
@@ -133,7 +133,7 @@ export function standingsTable(core, rows, { crownKey = null, caption }) {
       { label: "Return", align: "right", className: "col-optional", cell: (row) => pct(row.retPct, { signed: true, digits: 2 }) },
       { label: "Closes", align: "right", className: "col-optional", cell: (row) => int(row.n) },
       { label: "Marks", className: "col-marks", cell: (row) => compMarks(row.comp) },
-      { label: "Note", className: "col-note", cell: (row) => (row.qualified ? "" : html`<span class="why">${row.why.map(tidyReason).join("; ")}</span>`) },
+      { label: "Note", className: "col-note", cell: (row) => (row.qualified ? "" : html`<span class="why">${row.why.map(tidyCounts).join("; ")}</span>`) },
     ],
     rows,
   });

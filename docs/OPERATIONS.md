@@ -92,6 +92,28 @@ deleted). None of it is committed, and none of it is needed to read or verify th
 `gh run list --repo IllimitedEnterprise/MAEH-Showcase` shows the last runs; `gh run view <id> --log-failed`
 shows why one failed.
 
+## Rehearsing the night
+
+To watch the whole job work against the live harness without touching anything real, run it in a throwaway
+copy. The harness is only read; everything the job writes goes to the copy.
+
+1. Clone this checkout, remove its newest frozen day (`git rm -r results/YYYY/MM/<date>`), run
+   `node scripts/rank.mjs`, and commit. A fresh clone has no hooks, so the removal is allowed there; in the
+   real checkout it never is.
+2. `git init --bare` a temporary remote, point the copy's `origin` at it, and push.
+3. Make an empty folder for private state, copy only `config.json` into it, and set `MAEH_SHOWCASE_STATE` to
+   that folder.
+4. From the copy, run `node scripts/nightly.mjs`, or the Hermes shim with `MAEH_SHOWCASE_REPO` pointing at
+   the copy and an environment as bare as a scheduler's (no tokens, `PATH` with only the system folders).
+
+What to expect: the day is frozen, one commit that only adds files under the frozen folder and rewrites
+derived files, a push to the temporary remote, and a last line `{"wakeAgent":false,...}`. Compare the new day
+with the sealed one: the money, `trades.json` and `trades.csv` agree byte for byte, while `source`, `kind`, the
+balance check (`null` on a first read, because there is no earlier balance to compare with) and the entry hours
+of trades the ledger had no entry time for differ by design. A second run finds nothing due and stays asleep;
+an empty file named `force-wake` in the state folder wakes the agent once, which is how a health check is
+drilled.
+
 ## When something goes wrong
 
 | You see | Likely cause | Do |

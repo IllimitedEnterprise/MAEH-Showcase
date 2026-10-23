@@ -6,7 +6,7 @@ import { html, raw } from "../lib/html.mjs";
 import { renderMarkdown } from "../lib/markdown.mjs";
 import { highlight } from "../lib/highlight.mjs";
 import { parseCsv } from "../lib/csv.mjs";
-import { DASH, bytes, int, longDate, one, pct, plural, profitFactor, rMultiple, shortDate, two } from "../lib/fmt.mjs";
+import { DASH, bytes, int, longDate, one, pct, plural, profitFactor, rMultiple, shortDate, tidyCounts, two } from "../lib/fmt.mjs";
 import { KIND_OF_PATH, dayFile } from "../lib/data.mjs";
 import { href } from "../lib/router.mjs";
 import { accountKeys, entitySlot, labelOf } from "../lib/model.mjs";
@@ -100,7 +100,7 @@ ${summary.reasons?.length ? html`<p class="viewer-warn">${icon("warn")} ${summar
 ${statGrid(html`
 ${statTile({ label: "Net", value: moneyHtml(summary.net), hint: summary.funding ? `${pct(summary.retPct, { signed: true, digits: 2 })} on ${int(summary.funding)} EUR` : null })}
 ${statTile({ label: "Closes", value: int(summary.n), hint: `${int(summary.wins)} won · ${int(summary.losses)} lost · ${int(summary.breakevens)} even` })}
-${statTile({ label: "Win rate", value: pct(summary.winRatePct), hint: summary.streaks ? `Runs: ${summary.streaks.maxWins} wins, ${summary.streaks.maxLosses} losses` : null })}
+${statTile({ label: "Win rate", value: pct(summary.winRatePct), hint: summary.streaks ? `Runs: ${plural(summary.streaks.maxWins, "win")}, ${plural(summary.streaks.maxLosses, "loss", "losses")}` : null })}
 ${statTile({ label: "Profit factor", value: profitFactor(summary.profitFactor, summary.grossWin), hint: `${two(summary.grossWin)} won vs ${two(summary.grossLoss)} lost` })}
 ${statTile({ label: "Deepest fall", value: two(summary.maxDrawdown), hint: `${pct(summary.ddPct, { digits: 2 })} of funding` })}
 ${statTile({ label: "R", value: summary.r ? rMultiple(summary.r.sum) : DASH, hint: summary.r ? `over ${plural(summary.r.count, "close")}` : "not linked for this day" })}`)}
@@ -174,7 +174,7 @@ ${table({ caption: "Files of the day", className: "table-compact", columns: [
 export function visualFor({ core, date, rel, text, manifest, entry }) {
   const name = rel.split("/").at(-1);
   const key = /^accounts\/([^/]+)\//.exec(rel)?.[1] ?? null;
-  if (name.endsWith(".md")) return { markup: html`<div class="prose">${raw(renderMarkdown(text))}</div>`, mount: null };
+  if (name.endsWith(".md")) return { markup: html`<div class="prose">${raw(renderMarkdown(tidyCounts(text)))}</div>`, mount: null };
   if (name.endsWith(".csv")) {
     const { header, rows } = parseCsv(text);
     if (header.join(",") !== "i,symbol,side,net,r") return null;

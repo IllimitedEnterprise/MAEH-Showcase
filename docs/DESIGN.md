@@ -100,8 +100,10 @@ instead of showing a blank page.
 | A quiet day (frozen, no closes) | A tick on the line, "no closes" in the calendar, no footnote about entry hours |
 | The 25-hour and 23-hour days | A badge, and a note under the entry-hours chart: the repeated hour is one column holding both halves, the missing hour has none |
 
-A count of one takes the singular everywhere it is written. The one exception is text inside a sealed day,
-which is hashed and never edited; the page rewords the single phrase that matters ("needs 1 active days").
+A count of one takes the singular everywhere the page writes it. Text inside a sealed day is hashed and never
+edited, so a day frozen earlier can still say "3 wins, 1 losses" or "needs 1 active days"; the page words those
+right wherever it shows them as prose (the Readable view and the standings notes), and the Raw view and the
+raw file stay byte for byte what was frozen.
 
 ## Responsive and accessible
 

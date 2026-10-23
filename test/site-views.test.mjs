@@ -135,6 +135,16 @@ test("a trade file shows symbol, side, net and R but no time of any kind", async
   assert.ok(!/\b\d{2}:\d{2}:\d{2}\b/.test(markup), "no clock time appears on a trade page");
 });
 
+test("a sealed file that says '1 losses' reads right in the readable view and stays exact in the raw one", async () => {
+  const { markup } = await draw("#/day/2026-10-22/file/accounts/M9-Y-SINGLE/summary.md");
+  const readable = markup.match(/data-panel="visual"[\s\S]*?(?=data-panel="raw")/)[0];
+  assert.match(readable, /3 wins, 1 loss</, "the readable table words the count of one right");
+  assert.ok(!/1 losses/.test(readable));
+  const rawPanel = markup.match(/data-panel="raw"[\s\S]*$/)[0];
+  assert.match(rawPanel, /3 wins, 1 losses/, "the raw bytes are what was frozen");
+  assert.match(markup, /Matches the manifest/, "and they still hash to the manifest");
+});
+
 test("a raw file is escaped, never executed", async () => {
   const { markup } = await draw("#/day/2026-10-22/file/accounts/M9-S-B/trades.json");
   assert.match(markup, /<span class="tk-key">&quot;symbol&quot;<\/span>:/);

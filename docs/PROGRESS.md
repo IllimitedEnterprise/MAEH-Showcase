@@ -94,8 +94,9 @@ frozen partial, a day with an unverified account, a quiet day, the 25-hour day w
   links to that account's summary; the calendar marks the day.
 - **Counts of one read wrong** ("1 closes", "1 frozen days", "1 days with trades", "1 losses"). All the page's
   wording now follows the count. Days that are already sealed keep their words, because their files are
-  hashed; the page rewords one sealed phrase ("needs 1 active days") as it shows it, and the generators were
-  fixed for the days still to come (the written reports under `stars/` were rebuilt).
+  hashed; the page rewords such phrases ("3 wins, 1 losses", "needs 1 active days") in the Readable view and
+  the standings notes while the Raw view stays exact, and the generators were fixed for the days still to
+  come (the written reports under `stars/` were rebuilt).
 - **With one day of trades, the "worst day" was the best day.** It now says it needs a second day.
 - **The 25-hour and 23-hour days gave no hint** why the chart has the hours it has; a note says so, and a test
   pins that the repeated hour is one column holding both halves and that no trade is lost.
@@ -104,6 +105,28 @@ frozen partial, a day with an unverified account, a quiet day, the 25-hour day w
 
 These states are tests (`test/site-states.test.mjs`, and the browser checks in `test/site-browser.test.mjs`),
 so they stay right.
+
+## The night, rehearsed once for real
+
+The nightly job had only ever met a fake harness, so on 2026-10-23 it was run end to end against the live one,
+in a throwaway copy (the recipe is in [`OPERATIONS.md`](OPERATIONS.md#rehearsing-the-night)): a clone with
+2026-10-22 un-frozen, a temporary remote, and a private state folder holding nothing but the harness settings.
+The Hermes shim was started the way a scheduler would, with no session variables and only the system folders
+on `PATH`.
+
+- It found Node and Git on its own, read the live harness (about six seconds for all eight accounts), froze the
+  day, committed (only additions under the frozen folder, plus the rewritten derived files), pushed, and ended
+  with `{"wakeAgent":false,"outcome":"frozen",...}`.
+- **The money matched the sealed day, which came from the close ledgers, to the cent:** all eight accounts,
+  224 closes, desk +8,173.58. `trades.json` and `trades.csv` were byte-identical for every account. What
+  differed was only what should: the source (`ledger` became `both`), the kind (a catch-up, because it was
+  frozen more than six hours after the day ended), the balance check (`null`, since a first read has no earlier balance to compare with),
+  and the entry hour of three trades that the ledger had no entry time for and the live harness did.
+- A second run found nothing due and stayed asleep; a wake drill woke the agent and removed its file;
+  `verify` and `rank --check` passed on the copy. The real repository and the real state folder were not touched.
+
+What this does not cover is Hermes itself (its gateway and its clock) and a push to GitHub from the scheduler's
+account; both wait for the setup in [`deploy/hermes/HERMES-SETUP.md`](../deploy/hermes/HERMES-SETUP.md).
 
 ## Verification
 
@@ -119,4 +142,6 @@ MAEH_BROWSER_TESTS=1 node --test test/site-browser.test.mjs    real-browser chec
 
 1. Wire the nightly job into Hermes from [`deploy/hermes/HERMES-SETUP.md`](../deploy/hermes/HERMES-SETUP.md).
    Until then nothing freezes new days on its own; the first night to freeze is 2026-10-23, at 01:00 on the 24th.
-2. Firefox and Safari have not been tried; the browser checks use Chrome.
+2. Firefox and Safari have not been tried (neither was available where this was built). The real-browser
+   checks ran in Chrome, locally and on the CI runner, and once by hand in Edge (`MAEH_CHROME` points the test
+   driver at another Chromium-based browser); all six passed in each.

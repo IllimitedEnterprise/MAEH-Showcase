@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { DASH, MINUS, compact, longDate, money, monthTitle, pct, periodLabel, shortDate, tone, weekday } from "../site/js/lib/fmt.mjs";
+import { DASH, MINUS, compact, longDate, money, monthTitle, pct, periodLabel, plural, shortDate, tidyCounts, tone, weekday } from "../site/js/lib/fmt.mjs";
 import { heatLevel, linear, niceTicks, pathArea, pathLine, pathStep } from "../site/js/lib/scale.mjs";
 import { NAV, href, parseRoute, section } from "../site/js/lib/router.mjs";
 import { renderMarkdown } from "../site/js/lib/markdown.mjs";
@@ -24,6 +24,17 @@ test("percent and compact numbers", () => {
   assert.equal(compact(-2_300_000), `${MINUS}2.3m`);
   assert.equal(compact(0), "0");
   assert.equal(compact(250), "250");
+});
+
+test("a count of one takes the singular, in the page's own words and in sealed text it shows", () => {
+  assert.equal(plural(1, "close"), "1 close");
+  assert.equal(plural(0, "close"), "0 closes");
+  assert.equal(plural(1234, "closed trade"), "1,234 closed trades");
+  assert.equal(plural(1, "loss", "losses"), "1 loss");
+  assert.equal(tidyCounts("| Longest runs | 3 wins, 1 losses |"), "| Longest runs | 3 wins, 1 loss |");
+  assert.equal(tidyCounts("needs 1 active days, has 0"), "needs 1 active day, has 0");
+  assert.equal(tidyCounts("1 wins, 1 closes, 1 trades, 1 days"), "1 win, 1 close, 1 trade, 1 day");
+  for (const untouched of ["11 losses", "21 closes", "1,1 days", "2.1 wins", "needs 3 closes, has 1", "10 active days", "1 loss", "1 closed"]) assert.equal(tidyCounts(untouched), untouched, untouched);
 });
 
 test("dates read the same in every time zone", () => {
