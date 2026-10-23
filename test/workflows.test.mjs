@@ -85,6 +85,14 @@ test("CI runs the whole suite on Linux with Node 22 and 24 and on Windows, and c
   for (const command of ["verify.mjs --all", "rank.mjs --check", "verify.mjs --ci --base", "verify.mjs --history"]) assert.ok(ci.includes(command), command);
 });
 
+test("the real-browser checks run on exactly one CI leg, a Linux one, and never gate the deploy", () => {
+  const ci = workflows["ci.yml"];
+  assert.equal((ci.match(/browser: "1"/g) ?? []).length, 1);
+  assert.match(ci, /os: ubuntu-24\.04\s+node: 24\s+browser: "1"/);
+  assert.match(ci, /MAEH_BROWSER_TESTS: \$\{\{ matrix\.browser \}\}/);
+  assert.ok(!/MAEH_BROWSER_TESTS/.test(workflows["pages.yml"]), "a browser flake must never hold back the nightly deploy");
+});
+
 test("Pages deploys only after verification, and never at the same time as itself", () => {
   const pages = workflows["pages.yml"];
   assert.match(pages, /needs: build/);

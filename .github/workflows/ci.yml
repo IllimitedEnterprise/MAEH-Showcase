@@ -28,6 +28,7 @@ jobs:
             node: 22
           - os: ubuntu-24.04
             node: 24
+            browser: "1"
           - os: windows-latest
             node: 24
     steps:
@@ -37,7 +38,11 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: ${{ matrix.node }}
+      # The real-browser checks (layout at many widths, injected host failures, the in-page verifiers)
+      # run on one leg only, with the Chrome the runner image already has.
       - name: Run every test
+        env:
+          MAEH_BROWSER_TESTS: ${{ matrix.browser }}
         run: node --test "test/**/*.test.mjs"
 
   data:

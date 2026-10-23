@@ -9,7 +9,8 @@
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createSiteServer } from "./lib/site.mjs";
-import { assertNodeVersion } from "./lib/runtime.mjs";
+import { createGit } from "./lib/git.mjs";
+import { assertNodeVersion, resolveGit } from "./lib/runtime.mjs";
 
 assertNodeVersion(22);
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -23,7 +24,16 @@ if (!Number.isInteger(port) || port < 0 || port > 65535) {
   process.exit(2);
 }
 
-const server = createSiteServer({ root, base });
+/* The preview reports the real commit, so what a visitor would see on the Integrity page (a forty
+ * character hash) is what the preview shows too. */
+let commit = "0".repeat(40);
+try {
+  commit = createGit({ gitPath: resolveGit().path, cwd: root }).headSha() || commit;
+} catch {
+  /* not a git checkout, or no git: the placeholder is fine for a preview */
+}
+
+const server = createSiteServer({ root, base, commit });
 server.listen(port, "127.0.0.1", () => {
   const { port: actual } = server.address();
   console.log(`MAEH Showcase preview: http://127.0.0.1:${actual}${base.endsWith("/") ? base : `${base}/`}`);

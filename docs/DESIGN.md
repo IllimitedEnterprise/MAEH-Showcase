@@ -156,7 +156,10 @@ more than most. Two things deal with it, both exercised by injecting the failure
 | `site-csp` | the policy, forbidden APIs, where `innerHTML` may be set, every import and class resolves |
 | `site-fonts` | the bundled fonts are the recorded files |
 | `site-server` | the preview serves only the page and the data folders; path traversal cannot escape; the Pages artifact holds nothing else |
+| `site-hostile` | the real files served with script tags, event handlers, `javascript:` links and image payloads swapped into every label, symbol and Markdown file: every route is drawn and nothing comes out as markup; an account called `__proto__` is just not found |
 | `workflows` | every action pinned and vetted, the token read-only, nothing user-controlled reaches a shell |
+| `site-browser` | **a real Chrome or Edge** draws the pages at nine widths (390 to 1440 px) in both themes and finds no sideways scroll, no box overflowing itself, no hero figure running into the Star card, no console message and no failed request; a 503 injected into one script is survived once and given up on cleanly when permanent; the chain and per-day verifiers, deep links, keyboard stepping and the theme switch work. Opt-in (`MAEH_BROWSER_TESTS=1`) so `node --test` stays instant; CI runs it on one Linux leg |
 
-Beyond the tests, every page was inspected in a real browser at 390, 768 and 1280 px, in both themes, with a
-clean console, no sideways overflow on any route, and keyboard stepping through the charts.
+Two layout bugs, the hero figure running into the Star card between about 900 and 1100 px and a commit hash
+spilling out of its card on a phone, were found only by probing more widths than the first inspection used.
+They are exactly what `site-browser` now keeps from coming back.
