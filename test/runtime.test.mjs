@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { join } from "node:path";
+import { win32 } from "node:path";
 import {
   assertNodeVersion, compareVersionStrings, findOnPath, gitCandidates, ghCandidates, resolveTool, stateDir,
   versionAtLeast,
@@ -22,20 +22,21 @@ test("node version floor", () => {
 test("state lives outside the repository, per platform, with an override", () => {
   assert.equal(stateDir({ MAEH_SHOWCASE_STATE: "X:\\state" }, "win32"), "X:\\state");
   assert.equal(stateDir({ LOCALAPPDATA: "C:\\Users\\t\\AppData\\Local" }, "win32"),
-    join("C:\\Users\\t\\AppData\\Local", "MAEH-Showcase"));
-  assert.match(stateDir({ XDG_STATE_HOME: "/var/state" }, "linux"), /maeh-showcase$/);
+    "C:\\Users\\t\\AppData\\Local\\MAEH-Showcase", "Windows rules, whatever machine runs this");
+  assert.equal(stateDir({ XDG_STATE_HOME: "/var/state" }, "linux"), "/var/state/maeh-showcase");
 });
 
-test("PATH search honours the platform's executable suffix", () => {
-  const present = new Set([join("C:\\tools", "git.exe")]);
+test("PATH search honours the platform's executable suffix and separator", () => {
+  const present = new Set([win32.join("C:\\tools", "git.exe")]);
   const exists = (path) => present.has(path);
-  assert.equal(findOnPath("git", { env: { PATH: "C:\\bin;C:\\tools" }, platform: "win32", exists }), join("C:\\tools", "git.exe"));
+  assert.equal(findOnPath("git", { env: { PATH: "C:\\bin;C:\\tools" }, platform: "win32", exists }), "C:\\tools\\git.exe");
   assert.equal(findOnPath("git", { env: { PATH: "C:\\bin" }, platform: "win32", exists }), null);
+  assert.equal(findOnPath("git", { env: { PATH: "/opt/x:/usr/local/bin" }, platform: "linux", exists: (path) => path === "/usr/local/bin/git" }), "/usr/local/bin/git");
 });
 
 test("git is looked for in a fixed order: env, PATH, Hermes, MinGit, GitHub Desktop, Program Files", () => {
   const local = "C:\\Users\\t\\AppData\\Local";
-  const present = new Set([join("C:\\onpath", "git.exe")]);
+  const present = new Set([win32.join("C:\\onpath", "git.exe")]);
   const listDir = (dir) => {
     if (dir.endsWith("tools")) return ["git-2.53.0+3-win32-x64", "node-26.7.0-win32-x64", "git-2.40.0-win32-x64"];
     if (dir.endsWith("GitHubDesktop")) return ["app-3.6.7", "app-3.10.0", "other"];

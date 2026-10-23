@@ -7,12 +7,17 @@
 import { spawnSync } from "node:child_process";
 import { existsSync, readdirSync } from "node:fs";
 import { homedir } from "node:os";
-import { delimiter, join } from "node:path";
+import path from "node:path";
+
+/* Paths are built with the rules of the platform being asked about, not of the machine running the
+ * code, so a Windows lookup gives Windows paths (and ";" between PATH entries) on any host. */
+const pathFor = (platform) => (platform === "win32" ? path.win32 : path.posix);
 
 export function stateDir(env = process.env, platform = process.platform) {
+  const p = pathFor(platform);
   if (env.MAEH_SHOWCASE_STATE) return env.MAEH_SHOWCASE_STATE;
-  if (platform === "win32") return join(env.LOCALAPPDATA || join(homedir(), "AppData", "Local"), "MAEH-Showcase");
-  return join(env.XDG_STATE_HOME || join(homedir(), ".local", "state"), "maeh-showcase");
+  if (platform === "win32") return p.join(env.LOCALAPPDATA || p.join(homedir(), "AppData", "Local"), "MAEH-Showcase");
+  return p.join(env.XDG_STATE_HOME || p.join(homedir(), ".local", "state"), "maeh-showcase");
 }
 
 /* Natural order for version-stamped folder names: app-3.10.0 sorts above app-3.6.7. */
@@ -37,11 +42,12 @@ export function versionAtLeast(text, minimumMajor) {
 }
 
 export function findOnPath(name, { env = process.env, platform = process.platform, exists = existsSync } = {}) {
+  const p = pathFor(platform);
   const extensions = platform === "win32" ? [".exe"] : [""];
-  const dirs = String(env.PATH ?? env.Path ?? "").split(delimiter).filter(Boolean);
+  const dirs = String(env.PATH ?? env.Path ?? "").split(p.delimiter).filter(Boolean);
   for (const dir of dirs) {
     for (const extension of extensions) {
-      const full = join(dir, `${name}${extension}`);
+      const full = p.join(dir, `${name}${extension}`);
       if (exists(full)) return full;
     }
   }
@@ -49,7 +55,7 @@ export function findOnPath(name, { env = process.env, platform = process.platfor
 }
 
 /* Directories under `root` whose name matches `prefix`, newest version first. */
-function newestUnder(root, prefix, listDir) {
+function newestUnder(root, prefix, listDir, p) {
   let names = [];
   try {
     names = listDir(root);
@@ -57,22 +63,23 @@ function newestUnder(root, prefix, listDir) {
     return [];
   }
   return names.filter((name) => name.startsWith(prefix)).sort((a, b) => compareVersionStrings(b, a))
-    .map((name) => join(root, name));
+    .map((name) => p.join(root, name));
 }
 
 export function gitCandidates({ env = process.env, platform = process.platform, exists = existsSync, listDir = readdirSync } = {}) {
+  const p = pathFor(platform);
   const found = [];
   const add = (path, source) => { if (path) found.push({ path, source }); };
   add(env.MAEH_GIT, "env MAEH_GIT");
   add(findOnPath("git", { env, platform, exists }), "PATH");
   if (platform === "win32") {
-    const local = env.LOCALAPPDATA || join(homedir(), "AppData", "Local");
-    for (const dir of newestUnder(join(local, "hermes", "tools"), "git-", listDir))
-      add(join(dir, "cmd", "git.exe"), "Hermes tools");
-    add(join(local, "Programs", "MinGit", "cmd", "git.exe"), "MinGit");
-    for (const dir of newestUnder(join(local, "GitHubDesktop"), "app-", listDir))
-      add(join(dir, "resources", "app", "git", "cmd", "git.exe"), "GitHub Desktop");
-    add(join(env.ProgramFiles || "C:\\Program Files", "Git", "cmd", "git.exe"), "Program Files");
+    const local = env.LOCALAPPDATA || p.join(homedir(), "AppData", "Local");
+    for (const dir of newestUnder(p.join(local, "hermes", "tools"), "git-", listDir, p))
+      add(p.join(dir, "cmd", "git.exe"), "Hermes tools");
+    add(p.join(local, "Programs", "MinGit", "cmd", "git.exe"), "MinGit");
+    for (const dir of newestUnder(p.join(local, "GitHubDesktop"), "app-", listDir, p))
+      add(p.join(dir, "resources", "app", "git", "cmd", "git.exe"), "GitHub Desktop");
+    add(p.join(env.ProgramFiles || "C:\\Program Files", "Git", "cmd", "git.exe"), "Program Files");
   } else {
     add("/usr/bin/git", "system");
   }
@@ -80,11 +87,12 @@ export function gitCandidates({ env = process.env, platform = process.platform, 
 }
 
 export function ghCandidates({ env = process.env, platform = process.platform, exists = existsSync } = {}) {
+  const p = pathFor(platform);
   const found = [];
   const add = (path, source) => { if (path) found.push({ path, source }); };
   add(env.MAEH_GH, "env MAEH_GH");
   add(findOnPath("gh", { env, platform, exists }), "PATH");
-  if (platform === "win32") add(join(env.ProgramFiles || "C:\\Program Files", "GitHub CLI", "gh.exe"), "Program Files");
+  if (platform === "win32") add(p.join(env.ProgramFiles || "C:\\Program Files", "GitHub CLI", "gh.exe"), "Program Files");
   return found;
 }
 

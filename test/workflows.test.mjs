@@ -75,9 +75,12 @@ test("every checkout keeps no credentials, and the jobs that look at history fet
 
 test("CI runs the whole suite on Linux with Node 22 and 24 and on Windows, and checks the data four ways", () => {
   const ci = workflows["ci.yml"];
-  assert.match(ci, /os: ubuntu-latest\s+node: 22/);
-  assert.match(ci, /os: ubuntu-latest\s+node: 24/);
+  assert.match(ci, /os: ubuntu-24\.04\s+node: 22/);
+  assert.match(ci, /os: ubuntu-24\.04\s+node: 24/);
   assert.match(ci, /os: windows-latest\s+node: 24/);
+  for (const [name, text] of Object.entries(workflows)) {
+    assert.ok(!/ubuntu-latest/.test(text), `${name}: the Linux image is pinned, so a runner migration cannot break the nightly deploy`);
+  }
   assert.match(ci, /node --test "test\/\*\*\/\*\.test\.mjs"/);
   for (const command of ["verify.mjs --all", "rank.mjs --check", "verify.mjs --ci --base", "verify.mjs --history"]) assert.ok(ci.includes(command), command);
 });
