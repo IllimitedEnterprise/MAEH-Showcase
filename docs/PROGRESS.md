@@ -54,6 +54,17 @@ harness's own close ledgers: **0 mismatches**, and 2,094 closes with a net of +2
 published totals. The ledgers also hold today's closes, which belong to a day that has not ended and are
 rightly absent.
 
+An independent privacy audit, again sharing no code with the project's scanner, read all 462 published data
+files: 163 distinct JSON keys, every one a known schema field and none a forbidden one; the only free text
+is eight account labels, eighteen instrument names, `long` and `short`, status words and hour labels; the
+only instants are in manifests; no address, path, host, port, e-mail or long number anywhere; **0 hits**.
+
+A hostile-data test serves the real files with script tags, event handlers, `javascript:` links and image
+payloads swapped into every label, symbol, reason and Markdown file, draws every route, and parses each
+page's real tags and attributes: nothing came out as markup. It found one defect (an account name such as
+`__proto__` reached `Object.prototype` instead of the not-found page), now fixed, along with impossible
+dates and months such as `2026-13`, which the router now rejects.
+
 ## Verification, as of the sixteenth day
 
 ```

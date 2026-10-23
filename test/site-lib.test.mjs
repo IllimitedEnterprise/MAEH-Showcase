@@ -81,7 +81,8 @@ test("routes parse and format both ways", () => {
 });
 
 test("bad routes are 'notfound', never a blank page or a path escape", () => {
-  for (const hash of ["#/nope", "#/day/22-10-2026", "#/day/2026-10-22/file", "#/day/2026-10-22/file/../../secret", "#/account/", "#/account/a b", "#/stars/year", "#/calendar/2026", "#/integrity/x", "#/%E0%A4%A"]) {
+  for (const hash of ["#/nope", "#/day/22-10-2026", "#/day/2026-10-22/file", "#/day/2026-10-22/file/../../secret", "#/account/", "#/account/a b", "#/stars/year", "#/calendar/2026", "#/integrity/x", "#/%E0%A4%A",
+    "#/calendar/2026-13", "#/calendar/2026-00", "#/calendar/9999-99", "#/day/2026-13-01", "#/day/2026-10-32", "#/day/2026-00-10", "#/day/0000-00-00"]) {
     assert.deepEqual(parseRoute(hash), { name: "notfound" }, hash);
   }
   assert.equal(section({ name: "day" }), "calendar");

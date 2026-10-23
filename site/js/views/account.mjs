@@ -12,7 +12,8 @@ import { describeCurve } from "./season.mjs";
 
 export async function load(ctx, route) {
   const { core, data } = ctx;
-  const report = core.reports[route.key];
+  /* hasOwn: a name like __proto__ or constructor must not find something on Object.prototype */
+  const report = Object.hasOwn(core.reports, route.key) ? core.reports[route.key] : null;
   if (!report) return { core, key: route.key, missing: true };
   let markdown = "";
   try {

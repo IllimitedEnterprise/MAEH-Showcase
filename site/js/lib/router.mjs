@@ -9,8 +9,8 @@
  *
  * Anything else is "notfound": a bad link says so instead of showing a blank page. */
 
-const DATE = /^\d{4}-\d{2}-\d{2}$/;
-const MONTH = /^\d{4}-\d{2}$/;
+const DATE = /^\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$/;
+const MONTH = /^\d{4}-(?:0[1-9]|1[0-2])$/;
 const KEY = /^[A-Za-z0-9._-]{1,48}$/;
 const TABS = new Set(["day", "week", "month", "all"]);
 
