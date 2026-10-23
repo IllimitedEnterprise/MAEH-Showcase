@@ -38,6 +38,17 @@ read-only record of how they did:
 </tr>
 </table>
 
+<table>
+<tr>
+<td width="50%"><img src="docs/images/calendar.png" alt="The calendar: every day a square, coloured by the desk's net"></td>
+<td width="50%"><img src="docs/images/season-light.png" alt="The season page in the light theme"></td>
+</tr>
+<tr>
+<td><sub>The calendar: every day a square, deeper for bigger days; a crown is that day's Star.</sub></td>
+<td><sub>The light theme, same data, same rules.</sub></td>
+</tr>
+</table>
+
 ## Where things are
 
 ```
