@@ -74,7 +74,7 @@ export function stats(closes) {
       rCount += 1;
       rValues.push(close.r);
     }
-    const symbol = close.symbol ?? "?";
+    const symbol = close.symbol ?? "UNKNOWN";
     const pair = pairs.get(symbol) ?? { symbol, n: 0, netCents: 0 };
     pair.n += 1;
     pair.netCents += close.cents;

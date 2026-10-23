@@ -141,7 +141,7 @@ export const SCHEMAS = {
     label: t.str,
     status: t.enum("ok", "quiet", "partial", "unverified"),
     reasons,
-    source: t.enum("api", "ledger", "both"),
+    source: t.enum("api", "ledger", "both", "none"),
     currency: t.nullable(t.str),
     funding: t.nullable(t.money),
     n: t.int,
@@ -187,6 +187,19 @@ export const SCHEMAS = {
     worst: t.nullable(t.object({ key: t.key, net: t.money })),
     perAccount: t.array(t.object({ key: t.key, label: t.str, status: t.enum("ok", "quiet", "partial", "unverified"), n: t.int, net: t.money })),
     hours: t.object(hoursShape),
+  }),
+  /* One period's standings: the rows of the leaderboard and the crown, if one was earned. */
+  stars: t.object({
+    schema: t.enum(1),
+    date: t.date,
+    rules: t.str,
+    rows: t.array(t.object({
+      key: t.key, label: t.str, rank: t.nullable(t.int), score: t.nullable(t.num), n: t.int, net: t.money,
+      retPct: t.nullable(t.num), qualified: t.bool, why: t.array(t.line),
+      comp: t.nullable(t.object({ ret: t.unit, pf: t.unit, dd: t.unit, win: t.unit, cred: t.unit })),
+    })),
+    crown: t.nullable(t.object({ key: t.key, label: t.str, score: t.num, net: t.money })),
+    withheld: t.array(t.object({ key: t.key, reason: t.line })),
   }),
 };
 

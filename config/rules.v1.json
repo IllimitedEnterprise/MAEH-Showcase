@@ -1,0 +1,12 @@
+{
+  "version": "v1",
+  "weights": { "ret": 0.4, "pf": 0.2, "dd": 0.25, "win": 0.15 },
+  "winRate": { "floor": 30, "span": 40 },
+  "periods": {
+    "day": { "retHalf": 3, "ddZero": 5, "k": 10, "minCloses": 3, "minActiveDays": 1 },
+    "week": { "retHalf": 6, "ddZero": 10, "k": 40, "minCloses": 10, "minActiveDays": 2 },
+    "month": { "retHalf": 12, "ddZero": 20, "k": 120, "minCloses": 30, "minActiveDays": 5 }
+  },
+  "crownNeedsPositiveNet": true,
+  "pointsPerCrown": { "day": 1, "week": 5, "month": 20 }
+}
