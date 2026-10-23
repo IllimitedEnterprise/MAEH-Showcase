@@ -22,6 +22,7 @@ export function loadSeason(root) {
   }
   const days = season.healthWakeDays ?? [];
   if (!Array.isArray(days) || days.some((day) => !WEEKDAY_NAMES.includes(day))) fail(`healthWakeDays must be names from ${WEEKDAY_NAMES.join(", ")}`);
+  if (typeof season.rules !== "string" || !season.rules) fail("season.rules must name the rules version new days are sealed under");
   return { ...season, zone, healthWakeDays: days };
 }
 

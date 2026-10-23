@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "zone": "Europe/Berlin",
+  "seasonStart": "2026-10-07",
+  "rules": "v1",
+  "settleMinutes": 30,
+  "quietWaitMinutes": 45,
+  "healthWakeDays": ["Mon", "Wed", "Sat"]
+}
