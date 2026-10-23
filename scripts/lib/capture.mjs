@@ -15,7 +15,7 @@
 
 import { existsSync } from "node:fs";
 import { HarnessError } from "./harness.mjs";
-import { inWindow, mergeCloses } from "./ingest.mjs";
+import { attachR, inWindow, mergeCloses } from "./ingest.mjs";
 import { readAnchor, readLedger } from "./ledger.mjs";
 import { captureDelta } from "./metrics.mjs";
 
@@ -29,7 +29,7 @@ const sumCents = (closes) => closes.reduce((total, close) => total + (Number.isI
 
 export async function captureAccount({
   account, window, nowSec,
-  client = null, rosterEntry = null, liveDir = null, previousCapture = null,
+  client = null, rosterEntry = null, liveDir = null, previousCapture = null, intents = null,
   log = () => {}, sleep = wait, deltaRetryMs = 20_000,
   ledgerReader = readLedger, anchorReader = readAnchor, ledgerExists = existsSync,
 }) {
@@ -71,7 +71,7 @@ export async function captureAccount({
   /* 3. which rows describe the day */
   const apiRows = api && reaches ? api.rows : null;
   const apiComplete = apiRows !== null && !api.truncated && (api.rangeFromSec == null || api.rangeFromSec <= window.startSec);
-  const ledgerRows = ledgerFresh ? ledger.rows : null;
+  const ledgerRows = ledgerFresh ? (intents ? attachR(ledger.rows, intents) : ledger.rows) : null;
   const usable = apiComplete || ledgerFresh;
 
   const dayApi = apiRows ? apiRows.filter((row) => row && row.at >= window.startSec && row.at < window.endSec) : null;

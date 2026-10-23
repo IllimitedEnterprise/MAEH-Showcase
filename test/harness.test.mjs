@@ -35,6 +35,17 @@ test("the roster is reduced on arrival: logins, servers and paths never survive"
   });
 });
 
+test("journal intents are reduced on arrival to the three fields R needs", async () => {
+  await withHarness({ journal: { "id-1": [{ ticket: 7, clientRef: "TUabc", riskAmount: 25 }, { ticket: 8, clientRef: "TUdef" }] } }, async ({ client, fake }) => {
+    const intents = await client.journalIntents("id-1");
+    assert.deepEqual(intents, [{ ticket: 7, clientRef: "TUabc", riskAmount: 25 }, { ticket: 8, clientRef: "TUdef", riskAmount: null }]);
+    const text = JSON.stringify(intents);
+    for (const secret of ["SECRET-MODEL", "ref-secret", "IX-C", "1.09"]) assert.ok(!text.includes(secret), `${secret} leaked`);
+    assert.deepEqual(fake.calls.find((call) => call.path === "/api/v1/execution/journal").query, { accountId: "id-1", limit: "1", intents: "true" });
+    await assert.rejects(() => client.journalIntents(""), (error) => error.code === "NO_ACCOUNT");
+  });
+});
+
 test("progress passes the account id and the window, and is GET only", async () => {
   await withHarness({ progress: { "id-1": progressPayload({ trades: [{ ticket: 1, at: 1000, net: 5 }] }) } }, async ({ client, fake }) => {
     const result = await client.progress("id-1", 2);

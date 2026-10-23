@@ -110,6 +110,19 @@ export function createHarness({
       return { enabled: body?.enabled === true, phase: typeof body?.phase === "string" ? body.phase : null };
     },
 
+    /* What each order risked, from the execution journal: the only source of R for a close the
+     * live read no longer carries. Reduced on arrival to the three fields the join needs. */
+    async journalIntents(accountId) {
+      if (!accountId) throw new HarnessError("an account id is required", { code: "NO_ACCOUNT" });
+      const body = await get("/api/v1/execution/journal", { accountId, limit: 1, intents: "true" });
+      const intents = Array.isArray(body?.intents) ? body.intents : [];
+      return intents.map((intent) => ({
+        ticket: finite(intent?.ticket) ? intent.ticket : null,
+        clientRef: typeof intent?.clientRef === "string" ? intent.clientRef.slice(0, 64) : null,
+        riskAmount: finite(intent?.riskAmount) ? intent.riskAmount : null,
+      }));
+    },
+
     /* One account's closed trades for a rolling window. `days` is deliberately small: a long
      * window is slow, hits the 500-row cap, and can make the terminal recycle its sidecar. */
     async progress(accountId, days) {

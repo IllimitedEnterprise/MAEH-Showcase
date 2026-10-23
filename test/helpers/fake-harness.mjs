@@ -51,6 +51,16 @@ export async function startFakeHarness(scenario = {}) {
       return json(response, 200, { enabled: true, phase });
     }
 
+    if (url.pathname === "/api/v1/execution/journal") {
+      const accountId = url.searchParams.get("accountId") ?? "";
+      const intents = scenario.journal?.[accountId] ?? [];
+      // Like the real one: every folded intent, with plenty of fields a public file must never carry.
+      return json(response, 200, { events: [], intents: intents.map((intent) => ({
+        replayKey: "k", symbol: "EURUSD", direction: "LONG", stage: "IX-C", model: "SECRET-MODEL", status: "closed",
+        entryPrice: 1.1, sl: 1.09, executionReference: "ref-secret", ...intent,
+      })) });
+    }
+
     if (url.pathname === "/api/v1/account/progress") {
       const accountId = url.searchParams.get("accountId") ?? "";
       const count = (counters.get(accountId) ?? 0) + 1;

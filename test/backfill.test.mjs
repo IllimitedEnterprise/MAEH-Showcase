@@ -27,7 +27,7 @@ const ALPHA = [
 ]; // net 280
 const BETA = [row(21, "2026-10-21", 1, 1), row(22, "2026-10-21", 2, 1), row(23, "2026-10-21", 3, 1)]; // net 3
 
-async function withWorld({ alphaBalance = 50_280, seed = [] }, run) {
+async function withWorld({ alphaBalance = 50_280, seed = [] }, run, extra = {}) {
   const repo = makeRepo({ seed, remote: false, seasonStart: "2026-10-20" });
   writeLedger(repo.varDir, "acc-A", ALPHA, { anchor: ANCHOR });
   writeLedger(repo.varDir, "acc-B", BETA, { anchor: ANCHOR });
@@ -38,6 +38,7 @@ async function withWorld({ alphaBalance = 50_280, seed = [] }, run) {
       "acc-B": progressPayload({ balance: 50_003 }),
       "acc-L": progressPayload({ balance: 50_000 }),
     },
+    ...extra,
   });
   const env = { ...repo.env, MAEH_HARNESS_URL: fake.url };
   const ctx = loadContext(repo.root, env);
@@ -79,6 +80,21 @@ test("a reconciled account's days are frozen as backfilled, in date order, and e
   assert.equal(verifyEverything({ root: repo.root, ctx }).errors.length, 0);
   assert.equal(read(repo, "2026-10-21", "stars.json").crown.key, "Alpha");
 }));
+
+test("R is filled on backfilled days wherever a close links to a journalled order, and left null elsewhere", skip, () => withWorld({}, async ({ repo, ctx, client, fake }) => {
+  // The fake journal (set up by this test's last argument): orders for three of Alpha's 2026-10-21 closes risked 20 each.
+  const { surveyed } = await survey({ ctx, client, labels: ["Alpha", "Beta", "Late"], nowSec: NOW, sleep: noSleep });
+  const alpha = surveyed.find((entry) => entry.label === "Alpha");
+  assert.equal(alpha.linked, 3, "tickets 4, 5 and 6 are in the fake journal");
+  assert.match(reportLines({ surveyed, zone: ZONE }).join("\n"), /Alpha .* 3\/11/);
+  await backfill({ ctx, surveyed, dates: planDates({ ctx, nowSec: NOW }), nowSec: NOW });
+  const trades = read(repo, "2026-10-21", "accounts", "Alpha", "trades.json").trades;
+  assert.deepEqual(trades.map((trade) => trade.r), [2, 1.5, 2.5, null]);
+  const summary = read(repo, "2026-10-21", "accounts", "Alpha", "summary.json");
+  assert.deepEqual(summary.r, { count: 3, sum: 6 });
+  assert.equal(read(repo, "2026-10-20", "accounts", "Alpha", "summary.json").r, null, "no linked orders that day: no R, not zero");
+  assert.equal(verifyEverything({ root: repo.root, ctx }).errors.length, 0);
+}, { journal: { "acc-A": [{ ticket: 4, clientRef: "TU4", riskAmount: 20 }, { ticket: 5, clientRef: "TU5", riskAmount: 20 }, { ticket: 6, clientRef: "TU6", riskAmount: 20 }] } }));
 
 test("an account whose ledger does not add up is published, badged unverified, and kept out of every crown", skip, () => withWorld({ alphaBalance: 50_400 }, async ({ repo, ctx, client }) => {
   const { surveyed } = await survey({ ctx, client, labels: ["Alpha", "Beta", "Late"], nowSec: NOW, sleep: noSleep });

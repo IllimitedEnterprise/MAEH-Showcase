@@ -47,7 +47,7 @@ export function writeJsonAtomic(file, value) {
  *   roster     the harness's own list (from a live preflight), or null when it is unreachable
  *   accountsMap  label -> { id } remembered from an earlier read, so the ledger can still be found
  *   previous   { key: { sec, balanceCents } } the last capture of each account */
-export async function gatherDay({ ctx, date, nowSec, client = null, roster = null, accountsMap = {}, previous = {}, log = () => {}, sleep, deltaRetryMs }) {
+export async function gatherDay({ ctx, date, nowSec, client = null, roster = null, accountsMap = {}, previous = {}, intentsCache = new Map(), log = () => {}, sleep, deltaRetryMs }) {
   const window = dayWindow(date, ctx.season.zone);
   const byLabel = new Map((roster?.accounts ?? []).map((account) => [account.label, account]));
   const captures = [];
@@ -59,8 +59,17 @@ export async function gatherDay({ ctx, date, nowSec, client = null, roster = nul
     const rosterEntry = byLabel.get(allow.label) ?? null;
     const id = rosterEntry?.id ?? accountsMap[allow.label]?.id ?? null;
     const liveDir = ctx.priv.harnessVarDir && id ? ledgerDir(ctx.priv.harnessVarDir, id) : null;
+
+    // R for closes that come from the ledger: what each order risked is in the execution journal.
+    let intents = null;
+    if (client && rosterEntry?.active && liveDir) {
+      if (!intentsCache.has(id)) {
+        try { intentsCache.set(id, await client.journalIntents(id)); } catch { intentsCache.set(id, null); }
+      }
+      intents = intentsCache.get(id);
+    }
     const capture = await captureAccount({
-      account: allow, window, nowSec, client, rosterEntry, liveDir, previousCapture: previous[allow.key] ?? null, log,
+      account: allow, window, nowSec, client, rosterEntry, liveDir, previousCapture: previous[allow.key] ?? null, intents, log,
       ...(sleep ? { sleep } : {}), ...(deltaRetryMs !== undefined ? { deltaRetryMs } : {}),
     });
     captures.push({ allow, capture, gate: null });

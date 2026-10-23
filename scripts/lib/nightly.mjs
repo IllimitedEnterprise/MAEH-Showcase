@@ -207,6 +207,7 @@ export async function runNightly(options) {
 
     const previous = readJson(capturesFile(ctx), {});
     const records = { ...previous };
+    const intentsCache = new Map();
     const lastSettled = lastSettledDate(nowSec, zone, ctx.season.settleMinutes);
     const sealed = [];
     let skipped = 0;
@@ -214,7 +215,7 @@ export async function runNightly(options) {
     for (const date of pending) {
       const window = dayWindow(date, zone);
       const kind = date === lastSettled && nowSec - window.endSec <= NIGHTLY_WINDOW_SEC ? "nightly" : "catchup";
-      const gathered = await gatherDay({ ctx, date, nowSec, client, roster, accountsMap, previous, log: () => {} });
+      const gathered = await gatherDay({ ctx, date, nowSec, client, roster, accountsMap, previous, intentsCache, log: () => {} });
       if (gathered.unusable.length && argv.acceptPartial !== date) {
         note(`${date}: no complete source for ${gathered.unusable.length} account(s); not frozen`);
         skipped += 1;

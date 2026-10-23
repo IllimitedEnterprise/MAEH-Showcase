@@ -19,8 +19,10 @@ import { toCents } from "./canonical.mjs";
 import { captureAccount } from "./capture.mjs";
 import { backfillGate } from "./metrics.mjs";
 import { HarnessError, preflight } from "./harness.mjs";
+import { attachR } from "./ingest.mjs";
 import { ledgerDir, readAnchor, readLedger } from "./ledger.mjs";
 import { freezeDay, rebuildDerived } from "./pipeline.mjs";
+import { cleanSealing } from "./seal.mjs";
 import { addDays, dayWindow, lastSettledDate, localDate } from "./time.mjs";
 import { listFrozen } from "./verify.mjs";
 
@@ -42,8 +44,16 @@ async function readAccount({ ctx, client, entry, nowSec, sleep }) {
   const anchor = readAnchor(live);
   const nets = ledger.rows.filter((row) => Number.isFinite(row?.netProfit)).map((row) => toCents(row.netProfit));
   const closes = ledger.rows.filter((row) => Number.isFinite(row?.closedAt)).map((row) => row.closedAt).sort((a, b) => a - b);
+
+  // R comes from the execution journal; a close it cannot be linked to simply has none.
+  let intents = [];
+  try {
+    intents = await client.journalIntents(entry.id);
+  } catch { /* R stays null for this account */ }
+  const rows = attachR(ledger.rows, intents);
+  const linked = rows.filter((row) => Number.isFinite(row?.r)).length;
   return {
-    id: entry.id, label: entry.label, ledger: { ...ledger, mtimeSec: nowSec }, anchor, progress,
+    id: entry.id, label: entry.label, ledger: { ...ledger, rows, mtimeSec: nowSec }, anchor, progress, linked,
     rows: ledger.rows.length, ledgerNetCents: nets.reduce((a, b) => a + b, 0),
     firstCloseSec: closes[0] ?? null, lastCloseSec: closes.at(-1) ?? null,
     gate: backfillGate({ fundingCents: anchor?.fundingCents ?? null, ledgerNetCents: nets.reduce((a, b) => a + b, 0), balanceCents: progress.balanceCents }),
@@ -63,14 +73,15 @@ export async function survey({ ctx, client, labels, nowSec, sleep, log = () => {
 }
 
 export function reportLines({ surveyed, zone }) {
-  const lines = ["account              rows  first close  last close   funded      funding   ledger net  balance     gap       gate"];
+  const lines = ["account              rows  first close  last close   funded      funding   ledger net  balance     gap       gate        R linked"];
   for (const account of surveyed) {
     const day = (sec) => (sec === null ? "-" : localDate(sec, zone));
     lines.push([
       account.label.padEnd(20), String(account.rows).padStart(4), day(account.firstCloseSec).padStart(12), day(account.lastCloseSec).padStart(12),
       (account.anchor?.fundingAtSec ? localDate(account.anchor.fundingAtSec, zone) : "-").padStart(11),
       fmt(account.anchor?.fundingCents).padStart(10), fmt(account.ledgerNetCents).padStart(11), fmt(account.progress.balanceCents).padStart(10),
-      fmt(account.gate.gapCents).padStart(9), account.gate.ok === true ? "ok" : account.gate.ok === false ? "UNVERIFIED" : "unknown",
+      fmt(account.gate.gapCents).padStart(9), (account.gate.ok === true ? "ok" : account.gate.ok === false ? "UNVERIFIED" : "unknown").padEnd(10),
+      `${account.linked}/${account.rows}`.padStart(9),
     ].join(" "));
   }
   return lines;
@@ -105,6 +116,7 @@ export function planDates({ ctx, from, to, nowSec }) {
 
 /* Freeze the given dates, oldest first, as backfilled days. */
 export async function backfill({ ctx, surveyed, dates, nowSec, log = () => {} }) {
+  cleanSealing(ctx.root);
   const sealed = [];
   for (const date of dates) {
     const window = dayWindow(date, ctx.season.zone);

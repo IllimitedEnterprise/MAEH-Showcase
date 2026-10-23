@@ -42,7 +42,7 @@ export function closeFromApi(row) {
   };
 }
 
-/* A line of broker-closes.ndjson. */
+/* A line of broker-closes.ndjson. R is not in the ledger; `attachR` may have added it. */
 export function closeFromLedger(row) {
   if (!row || !finite(row.closedAt)) return null;
   return {
@@ -51,12 +51,35 @@ export function closeFromLedger(row) {
     symbol: typeof row.symbol === "string" ? row.symbol.slice(0, 32) : null,
     side: sideOf(row.direction, row.type),
     cents: finite(row.netProfit) ? toCents(row.netProfit) : null,
-    r: null,
+    r: finite(row.r) ? row.r : null,
     closeSec: Math.floor(row.closedAt),
     openSec: finite(row.openedAt) ? Math.floor(row.openedAt) : null,
     selftest: false,
     source: "ledger",
   };
+}
+
+/* Give ledger rows their R, the way the harness does: the close's net result over the money it
+ * risked when the order was sent, which the execution journal recorded. A close links to its
+ * intent by ticket, or by the intent's reference being contained in the broker comment (brokers
+ * truncate and append to comments). Closes with no linked intent, or none with a positive risk,
+ * keep R null: a missing R is never filled with a guess. `intents` are { ticket, clientRef, riskAmount }. */
+export function attachR(rows, intents) {
+  const byTicket = new Map();
+  const refs = [];
+  for (const intent of intents ?? []) {
+    if (!finite(intent?.riskAmount) || intent.riskAmount <= 0) continue;
+    if (finite(intent.ticket)) byTicket.set(intent.ticket, intent.riskAmount);
+    if (typeof intent.clientRef === "string" && intent.clientRef) refs.push([intent.clientRef, intent.riskAmount]);
+  }
+  return (rows ?? []).map((row) => {
+    if (!row || !finite(row.netProfit)) return row;
+    let risk = finite(row.ticket) ? byTicket.get(row.ticket) : undefined;
+    if (risk === undefined && typeof row.comment === "string" && row.comment) {
+      risk = refs.find(([ref]) => row.comment.includes(ref))?.[1];
+    }
+    return risk === undefined ? row : { ...row, r: Number((row.netProfit / risk).toFixed(3)) };
+  });
 }
 
 /* One source's rows to a keyed map, counting rows that repeat a key. */

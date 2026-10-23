@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { closeFromApi, closeFromLedger, closeKey, inWindow, mergeCloses, withResult } from "../scripts/lib/ingest.mjs";
+import { attachR, closeFromApi, closeFromLedger, closeKey, inWindow, mergeCloses, withResult } from "../scripts/lib/ingest.mjs";
 
 const api = (ticket, at, netMoney, extra = {}) => ({
   ticket, symbol: "EURUSD", direction: "LONG", at, openedAt: at - 900, netMoney, r: null, selftest: false, ...extra,
@@ -86,6 +86,33 @@ test("anomalies: repeated rows, missing results and unknown sides are counted", 
   assert.equal(merged.anomalies.nullNet, 1);
   assert.equal(merged.anomalies.unknownSide, 1);
   assert.equal(merged.closes.length, 3);
+});
+
+test("R is the close's net result over what the order risked, joined by ticket", () => {
+  const rows = attachR([ledger(7, 100, 30), ledger(8, 200, -15), ledger(9, 300, 5)], [
+    { ticket: 7, clientRef: "TUa", riskAmount: 20 },
+    { ticket: 8, clientRef: "TUb", riskAmount: 10 },
+  ]);
+  assert.deepEqual(rows.map((row) => row.r), [1.5, -1.5, undefined]);
+  assert.equal(closeFromLedger(rows[0]).r, 1.5);
+  assert.equal(closeFromLedger(rows[2]).r, null, "no linked intent: R stays null, never a guess");
+});
+
+test("R: a broker comment that contains the intent's reference links a close the ticket does not", () => {
+  const [row] = attachR([{ ...ledger(999, 100, 12), comment: "from TUdeadbeef-ext" }], [{ ticket: 1, clientRef: "TUdeadbeef", riskAmount: 8 }]);
+  assert.equal(row.r, 1.5);
+});
+
+test("R: an intent with no positive risk, or a close with no result, is not given an R", () => {
+  const rows = attachR([ledger(1, 100, 10), ledger(2, 200, null), ledger(3, 300, 4)], [
+    { ticket: 1, clientRef: "A", riskAmount: 0 }, { ticket: 2, clientRef: "B", riskAmount: 5 }, { ticket: 3, clientRef: "C", riskAmount: null },
+  ]);
+  assert.deepEqual(rows.map((row) => row.r), [undefined, undefined, undefined]);
+  assert.deepEqual(attachR(undefined, undefined), []);
+});
+
+test("R is rounded to three decimals like the harness's own", () => {
+  assert.equal(attachR([ledger(1, 100, 10)], [{ ticket: 1, riskAmount: 3 }])[0].r, 3.333);
 });
 
 test("window filter is half-open", () => {
