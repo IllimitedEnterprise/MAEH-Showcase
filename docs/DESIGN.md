@@ -133,6 +133,19 @@ the browser between visits except the theme choice.
 There is no bundler: the page loads about thirty small ES modules over HTTP/2. If that ever matters, a
 single-file bundle can be added to `scripts/build-site.mjs` without touching the source.
 
+### When the host hiccups
+
+A static host now and then answers one file with a 503, and a page made of many small scripts feels that
+more than most. Two things deal with it, both exercised by injecting the failure into a real browser:
+
+- **Data requests** are retried twice, after 250 and 800 ms, for the statuses a host uses for a hiccup (408,
+  425, 429 and the 5xx family) and for a dropped connection. A 404 is an answer and is never retried.
+- **The scripts** are started by a small classic script, `boot.js`. If the module graph fails to arrive it
+  reloads the page, at most twice (counted in `sessionStorage`, so there can be no loop), and then says in
+  plain words what happened, with a Reload button. A failed script is remembered by the browser for the life
+  of a page, which is why a fresh load is the only retry that works. With one injected 503 the visitor sees
+  the page after a brief blink; with a permanent one, the message after three loads.
+
 ## How it is tested
 
 | Test file | What it proves |

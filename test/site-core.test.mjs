@@ -48,6 +48,7 @@ test("the loader caches, versions urls, and turns failures into DataError", asyn
   const seen = [];
   const data = createData({
     build: "abc 1",
+    sleep: async () => {},
     fetchImpl: async (url) => {
       calls += 1;
       seen.push(url);
@@ -64,8 +65,37 @@ test("the loader caches, versions urls, and turns failures into DataError", asyn
   await assert.rejects(data.json("missing.json"), (error) => error instanceof DataError && error.status === 404);
   await assert.rejects(data.json("broken.json"), /not valid JSON/);
   await assert.rejects(data.json("down.json"), /Could not reach/);
+  assert.equal(calls, 6, "a dead connection is asked for three times in all; a 404 and a bad body only once");
   await data.json("missing.json").catch(() => {});
-  assert.equal(calls, 5, "a failed read is not cached, so a retry asks again");
+  assert.equal(calls, 7, "a failed read is not cached, so a later read asks again");
+});
+
+test("a flaky host is asked again, a missing file is not, and giving up is a typed error", async () => {
+  const script = { "flaky.json": [503, 503, 200], "limited.json": [429, 200], "gone.json": [404], "dead.json": [500, 500, 500, 500], "drop.json": ["net", 200], "teapot.json": [418] };
+  const counts = {};
+  const waits = [];
+  const data = createData({
+    retryDelays: [10, 20],
+    sleep: async (ms) => { waits.push(ms); },
+    fetchImpl: async (url) => {
+      const name = url.split("?")[0];
+      counts[name] = (counts[name] ?? 0) + 1;
+      const step = script[name][Math.min(counts[name], script[name].length) - 1];
+      if (step === "net") throw new TypeError("reset");
+      return step === 200 ? { ok: true, status: 200, json: async () => ({ name }) } : { ok: false, status: step };
+    },
+  });
+  assert.deepEqual(await data.json("flaky.json"), { name: "flaky.json" });
+  assert.equal(counts["flaky.json"], 3);
+  assert.deepEqual(waits, [10, 20], "it waits a little, then a little longer");
+  assert.deepEqual(await data.json("limited.json"), { name: "limited.json" });
+  assert.deepEqual(await data.json("drop.json"), { name: "drop.json" });
+  await assert.rejects(data.json("gone.json"), (error) => error.status === 404);
+  assert.equal(counts["gone.json"], 1, "a 404 is an answer");
+  await assert.rejects(data.json("teapot.json"), (error) => error.status === 418);
+  assert.equal(counts["teapot.json"], 1, "only the statuses a host uses for a hiccup are retried");
+  await assert.rejects(data.json("dead.json"), (error) => error instanceof DataError && error.status === 500);
+  assert.equal(counts["dead.json"], 3, "two retries, then it gives up");
 });
 
 test("day paths follow the repository layout", () => {

@@ -68,6 +68,15 @@ test("fetch, storage and the clipboard stay in the one module that owns each", (
   }
 });
 
+test("the boot script can only reload a bounded number of times, and builds its message with the DOM", () => {
+  const boot = read(files.find((file) => file.rel === "boot.js"));
+  assert.ok(!/innerHTML|insertAdjacentHTML|document\.write/.test(boot), "the failure message is built with createElement and textContent");
+  assert.match(boot, /count >= 0 && count < 2/, "at most two automatic reloads");
+  assert.match(boot, /sessionStorage/, "the count survives a reload, so there is no loop");
+  assert.match(boot, /return -1;[^}]*blocked/s, "with storage blocked there are no automatic reloads at all");
+  assert.equal((boot.match(/location\.reload\(\)/g) ?? []).length, 2, "one automatic retry and the Reload button");
+});
+
 test("the stylesheets load nothing from outside and set no inline-only features", () => {
   for (const file of styles) {
     const text = read(file);

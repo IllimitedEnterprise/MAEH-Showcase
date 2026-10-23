@@ -15,21 +15,33 @@ export class DataError extends Error {
   }
 }
 
-export function createData({ fetchImpl, build = "" } = {}) {
+/* A static host now and then answers 429 or 503 for a single file, and a dropped connection is the same
+ * story: worth asking again, briefly. A 404 is an answer, and is never retried. */
+const RETRYABLE = new Set([408, 425, 429, 500, 502, 503, 504]);
+const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+export function createData({ fetchImpl, build = "", retryDelays = [250, 800], sleep = pause } = {}) {
   const doFetch = fetchImpl ?? ((...args) => globalThis.fetch(...args));
   const cache = new Map();
 
   const versioned = (path) => (build ? `${path}${path.includes("?") ? "&" : "?"}v=${encodeURIComponent(build)}` : path);
 
   async function fetchOk(path, options = {}) {
-    let response;
-    try {
-      response = await doFetch(versioned(path), options);
-    } catch (error) {
-      throw new DataError(`Could not reach ${path}`, { path, cause: error });
+    let failure = null;
+    for (let attempt = 0; attempt <= retryDelays.length; attempt += 1) {
+      if (attempt > 0) await sleep(retryDelays[attempt - 1]);
+      let response;
+      try {
+        response = await doFetch(versioned(path), options);
+      } catch (error) {
+        failure = new DataError(`Could not reach ${path}`, { path, cause: error });
+        continue;
+      }
+      if (response.ok) return response;
+      failure = new DataError(`${path} answered ${response.status}`, { path, status: response.status });
+      if (!RETRYABLE.has(response.status)) break;
     }
-    if (!response.ok) throw new DataError(`${path} answered ${response.status}`, { path, status: response.status });
-    return response;
+    throw failure;
   }
 
   function memo(key, make) {
