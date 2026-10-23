@@ -1,0 +1,28 @@
+#!/bin/sh
+# Frozen days are append-only: under results/YYYY/MM/YYYY-MM-DD/ a commit may add
+# files and nothing else. results/index.json and results/series.json are derived
+# and may change. A refusal here is the point: fix the cause, never bypass it.
+
+list="$(git rev-parse --git-dir)/maeh-precommit.tmp"
+git diff --cached --name-status --no-renames > "$list" || exit 1
+
+bad=0
+tab="$(printf '\t')"
+while IFS="$tab" read -r status path; do
+  case "$path" in
+    results/index.json|results/series.json) ;;
+    results/*)
+      case "$path" in
+        results/[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/*) ;;
+        *) echo "pre-commit: $path is not inside a dated results folder" >&2; bad=1 ;;
+      esac
+      if [ "$status" != "A" ]; then
+        echo "pre-commit: $status $path - frozen files may only be added" >&2
+        bad=1
+      fi
+      ;;
+  esac
+done < "$list"
+
+rm -f "$list"
+exit "$bad"

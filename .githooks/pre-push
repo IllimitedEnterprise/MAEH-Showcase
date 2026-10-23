@@ -1,0 +1,18 @@
+#!/bin/sh
+# History is append-only: refuse to delete a ref and refuse any push that is not a
+# fast-forward of what the remote already has.
+
+zero="0000000000000000000000000000000000000000"
+while read -r local_ref local_sha remote_ref remote_sha; do
+  if [ "$local_sha" = "$zero" ]; then
+    echo "pre-push: refusing to delete $remote_ref" >&2
+    exit 1
+  fi
+  if [ "$remote_sha" != "$zero" ]; then
+    if ! git merge-base --is-ancestor "$remote_sha" "$local_sha" 2>/dev/null; then
+      echo "pre-push: $remote_ref would not be a fast-forward; fetch and rebase first" >&2
+      exit 1
+    fi
+  fi
+done
+exit 0

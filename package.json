@@ -1,0 +1,18 @@
+{
+  "name": "maeh-showcase",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Nightly-frozen results of the MAEH demo accounts, with Star crowns and a static dashboard.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test",
+    "verify": "node scripts/verify.mjs --all",
+    "rank": "node scripts/rank.mjs",
+    "nightly": "node scripts/nightly.mjs",
+    "serve": "node scripts/serve.mjs"
+  }
+}
