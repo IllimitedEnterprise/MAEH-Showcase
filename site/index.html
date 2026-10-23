@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; manifest-src 'none'">
+<title>MAEH Showcase</title>
+<meta name="description" content="Eight demo trading accounts, frozen every night: daily results, Star rankings and a record anyone can verify.">
+<meta name="theme-color" content="#060716">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/BricolageGrotesque-latin-VF.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/tokens.css?v=__BUILD__">
+<link rel="stylesheet" href="css/base.css?v=__BUILD__">
+<link rel="stylesheet" href="css/components.css?v=__BUILD__">
+<link rel="stylesheet" href="css/charts.css?v=__BUILD__">
+<script src="theme-boot.js?v=__BUILD__"></script>
+<script type="module" src="js/app.mjs?v=__BUILD__"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset="1" stop-color="#f2a93b"/></linearGradient>
+<linearGradient id="g-aurora" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2ee6c5"/><stop offset=".5" stop-color="#8b6bff"/><stop offset="1" stop-color="#ff4fb8"/></linearGradient>
+</defs>
+<symbol id="i-brand" viewBox="0 0 32 32"><path d="M16 2.5c.9 6.9 4.7 12.5 13.5 13.5-8.8 1-12.6 6.6-13.5 13.5C15.1 22.6 11.3 17 2.5 16 11.3 15 15.1 9.4 16 2.5z" fill="url(#g-aurora)"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="M12 5l8 13H4z" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="M12 19L4 6h16z" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-crown" viewBox="0 0 24 24"><path d="M2.8 8.2l4.6 4.1L12 4.6l4.6 7.7 4.6-4.1-1.9 11.1H4.7z" fill="url(#g-gold)" stroke="none"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.2A8.5 8.5 0 019.8 3.5 8.5 8.5 0 1020.5 14.2z"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.6 4.6L19 7.5"/></symbol>
+<symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5M12 17.2v.1"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.8v.1"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.6-3.1 8.2-7.5 9.5-4.4-1.3-7.5-4.9-7.5-9.5V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+<symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="M14.5 5.5L8 12l6.5 6.5"/></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="M9.5 5.5L16 12l-6.5 6.5"/></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="12" height="12" rx="3"/><path d="M15.5 8.5V6.5a3 3 0 00-3-3h-6a3 3 0 00-3 3v6a3 3 0 003 3h2"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M13.5 4.5h6v6M19.5 4.5l-8 8M18 14v3.5a3 3 0 01-3 3H6.5a3 3 0 01-3-3V9a3 3 0 013-3H10"/></symbol>
+<symbol id="i-history" viewBox="0 0 24 24"><path d="M3.5 12a8.5 8.5 0 108.5-8.5A8.5 8.5 0 005.4 6.7"/><path d="M3.5 4.5v4h4M12 7.5V12l3 2"/></symbol>
+<symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+</svg>
+
+<div class="banner" role="note"><span class="banner-text">Demo accounts, simulated money. Nothing here is investment advice.</span> <a href="#/integrity">How the record is protected</a></div>
+
+<header class="site-header">
+<a class="brand" href="#/" aria-label="MAEH Showcase, home"><svg class="brand-mark" aria-hidden="true" focusable="false"><use href="#i-brand"></use></svg><span class="brand-name">MAEH <b>Showcase</b></span></a>
+<nav class="site-nav" aria-label="Main">
+<a data-nav="season" href="#/"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-brand"></use></svg><span>Season</span></a>
+<a data-nav="calendar" href="#/calendar"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-calendar"></use></svg><span>Calendar</span></a>
+<a data-nav="stars" href="#/stars"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-crown"></use></svg><span>Stars</span></a>
+<a data-nav="integrity" href="#/integrity"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield"></use></svg><span>Integrity</span></a>
+</nav>
+<button type="button" class="icon-btn" data-action="toggle-theme" aria-label="Switch to the light theme" title="Switch to the light theme"><svg class="icon icon-sun" aria-hidden="true" focusable="false"><use href="#i-sun"></use></svg><svg class="icon icon-moon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg></button>
+</header>
+
+<main id="main" tabindex="-1">
+<div id="view"><p class="loading">Loading the season…</p></div>
+<noscript><p class="loading">This page draws its charts with JavaScript. The results are plain files in the repository: https://github.com/IllimitedEnterprise/MAEH-Showcase</p></noscript>
+</main>
+
+<footer class="site-footer">
+<p>Frozen every night at 01:00, Europe/Berlin. Code: MIT. Data: CC BY 4.0. <a href="https://github.com/IllimitedEnterprise/MAEH-Showcase" target="_blank" rel="noopener noreferrer">Source</a></p>
+<p class="footer-meta" id="footer-meta"></p>
+</footer>
+
+<div id="announcer" class="sr-only" role="status" aria-live="polite"></div>
+</body>
+</html>

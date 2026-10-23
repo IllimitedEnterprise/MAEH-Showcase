@@ -1,0 +1,177 @@
+/* Design tokens: Aurora glass.
+ *
+ * Dark is the house look: a deep navy-violet canvas, soft aurora washes behind translucent glass
+ * cards, and gain/loss colours that glow. Light is the same system on a pale canvas.
+ *
+ * Series colours (--ent-1..8) are the eight categorical steps of the dataviz method, in its fixed
+ * order, chosen per theme and run through its validator against the chart surface: lightness band,
+ * chroma floor, colour-blind separation of neighbours and contrast. An account keeps its colour on
+ * every page. Gain and loss are status colours, never series colours, and always travel with a sign
+ * and an arrow. */
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("../assets/fonts/BricolageGrotesque-latin-VF.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../assets/fonts/JetBrainsMono-latin-VF.woff2") format("woff2");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #060716;
+  --bg-2: #0a0c24;
+  --surface: #0f1230;
+  --surface-2: #171c44;
+  --surface-chart: #10132f;
+  --glass: rgba(255, 255, 255, 0.055);
+  --glass-strong: rgba(255, 255, 255, 0.09);
+  --glass-solid: rgba(21, 25, 60, 0.82);
+  --glass-line: rgba(255, 255, 255, 0.13);
+  --glass-hi: rgba(255, 255, 255, 0.2);
+  --shadow: 0 26px 60px -30px rgba(0, 0, 0, 0.8);
+  --scrim: rgba(6, 7, 22, 0.78);
+
+  --ink: #eef0ff;
+  --ink-2: #c1c8ec;
+  --ink-3: #a9b1dc;
+  --link: #a9bcff;
+  --grid: rgba(255, 255, 255, 0.075);
+  --axis: rgba(255, 255, 255, 0.22);
+  --focus: #a9bcff;
+
+  --gain: #3fe0a5;
+  --gain-1: rgba(63, 224, 165, 0.12);
+  --gain-2: rgba(63, 224, 165, 0.2);
+  --gain-3: rgba(63, 224, 165, 0.28);
+  --gain-4: rgba(63, 224, 165, 0.36);
+  --gain-glow: rgba(63, 224, 165, 0.3);
+  --loss: #ff8fa5;
+  --loss-1: rgba(255, 143, 165, 0.1);
+  --loss-2: rgba(255, 143, 165, 0.2);
+  --loss-3: rgba(255, 143, 165, 0.28);
+  --loss-4: rgba(255, 143, 165, 0.36);
+  --loss-glow: rgba(255, 143, 165, 0.28);
+  --flat: #aab3dc;
+  --gold: #ffc94d;
+  --info: #8fb2ff;
+  --warn: #ffb454;
+
+  --ent-1: #3987e5;
+  --ent-2: #d95926;
+  --ent-3: #199e70;
+  --ent-4: #c98500;
+  --ent-5: #d55181;
+  --ent-6: #008300;
+  --ent-7: #9085e9;
+  --ent-8: #e66767;
+  --ent-x: #8a90b3;
+
+  --brand-1: #2ee6c5;
+  --brand-2: #8b6bff;
+  --brand-3: #ff4fb8;
+  --brand-4: #3b8cff;
+  --brand-gradient: linear-gradient(120deg, var(--brand-1), var(--brand-2) 55%, var(--brand-3));
+
+  --aurora-a: rgba(46, 230, 197, 0.2);
+  --aurora-b: rgba(139, 107, 255, 0.28);
+  --aurora-c: rgba(255, 79, 184, 0.15);
+  --aurora-d: rgba(59, 140, 255, 0.2);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f1f2ff;
+  --bg-2: #e8eaff;
+  --surface: #ffffff;
+  --surface-2: #f4f5ff;
+  --surface-chart: #fafaff;
+  --glass: rgba(255, 255, 255, 0.68);
+  --glass-strong: rgba(255, 255, 255, 0.86);
+  --glass-solid: rgba(255, 255, 255, 0.9);
+  --glass-line: rgba(28, 34, 92, 0.13);
+  --glass-hi: rgba(255, 255, 255, 0.95);
+  --shadow: 0 22px 48px -30px rgba(40, 50, 130, 0.5);
+  --scrim: rgba(241, 242, 255, 0.82);
+
+  --ink: #12143a;
+  --ink-2: #41467a;
+  --ink-3: #4f5580;
+  --link: #3140b8;
+  --grid: rgba(20, 24, 72, 0.08);
+  --axis: rgba(20, 24, 72, 0.24);
+  --focus: #3140b8;
+
+  --gain: #046b4a;
+  --gain-1: rgba(4, 107, 74, 0.1);
+  --gain-2: rgba(4, 107, 74, 0.18);
+  --gain-3: rgba(4, 107, 74, 0.28);
+  --gain-4: rgba(4, 107, 74, 0.4);
+  --gain-glow: rgba(4, 107, 74, 0);
+  --loss: #b81d38;
+  --loss-1: rgba(184, 29, 56, 0.09);
+  --loss-2: rgba(184, 29, 56, 0.17);
+  --loss-3: rgba(184, 29, 56, 0.27);
+  --loss-4: rgba(184, 29, 56, 0.4);
+  --loss-glow: rgba(184, 29, 56, 0);
+  --flat: #4f5580;
+  --gold: #7a4a00;
+  --info: #2c4fc2;
+  --warn: #8f4b00;
+
+  --ent-1: #2a78d6;
+  --ent-2: #eb6834;
+  --ent-3: #1baf7a;
+  --ent-4: #eda100;
+  --ent-5: #e87ba4;
+  --ent-6: #008300;
+  --ent-7: #6250d6;
+  --ent-8: #e34948;
+  --ent-x: #7c82a8;
+
+  --aurora-a: rgba(46, 230, 197, 0.2);
+  --aurora-b: rgba(139, 107, 255, 0.2);
+  --aurora-c: rgba(255, 79, 184, 0.12);
+  --aurora-d: rgba(59, 140, 255, 0.16);
+}
+
+:root {
+  --font-ui: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-h2: clamp(1.15rem, 0.5vw + 1.05rem, 1.4rem);
+  --fs-h1: clamp(2.1rem, 4.4vw + 0.9rem, 3.6rem);
+  --fs-hero: clamp(3.25rem, 11vw + 0.4rem, 7.25rem);
+  --fs-xl: clamp(1.6rem, 2.4vw + 1rem, 2.4rem);
+
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-pill: 999px;
+
+  --gutter: 16px;
+  --gap: 16px;
+  --measure: 1180px;
+}
+
+@media (min-width: 720px) {
+  :root {
+    --gutter: 28px;
+    --gap: 20px;
+  }
+}

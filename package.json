@@ -13,6 +13,7 @@
     "verify": "node scripts/verify.mjs --all",
     "rank": "node scripts/rank.mjs",
     "nightly": "node scripts/nightly.mjs",
-    "serve": "node scripts/serve.mjs"
+    "serve": "node scripts/serve.mjs",
+    "build:site": "node scripts/build-site.mjs"
   }
 }
