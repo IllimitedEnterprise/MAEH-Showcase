@@ -53,7 +53,8 @@ object from an allowlist, and `node scripts/verify.mjs --all` scans the files ag
 - `config/` holds the season settings, the published-account list and the versioned
   ranking rules.
 - `scripts/` holds the command line tools; `scripts/lib/` holds their modules.
-- `test/` holds the tests. Run them with `node --test`.
+- `test/` holds the tests. Run them with `node --test "test/**/*.test.mjs"`.
+- `site/` is the dashboard; `node scripts/serve.mjs` previews it locally.
 - `docs/METHODS.md` explains how every number is computed.
 
 ## Conventions

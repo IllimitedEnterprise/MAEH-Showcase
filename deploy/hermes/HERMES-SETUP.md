@@ -28,7 +28,7 @@ The days are set in `config/season.json` (`healthWakeDays`).
 - [ ] The private settings file exists: `%LOCALAPPDATA%\MAEH-Showcase\config.json`
 
       ```json
-      { "harnessUrl": "http://127.0.0.1:8790", "harnessVarDir": "<path to the harness var folder>" }
+      { "harnessUrl": "http://127.0.0.1:<the harness port>", "harnessVarDir": "<path to the harness var folder>" }
       ```
 
       It stays on this machine and is never committed. `harnessVarDir` is the harness's `var`
@@ -80,7 +80,7 @@ the model that is the Hermes default today, so a later model change does not sil
 ```powershell
 hermes cron create "0 1 * * *" "<the prompt below>" `
   --name maeh-showcase-nightly `
-  --workdir C:\Users\t\Documents\GitHub\MAEH-Showcase `
+  --workdir "<the folder of this checkout>" `
   --skill maeh-showcase `
   --script maeh-showcase-nightly.py `
   --deliver <your target> `

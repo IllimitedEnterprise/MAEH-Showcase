@@ -1,0 +1,149 @@
+# Dashboard design
+
+The dashboard is a static site with no framework, no dependencies and no build step for the page itself.
+This page explains the look, the colour rules, how the charts work, and how the code is organised and
+tested. The aim throughout: **bold and beautiful, and never at the cost of a number being misread.**
+
+## Look: Aurora glass
+
+- **Canvas.** A deep navy-violet page with four soft colour washes (teal, violet, magenta, blue) in its
+  corners. The washes are static on purpose: glass cards blur whatever is behind them, and a moving
+  background would make every card re-blur every frame.
+- **Glass.** Cards are translucent with a hairline edge and a faint top highlight, blurred over the
+  aurora. On a phone, or with `prefers-reduced-transparency`, or where `backdrop-filter` is missing, a
+  card is a nearly solid panel instead, so the page costs less and stays readable.
+- **Figures.** Big, tight, proportional numerals. The one **hero figure** on each page is at least 48 px
+  and set in the same family as the rest of the page, so a number never looks like decoration. Columns of
+  numbers (tables, axes, hashes) use JetBrains Mono, whose digits are fixed-width, so they line up.
+- **Dark first, light included.** Dark is the house look; the toggle in the header switches to light and
+  remembers the choice. Both are checked for contrast (below).
+
+Fonts are bundled and licensed: [`site/assets/fonts/FONTS.md`](../site/assets/fonts/FONTS.md).
+
+## Colour, and what it is allowed to mean
+
+| Role | Rule |
+|---|---|
+| **Gain and loss** | a signed figure with a **▲ or ▼** and a true minus (U+2212); green and red only repeat what the sign and arrow already say. Zero is a plain `0.00`; a figure that does not exist is a muted en dash, never coloured, so "no data" cannot look like a win or a loss. |
+| **An account** | each account has one colour from the validated palette, in the order of `config/accounts.json`, and keeps it on every page: the swatch, its card, its line, its columns. Colour follows the account, never its rank. |
+| **The desk** | the whole desk, as opposed to an account, is drawn in ink (lines) or the brand violet (columns), never in an account's colour. |
+| **Gold** | a Star. Always with a crown icon and the word "Star" for assistive technology. |
+| **Heat** | the calendar's squares: green deeper for a bigger gain, red deeper for a bigger loss, a neutral for none. Every cell also prints its figure, so colour is never the only signal. |
+
+### The series palette
+
+The eight account colours are the eight categorical steps of the dataviz method, in its fixed order, one
+set per theme, and were run through its validator against the real chart surface:
+
+| Mode | Surface | Lightness band | Chroma | Neighbours, colour-blind separation | Neighbours, normal vision | Contrast ≥ 3:1 |
+|---|---|---|---|---|---|---|
+| Dark | `#10132f` | pass | pass | worst pair ΔE 8.4 (target 8) | worst pair ΔE 19.3 (floor 15) | all eight |
+| Light | `#fafaff` | pass | pass | worst pair ΔE 9.1 | worst pair ΔE 19.6 | five of eight; aqua, yellow and magenta fall below, so every chart has a legend and a table twin |
+
+`test/site-contrast.test.mjs` keeps the palette exactly as validated and fails if it drifts. Because the
+eight colours were not changed to suit the look, the aurora accents (teal, violet, magenta, blue) are used
+only for decoration, the brand gradient, and single-series marks, never to identify an account.
+
+### Contrast is tested, not eyeballed
+
+The same test reads the real `tokens.css` and checks every text colour against every surface it can land
+on: the page, a card, the hero, a phone's solid card, a tooltip, the chart plate, each of them over the
+aurora at its **brightest** point, plus text on a gain or loss badge, a heat cell and the Star card.
+Text needs 4.5:1 (ink 7:1), marks 3:1. Several colours failed at first and were corrected; the test is what
+keeps them corrected.
+
+## Charts
+
+Hand-drawn SVG, built by pure functions so they can be tested without a browser.
+
+- **Marks.** Lines are 2 px with round joins. End dots are at least 8 px with a 2 px ring in the surface
+  colour. Areas are a wash, never a block (the desk curve is tinted green above zero and red below).
+  Columns are at most 24 px thick, rounded at the data end and square at the baseline, with a 2 px gap
+  between neighbours. Gridlines are solid hairlines.
+- **The axis is the calendar.** A weekend with no closes is a visible gap, a **quiet day** (frozen, no
+  closes) is a short tick on the baseline, and a day that was never frozen is absent. Three different
+  things look different.
+- **Labels.** Text uses text colours, never a series colour; identity comes from the coloured mark beside
+  it. Only the end of a line, and the best and worst column, carry a value; the tooltip and the table carry
+  the rest.
+- **One tooltip, every series.** A hairline snaps to the nearest day and one tooltip lists everything
+  there, value first. It enhances; it is never the only way to read a value.
+- **Keyboard and touch.** A chart is a focusable group: the arrow keys, Home, End and Escape move the
+  cursor, and the value is announced. Touch shows the cursor and keeps it until the next tap elsewhere.
+- **A table twin for every chart** behind a Chart/Table switch, with every value the picture shows.
+- **Tick labels** are a whole number of days apart, counted back from the newest day so that day is
+  always labelled.
+- Under `forced-colors`, series fall back to system colours; the legend and table carry identity.
+
+## Pages
+
+| Route | Page |
+|---|---|
+| `#/` | Season: hero figure, the Star of the day, the cumulative curve, daily columns, the eight account cards, the account race, recent days, the Star tally |
+| `#/calendar[/YYYY-MM]` | A month heat grid, Monday first, with ISO week totals and week crowns |
+| `#/day/DATE[/file/PATH]` | One frozen day, and a file browser with a readable and a raw view of every file and an in-browser hash check |
+| `#/account/KEY` | One account's whole record |
+| `#/stars[/day|week|month|all]` | Standings, finished periods, the tally and the rules |
+| `#/integrity` | The chain, a button that checks it in the browser, and how to check it yourself |
+
+Routes are hash-based so the site works on GitHub Pages with no server rules. A bad link says so
+instead of showing a blank page.
+
+## Responsive and accessible
+
+- Designed at 390 px first. On a phone the navigation is a bar along the bottom edge; tables drop their
+  optional columns; charts are redrawn at the width they are given, so type never scales down.
+- Semantic landmarks, one `h1` per page, a skip link, visible focus rings, real buttons and links, labels
+  for every control and chart, a polite live region that announces page changes and chart steps.
+- `prefers-reduced-motion` removes every transition; `prefers-reduced-transparency` and `forced-colors`
+  have their own fallbacks; print drops the chrome.
+
+## Security
+
+The page runs under a strict Content-Security-Policy set in the page itself: `default-src 'none'`, scripts,
+styles, fonts and requests from the page's own origin only, no inline script, no inline style, no framing
+or form targets. Because inline styles are blocked, values that only exist at run time (a bar's width) are
+written as `data-style="--w:37%"` and applied through the CSSOM, which the policy allows; the parser accepts
+only custom properties with plain values.
+
+Every string from a data file is **escaped by default**: markup is built by a tagged template that escapes
+every interpolated value and trusts only its own nested templates. The Markdown renderer escapes first and
+allows only relative, anchor and `https` links. The raw file viewer escapes, then colours. A test scans all
+site code for `eval`, `Function`, `document.write`, inline handlers, remote URLs, and any `innerHTML`
+assignment outside the two modules that own it.
+
+## How it is built
+
+```
+site/
+  index.html  theme-boot.js        the shell and the pre-paint theme
+  css/ tokens base components charts
+  js/app.mjs                       boot, router, the few interactions
+  js/lib/    html dom data model fmt scale router markdown highlight csv theme site
+  js/charts/ geometry draw interact     numbers -> coordinates -> SVG text -> pointer layer
+  js/views/  season calendar day files account stars integrity
+  js/ui.mjs                        cards, tiles, badges, tables, standings
+```
+
+Data flows one way: the loader fetches the repository's own JSON (a build id is appended so a fresh deploy
+is never hidden by a ten-minute CDN copy), `model.mjs` answers questions about it, a view turns that into a
+string of markup, `mount()` puts it on the page, and `after()` attaches the charts. Nothing is cached in
+the browser between visits except the theme choice.
+
+There is no bundler: the page loads about thirty small ES modules over HTTP/2. If that ever matters, a
+single-file bundle can be added to `scripts/build-site.mjs` without touching the source.
+
+## How it is tested
+
+| Test file | What it proves |
+|---|---|
+| `site-lib`, `site-core` | formatting, scales, routes, the Markdown renderer, the loader, the model, every chart builder |
+| `site-views` | **every route and every file of every frozen day** is drawn from the real committed data and audited: balanced markup, unique ids, resolvable links, no `NaN`, `null` or `undefined`, only escaped text; the hash and chain checkers catch a tampered file and a broken link |
+| `site-contrast` | colour contrast on every surface, and the validated palette unchanged |
+| `site-csp` | the policy, forbidden APIs, where `innerHTML` may be set, every import and class resolves |
+| `site-fonts` | the bundled fonts are the recorded files |
+| `site-server` | the preview serves only the page and the data folders; path traversal cannot escape; the Pages artifact holds nothing else |
+| `workflows` | every action pinned and vetted, the token read-only, nothing user-controlled reaches a shell |
+
+Beyond the tests, every page was inspected in a real browser at 390, 768 and 1280 px, in both themes, with a
+clean console, no sideways overflow on any route, and keyboard stepping through the charts.
