@@ -16,8 +16,9 @@ const hashShort = (hash) => `${hash.slice(0, 10)}…${hash.slice(-6)}`;
 
 export function chainResultHtml(result) {
   const bad = result.rows.filter((row) => !row.hashOk || !row.prevOk || row.note);
+  const days = result.rows.length;
   const summary = result.ok
-    ? html`<p class="verify-ok" role="status">${icon("check")} All ${int(result.rows.length)} days check out: every manifest hashes to what the catalogue records, every day points back at the one before, and the tip matches.</p>`
+    ? html`<p class="verify-ok" role="status">${icon("check")} ${days === 1 ? "The one day checks out: its manifest hashes to what the catalogue records, and the tip matches." : html`All ${int(days)} days check out: every manifest hashes to what the catalogue records, every day points back at the one before, and the tip matches.`}</p>`
     : html`<p class="verify-bad" role="alert">${icon("warn")} A problem was found. ${bad.length ? `First at ${bad[0].date}${bad[0].note ? `: ${bad[0].note}` : ""}.` : "The chain tip does not match the last day."} Do not rely on these numbers until it is explained.</p>`;
   return html`${summary}${table({
     caption: "Chain check, day by day",

@@ -6,7 +6,7 @@ import { accountKeys, dayEntry } from "../site/js/lib/model.mjs";
 import { views } from "../site/js/views/index.mjs";
 import { chainResultHtml } from "../site/js/views/integrity.mjs";
 import { verifyChain, verifyDayFiles } from "../site/js/lib/data.mjs";
-import { LEAKS, fsFetch } from "./helpers/site-data.mjs";
+import { GRAMMAR, LEAKS, fsFetch } from "./helpers/site-data.mjs";
 import { checkMarkup, externalLinks, hashLinks, withoutCode } from "./helpers/markup.mjs";
 
 const data = createData({ fetchImpl: fsFetch(), build: "test" });
@@ -33,6 +33,8 @@ function audit(hash, markup) {
   const scan = withoutCode(markup);
   const leak = scan.match(LEAKS);
   assert.equal(leak, null, `${hash} shows "${leak?.[0]}" near: ${leak ? scan.slice(Math.max(0, leak.index - 60), leak.index + 60) : ""}`);
+  const grammar = scan.match(GRAMMAR);
+  assert.equal(grammar, null, `${hash} says "${grammar?.[0]}"`);
   for (const link of hashLinks(markup)) {
     const route = parseRoute(link);
     assert.notEqual(route.name, "notfound", `${hash} links to ${link}, which is not a route`);

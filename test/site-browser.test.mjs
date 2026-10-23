@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { PROBE, findChrome, withBrowser } from "./helpers/chrome.mjs";
 import { createSiteServer } from "../scripts/lib/site.mjs";
+import { SEASONS, makeFixtureSite } from "./helpers/fixture-site.mjs";
 import { REPO } from "./helpers/site-data.mjs";
 
 /* The real-browser checks. The page is drawn by Chrome or Edge, at many widths, in both themes, and
@@ -12,8 +13,8 @@ import { REPO } from "./helpers/site-data.mjs";
 const browser = findChrome();
 const skip = process.env.MAEH_BROWSER_TESTS === "1" && browser ? false : "set MAEH_BROWSER_TESTS=1 with Chrome or Edge installed to run the real-browser checks";
 
-async function serving(run) {
-  const server = createSiteServer({ root: REPO, base: "/MAEH-Showcase/", build: "test", commit: "0123456789abcdef0123456789abcdef01234567" });
+async function serving(run, root = REPO) {
+  const server = createSiteServer({ root, base: "/MAEH-Showcase/", build: "test", commit: "0123456789abcdef0123456789abcdef01234567" });
   await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
   const { port } = server.address();
   try {
@@ -40,6 +41,7 @@ async function matrix(origin, { widths, routes, theme }) {
         if (data.selfOverflow.length) problems.push(`${where}: a box overflows itself: ${data.selfOverflow.join(", ")}`);
         if (data.hero && !data.hero.fits) problems.push(`${where}: the hero figure runs past its column (${data.hero.right} > ${data.hero.column})`);
         if (data.errorCard) problems.push(`${where}: the page shows its error card`);
+        if (data.unnamed.length) problems.push(`${where}: controls with no accessible name: ${data.unnamed.join(", ")}`);
         for (const issue of issues) problems.push(`${where}: ${issue}`);
       }
     }
@@ -58,6 +60,85 @@ test("light theme: the same, at the widths where the layout changes", { skip, ti
   await serving(async (origin) => {
     const problems = await matrix(origin, { widths: [390, 900, 1100, 1440], routes: ["#/", "#/day/2026-10-22", "#/account/M9-L-Mix", "#/integrity"], theme: "light" });
     assert.deepEqual(problems, []);
+  });
+});
+
+test("the states the real season does not have yet draw cleanly on a phone and on a desktop", { skip, timeout: 600_000 }, async () => {
+  const empty = makeFixtureSite(SEASONS.empty);
+  const mixed = makeFixtureSite(SEASONS.mixed);
+  const spring = makeFixtureSite(SEASONS.spring);
+  try {
+    await serving(async (origin) => {
+      assert.deepEqual(await matrix(origin, { widths: [390, 1280], routes: ["#/", "#/calendar", "#/stars", "#/integrity", "#/day/2026-10-24", "#/account/Alpha"], theme: "dark" }), []);
+      await withBrowser(async (page) => {
+        await page.emulate(1280);
+        await page.visit(`${origin}/#/`);
+        const seen = JSON.parse(await page.evaluate(`JSON.stringify({ h1: document.querySelector('h1').textContent, footer: document.getElementById('footer-meta').textContent.trim(), chips: document.querySelectorAll('#view .chip-account').length, focus: document.activeElement?.tagName })`));
+        assert.equal(seen.h1, "Waiting for the first freeze");
+        assert.match(seen.footer, /^Nothing frozen yet/, "the footer does not claim a freeze that has not happened");
+        assert.equal(seen.chips, 3);
+      });
+    }, empty.root);
+
+    await serving(async (origin) => {
+      const routes = ["#/", "#/calendar", "#/day/2026-10-21", "#/day/2026-10-22", "#/day/2026-10-23", "#/day/2026-10-24", "#/day/2026-10-25", "#/day/2026-10-27", "#/integrity", "#/stars/week", "#/account/Late"];
+      assert.deepEqual(await matrix(origin, { widths: [390, 768, 1280], routes, theme: "dark" }), []);
+      assert.deepEqual(await matrix(origin, { widths: [390, 1280], routes: ["#/calendar", "#/day/2026-10-22", "#/day/2026-10-25"], theme: "light" }), []);
+      await withBrowser(async (page) => {
+        await page.emulate(1280);
+        await page.visit(`${origin}/#/calendar`);
+        const calendar = JSON.parse(await page.evaluate(`JSON.stringify({ flags: document.querySelectorAll('.cal-flag').length, label: document.querySelector('a.cal-cell[href="#/day/2026-10-22"]')?.getAttribute('aria-label') })`));
+        assert.equal(calendar.flags, 2);
+        assert.match(calendar.label, /partial/);
+        await page.visit(`${origin}/#/day/2026-10-22`);
+        assert.match(await page.evaluate("document.querySelector('.notice')?.textContent ?? ''"), /Read these numbers with care[\s\S]*Alpha[\s\S]*Unverified/);
+        await page.visit(`${origin}/#/day/2026-10-25`);
+        const hours = JSON.parse(await page.evaluate(`JSON.stringify({ badge: [...document.querySelectorAll('.badge')].some((b) => /25-hour day/.test(b.textContent)), columns: document.querySelectorAll('#day-hours-box svg [data-i]').length })`));
+        assert.equal(hours.badge, true);
+        assert.equal(hours.columns, 24, "the hour that happens twice is one column, so the chart still reads as a clock");
+      });
+    }, mixed.root);
+
+    await serving(async (origin) => {
+      assert.deepEqual(await matrix(origin, { widths: [390, 1280], routes: ["#/", "#/day/2027-03-28"], theme: "dark" }), []);
+      await withBrowser(async (page) => {
+        await page.emulate(1280);
+        await page.visit(`${origin}/#/day/2027-03-28`);
+        assert.equal(await page.evaluate("document.querySelectorAll('#day-hours-box svg [data-i]').length"), 23, "the hour that does not exist has no column");
+      });
+    }, spring.root);
+  } finally {
+    empty.cleanup();
+    mixed.cleanup();
+    spring.cleanup();
+  }
+});
+
+test("the page honours reduced motion, reduced transparency and forced colours", { skip, timeout: 300_000 }, async () => {
+  await serving(async (origin) => {
+    await withBrowser(async (page) => {
+      await page.emulate(1280);
+      const probe = (selector) => `(() => { const el = document.querySelector('${selector}'); const cs = getComputedStyle(el); return JSON.stringify({ transition: cs.transitionDuration, backdrop: cs.backdropFilter || cs.webkitBackdropFilter, borderStyle: cs.borderTopStyle, borderWidth: cs.borderTopWidth }); })()`;
+      await page.visit(`${origin}/#/`);
+      const normal = JSON.parse(await page.evaluate(probe(".btn")));
+      assert.notEqual(normal.transition, "1e-05s", "motion is on by default");
+      assert.match(JSON.parse(await page.evaluate(probe(".card"))).backdrop, /blur/, "glass is on by default");
+
+      await page.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }, { name: "prefers-reduced-transparency", value: "reduce" }] });
+      await page.visit(`${origin}/#/`);
+      assert.equal(JSON.parse(await page.evaluate(probe(".btn"))).transition, "1e-05s", "reduced motion stops the transitions");
+      assert.equal(JSON.parse(await page.evaluate(probe(".card"))).backdrop, "none", "reduced transparency drops the blur");
+      assert.equal(await page.evaluate("document.getAnimations().length"), 0, "nothing is animating");
+
+      await page.send("Emulation.setEmulatedMedia", { features: [{ name: "forced-colors", value: "active" }] });
+      await page.visit(`${origin}/#/calendar`);
+      assert.equal(await page.evaluate("matchMedia('(forced-colors: active)').matches"), true);
+      const card = JSON.parse(await page.evaluate(probe(".card")));
+      assert.equal(card.borderStyle, "solid");
+      assert.ok(parseFloat(card.borderWidth) >= 1, "cards keep an outline in forced colours");
+      const data = JSON.parse(await page.evaluate(PROBE));
+      assert.ok(data.scrollW <= data.vw + 1 && data.unnamed.length === 0, "forced colours: no sideways scroll, every control named");
+    });
   });
 });
 

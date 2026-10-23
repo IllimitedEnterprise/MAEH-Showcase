@@ -16,6 +16,8 @@
 .chart-table[hidden],
 .chart-box[hidden] { display: none; }
 .chart-table { padding-top: 4px; }
+.chart-box ~ .muted { margin-top: 8px; }
+.chart-box ~ .muted + .muted { margin-top: 4px; }
 .chart-empty { padding: 36px 12px; text-align: center; color: var(--ink-2); }
 
 .svg-chart { display: block; width: 100%; height: auto; overflow: visible; }

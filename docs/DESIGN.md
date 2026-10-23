@@ -89,6 +89,20 @@ Hand-drawn SVG, built by pure functions so they can be tested without a browser.
 Routes are hash-based so the site works on GitHub Pages with no server rules. A bad link says so
 instead of showing a blank page.
 
+### States the data can be in
+
+| State | What the page does |
+|---|---|
+| No day frozen yet | Every route but the 404 shows one explanation: when the season begins, that the first night is at 01:00, and who takes part. The footer says nothing is frozen yet |
+| One day | Wording follows the count ("1 frozen day"); the worst day waits for a second day with trades |
+| A gap (a day never frozen) | A dashed "not frozen" cell in the calendar, listed on the integrity page; never drawn as zero |
+| A day frozen partial, or an account that could not be proven complete | A note above the day names the account, says why, links to its summary, and says it is left out of the ranking; the calendar flags the day |
+| A quiet day (frozen, no closes) | A tick on the line, "no closes" in the calendar, no footnote about entry hours |
+| The 25-hour and 23-hour days | A badge, and a note under the entry-hours chart: the repeated hour is one column holding both halves, the missing hour has none |
+
+A count of one takes the singular everywhere it is written. The one exception is text inside a sealed day,
+which is hashed and never edited; the page rewords the single phrase that matters ("needs 1 active days").
+
 ## Responsive and accessible
 
 - Designed at 390 px first. On a phone the navigation is a bar along the bottom edge; tables drop their
@@ -121,8 +135,8 @@ site/
   js/app.mjs                       boot, router, the few interactions
   js/lib/    html dom data model fmt scale router markdown highlight csv theme site
   js/charts/ geometry draw interact     numbers -> coordinates -> SVG text -> pointer layer
-  js/views/  season calendar day files account stars integrity
-  js/ui.mjs                        cards, tiles, badges, tables, standings
+  js/views/  season calendar day files account stars integrity empty
+  js/ui.mjs                        cards, tiles, badges, notices, tables, standings
 ```
 
 Data flows one way: the loader fetches the repository's own JSON (a build id is appended so a fresh deploy
@@ -152,13 +166,14 @@ more than most. Two things deal with it, both exercised by injecting the failure
 |---|---|
 | `site-lib`, `site-core` | formatting, scales, routes, the Markdown renderer, the loader, the model, every chart builder |
 | `site-views` | **every route and every file of every frozen day** is drawn from the real committed data and audited: balanced markup, unique ids, resolvable links, no `NaN`, `null` or `undefined`, only escaped text; the hash and chain checkers catch a tampered file and a broken link |
+| `site-states` | small seasons built with the project's own freeze code (`test/helpers/fixture-site.mjs`): none, one night, a gap, a partial day, an unverified account, a quiet day, the 25-hour and 23-hour days. Every page of each is drawn and audited like the real ones, plus the wording of a count of one, the notice, the calendar flag, and the hours chart on a day with a repeated or missing hour |
 | `site-contrast` | colour contrast on every surface, and the validated palette unchanged |
 | `site-csp` | the policy, forbidden APIs, where `innerHTML` may be set, every import and class resolves |
 | `site-fonts` | the bundled fonts are the recorded files |
 | `site-server` | the preview serves only the page and the data folders; path traversal cannot escape; the Pages artifact holds nothing else |
 | `site-hostile` | the real files served with script tags, event handlers, `javascript:` links and image payloads swapped into every label, symbol and Markdown file: every route is drawn and nothing comes out as markup; an account called `__proto__` is just not found |
 | `workflows` | every action pinned and vetted, the token read-only, nothing user-controlled reaches a shell |
-| `site-browser` | **a real Chrome or Edge** draws the pages at nine widths (390 to 1440 px) in both themes and finds no sideways scroll, no box overflowing itself, no hero figure running into the Star card, no console message and no failed request; a 503 injected into one script is survived once and given up on cleanly when permanent; the chain and per-day verifiers, deep links, keyboard stepping and the theme switch work. Opt-in (`MAEH_BROWSER_TESTS=1`) so `node --test` stays instant; CI runs it on one Linux leg |
+| `site-browser` | **a real Chrome or Edge** draws the pages at nine widths (390 to 1440 px) in both themes and finds no sideways scroll, no box overflowing itself, no hero figure running into the Star card, no console message and no failed request; a 503 injected into one script is survived once and given up on cleanly when permanent; the chain and per-day verifiers, deep links, keyboard stepping and the theme switch work; the fixture seasons above are drawn at phone, tablet and desktop widths; every control has an accessible name; reduced motion, reduced transparency and forced colours each change what they should. Opt-in (`MAEH_BROWSER_TESTS=1`) so `node --test` stays instant; CI runs it on one Linux leg |
 
 Two layout bugs, the hero figure running into the Star card between about 900 and 1100 px and a commit hash
 spilling out of its card on a phone, were found only by probing more widths than the first inspection used.

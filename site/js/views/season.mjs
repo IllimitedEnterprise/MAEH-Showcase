@@ -1,7 +1,7 @@
 /* The landing page: the whole season at a glance. */
 
 import { html } from "../lib/html.mjs";
-import { compact, int, longDate, mediumDate, money, pct, profitFactor, shortDate, two, weekday } from "../lib/fmt.mjs";
+import { DASH, compact, int, longDate, mediumDate, money, pct, plural, profitFactor, shortDate, two, weekday } from "../lib/fmt.mjs";
 import { href } from "../lib/router.mjs";
 import { accountKeys, accountSeries, crownNote, dailyBars, deskSeries, entityClass, entitySlot, labelOf, lastDays, seasonTotals, tallyRow } from "../lib/model.mjs";
 import { accountChip, card, chartCard, crownMark, icon, moneyHtml, segmented, statGrid, statTile, toneClass } from "../ui.mjs";
@@ -13,6 +13,7 @@ const rangeDays = (value) => (value === "all" ? 0 : Number(value));
 
 export function describeCurve(name, rows) {
   if (rows.length === 0) return `${name}: no data yet.`;
+  if (rows.length === 1) return `${name}: one day so far, ${shortDate(rows[0].date)}, at ${money(rows[0].value)}.`;
   const values = rows.map((row) => row.value);
   return `${name} from ${shortDate(rows[0].date)} to ${shortDate(rows.at(-1).date)}: starts at ${money(rows[0].value)}, ends at ${money(rows.at(-1).value)}, high ${money(Math.max(...values))}, low ${money(Math.min(...values))}.`;
 }
@@ -53,25 +54,30 @@ function accountCards(core) {
 <span class="acct-net">${moneyHtml(net)}</span>
 <span class="acct-meta"><span>${pct(report.totals.retPct, { signed: true })} on funding</span><span>${pct(report.totals.winRatePct)} won</span><span>PF ${profitFactor(report.totals.profitFactor, report.totals.grossWin)}</span></span>
 <span class="acct-spark">${spark({ values: series.map((p) => p.value), slot: entitySlot(core, key), width: 150, height: 40 })}</span>
-<span class="acct-foot">Funded ${shortDate(report.fundedDate)} · ${int(report.totals.n)} closes</span>
+<span class="acct-foot">Funded ${shortDate(report.fundedDate)} · ${plural(report.totals.n, "close")}</span>
 </a></li>`;
   })}</ul>`;
 }
 
 function recentDays(core) {
   const days = core.index.days.slice(-14);
-  return html`<ul class="day-tiles" role="list">${days.map((day) => html`<li><a class="day-tile tone-${toneClass(day.n === 0 ? null : day.net)}" href="${href({ name: "day", date: day.date, file: null })}" aria-label="${longDate(day.date)}: ${day.n === 0 ? "no closes" : `${money(day.net)}, ${int(day.n)} closes`}">
+  return html`<ul class="day-tiles" role="list">${days.map((day) => html`<li><a class="day-tile tone-${toneClass(day.n === 0 ? null : day.net)}" href="${href({ name: "day", date: day.date, file: null })}" aria-label="${longDate(day.date)}: ${day.n === 0 ? "no closes" : `${money(day.net)}, ${plural(day.n, "close")}`}">
 <span class="day-tile-wd">${weekday(day.date)}</span><span class="day-tile-d">${Number(day.date.slice(8))}</span>
 <span class="day-tile-net">${day.n === 0 ? "–" : compact(day.net)}</span>${day.crown ? html`<span class="day-tile-crown">${icon("crown")}</span>` : ""}
 </a></li>`)}</ul>`;
 }
+
+/* A best or worst day; a dash and the reason when there is no such day to show. */
+const dayTile = (label, entry, absent) => statTile(entry
+  ? { label, value: moneyHtml(entry.net), hint: html`<a href="${href({ name: "day", date: entry.date, file: null })}">${mediumDate(entry.date)}</a>` }
+  : { label, value: DASH, hint: absent });
 
 function tallyTeaser(core) {
   const rows = [...core.crowns.tally].sort((a, b) => b.points - a.points).slice(0, 3).filter((row) => row.points > 0);
   if (rows.length === 0) return html`<p class="muted">No Star has been awarded yet.</p>`;
   return html`<ol class="tally-list">${rows.map((row, index) => html`<li>
 <span class="tally-rank">${index + 1}</span>${accountChip(core, row.key, { label: row.label })}
-<span class="tally-detail">${row.day} day · ${row.week} week · ${row.month} month</span><span class="tally-points">${row.points}<span class="sr-only"> points</span></span>
+<span class="tally-detail">${plural(row.day, "day")} · ${plural(row.week, "week")} · ${plural(row.month, "month")}</span><span class="tally-points">${row.points}<span class="sr-only"> points</span></span>
 </li>`)}</ol>`;
 }
 
@@ -115,19 +121,19 @@ export function render(model) {
   const markup = html`<div class="page season">
 <div class="hero card glass-strong">
 <div class="hero-main">
-<p class="eyebrow">Season to date · ${shortDate(totals.start)} – ${shortDate(totals.end)} ${totals.end.slice(0, 4)}</p>
+<p class="eyebrow">Season to date · ${totals.start === totals.end ? shortDate(totals.start) : `${shortDate(totals.start)} – ${shortDate(totals.end)}`} ${totals.end.slice(0, 4)}</p>
 <h1 class="page-title" tabindex="-1">The desk so far</h1>
 <p class="hero-figure ${toneClass(totals.net)}"><span class="sr-only">Desk net since the start of the season: </span>${moneyHtml(totals.net)}<span class="unit">EUR</span></p>
-<p class="hero-caption">Net result of ${keys.length} demo accounts over ${totals.frozen} frozen days and ${int(totals.closes)} closed trades. Simulated money, not advice.</p>
+<p class="hero-caption">Net result of ${plural(keys.length, "demo account")} over ${plural(totals.frozen, "frozen day")} and ${plural(totals.closes, "closed trade")}. Simulated money, not advice.</p>
 </div>
 ${starCard(core)}
 </div>
 
 ${statGrid(html`
 ${statTile({ label: "Frozen days", value: int(totals.frozen), hint: `since ${shortDate(totals.start)}` })}
-${statTile({ label: "Closed trades", value: int(totals.closes), hint: `${int(totals.active)} days with trades` })}
-${totals.best ? statTile({ label: "Best day", value: moneyHtml(totals.best.net), hint: html`<a href="${href({ name: "day", date: totals.best.date, file: null })}">${mediumDate(totals.best.date)}</a>` }) : ""}
-${totals.worst ? statTile({ label: "Worst day", value: moneyHtml(totals.worst.net), hint: html`<a href="${href({ name: "day", date: totals.worst.date, file: null })}">${mediumDate(totals.worst.date)}</a>` }) : ""}
+${statTile({ label: "Closed trades", value: int(totals.closes), hint: `${plural(totals.active, "day")} with trades` })}
+${dayTile("Best day", totals.best, "no day with trades yet")}
+${dayTile("Worst day", totals.worst, "needs a second day with trades")}
 `, "stats-4")}
 
 ${chartCard({ id: "desk-curve", title: "Desk result, cumulative", subtitle: describeCurve("Desk", rows), table: curveTable, label: "Desk cumulative result by day. Use the arrow keys to step through the days.", filters })}
@@ -151,9 +157,9 @@ ${card({ id: "tally", title: "Star tally", subtitle: "Points: 1 for a day, 5 for
       mountChart(root.querySelector("#desk-curve-box"), (width) => curveChart({
         uid: "deskcurve", width, title: "Desk cumulative result", description: describeCurve("Desk", rows),
         series: [{ key: "desk", label: "Desk", slot: 0, points: rows.map((row) => ({ date: row.date, value: row.value })) }],
-        extraRows: (date) => { const row = rows.find((r) => r.date === date); return row ? [{ label: `${int(row.n)} closes that day`, value: money(row.net) }] : []; },
+        extraRows: (date) => { const row = rows.find((r) => r.date === date); return row ? [{ label: `${plural(row.n, "close")} that day`, value: money(row.net) }] : []; },
       }));
-      mountChart(root.querySelector("#desk-bars-box"), (width) => barsChart({ uid: "deskbars", width, title: "Daily desk result", description: `Daily desk result for ${bars.length} days, ${money(total.net)} in all.`, days: bars }));
+      mountChart(root.querySelector("#desk-bars-box"), (width) => barsChart({ uid: "deskbars", width, title: "Daily desk result", description: `Daily desk result for ${plural(bars.length, "day")}, ${money(total.net)} in all.`, days: bars }));
       mountChart(root.querySelector("#race-box"), (width) => curveChart({
         uid: "race", width, height: 300, title: "Cumulative result by account", description: "One line per account; the legend names each.", isolated,
         series: keys.map((key) => ({ key, label: labelOf(core, key), slot: entitySlot(core, key), points: lastDays(accountSeries(core, key), rangeDays(range)).map((p) => ({ date: p.date, value: p.value })) })).filter((s) => s.points.length > 0),

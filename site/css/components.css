@@ -666,7 +666,9 @@ a.cal-cell:hover { transform: translateY(-2px); border-color: var(--ink-2); text
 .cal-cell.tone-loss.level-2 { background: var(--loss-2); border-color: var(--loss-3); }
 .cal-cell.tone-loss.level-3 { background: var(--loss-3); border-color: var(--loss); }
 .cal-cell.tone-loss.level-4 { background: var(--loss-4); border-color: var(--loss); }
-.cal-day { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; }
+.cal-day { display: inline-flex; align-items: center; gap: 4px; font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; }
+.cal-flag { display: inline-flex; color: var(--ink); }
+.cal-flag .icon { width: 13px; height: 13px; }
 .cal-net { font-family: var(--font-mono); font-weight: 700; font-size: 0.8rem; }
 .cal-n { font-size: 0.68rem; color: var(--ink-2); }
 .cal-crown { position: absolute; top: 6px; right: 6px; }
@@ -685,6 +687,8 @@ a.cal-cell:hover { transform: translateY(-2px); border-color: var(--ink-2); text
 .cal-swatch.tone-loss.level-2 { background: var(--loss-2); }
 .cal-swatch.tone-loss.level-4 { background: var(--loss-4); }
 .cal-swatch.is-missing { margin-left: 14px; border: 1px dashed var(--axis); background: transparent; }
+.cal-legend-flag { display: inline-flex; margin-left: 14px; color: var(--ink); }
+.cal-legend-flag .icon { width: 14px; height: 14px; }
 
 @media (max-width: 599px) {
   .cal { border-spacing: 3px; min-width: 0; }
@@ -695,6 +699,7 @@ a.cal-cell:hover { transform: translateY(-2px); border-color: var(--ink-2); text
   .cal-net { font-size: 0.7rem; }
   .cal-crown { top: 3px; right: 3px; }
   .cal-crown .icon { width: 13px; height: 13px; }
+  .cal-flag .icon { width: 11px; height: 11px; }
 }
 
 /* ---------- day: files ---------- */
@@ -899,6 +904,16 @@ a.cal-cell:hover { transform: translateY(-2px); border-color: var(--ink-2); text
 .empty-title { font-size: var(--fs-xl); }
 .empty p { max-width: 54ch; color: var(--ink-2); }
 .empty-error { border-color: var(--loss-3); }
+.empty .chip-list { justify-content: center; margin-top: 8px; }
+
+/* A note above the content it qualifies: a partial day, an account that could not be proven complete. */
+.notice { display: flex; align-items: flex-start; gap: 12px; margin-bottom: var(--gap); padding: 14px 18px; border-radius: var(--r-md); background: var(--glass); border: 1px solid var(--glass-line); border-left: 4px solid var(--warn); }
+.notice > .icon { flex: none; width: 20px; height: 20px; margin-top: 2px; color: var(--warn); }
+.notice p { margin: 0; max-width: 74ch; color: var(--ink-2); }
+.notice .notice-title { margin-bottom: 4px; font-weight: 800; letter-spacing: -0.01em; color: var(--ink); }
+.notice-list { display: grid; gap: 8px; margin: 10px 0 0; padding: 0; list-style: none; }
+.notice-list li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; color: var(--ink-2); }
+.notice-list li > span { min-width: 0; overflow-wrap: anywhere; }
 
 .tip {
   position: fixed;

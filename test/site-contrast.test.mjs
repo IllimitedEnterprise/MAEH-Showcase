@@ -89,8 +89,7 @@ for (const [themeName, theme] of [["dark", dark], ["light", light]]) {
       const check = (label, fg, bg, minimum = 4.5) => { const value = ratio(fg, bg); if (value < minimum) problems.push(`${label}: ${value.toFixed(2)} < ${minimum}`); };
       for (const level of [1, 2, 3, 4]) {
         check(`ink on gain heat ${level}`, parse(theme.ink), over(parse(theme[`gain-${level}`]), card));
-        check(`ink on loss heat ${level}`, parse(theme.ink), over(parse(theme[`loss-${level}`]), card));
-      }
+        check(`ink on loss heat ${level}`, parse(theme.ink), over(parse(theme[`loss-${level}`]), card));      }
       check("gain on its badge", parse(theme.gain), over(parse(theme["gain-1"]), card));
       check("loss on its badge", parse(theme.loss), over(parse(theme["loss-1"]), card));
       const starTint = theme === dark ? [255, 201, 77, 0.14] : [255, 201, 77, 0.3];

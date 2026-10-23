@@ -33,7 +33,10 @@ const cleanEnv = () => Object.fromEntries(Object.entries(process.env).filter(([n
 /* Everything the layout probe asks a page, as one expression, so tests and humans ask the same thing. */
 export const PROBE = `(() => {
   const vw = document.documentElement.clientWidth;
-  const out = { scrollW: document.documentElement.scrollWidth, vw, past: [], selfOverflow: [], hero: null, errorCard: !!document.querySelector('.empty-error') };
+  const out = { scrollW: document.documentElement.scrollWidth, vw, past: [], selfOverflow: [], hero: null, errorCard: !!document.querySelector('.empty-error'), unnamed: [] };
+  const named = (el) => { if ((el.getAttribute('aria-label') ?? '').trim() || (el.getAttribute('title') ?? '').trim() || (el.textContent ?? '').trim()) return true; return (el.getAttribute('aria-labelledby') ?? '').split(/\\s+/).some((id) => (document.getElementById(id)?.textContent ?? '').trim()); };
+  for (const el of document.querySelectorAll('#view a[href], #view button, #view summary, #view input, #view select, #view textarea, #view [role="button"], #view [role="img"], #view [role="group"]')) if (!named(el)) out.unnamed.push(el.tagName.toLowerCase() + '.' + String(el.className).slice(0, 24));
+  out.unnamed = out.unnamed.slice(0, 5);
   const skip = (el) => el.closest('.table-wrap, .code, .tree, svg, .chart-box, .files-side, .tip, .cal-wrap');
   for (const el of document.querySelectorAll('#view *')) {
     if (skip(el)) continue;

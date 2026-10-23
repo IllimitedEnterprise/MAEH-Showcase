@@ -1,11 +1,11 @@
 /* One frozen day: the desk result, the Star, every account, the hours, and the day's files. */
 
 import { html } from "../lib/html.mjs";
-import { DASH, int, longDate, pct, profitFactor, shortDate, two, weekday } from "../lib/fmt.mjs";
+import { DASH, int, longDate, pct, plural, profitFactor, shortDate, two, weekday } from "../lib/fmt.mjs";
 import { dayFile, loadDay, loadFile } from "../lib/data.mjs";
 import { href } from "../lib/router.mjs";
 import { crownNote, dayEntry, neighbours } from "../lib/model.mjs";
-import { accountChip, badge, card, crownMark, emptyState, icon, kindBadge, moneyHtml, pageHead, standingsTable, statGrid, statTile, statusBadge, toneClass } from "../ui.mjs";
+import { accountChip, badge, card, crownMark, emptyState, icon, kindBadge, moneyHtml, notice, pageHead, standingsTable, statGrid, statTile, statusBadge, toneClass } from "../ui.mjs";
 import { hoursChart } from "../charts/draw.mjs";
 import { mountChart } from "../charts/interact.mjs";
 import { describeFile, treeHtml, treeModel, viewerHtml, visualFor } from "./files.mjs";
@@ -44,6 +44,37 @@ function starCard(core, stars, date) {
   return html`<aside class="star-card is-empty" aria-labelledby="star-h"><p class="eyebrow" id="star-h">Star of the day</p><p class="star-name">No Star</p><p class="muted">${crownNote(stars.rows)}</p></aside>`;
 }
 
+/* Under the entry-hours chart: how many of the day's closes were not opened on the day itself. */
+function openedNote(hours) {
+  const parts = [];
+  if (hours.earlier > 0) parts.push(`${int(hours.earlier)} had been opened before this day`);
+  if (hours.unknown > 0) parts.push(`${int(hours.unknown)} ${hours.unknown === 1 ? "has" : "have"} no recorded entry`);
+  if (parts.length) return `${parts.join("; ")}.`;
+  return hours.total === 0 ? "" : "Every one of them was opened on this day.";
+}
+
+/* The day the clocks change has 23 or 25 hours; the chart says why it has that many columns. */
+const clockNote = (hours) => (hours === 24 ? "" : html`<p class="muted small">${hours === 25
+  ? "The clocks went back on this day, so it lasted 25 hours and one clock hour happens twice. Trades opened in either of them are counted together in that hour's column."
+  : "The clocks went forward on this day, so it lasted 23 hours and one clock hour does not exist. The chart has no column for it."}</p>`);
+
+const CAUTION = {
+  partial: "Part of what this account closed could not be read completely, so its numbers may be missing trades.",
+  unverified: "The closes that were read do not add up to the account's balance, so its numbers cannot be proven complete.",
+};
+
+/* A day that was frozen partial, or holds an account that could not be proven complete, says so and why. */
+function caution(core, date, manifest) {
+  const flagged = Object.entries(manifest.accounts).filter(([, status]) => Object.hasOwn(CAUTION, status));
+  if (manifest.status === "complete" && flagged.length === 0) return "";
+  const summary = (key) => `accounts/${key}/summary.md`;
+  return notice({
+    id: "caution-h",
+    title: "Read these numbers with care",
+    body: html`<p>${flagged.length ? "Not every account could be proven complete when this day was frozen. Their numbers are published as they were found, and an account in this state is left out of the ranking for the day and for any week or month that includes it." : "This day was frozen as partial: some of its data could not be read completely."}</p>${flagged.length ? html`<ul class="notice-list" role="list">${flagged.map(([key, status]) => html`<li>${accountChip(core, key)} ${statusBadge(status)} <span>${CAUTION[status]}</span>${Object.hasOwn(manifest.files, summary(key)) ? html` <a href="${href({ name: "day", date, file: summary(key) })}">Its summary</a>` : ""}</li>`)}</ul>` : ""}`,
+  });
+}
+
 function netByAccount(core, desk) {
   const rows = [...desk.perAccount].filter((row) => row.n > 0).sort((a, b) => b.net - a.net);
   const top = Math.max(1, ...rows.map((row) => Math.abs(row.net)));
@@ -63,6 +94,7 @@ export function render(model, ctx) {
   const { date, entry, manifest, desk, stars, rel, known, file, visual, tree } = model;
   const { prev, next } = neighbours(core, date);
   const hours = manifest.window.hours;
+  const opened = openedNote(desk.hours);
 
   const nav = html`<nav class="day-nav" aria-label="Move between days">
 ${prev ? html`<a class="btn btn-ghost" href="${href({ name: "day", date: prev, file: null })}">${icon("chevron-left")} ${shortDate(prev)}</a>` : html`<span class="btn btn-ghost is-disabled" aria-disabled="true">${icon("chevron-left")} Earlier</span>`}
@@ -77,19 +109,19 @@ ${pageHead({
     badges: html`${statusBadge(manifest.status)}${kindBadge(manifest.kind)}${hours !== 24 ? badge(`${hours}-hour day`, "info", { icon: "info", title: "Daylight saving time changed the length of this day." }) : ""}${badge(`Rules ${manifest.rules}`, "neutral")}`,
     actions: nav,
   })}
-
+${caution(core, date, manifest)}
 <div class="hero card glass-strong">
 <div class="hero-main">
 <p class="eyebrow">Desk net for the day</p>
 <p class="hero-figure ${toneClass(desk.net)}"><span class="sr-only">Desk net: </span>${moneyHtml(desk.net)}<span class="unit">EUR</span></p>
-<p class="hero-caption">${desk.n === 0 ? "No trade closed on this day." : html`${int(desk.n)} closes · ${pct(desk.winRatePct)} won · profit factor ${profitFactor(desk.profitFactor, desk.grossWin)}${desk.best ? html` · best <a href="${href({ name: "account", key: desk.best.key })}">${core.index.accounts.find((a) => a.key === desk.best.key)?.label ?? desk.best.key}</a>` : ""}`}</p>
+<p class="hero-caption">${desk.n === 0 ? "No trade closed on this day." : html`${plural(desk.n, "close")} · ${pct(desk.winRatePct)} won · profit factor ${profitFactor(desk.profitFactor, desk.grossWin)}${desk.best ? html` · best <a href="${href({ name: "account", key: desk.best.key })}">${core.index.accounts.find((a) => a.key === desk.best.key)?.label ?? desk.best.key}</a>` : ""}`}</p>
 </div>
 ${starCard(core, stars, date)}
 </div>
 
 <div class="grid-2">
 ${card({ id: "by-account", title: "Net by account", subtitle: "Only accounts that closed a trade are drawn.", body: netByAccount(core, desk) })}
-${card({ id: "day-hours", title: "When the trades were opened", subtitle: "Trades that closed on this day, by the hour they were opened.", body: html`<div class="chart-box" id="day-hours-box" tabindex="0" role="group" aria-label="Entry hours of the day's trades. Use the arrow keys to step through the hours."></div><p class="muted small">${int(desk.hours.earlier)} had been opened before this day${desk.hours.unknown ? `; ${int(desk.hours.unknown)} have no recorded entry` : ""}.</p>` })}
+${card({ id: "day-hours", title: "When the trades were opened", subtitle: "Trades that closed on this day, by the hour they were opened.", body: html`<div class="chart-box" id="day-hours-box" tabindex="0" role="group" aria-label="Entry hours of the day's trades. Use the arrow keys to step through the hours."></div>${opened ? html`<p class="muted small">${opened}</p>` : ""}${clockNote(hours)}` })}
 </div>
 
 ${card({ id: "standings", title: "Star standings", subtitle: "Ranked by score. The score blends return, profit factor, drawdown and win rate, then leans toward 50 when an account made few closes.", body: standingsTable(core, stars.rows, { crownKey: stars.crown?.key ?? null, caption: `Star standings for ${longDate(date)}` }), actions: html`<a class="btn btn-ghost" href="${href({ name: "stars", tab: "day" })}">How it works ${icon("arrow-right")}</a>` })}
@@ -109,7 +141,7 @@ ${card({ id: "standings", title: "Star standings", subtitle: "Ranked by score. T
     title: longDate(date),
     markup,
     after(root) {
-      mountChart(root.querySelector("#day-hours-box"), (width) => hoursChart({ uid: "dayhours", width, title: "Entry hours", description: `${int(desk.n)} trades closed on ${longDate(date)}, by the hour they were opened.`, buckets: desk.hours.buckets, slot: 0 }));
+      mountChart(root.querySelector("#day-hours-box"), (width) => hoursChart({ uid: "dayhours", width, title: "Entry hours", description: `${plural(desk.n, "trade")} closed on ${longDate(date)}, by the hour they were opened.`, buckets: desk.hours.buckets, slot: 0 }));
       visual?.mount?.(root);
     },
   };

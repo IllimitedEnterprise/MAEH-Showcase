@@ -1,7 +1,7 @@
 /* A month as a grid of days, each coloured by the desk's net for that day. */
 
 import { html } from "../lib/html.mjs";
-import { DASH, compact, int, longDate, mediumDate, monthTitle } from "../lib/fmt.mjs";
+import { DASH, compact, int, longDate, mediumDate, monthTitle, plural } from "../lib/fmt.mjs";
 import { href } from "../lib/router.mjs";
 import { isoWeek, labelOf, monthsAvailable, shiftMonth } from "../lib/model.mjs";
 import { badge, card, icon, moneyHtml, pageHead, statGrid, statTile } from "../ui.mjs";
@@ -21,7 +21,7 @@ const monthLink = (month) => href({ name: "calendar", month });
 function cellLabel(core, cell) {
   if (cell.state === "missing") return `${longDate(cell.date)}: not frozen`;
   const entry = cell.entry;
-  const parts = [cell.state === "quiet" ? "no closes" : `${moneyText(entry.value)}, ${int(entry.n)} closes`];
+  const parts = [cell.state === "quiet" ? "no closes" : `${moneyText(entry.value)}, ${plural(entry.n, "close")}`];
   if (entry.crown) parts.push(`Star ${labelOf(core, entry.crown)}`);
   if (entry.status !== "complete") parts.push(entry.status);
   return `${longDate(cell.date)}: ${parts.join(", ")}`;
@@ -37,8 +37,8 @@ function cellHtml(core, cell, latest) {
   }
   const entry = cell.entry;
   return html`<td><a class="cal-cell tone-${cell.tone} level-${cell.level}${cell.state === "quiet" ? " is-quiet" : ""}" href="${href({ name: "day", date: cell.date, file: null })}" aria-label="${cellLabel(core, cell)}">
-<span class="cal-day">${cell.day}</span>${entry.crown ? html`<span class="cal-crown" title="Star: ${labelOf(core, entry.crown)}">${icon("crown")}</span>` : ""}
-<span class="cal-net">${cell.state === "quiet" ? DASH : compact(entry.value)}</span><span class="cal-n">${cell.state === "quiet" ? "no closes" : `${int(entry.n)} closes`}</span>
+<span class="cal-day">${cell.day}${entry.status !== "complete" ? html`<span class="cal-flag" title="${entry.status === "partial" ? "A partial day: some accounts were not read completely" : entry.status}">${icon("warn")}</span>` : ""}</span>${entry.crown ? html`<span class="cal-crown" title="Star: ${labelOf(core, entry.crown)}">${icon("crown")}</span>` : ""}
+<span class="cal-net">${cell.state === "quiet" ? DASH : compact(entry.value)}</span><span class="cal-n">${cell.state === "quiet" ? "no closes" : plural(entry.n, "close")}</span>
 </a></td>`;
 }
 
@@ -89,7 +89,7 @@ ${card({
 <caption class="sr-only">${monthTitle(month)}: desk net per day</caption>
 <thead><tr>${["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].map((name) => html`<th scope="col"><abbr title="${name}">${name.slice(0, 3)}</abbr></th>`)}<th scope="col" class="cal-week-h">Week</th></tr></thead>
 <tbody>${rows}</tbody></table></div>
-<div class="cal-legend" aria-hidden="true"><span>Loss</span><span class="cal-swatch tone-loss level-4"></span><span class="cal-swatch tone-loss level-2"></span><span class="cal-swatch tone-flat level-0"></span><span class="cal-swatch tone-gain level-2"></span><span class="cal-swatch tone-gain level-4"></span><span>Gain</span><span class="cal-swatch is-missing"></span><span>Not frozen</span></div>`,
+<div class="cal-legend" aria-hidden="true"><span>Loss</span><span class="cal-swatch tone-loss level-4"></span><span class="cal-swatch tone-loss level-2"></span><span class="cal-swatch tone-flat level-0"></span><span class="cal-swatch tone-gain level-2"></span><span class="cal-swatch tone-gain level-4"></span><span>Gain</span><span class="cal-swatch is-missing"></span><span>Not frozen</span><span class="cal-legend-flag">${icon("warn")}</span><span>Partial or unverified</span></div>`,
   })}
 </div>`;
   return { title: monthTitle(month), markup, after() {} };

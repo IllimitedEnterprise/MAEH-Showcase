@@ -87,6 +87,10 @@ export const dayOfMonth = (date) => Number(date.slice(8, 10));
 export const hashShort = (hash, length = 12) => (hash ? String(hash).slice(0, length) : DASH);
 export const plural = (count, one_, many) => `${int(count)} ${count === 1 ? one_ : many ?? `${one_}s`}`;
 
+/* A sealed day records why an account was not ranked as a sentence ("needs 1 active days, has 0").
+ * The frozen text must never change, so the page words the count of one right when it shows it. */
+export const tidyReason = (text) => String(text).replace(/\b1 (active day|close|trade|day)s\b/g, "1 $1");
+
 /* "2026-W43" -> "Week 43"; "2026-10" -> "October 2026". */
 export function periodLabel(kind, period) {
   if (kind === "week") return `Week ${Number(period.slice(6))}${period.slice(0, 4) ? `, ${period.slice(0, 4)}` : ""}`;

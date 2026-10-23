@@ -6,7 +6,7 @@ import { html, raw } from "../lib/html.mjs";
 import { renderMarkdown } from "../lib/markdown.mjs";
 import { highlight } from "../lib/highlight.mjs";
 import { parseCsv } from "../lib/csv.mjs";
-import { DASH, bytes, int, longDate, one, pct, profitFactor, rMultiple, shortDate, two } from "../lib/fmt.mjs";
+import { DASH, bytes, int, longDate, one, pct, plural, profitFactor, rMultiple, shortDate, two } from "../lib/fmt.mjs";
 import { KIND_OF_PATH, dayFile } from "../lib/data.mjs";
 import { href } from "../lib/router.mjs";
 import { accountKeys, entitySlot, labelOf } from "../lib/model.mjs";
@@ -57,8 +57,8 @@ const safeJson = (text) => { try { return JSON.parse(text); } catch { return nul
 function hoursBlock(uid, hours, slot, noun = "trades") {
   return {
     markup: html`<div class="chart-box chart-inline" id="${uid}-box" tabindex="0" role="group" aria-label="Entry hours. Use the arrow keys to step through the hours."></div>
-<p class="muted small">${int(hours.total - hours.earlier - hours.unknown)} of ${int(hours.total)} trades were opened on this day${hours.earlier > 0 ? `; ${int(hours.earlier)} had been opened earlier` : ""}${hours.unknown > 0 ? `; ${int(hours.unknown)} have no recorded entry` : ""}.</p>`,
-    mount: (root) => mountChart(root.querySelector(`#${uid}-box`), (width) => hoursChart({ uid, width, title: "Entry hours", description: `${int(hours.total)} trades closed this day, by the hour they were opened.`, buckets: hours.buckets, slot, noun })),
+<p class="muted small">${int(hours.total - hours.earlier - hours.unknown)} of ${plural(hours.total, "trade")} ${hours.total === 1 ? "was" : "were"} opened on this day${hours.earlier > 0 ? `; ${int(hours.earlier)} had been opened earlier` : ""}${hours.unknown > 0 ? `; ${int(hours.unknown)} ${hours.unknown === 1 ? "has" : "have"} no recorded entry` : ""}.</p>`,
+    mount: (root) => mountChart(root.querySelector(`#${uid}-box`), (width) => hoursChart({ uid, width, title: "Entry hours", description: `${plural(hours.total, "trade")} closed this day, by the hour they were opened.`, buckets: hours.buckets, slot, noun })),
   };
 }
 
@@ -103,7 +103,7 @@ ${statTile({ label: "Closes", value: int(summary.n), hint: `${int(summary.wins)}
 ${statTile({ label: "Win rate", value: pct(summary.winRatePct), hint: summary.streaks ? `Runs: ${summary.streaks.maxWins} wins, ${summary.streaks.maxLosses} losses` : null })}
 ${statTile({ label: "Profit factor", value: profitFactor(summary.profitFactor, summary.grossWin), hint: `${two(summary.grossWin)} won vs ${two(summary.grossLoss)} lost` })}
 ${statTile({ label: "Deepest fall", value: two(summary.maxDrawdown), hint: `${pct(summary.ddPct, { digits: 2 })} of funding` })}
-${statTile({ label: "R", value: summary.r ? rMultiple(summary.r.sum) : DASH, hint: summary.r ? `over ${int(summary.r.count)} closes` : "not linked for this day" })}`)}
+${statTile({ label: "R", value: summary.r ? rMultiple(summary.r.sum) : DASH, hint: summary.r ? `over ${plural(summary.r.count, "close")}` : "not linked for this day" })}`)}
 ${pairs.length ? html`<h3 class="viewer-sub">Symbols</h3><ul class="bars-list" role="list">${pairs.map((pair) => html`<li><span class="bl-name">${pair.symbol}</span><span class="bl-n">${int(pair.n)}×</span><span class="bl-bar"><span class="bl-fill ${pair.net >= 0 ? "gain" : "loss"}" data-style="--w:${Math.max(2, Math.round((Math.abs(pair.net) / top) * 100))}%"></span></span><span class="bl-val">${moneyHtml(pair.net, { arrow: false })}</span></li>`)}</ul>` : ""}
 <p class="muted small">Balance check: ${summary.chain?.ok ? "the day's result reconciles with the account's balance." : summary.chain?.gap === null || summary.chain?.gap === undefined ? "not available for this day." : `a gap of ${two(summary.chain.gap)} EUR remains, so this day is not counted for Stars.`}</p>`,
     mount: null,
@@ -131,7 +131,7 @@ function tradesVisual(core, trades, key) {
   const losses = trades.filter((t) => t.net < 0).length;
   const net = Math.round(trades.reduce((sum, t) => sum + t.net, 0) * 100) / 100;
   return {
-    markup: html`<p class="viewer-note">${key ? accountChip(core, key, { label: labelOf(core, key) }) : ""} <span class="muted">${int(trades.length)} closes, in the order they closed. Times are not published.</span></p>
+    markup: html`<p class="viewer-note">${key ? accountChip(core, key, { label: labelOf(core, key) }) : ""} <span class="muted">${plural(trades.length, "close")}, in the order they closed. Times are not published.</span></p>
 ${statGrid(html`${statTile({ label: "Net", value: moneyHtml(net) })}${statTile({ label: "Won", value: int(wins) })}${statTile({ label: "Lost", value: int(losses) })}${statTile({ label: "Even", value: int(trades.length - wins - losses) })}`, "stats-4")}
 ${trades.length ? tradesTable(trades) : html`<p class="muted">No trades closed in this account on this day.</p>`}`,
     mount: null,

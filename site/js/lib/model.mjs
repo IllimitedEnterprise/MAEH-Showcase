@@ -63,7 +63,8 @@ export function seasonTotals(core) {
   const days = core.index.days;
   const active = days.filter((day) => day.n > 0);
   const best = active.reduce((top, day) => (top === null || day.net > top.net ? day : top), null);
-  const worst = active.reduce((low, day) => (low === null || day.net < low.net ? day : low), null);
+  /* With a single day of trades the best day is also the worst; there is nothing to compare it with. */
+  const worst = active.length < 2 ? null : active.reduce((low, day) => (low === null || day.net < low.net ? day : low), null);
   return {
     frozen: days.length,
     active: active.length,

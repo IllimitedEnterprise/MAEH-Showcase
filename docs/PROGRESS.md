@@ -65,19 +65,58 @@ page's real tags and attributes: nothing came out as markup. It found one defect
 `__proto__` reached `Object.prototype` instead of the not-found page), now fixed, along with impossible
 dates and months such as `2026-13`, which the router now rejects.
 
-## Verification, as of the sixteenth day
+## After it went public
+
+The repository was created private, pushed, and proved green on real runners (Ubuntu with Node 22 and 24,
+Windows with Node 24, and the data job) before the single irreversible step: making it public, enabling
+Pages, protecting `main` and running the Pages workflow. The live address was then opened and read, page by
+page, in a real browser. Doing so found, and fixed, defects that no test had:
+
+- **The hero figure ran into the Star card** between about 900 and 1100 px (`19dd27b`); it is now sized by
+  its own column with a container query.
+- **A GitHub Pages `503` could blank the page** (`3e5c2a5`): data requests now retry, and a script that fails
+  to arrive reloads the page once or twice and then says so in plain words instead of looping.
+- **The integrity facts card spilled on a phone** (`1a677f1`).
+- **Two path tests failed only on Linux** (`2642031`): path rules now follow the platform asked about, and the
+  runner image is pinned so a new default cannot change the result.
+
+## Rendered in states the real season does not have
+
+The real data only shows what has happened so far, so the dashboard was also drawn from small seasons built
+with the project's own freeze code (`test/helpers/fixture-site.mjs`): no day at all, one night, a gap, a day
+frozen partial, a day with an unverified account, a quiet day, the 25-hour day when the clocks go back and the
+23-hour day when they go forward. Every page of each was drawn and audited, then opened in headless Chrome at
+390, 768 and 1280 px in both themes, and screenshots were looked at. That found:
+
+- **An empty season crashed three pages** into a generic error card. It is now one explanation (when the
+  season begins, when the first night is, who takes part), and the footer no longer claims a freeze.
+- **Partial and unverified days were not explained anywhere.** The day page now says which account, why, and
+  links to that account's summary; the calendar marks the day.
+- **Counts of one read wrong** ("1 closes", "1 frozen days", "1 days with trades", "1 losses"). All the page's
+  wording now follows the count. Days that are already sealed keep their words, because their files are
+  hashed; the page rewords one sealed phrase ("needs 1 active days") as it shows it, and the generators were
+  fixed for the days still to come (the written reports under `stars/` were rebuilt).
+- **With one day of trades, the "worst day" was the best day.** It now says it needs a second day.
+- **The 25-hour and 23-hour days gave no hint** why the chart has the hours it has; a note says so, and a test
+  pins that the repeated hour is one column holding both halves and that no trade is lost.
+- **Accessibility and preferences** were checked in the browser: every control has an accessible name, and
+  reduced motion, reduced transparency and forced colours each change what they should.
+
+These states are tests (`test/site-states.test.mjs`, and the browser checks in `test/site-browser.test.mjs`),
+so they stay right.
+
+## Verification
 
 ```
 node scripts/verify.mjs --all       OK: 16 day(s)
 node scripts/rank.mjs --check       OK: 16 day(s); derived files match a rebuild
 node scripts/verify.mjs --history   OK: every blob in history scanned, none secret-shaped
 node --test "test/**/*.test.mjs"    all tests pass (also in a clean git environment)
+MAEH_BROWSER_TESTS=1 node --test test/site-browser.test.mjs    real-browser checks (opt-in, one CI leg)
 ```
 
-## Still to do before the site is public
+## Still to do
 
-1. A review of the whole tree for the things a second pair of eyes finds.
-2. Create the repository **private**, push, and prove CI green on real runners.
-3. Make it public, enable Pages, protect `main`, run the Pages workflow, and inspect the live address.
-4. Tag the chain tip.
-5. Wire the nightly job into Hermes from [`deploy/hermes/HERMES-SETUP.md`](../deploy/hermes/HERMES-SETUP.md).
+1. Wire the nightly job into Hermes from [`deploy/hermes/HERMES-SETUP.md`](../deploy/hermes/HERMES-SETUP.md).
+   Until then nothing freezes new days on its own; the first night to freeze is 2026-10-23, at 01:00 on the 24th.
+2. Firefox and Safari have not been tried; the browser checks use Chrome.

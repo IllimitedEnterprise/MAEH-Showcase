@@ -11,7 +11,7 @@ import { SITE_NAME } from "./lib/site.mjs";
 import { dayEntry } from "./lib/model.mjs";
 import { errorState } from "./ui.mjs";
 import { chainResultHtml } from "./views/integrity.mjs";
-import { views } from "./views/index.mjs";
+import { viewFor } from "./views/index.mjs";
 
 const state = { range: "all", isolated: null };
 let ctx = null;
@@ -41,7 +41,7 @@ function fillFooter() {
   if (!meta || !ctx) return;
   const tip = ctx.core.index.tip;
   const build = ctx.build;
-  mount(meta, html`<span>Latest freeze #${tip.seq}, ${mediumDate(tip.date)}</span>${build ? html`<span>Build <code>${build.build}</code></span>` : ""}`);
+  mount(meta, html`<span>${tip ? `Latest freeze #${tip.seq}, ${mediumDate(tip.date)}` : "Nothing frozen yet"}</span>${build ? html`<span>Build <code>${build.build}</code></span>` : ""}`);
 }
 
 const sameSpot = (a, b) => Boolean(a) && a.name === b.name && (a.name === "stars" || a.name === "calendar" || (a.name === "day" && a.date === b.date) || a.name === "season");
@@ -49,7 +49,7 @@ const sameSpot = (a, b) => Boolean(a) && a.name === b.name && (a.name === "stars
 async function navigate({ first = false, keepScroll = false } = {}) {
   const route = parseRoute(window.location.hash);
   const mine = ++token;
-  const view = views[route.name];
+  const view = viewFor(ctx.core, route);
   const target = $("#view");
   setNav(route);
   target.classList.add("is-loading");

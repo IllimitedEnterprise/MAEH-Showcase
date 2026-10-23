@@ -1,7 +1,7 @@
 /* One account: its whole record since it was funded. */
 
 import { html, raw } from "../lib/html.mjs";
-import { DASH, int, mediumDate, money, pct, periodLabel, profitFactor, two } from "../lib/fmt.mjs";
+import { DASH, int, mediumDate, money, pct, periodLabel, plural, profitFactor, two } from "../lib/fmt.mjs";
 import { href } from "../lib/router.mjs";
 import { renderMarkdown } from "../lib/markdown.mjs";
 import { accountSeries, dailyBars, entityClass, entitySlot, labelOf, tallyRow } from "../lib/model.mjs";
@@ -30,7 +30,7 @@ function symbols(report) {
   const row = (pair) => html`<li><span class="bl-name">${pair.symbol}</span><span class="bl-n">${int(pair.n)}×</span><span class="bl-bar"><span class="bl-fill ${pair.net >= 0 ? "gain" : "loss"}" data-style="--w:${Math.max(2, Math.round((Math.abs(pair.net) / top) * 100))}%"></span></span><span class="bl-val">${moneyHtml(pair.net, { arrow: false })}</span></li>`;
   const head = pairs.slice(0, 8);
   const rest = pairs.slice(8);
-  return html`<ul class="bars-list" role="list">${head.map(row)}</ul>${rest.length ? html`<details class="data-details"><summary>${rest.length} more symbols</summary><ul class="bars-list" role="list">${rest.map(row)}</ul></details>` : ""}`;
+  return html`<ul class="bars-list" role="list">${head.map(row)}</ul>${rest.length ? html`<details class="data-details"><summary>${plural(rest.length, "more symbol")}</summary><ul class="bars-list" role="list">${rest.map(row)}</ul></details>` : ""}`;
 }
 
 function awards(core, key) {
@@ -53,6 +53,8 @@ export function render(model) {
   const bars = dailyBars(core, key);
   const form = report.form.filter((row) => row.status !== "prefunding");
   const tally = tallyRow(core, key);
+  /* With a single day of trades the best day is also the worst; there is nothing to compare it with. */
+  const worst = t.activeDays > 1 ? report.worstDay : null;
 
   const curveTable = chartTable({
     caption: `${report.label}: result by day`,
@@ -91,7 +93,7 @@ export function render(model) {
 <p class="eyebrow"><a href="${href({ name: "season" })}">Season</a> · Account · funded ${mediumDate(report.fundedDate)}</p>
 <h1 class="page-title account-title" tabindex="-1"><span class="swatch swatch-lg" aria-hidden="true"></span>${report.label}</h1>
 <p class="hero-figure ${toneClass(t.net)}"><span class="sr-only">Net since funding: </span>${moneyHtml(t.net)}<span class="unit">EUR</span></p>
-<p class="hero-caption">${pct(t.retPct, { signed: true, digits: 2 })} on its funding · ${int(t.n)} closes over ${int(t.activeDays)} active ${t.activeDays === 1 ? "day" : "days"} of ${int(t.days)}</p>
+<p class="hero-caption">${pct(t.retPct, { signed: true, digits: 2 })} on its funding · ${plural(t.n, "close")} over ${plural(t.activeDays, "active day")} of ${int(t.days)}</p>
 </div>
 <aside class="star-card ${tally && tally.points > 0 ? "" : "is-empty"}" aria-labelledby="stars-h">
 <p class="eyebrow" id="stars-h">${crownMark()} Stars</p>
@@ -106,7 +108,7 @@ ${statTile({ label: "Win rate", value: pct(t.winRatePct), hint: `${int(t.wins)} 
 ${statTile({ label: "Profit factor", value: profitFactor(t.profitFactor, t.grossWin), hint: `${two(t.grossWin)} won vs ${two(t.grossLoss)} lost` })}
 ${statTile({ label: "Deepest fall", value: two(t.maxDrawdown), hint: `${pct(t.ddPct, { digits: 2 })} of funding` })}
 ${statTile({ label: "Best day", value: report.bestDay ? moneyHtml(report.bestDay.net) : DASH, hint: report.bestDay ? html`<a href="${href({ name: "day", date: report.bestDay.date, file: null })}">${mediumDate(report.bestDay.date)}</a>` : null })}
-${statTile({ label: "Worst day", value: report.worstDay ? moneyHtml(report.worstDay.net) : DASH, hint: report.worstDay ? html`<a href="${href({ name: "day", date: report.worstDay.date, file: null })}">${mediumDate(report.worstDay.date)}</a>` : null })}
+${statTile({ label: "Worst day", value: worst ? moneyHtml(worst.net) : DASH, hint: worst ? html`<a href="${href({ name: "day", date: worst.date, file: null })}">${mediumDate(worst.date)}</a>` : "needs a second day with trades" })}
 ${statTile({ label: "Longest runs", value: `${t.streaks.maxWins} / ${t.streaks.maxLosses}`, hint: "wins / losses in a row" })}`, "stats-6")}
 
 ${chartCard({ id: "acct-curve", title: "Result since funding", subtitle: describeCurve(report.label, series), table: curveTable, label: `${report.label}: cumulative result by day. Use the arrow keys to step through the days.` })}
@@ -129,10 +131,10 @@ ${markdown ? card({ id: "acct-report", title: "The written report", subtitle: `s
       mountChart(root.querySelector("#acct-curve-box"), (width) => curveChart({
         uid: "acctcurve", width, title: `${report.label}: cumulative result`, description: describeCurve(report.label, series),
         series: [{ key, label: report.label, slot, points: series.map((row) => ({ date: row.date, value: row.value })) }],
-        extraRows: (date) => { const row = series.find((r) => r.date === date); return row ? [{ label: `${int(row.n)} closes that day`, value: money(row.net) }] : []; },
+        extraRows: (date) => { const row = series.find((r) => r.date === date); return row ? [{ label: `${plural(row.n, "close")} that day`, value: money(row.net) }] : []; },
       }));
-      mountChart(root.querySelector("#acct-bars-box"), (width) => barsChart({ uid: "acctbars", width, title: `${report.label}: daily result`, description: `Daily result for ${bars.length} days.`, days: bars, slot }));
-      mountChart(root.querySelector("#acct-hours-box"), (width) => hoursChart({ uid: "accthours", width, title: "Entry hours", description: `${int(report.hours.total)} closed trades by the hour they were opened.`, buckets: report.hours.buckets, slot }));
+      mountChart(root.querySelector("#acct-bars-box"), (width) => barsChart({ uid: "acctbars", width, title: `${report.label}: daily result`, description: `Daily result for ${plural(bars.length, "day")}.`, days: bars, slot }));
+      mountChart(root.querySelector("#acct-hours-box"), (width) => hoursChart({ uid: "accthours", width, title: "Entry hours", description: `${plural(report.hours.total, "closed trade")} by the hour they were opened.`, buckets: report.hours.buckets, slot }));
     },
   };
 }

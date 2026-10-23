@@ -3,7 +3,7 @@
 
 import { html, join, raw } from "./lib/html.mjs";
 import { styleData } from "./lib/dom.mjs";
-import { DASH, KIND_LABEL, STATUS_LABEL, int, money, one, pct, profitFactor, tone, two } from "./lib/fmt.mjs";
+import { DASH, KIND_LABEL, STATUS_LABEL, int, money, one, pct, profitFactor, tidyReason, tone, two } from "./lib/fmt.mjs";
 import { href } from "./lib/router.mjs";
 import { entityClass, labelOf } from "./lib/model.mjs";
 import { clamp } from "./lib/scale.mjs";
@@ -106,6 +106,11 @@ export function emptyState(title, body, action = null) {
   return html`<div class="empty"><h2 class="empty-title">${title}</h2><p>${body}</p>${action ?? ""}</div>`;
 }
 
+/* A note that sits above the content it qualifies: not an error, but something to read first. */
+export function notice({ title, body, id }) {
+  return html`<aside class="notice" role="note" aria-labelledby="${id}">${icon("warn")}<div><p class="notice-title" id="${id}">${title}</p>${body}</div></aside>`;
+}
+
 export function errorState(error) {
   const detail = error?.path ? `The file ${error.path} could not be read.` : "Something went wrong while drawing this page.";
   return html`<div class="empty empty-error" role="alert"><h2 class="empty-title">This page could not load</h2><p>${detail}</p><p class="muted">The data is plain files in the repository; if the site was just updated, reloading in a minute usually fixes it.</p><p><button type="button" class="btn" data-action="reload">Reload</button> <a class="btn btn-ghost" href="#/">Back to the season</a></p></div>`;
@@ -128,7 +133,7 @@ export function standingsTable(core, rows, { crownKey = null, caption }) {
       { label: "Return", align: "right", className: "col-optional", cell: (row) => pct(row.retPct, { signed: true, digits: 2 }) },
       { label: "Closes", align: "right", className: "col-optional", cell: (row) => int(row.n) },
       { label: "Marks", className: "col-marks", cell: (row) => compMarks(row.comp) },
-      { label: "Note", className: "col-note", cell: (row) => (row.qualified ? "" : html`<span class="why">${row.why.join("; ")}</span>`) },
+      { label: "Note", className: "col-note", cell: (row) => (row.qualified ? "" : html`<span class="why">${row.why.map(tidyReason).join("; ")}</span>`) },
     ],
     rows,
   });

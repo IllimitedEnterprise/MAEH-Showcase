@@ -30,3 +30,6 @@ export function fsFetch(root = REPO) {
 
 /* No NaN, undefined or [object Object] may ever reach a page. */
 export const LEAKS = /\bNaN\b|\bundefined\b|\[object |\bnull\b(?![-\w])|Infinity/;
+
+/* A count of one takes the singular: "1 closes", "1 frozen days" and "1 closed trades" are bugs. */
+export const GRAMMAR = /(?<![\w.,])1 (?:(?:frozen|active|demo|closed|more) )?(?:closes|days|accounts|trades|files|symbols|weeks|months|pairs)\b/;
