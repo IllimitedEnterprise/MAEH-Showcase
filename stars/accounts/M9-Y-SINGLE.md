@@ -11,9 +11,9 @@ Account report as of 2026-10-22. Rules v1. Demo account; not advice.
 | Profit factor | 93.6 |
 | Return on funding | 0.987% |
 | Max drawdown | 5.33 (0.011%) |
-| Longest runs | 3 wins, 1 losses |
+| Longest runs | 3 wins, 1 loss |
 | Best day | 2026-10-22 (+493.58) |
-| Worst day | 2026-10-22 (+493.58) |
+| Worst day | - |
 
 ## Crowns
 

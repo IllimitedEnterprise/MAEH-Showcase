@@ -13,7 +13,7 @@ Account report as of 2026-10-22. Rules v1. Demo account; not advice.
 | Max drawdown | 216.04 (0.432%) |
 | Longest runs | 15 wins, 2 losses |
 | Best day | 2026-10-22 (+1908.27) |
-| Worst day | 2026-10-22 (+1908.27) |
+| Worst day | - |
 
 ## Crowns
 

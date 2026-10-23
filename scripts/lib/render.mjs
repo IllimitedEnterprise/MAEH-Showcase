@@ -13,6 +13,7 @@ import { withResult } from "./ingest.mjs";
 import { hoursRecord, stats } from "./metrics.mjs";
 import { project } from "./project.mjs";
 import { evaluatePeriod } from "./score.mjs";
+import { count } from "./words.mjs";
 
 const money = fromCents;
 const round = (value, places) => Number(value.toFixed(places));
@@ -120,8 +121,8 @@ function summaryMarkdown(summary) {
     `| Profit factor | ${summary.profitFactor !== null ? summary.profitFactor : summary.grossWin > 0 ? "no losses" : "n/a"} |`,
     `| Return on funding | ${summary.retPct === null ? "n/a" : `${summary.retPct > 0 ? "+" : ""}${summary.retPct}%`} |`,
     `| Max drawdown | ${summary.maxDrawdown.toFixed(2)}${summary.ddPct === null ? "" : ` (${summary.ddPct}% of funding)`} |`,
-    `| Longest runs | ${summary.streaks.maxWins} wins, ${summary.streaks.maxLosses} losses |`);
-  if (summary.r) lines.push(`| R | ${summary.r.sum > 0 ? "+" : ""}${summary.r.sum} over ${summary.r.count} closes |`);
+    `| Longest runs | ${count(summary.streaks.maxWins, "win")}, ${count(summary.streaks.maxLosses, "loss", "losses")} |`);
+  if (summary.r) lines.push(`| R | ${summary.r.sum > 0 ? "+" : ""}${summary.r.sum} over ${count(summary.r.count, "close")} |`);
   if (summary.best) lines.push("", `Best close: ${summary.best.symbol} ${signed(summary.best.net)}. Worst close: ${summary.worst ? `${summary.worst.symbol} ${signed(summary.worst.net)}` : "none"}.`);
   if (summary.pairs.length) lines.push("", `Pairs: ${summary.pairs.map((pair) => `${pair.symbol} x${pair.n} (${signed(pair.net)})`).join(", ")}.`);
   return `${lines.join("\n")}\n`;
@@ -190,7 +191,7 @@ function readme({ date, kind, desk, starsDoc, days }) {
   const clean = desk.accounts.ok + desk.accounts.quiet;
   const total = days.length - desk.accounts.prefunding;
   lines.push(`Status: **${desk.status}** - ${clean} of ${total} accounts read cleanly. Frozen as ${kind}.`, "");
-  lines.push(`Desk net **${signed(desk.net)}** over ${desk.n} closes. Win rate ${percent(desk.winRatePct)}. Profit factor ${desk.profitFactor ?? (desk.grossWin > 0 ? "no losses" : "n/a")}.`, "");
+  lines.push(`Desk net **${signed(desk.net)}** over ${count(desk.n, "close")}. Win rate ${percent(desk.winRatePct)}. Profit factor ${desk.profitFactor ?? (desk.grossWin > 0 ? "no losses" : "n/a")}.`, "");
   lines.push(starsDoc.crown
     ? `Star of the day: **${starsDoc.crown.label}** (score ${starsDoc.crown.score}, net ${signed(starsDoc.crown.net)}).`
     : "No Star of the day: no qualified account finished with a positive net result.", "");
