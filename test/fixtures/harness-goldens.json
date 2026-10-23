@@ -1,0 +1,8631 @@
+{
+ "note": "Generated once from the harness's own buildAccountProgress over deterministic synthetic inputs. Tickets are synthetic. Static: nothing here is read from the harness at test time.",
+ "generatedOn": "2026-10-23",
+ "harnessCommit": "339b68b",
+ "cases": [
+  {
+   "name": "empty",
+   "expected": {
+    "statistics": {
+     "wins": 0,
+     "losses": 0,
+     "breakevens": 0,
+     "winRatePct": null,
+     "grossWin": 0,
+     "grossLoss": 0,
+     "profitFactor": null,
+     "biggestWin": null,
+     "biggestLoss": null,
+     "streaks": {
+      "maxWins": 0,
+      "maxLosses": 0,
+      "currentType": null,
+      "currentCount": 0
+     },
+     "pairs": [],
+     "mostTradedPair": null
+    },
+    "maxDrawdown": 0,
+    "moneyTotal": 0,
+    "rTotal": 0,
+    "rCount": 0,
+    "trades": []
+   }
+  },
+  {
+   "name": "mixed-60",
+   "expected": {
+    "statistics": {
+     "wins": 31,
+     "losses": 24,
+     "breakevens": 5,
+     "winRatePct": 56.4,
+     "grossWin": 1907.69,
+     "grossLoss": 1058.65,
+     "profitFactor": 1.8,
+     "biggestWin": {
+      "symbol": "USDJPY",
+      "at": 1760111940,
+      "atIso": "2025-10-10T15:59:00.000Z",
+      "netMoney": 120.37,
+      "r": null,
+      "native": {
+       "unit": "pips",
+       "value": 0.73
+      }
+     },
+     "biggestLoss": {
+      "symbol": "EURUSD",
+      "at": 1760058965,
+      "atIso": "2025-10-10T01:16:05.000Z",
+      "netMoney": -88.03,
+      "r": null,
+      "native": {
+       "unit": "pips",
+       "value": -97.2
+      }
+     },
+     "streaks": {
+      "maxWins": 4,
+      "maxLosses": 4,
+      "currentType": "win",
+      "currentCount": 1
+     },
+     "pairs": [
+      {
+       "symbol": "AUDUSD",
+       "count": 13,
+       "sharePct": 21.7
+      },
+      {
+       "symbol": "GBPUSD",
+       "count": 11,
+       "sharePct": 18.3
+      },
+      {
+       "symbol": "GBPJPY",
+       "count": 10,
+       "sharePct": 16.7
+      },
+      {
+       "symbol": "XAUUSD",
+       "count": 10,
+       "sharePct": 16.7
+      },
+      {
+       "symbol": "EURUSD",
+       "count": 9,
+       "sharePct": 15
+      },
+      {
+       "symbol": "USDJPY",
+       "count": 7,
+       "sharePct": 11.7
+      }
+     ],
+     "mostTradedPair": {
+      "symbol": "AUDUSD",
+      "count": 13,
+      "sharePct": 21.7
+     }
+    },
+    "maxDrawdown": 250.24,
+    "moneyTotal": 849.04,
+    "rTotal": 0,
+    "rCount": 0,
+    "trades": [
+     {
+      "ticket": 9000000,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760000064,
+      "openedAt": 1759997223,
+      "netMoney": 33.79,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000001,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760004702,
+      "openedAt": 1759998679,
+      "netMoney": 9.54,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000002,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760008544,
+      "openedAt": 1760005787,
+      "netMoney": -77.11,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000003,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760012272,
+      "openedAt": 1760005759,
+      "netMoney": 86.98,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000004,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760014715,
+      "openedAt": 1759997773,
+      "netMoney": 26.25,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000005,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760019675,
+      "openedAt": 1760006004,
+      "netMoney": -24.98,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000006,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760022964,
+      "openedAt": 1760015903,
+      "netMoney": 43.29,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000007,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760025792,
+      "openedAt": 1760022118,
+      "netMoney": -58.58,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000008,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760029603,
+      "openedAt": 1760019458,
+      "netMoney": 58.2,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000009,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760032401,
+      "openedAt": 1760026669,
+      "netMoney": -36.63,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000010,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760036256,
+      "openedAt": 1760029262,
+      "netMoney": 88.8,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000011,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760040510,
+      "openedAt": 1760036258,
+      "netMoney": -3.76,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000012,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760044370,
+      "openedAt": 1760029465,
+      "netMoney": 15.6,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000013,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760046834,
+      "openedAt": 1760037292,
+      "netMoney": -5.03,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000014,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760050961,
+      "openedAt": 1760041567,
+      "netMoney": 111.84,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000015,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760054425,
+      "openedAt": 1760050190,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000016,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760058965,
+      "openedAt": 1760054344,
+      "netMoney": -88.03,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000017,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760061551,
+      "openedAt": 1760043926,
+      "netMoney": 44.16,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000018,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760065597,
+      "openedAt": 1760058417,
+      "netMoney": -3.38,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000019,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760068957,
+      "openedAt": 1760063860,
+      "netMoney": 104.06,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000020,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760073570,
+      "openedAt": 1760070598,
+      "netMoney": 34.57,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000021,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760075892,
+      "openedAt": 1760061045,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000022,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760080497,
+      "openedAt": 1760078684,
+      "netMoney": -85.38,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000023,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760084338,
+      "openedAt": 1760075268,
+      "netMoney": -14.49,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000024,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760086833,
+      "openedAt": 1760077331,
+      "netMoney": -54.19,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000025,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760091719,
+      "openedAt": 1760079907,
+      "netMoney": -37.85,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000026,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760094749,
+      "openedAt": 1760092745,
+      "netMoney": 74.9,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000027,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760097830,
+      "openedAt": 1760097162,
+      "netMoney": -4.77,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000028,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760101425,
+      "openedAt": 1760099967,
+      "netMoney": -12.93,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000029,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760105376,
+      "openedAt": 1760100863,
+      "netMoney": 83.89,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000030,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760108653,
+      "openedAt": 1760089973,
+      "netMoney": -53.22,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000031,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760111940,
+      "openedAt": 1760097481,
+      "netMoney": 120.37,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000032,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760115304,
+      "openedAt": 1760103432,
+      "netMoney": 20.31,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000033,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760120477,
+      "openedAt": 1760100253,
+      "netMoney": 62.65,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000034,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760122695,
+      "openedAt": 1760106505,
+      "netMoney": 39.53,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000035,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760127462,
+      "openedAt": 1760118372,
+      "netMoney": -46.81,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000036,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760131084,
+      "openedAt": 1760127184,
+      "netMoney": 65.82,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000037,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760134687,
+      "openedAt": 1760125030,
+      "netMoney": 75.02,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000038,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760138426,
+      "openedAt": 1760118657,
+      "netMoney": 18.47,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000039,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760141121,
+      "openedAt": 1760133561,
+      "netMoney": 84.62,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000040,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760145733,
+      "openedAt": 1760144324,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000041,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760149138,
+      "openedAt": 1760143784,
+      "netMoney": 31.48,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000042,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760152260,
+      "openedAt": 1760133013,
+      "netMoney": 96.54,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000043,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760155037,
+      "openedAt": 1760151295,
+      "netMoney": 38.94,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000044,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760160168,
+      "openedAt": 1760144359,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000045,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760162637,
+      "openedAt": 1760156298,
+      "netMoney": -64.12,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000046,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760167378,
+      "openedAt": 1760158366,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000047,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760170993,
+      "openedAt": 1760155834,
+      "netMoney": 78.38,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000048,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760174571,
+      "openedAt": 1760165429,
+      "netMoney": 20.18,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000049,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760177698,
+      "openedAt": 1760168684,
+      "netMoney": 108.44,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000050,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760180550,
+      "openedAt": 1760176332,
+      "netMoney": -87.28,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000051,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760183927,
+      "openedAt": 1760181921,
+      "netMoney": -83.01,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000052,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760187414,
+      "openedAt": 1760173997,
+      "netMoney": 73.65,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000053,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760191386,
+      "openedAt": 1760187077,
+      "netMoney": -10.34,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000054,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760196065,
+      "openedAt": 1760182814,
+      "netMoney": -30.22,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000055,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760198025,
+      "openedAt": 1760185602,
+      "netMoney": 63.5,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000056,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760201798,
+      "openedAt": 1760195602,
+      "netMoney": -43.81,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000057,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760206968,
+      "openedAt": 1760205887,
+      "netMoney": -82.22,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000058,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760209182,
+      "openedAt": 1760202748,
+      "netMoney": -50.51,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000059,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760213232,
+      "openedAt": 1760199214,
+      "netMoney": 93.92,
+      "r": null,
+      "selftest": false
+     }
+    ]
+   }
+  },
+  {
+   "name": "all-wins",
+   "expected": {
+    "statistics": {
+     "wins": 10,
+     "losses": 0,
+     "breakevens": 0,
+     "winRatePct": 100,
+     "grossWin": 192.06,
+     "grossLoss": 0,
+     "profitFactor": null,
+     "biggestWin": {
+      "symbol": "USDJPY",
+      "at": 1760026576,
+      "atIso": "2025-10-09T16:16:16.000Z",
+      "netMoney": 99.99,
+      "r": null,
+      "native": {
+       "unit": "pips",
+       "value": 0.01
+      }
+     },
+     "biggestLoss": null,
+     "streaks": {
+      "maxWins": 10,
+      "maxLosses": 0,
+      "currentType": "win",
+      "currentCount": 10
+     },
+     "pairs": [
+      {
+       "symbol": "AUDUSD",
+       "count": 3,
+       "sharePct": 30
+      },
+      {
+       "symbol": "USDJPY",
+       "count": 3,
+       "sharePct": 30
+      },
+      {
+       "symbol": "XAUUSD",
+       "count": 2,
+       "sharePct": 20
+      },
+      {
+       "symbol": "EURUSD",
+       "count": 1,
+       "sharePct": 10
+      },
+      {
+       "symbol": "GBPJPY",
+       "count": 1,
+       "sharePct": 10
+      }
+     ],
+     "mostTradedPair": {
+      "symbol": "AUDUSD",
+      "count": 3,
+      "sharePct": 30
+     }
+    },
+    "maxDrawdown": 0,
+    "moneyTotal": 192.06,
+    "rTotal": 0,
+    "rCount": 0,
+    "trades": [
+     {
+      "ticket": 9000000,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760000357,
+      "openedAt": 1759990853,
+      "netMoney": 10,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000001,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760003943,
+      "openedAt": 1759987579,
+      "netMoney": 0.1,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000002,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760008642,
+      "openedAt": 1760001987,
+      "netMoney": 55.55,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000003,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760010867,
+      "openedAt": 1760003045,
+      "netMoney": 3.3,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000004,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760015424,
+      "openedAt": 1760000408,
+      "netMoney": 7.77,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000005,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760019080,
+      "openedAt": 1760016259,
+      "netMoney": 1,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000006,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760023119,
+      "openedAt": 1760009684,
+      "netMoney": 2,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000007,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760026576,
+      "openedAt": 1760023062,
+      "netMoney": 99.99,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000008,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760029118,
+      "openedAt": 1760024204,
+      "netMoney": 0.01,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000009,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760033637,
+      "openedAt": 1760026288,
+      "netMoney": 12.34,
+      "r": null,
+      "selftest": false
+     }
+    ]
+   }
+  },
+  {
+   "name": "all-losses",
+   "expected": {
+    "statistics": {
+     "wins": 0,
+     "losses": 5,
+     "breakevens": 0,
+     "winRatePct": 0,
+     "grossWin": 0,
+     "grossLoss": 76.72,
+     "profitFactor": 0,
+     "biggestWin": null,
+     "biggestLoss": {
+      "symbol": "EURUSD",
+      "at": 1760007253,
+      "atIso": "2025-10-09T10:54:13.000Z",
+      "netMoney": -55.55,
+      "r": null,
+      "native": {
+       "unit": "pips",
+       "value": -64.6
+      }
+     },
+     "streaks": {
+      "maxWins": 0,
+      "maxLosses": 5,
+      "currentType": "loss",
+      "currentCount": 5
+     },
+     "pairs": [
+      {
+       "symbol": "AUDUSD",
+       "count": 1,
+       "sharePct": 20
+      },
+      {
+       "symbol": "EURUSD",
+       "count": 1,
+       "sharePct": 20
+      },
+      {
+       "symbol": "GBPJPY",
+       "count": 1,
+       "sharePct": 20
+      },
+      {
+       "symbol": "GBPUSD",
+       "count": 1,
+       "sharePct": 20
+      },
+      {
+       "symbol": "XAUUSD",
+       "count": 1,
+       "sharePct": 20
+      }
+     ],
+     "mostTradedPair": {
+      "symbol": "AUDUSD",
+      "count": 1,
+      "sharePct": 20
+     }
+    },
+    "maxDrawdown": 76.72,
+    "moneyTotal": -76.72,
+    "rTotal": 0,
+    "rCount": 0,
+    "trades": [
+     {
+      "ticket": 9000000,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760001589,
+      "openedAt": 1759991345,
+      "netMoney": -10,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000001,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760004859,
+      "openedAt": 1759987346,
+      "netMoney": -0.1,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000002,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760007253,
+      "openedAt": 1759991277,
+      "netMoney": -55.55,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000003,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760012111,
+      "openedAt": 1759993033,
+      "netMoney": -3.3,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000004,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760014703,
+      "openedAt": 1760004346,
+      "netMoney": -7.77,
+      "r": null,
+      "selftest": false
+     }
+    ]
+   }
+  },
+  {
+   "name": "breakeven-runs",
+   "expected": {
+    "statistics": {
+     "wins": 9,
+     "losses": 4,
+     "breakevens": 5,
+     "winRatePct": 69.2,
+     "grossWin": 41,
+     "grossLoss": 10,
+     "profitFactor": 4.1,
+     "biggestWin": {
+      "symbol": "GBPJPY",
+      "at": 1760001022,
+      "atIso": "2025-10-09T09:10:22.000Z",
+      "netMoney": 5,
+      "r": null,
+      "native": {
+       "unit": "pips",
+       "value": 0.82
+      }
+     },
+     "biggestLoss": {
+      "symbol": "GBPJPY",
+      "at": 1760022753,
+      "atIso": "2025-10-09T15:12:33.000Z",
+      "netMoney": -3,
+      "r": null,
+      "native": {
+       "unit": "pips",
+       "value": -0.55
+      }
+     },
+     "streaks": {
+      "maxWins": 4,
+      "maxLosses": 2,
+      "currentType": "loss",
+      "currentCount": 1
+     },
+     "pairs": [
+      {
+       "symbol": "EURUSD",
+       "count": 5,
+       "sharePct": 27.8
+      },
+      {
+       "symbol": "GBPJPY",
+       "count": 5,
+       "sharePct": 27.8
+      },
+      {
+       "symbol": "GBPUSD",
+       "count": 3,
+       "sharePct": 16.7
+      },
+      {
+       "symbol": "AUDUSD",
+       "count": 2,
+       "sharePct": 11.1
+      },
+      {
+       "symbol": "USDJPY",
+       "count": 2,
+       "sharePct": 11.1
+      },
+      {
+       "symbol": "XAUUSD",
+       "count": 1,
+       "sharePct": 5.6
+      }
+     ],
+     "mostTradedPair": {
+      "symbol": "EURUSD",
+      "count": 5,
+      "sharePct": 27.8
+     }
+    },
+    "maxDrawdown": 9,
+    "moneyTotal": 31,
+    "rTotal": 0,
+    "rCount": 0,
+    "trades": [
+     {
+      "ticket": 9000000,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760001022,
+      "openedAt": 1759990038,
+      "netMoney": 5,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000001,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760003974,
+      "openedAt": 1759985312,
+      "netMoney": 5,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000002,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760007664,
+      "openedAt": 1760002366,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000003,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760011555,
+      "openedAt": 1760001220,
+      "netMoney": 5,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000004,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760015782,
+      "openedAt": 1760010083,
+      "netMoney": 5,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000005,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760018948,
+      "openedAt": 1760011871,
+      "netMoney": 5,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000006,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760022753,
+      "openedAt": 1760003458,
+      "netMoney": -3,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000007,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760026950,
+      "openedAt": 1760023472,
+      "netMoney": -3,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000008,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760029811,
+      "openedAt": 1760010504,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000009,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760033511,
+      "openedAt": 1760023581,
+      "netMoney": -3,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000010,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760036247,
+      "openedAt": 1760035078,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000011,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760039625,
+      "openedAt": 1760027797,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000012,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760044219,
+      "openedAt": 1760024776,
+      "netMoney": 4,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000013,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760047523,
+      "openedAt": 1760040602,
+      "netMoney": 4,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000014,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760051618,
+      "openedAt": 1760040157,
+      "netMoney": 4,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000015,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760054073,
+      "openedAt": 1760034837,
+      "netMoney": 4,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000016,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760057736,
+      "openedAt": 1760039088,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000017,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760062512,
+      "openedAt": 1760049479,
+      "netMoney": -1,
+      "r": null,
+      "selftest": false
+     }
+    ]
+   }
+  },
+  {
+   "name": "drawdown-shape",
+   "expected": {
+    "statistics": {
+     "wins": 5,
+     "losses": 7,
+     "breakevens": 0,
+     "winRatePct": 41.7,
+     "grossWin": 88,
+     "grossLoss": 93,
+     "profitFactor": 0.95,
+     "biggestWin": {
+      "symbol": "EURUSD",
+      "at": 1760033449,
+      "atIso": "2025-10-09T18:10:49.000Z",
+      "netMoney": 40,
+      "r": null,
+      "native": {
+       "unit": "pips",
+       "value": 97
+      }
+     },
+     "biggestLoss": {
+      "symbol": "XAUUSD",
+      "at": 1760036247,
+      "atIso": "2025-10-09T18:57:27.000Z",
+      "netMoney": -60,
+      "r": null,
+      "native": {
+       "unit": "price-points",
+       "value": -0.001
+      }
+     },
+     "streaks": {
+      "maxWins": 1,
+      "maxLosses": 3,
+      "currentType": "win",
+      "currentCount": 1
+     },
+     "pairs": [
+      {
+       "symbol": "XAUUSD",
+       "count": 4,
+       "sharePct": 33.3
+      },
+      {
+       "symbol": "EURUSD",
+       "count": 3,
+       "sharePct": 25
+      },
+      {
+       "symbol": "GBPJPY",
+       "count": 2,
+       "sharePct": 16.7
+      },
+      {
+       "symbol": "USDJPY",
+       "count": 2,
+       "sharePct": 16.7
+      },
+      {
+       "symbol": "AUDUSD",
+       "count": 1,
+       "sharePct": 8.3
+      }
+     ],
+     "mostTradedPair": {
+      "symbol": "XAUUSD",
+      "count": 4,
+      "sharePct": 33.3
+     }
+    },
+    "maxDrawdown": 60,
+    "moneyTotal": -5,
+    "rTotal": 0,
+    "rCount": 0,
+    "trades": [
+     {
+      "ticket": 9000000,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760000454,
+      "openedAt": 1759988729,
+      "netMoney": 10,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000001,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760004890,
+      "openedAt": 1759985079,
+      "netMoney": -5,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000002,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760008075,
+      "openedAt": 1759993455,
+      "netMoney": -5,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000003,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760010999,
+      "openedAt": 1760009408,
+      "netMoney": 3,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000004,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760015061,
+      "openedAt": 1760014021,
+      "netMoney": -20,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000005,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760018882,
+      "openedAt": 1759999677,
+      "netMoney": 30,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000006,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760022570,
+      "openedAt": 1760020344,
+      "netMoney": -1,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000007,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760026237,
+      "openedAt": 1760022777,
+      "netMoney": -1,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000008,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760030157,
+      "openedAt": 1760013654,
+      "netMoney": -1,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000009,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760033449,
+      "openedAt": 1760032228,
+      "netMoney": 40,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000010,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760036247,
+      "openedAt": 1760031971,
+      "netMoney": -60,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000011,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760041017,
+      "openedAt": 1760035773,
+      "netMoney": 5,
+      "r": null,
+      "selftest": false
+     }
+    ]
+   }
+  },
+  {
+   "name": "stress-400",
+   "expected": {
+    "statistics": {
+     "wins": 182,
+     "losses": 155,
+     "breakevens": 63,
+     "winRatePct": 54,
+     "grossWin": 10930,
+     "grossLoss": 6821.47,
+     "profitFactor": 1.6,
+     "biggestWin": {
+      "symbol": "XAUUSD",
+      "at": 1761149464,
+      "atIso": "2025-10-22T16:11:04.000Z",
+      "netMoney": 120.55,
+      "r": null,
+      "native": {
+       "unit": "price-points",
+       "value": 0.008
+      }
+     },
+     "biggestLoss": {
+      "symbol": "USDJPY",
+      "at": 1760295705,
+      "atIso": "2025-10-12T19:01:45.000Z",
+      "netMoney": -90.81,
+      "r": null,
+      "native": {
+       "unit": "pips",
+       "value": -0.87
+      }
+     },
+     "streaks": {
+      "maxWins": 7,
+      "maxLosses": 8,
+      "currentType": "win",
+      "currentCount": 2
+     },
+     "pairs": [
+      {
+       "symbol": "GBPUSD",
+       "count": 86,
+       "sharePct": 21.5
+      },
+      {
+       "symbol": "USDJPY",
+       "count": 69,
+       "sharePct": 17.3
+      },
+      {
+       "symbol": "XAUUSD",
+       "count": 65,
+       "sharePct": 16.3
+      },
+      {
+       "symbol": "EURUSD",
+       "count": 63,
+       "sharePct": 15.8
+      },
+      {
+       "symbol": "GBPJPY",
+       "count": 60,
+       "sharePct": 15
+      },
+      {
+       "symbol": "AUDUSD",
+       "count": 57,
+       "sharePct": 14.2
+      }
+     ],
+     "mostTradedPair": {
+      "symbol": "GBPUSD",
+      "count": 86,
+      "sharePct": 21.5
+     }
+    },
+    "maxDrawdown": 722.29,
+    "moneyTotal": 4108.53,
+    "rTotal": 0,
+    "rCount": 0,
+    "trades": [
+     {
+      "ticket": 9000000,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760001314,
+      "openedAt": 1759983667,
+      "netMoney": 11.39,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000001,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760005015,
+      "openedAt": 1759996013,
+      "netMoney": 98.74,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000002,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760007763,
+      "openedAt": 1759998568,
+      "netMoney": 96.99,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000003,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760011951,
+      "openedAt": 1760000307,
+      "netMoney": -4.19,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000004,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760014691,
+      "openedAt": 1760010919,
+      "netMoney": 44.2,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000005,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760018354,
+      "openedAt": 1760002126,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000006,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760022908,
+      "openedAt": 1760017240,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000007,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760025934,
+      "openedAt": 1760022616,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000008,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760029326,
+      "openedAt": 1760015251,
+      "netMoney": 10.73,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000009,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760032947,
+      "openedAt": 1760021401,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000010,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760036240,
+      "openedAt": 1760027109,
+      "netMoney": -71.34,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000011,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760041355,
+      "openedAt": 1760028782,
+      "netMoney": -12.71,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000012,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760044914,
+      "openedAt": 1760043575,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000013,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760047269,
+      "openedAt": 1760046129,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000014,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760051338,
+      "openedAt": 1760047276,
+      "netMoney": 57.15,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000015,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760055258,
+      "openedAt": 1760052840,
+      "netMoney": -87.51,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000016,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760058857,
+      "openedAt": 1760045096,
+      "netMoney": -35.93,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000017,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760062154,
+      "openedAt": 1760058332,
+      "netMoney": -24.96,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000018,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760065243,
+      "openedAt": 1760057561,
+      "netMoney": -75.69,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000019,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760069849,
+      "openedAt": 1760066370,
+      "netMoney": 21.59,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000020,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760072205,
+      "openedAt": 1760058537,
+      "netMoney": 28.28,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000021,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760077203,
+      "openedAt": 1760064640,
+      "netMoney": 79.35,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000022,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760079411,
+      "openedAt": 1760067623,
+      "netMoney": -10.18,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000023,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760084464,
+      "openedAt": 1760070823,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000024,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760086718,
+      "openedAt": 1760074245,
+      "netMoney": -85.79,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000025,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760090014,
+      "openedAt": 1760087751,
+      "netMoney": 97.39,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000026,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760094578,
+      "openedAt": 1760093740,
+      "netMoney": 48.92,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000027,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760097549,
+      "openedAt": 1760093600,
+      "netMoney": 64.13,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000028,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760102031,
+      "openedAt": 1760100142,
+      "netMoney": -9.57,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000029,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760105409,
+      "openedAt": 1760101631,
+      "netMoney": -42.51,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000030,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760109333,
+      "openedAt": 1760103042,
+      "netMoney": -56.04,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000031,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760113249,
+      "openedAt": 1760102490,
+      "netMoney": 41.35,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000032,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760116542,
+      "openedAt": 1760115152,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000033,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760120488,
+      "openedAt": 1760116302,
+      "netMoney": -44.45,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000034,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760122409,
+      "openedAt": 1760105223,
+      "netMoney": 20.83,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000035,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760127415,
+      "openedAt": 1760113282,
+      "netMoney": 33.18,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000036,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760130200,
+      "openedAt": 1760128281,
+      "netMoney": -62.1,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000037,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760134089,
+      "openedAt": 1760120770,
+      "netMoney": -82.88,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000038,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760136884,
+      "openedAt": 1760129899,
+      "netMoney": 112.3,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000039,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760141620,
+      "openedAt": 1760139131,
+      "netMoney": -76.83,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000040,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760145621,
+      "openedAt": 1760139770,
+      "netMoney": 111.95,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000041,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760148258,
+      "openedAt": 1760131726,
+      "netMoney": -43.11,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000042,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760151893,
+      "openedAt": 1760135235,
+      "netMoney": 97.18,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000043,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760156587,
+      "openedAt": 1760153088,
+      "netMoney": 71.16,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000044,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760158499,
+      "openedAt": 1760155293,
+      "netMoney": -86.29,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000045,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760163538,
+      "openedAt": 1760149812,
+      "netMoney": 111.47,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000046,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760167057,
+      "openedAt": 1760153045,
+      "netMoney": 96.87,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000047,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760170233,
+      "openedAt": 1760168995,
+      "netMoney": -39.99,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000048,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760173345,
+      "openedAt": 1760169239,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000049,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760177064,
+      "openedAt": 1760172440,
+      "netMoney": -11.1,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000050,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760181619,
+      "openedAt": 1760172333,
+      "netMoney": 75.91,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000051,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760183921,
+      "openedAt": 1760164341,
+      "netMoney": 118.65,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000052,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760188729,
+      "openedAt": 1760181242,
+      "netMoney": 67.06,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000053,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760192476,
+      "openedAt": 1760172184,
+      "netMoney": 103.12,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000054,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760195495,
+      "openedAt": 1760188514,
+      "netMoney": -13.17,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000055,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760198930,
+      "openedAt": 1760187077,
+      "netMoney": -29.74,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000056,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760202439,
+      "openedAt": 1760196376,
+      "netMoney": 80.43,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000057,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760205641,
+      "openedAt": 1760204728,
+      "netMoney": -89.1,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000058,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760210443,
+      "openedAt": 1760196494,
+      "netMoney": -86.15,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000059,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760213930,
+      "openedAt": 1760197203,
+      "netMoney": 85.59,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000060,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760216747,
+      "openedAt": 1760209214,
+      "netMoney": -45.94,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000061,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760220188,
+      "openedAt": 1760200376,
+      "netMoney": 44.8,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000062,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760224130,
+      "openedAt": 1760220403,
+      "netMoney": -21.34,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000063,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760227077,
+      "openedAt": 1760206703,
+      "netMoney": 5.96,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000064,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760231198,
+      "openedAt": 1760219155,
+      "netMoney": 0.98,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000065,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760235257,
+      "openedAt": 1760221529,
+      "netMoney": -27.86,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000066,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760238730,
+      "openedAt": 1760221606,
+      "netMoney": -65.84,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000067,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760242717,
+      "openedAt": 1760237860,
+      "netMoney": 20.87,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000068,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760246299,
+      "openedAt": 1760240400,
+      "netMoney": 79.37,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000069,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760248659,
+      "openedAt": 1760229322,
+      "netMoney": 97.65,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000070,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760253418,
+      "openedAt": 1760234361,
+      "netMoney": 19.93,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000071,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760255701,
+      "openedAt": 1760252918,
+      "netMoney": 6.27,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000072,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760260129,
+      "openedAt": 1760248604,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000073,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760262850,
+      "openedAt": 1760246823,
+      "netMoney": 98.81,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000074,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760267788,
+      "openedAt": 1760256153,
+      "netMoney": 33.38,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000075,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760270916,
+      "openedAt": 1760252714,
+      "netMoney": -58.47,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000076,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760274059,
+      "openedAt": 1760260383,
+      "netMoney": 75.67,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000077,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760277515,
+      "openedAt": 1760262593,
+      "netMoney": -19.55,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000078,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760281777,
+      "openedAt": 1760278277,
+      "netMoney": 95.24,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000079,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760286027,
+      "openedAt": 1760272275,
+      "netMoney": 116.71,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000080,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760289584,
+      "openedAt": 1760287686,
+      "netMoney": 40.87,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000081,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760292167,
+      "openedAt": 1760278017,
+      "netMoney": 73.65,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000082,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760295705,
+      "openedAt": 1760280300,
+      "netMoney": -90.81,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000083,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760300429,
+      "openedAt": 1760296367,
+      "netMoney": 32.07,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000084,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760303468,
+      "openedAt": 1760294228,
+      "netMoney": -1.85,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000085,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760306158,
+      "openedAt": 1760285784,
+      "netMoney": 9.15,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000086,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760310427,
+      "openedAt": 1760308368,
+      "netMoney": 111.19,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000087,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760314417,
+      "openedAt": 1760299021,
+      "netMoney": -23.96,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000088,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760317401,
+      "openedAt": 1760310188,
+      "netMoney": -35.01,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000089,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760321500,
+      "openedAt": 1760304938,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000090,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760325792,
+      "openedAt": 1760315589,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000091,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760329362,
+      "openedAt": 1760317809,
+      "netMoney": -1.71,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000092,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760331571,
+      "openedAt": 1760314568,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000093,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760335904,
+      "openedAt": 1760319897,
+      "netMoney": 11.44,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000094,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760339224,
+      "openedAt": 1760326267,
+      "netMoney": 110.11,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000095,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760343506,
+      "openedAt": 1760337488,
+      "netMoney": -67.95,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000096,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760347341,
+      "openedAt": 1760330411,
+      "netMoney": -18.83,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000097,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760349425,
+      "openedAt": 1760346817,
+      "netMoney": 45.34,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000098,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760353411,
+      "openedAt": 1760333014,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000099,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760357763,
+      "openedAt": 1760337406,
+      "netMoney": 115.4,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000100,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760361051,
+      "openedAt": 1760354890,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000101,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760364923,
+      "openedAt": 1760347537,
+      "netMoney": 34.23,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000102,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760367901,
+      "openedAt": 1760361507,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000103,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760371740,
+      "openedAt": 1760362873,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000104,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760375921,
+      "openedAt": 1760371251,
+      "netMoney": -29.01,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000105,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760378737,
+      "openedAt": 1760367474,
+      "netMoney": -33.19,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000106,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760381622,
+      "openedAt": 1760369921,
+      "netMoney": 24.75,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000107,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760386162,
+      "openedAt": 1760376688,
+      "netMoney": 96.36,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000108,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760388871,
+      "openedAt": 1760379425,
+      "netMoney": 119.52,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000109,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760393970,
+      "openedAt": 1760389889,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000110,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760397303,
+      "openedAt": 1760394015,
+      "netMoney": -66.84,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000111,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760400915,
+      "openedAt": 1760400035,
+      "netMoney": -73.41,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000112,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760404458,
+      "openedAt": 1760397496,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000113,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760407789,
+      "openedAt": 1760397909,
+      "netMoney": 42.47,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000114,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760411615,
+      "openedAt": 1760401687,
+      "netMoney": -58.08,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000115,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760414103,
+      "openedAt": 1760408136,
+      "netMoney": -67.26,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000116,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760418312,
+      "openedAt": 1760416437,
+      "netMoney": 109.89,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000117,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760421332,
+      "openedAt": 1760412915,
+      "netMoney": 67.06,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000118,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760425223,
+      "openedAt": 1760411190,
+      "netMoney": -19.35,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000119,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760429312,
+      "openedAt": 1760427874,
+      "netMoney": 18.23,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000120,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760433103,
+      "openedAt": 1760431106,
+      "netMoney": -83.52,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000121,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760436232,
+      "openedAt": 1760433291,
+      "netMoney": -33.15,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000122,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760440349,
+      "openedAt": 1760420610,
+      "netMoney": 13.44,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000123,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760444089,
+      "openedAt": 1760430370,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000124,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760447604,
+      "openedAt": 1760428105,
+      "netMoney": -25.4,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000125,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760450355,
+      "openedAt": 1760446135,
+      "netMoney": 36.8,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000126,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760454846,
+      "openedAt": 1760437602,
+      "netMoney": -71.63,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000127,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760457435,
+      "openedAt": 1760456325,
+      "netMoney": -81.13,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000128,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760462078,
+      "openedAt": 1760453702,
+      "netMoney": -37.34,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000129,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760465347,
+      "openedAt": 1760464539,
+      "netMoney": 45.27,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000130,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760468989,
+      "openedAt": 1760465598,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000131,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760472911,
+      "openedAt": 1760470733,
+      "netMoney": -46.09,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000132,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760476571,
+      "openedAt": 1760458415,
+      "netMoney": -9.26,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000133,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760478991,
+      "openedAt": 1760463418,
+      "netMoney": -51.87,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000134,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760483378,
+      "openedAt": 1760464869,
+      "netMoney": -49.41,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000135,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760486551,
+      "openedAt": 1760476142,
+      "netMoney": 57.95,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000136,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760491118,
+      "openedAt": 1760487257,
+      "netMoney": 62.6,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000137,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760494786,
+      "openedAt": 1760486317,
+      "netMoney": -67.97,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000138,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760496946,
+      "openedAt": 1760477455,
+      "netMoney": -42.48,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000139,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760500993,
+      "openedAt": 1760485886,
+      "netMoney": 7.72,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000140,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760504264,
+      "openedAt": 1760492046,
+      "netMoney": 102.91,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000141,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760509128,
+      "openedAt": 1760503567,
+      "netMoney": 27.7,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000142,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760512290,
+      "openedAt": 1760503152,
+      "netMoney": 28.58,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000143,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760515424,
+      "openedAt": 1760506884,
+      "netMoney": 115.16,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000144,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760518899,
+      "openedAt": 1760514778,
+      "netMoney": -11.45,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000145,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760522911,
+      "openedAt": 1760508616,
+      "netMoney": 20.55,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000146,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760526709,
+      "openedAt": 1760524968,
+      "netMoney": 52.3,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000147,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760530926,
+      "openedAt": 1760511587,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000148,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760533800,
+      "openedAt": 1760520458,
+      "netMoney": -52.16,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000149,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760537934,
+      "openedAt": 1760532910,
+      "netMoney": -30.3,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000150,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760541353,
+      "openedAt": 1760536437,
+      "netMoney": 37.62,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000151,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760544254,
+      "openedAt": 1760532107,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000152,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760547888,
+      "openedAt": 1760546399,
+      "netMoney": 72.64,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000153,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760552528,
+      "openedAt": 1760533746,
+      "netMoney": 102.34,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000154,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760556089,
+      "openedAt": 1760538397,
+      "netMoney": 83.92,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000155,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760558805,
+      "openedAt": 1760545286,
+      "netMoney": -68.45,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000156,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760562800,
+      "openedAt": 1760553580,
+      "netMoney": 119.44,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000157,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760565388,
+      "openedAt": 1760564083,
+      "netMoney": -13.53,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000158,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760569875,
+      "openedAt": 1760565027,
+      "netMoney": 4.63,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000159,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760573216,
+      "openedAt": 1760569149,
+      "netMoney": -31,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000160,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760576570,
+      "openedAt": 1760572865,
+      "netMoney": 49.53,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000161,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760580425,
+      "openedAt": 1760577118,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000162,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760584851,
+      "openedAt": 1760577357,
+      "netMoney": 81.32,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000163,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760587167,
+      "openedAt": 1760570306,
+      "netMoney": -34.13,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000164,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760591824,
+      "openedAt": 1760589492,
+      "netMoney": -57.67,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000165,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760594623,
+      "openedAt": 1760587621,
+      "netMoney": 2,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000166,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760597940,
+      "openedAt": 1760588027,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000167,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760602796,
+      "openedAt": 1760600718,
+      "netMoney": 103.62,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000168,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760606090,
+      "openedAt": 1760593418,
+      "netMoney": 90.86,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000169,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760608513,
+      "openedAt": 1760589637,
+      "netMoney": 116.57,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000170,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760612357,
+      "openedAt": 1760609715,
+      "netMoney": -27.68,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000171,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760616330,
+      "openedAt": 1760598434,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000172,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760620214,
+      "openedAt": 1760611525,
+      "netMoney": -70.65,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000173,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760623261,
+      "openedAt": 1760614546,
+      "netMoney": 78.17,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000174,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760627644,
+      "openedAt": 1760625832,
+      "netMoney": -71.57,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000175,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760630527,
+      "openedAt": 1760622878,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000176,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760634292,
+      "openedAt": 1760631092,
+      "netMoney": 105.89,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000177,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760638760,
+      "openedAt": 1760623886,
+      "netMoney": 54.92,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000178,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760642398,
+      "openedAt": 1760637668,
+      "netMoney": -69.84,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000179,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760644730,
+      "openedAt": 1760641510,
+      "netMoney": 71.81,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000180,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760649122,
+      "openedAt": 1760632533,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000181,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760652749,
+      "openedAt": 1760636948,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000182,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760655333,
+      "openedAt": 1760653614,
+      "netMoney": -80.39,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000183,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760660330,
+      "openedAt": 1760645639,
+      "netMoney": -13.92,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000184,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760664154,
+      "openedAt": 1760662391,
+      "netMoney": 73.52,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000185,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760666328,
+      "openedAt": 1760658515,
+      "netMoney": -55.02,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000186,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760670035,
+      "openedAt": 1760665835,
+      "netMoney": 88.73,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000187,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760674655,
+      "openedAt": 1760668410,
+      "netMoney": 65.32,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000188,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760677360,
+      "openedAt": 1760671994,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000189,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760681500,
+      "openedAt": 1760672382,
+      "netMoney": -61.91,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000190,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760685442,
+      "openedAt": 1760676411,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000191,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760688449,
+      "openedAt": 1760670142,
+      "netMoney": -13.92,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000192,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760692423,
+      "openedAt": 1760687182,
+      "netMoney": 28.07,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000193,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760696115,
+      "openedAt": 1760686028,
+      "netMoney": 82.54,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000194,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760699034,
+      "openedAt": 1760679943,
+      "netMoney": 46.79,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000195,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760703588,
+      "openedAt": 1760687638,
+      "netMoney": 80.07,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000196,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760706226,
+      "openedAt": 1760702088,
+      "netMoney": 65.12,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000197,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760710630,
+      "openedAt": 1760700851,
+      "netMoney": 113.69,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000198,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760713730,
+      "openedAt": 1760693612,
+      "netMoney": 18.46,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000199,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760718189,
+      "openedAt": 1760714649,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000200,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760721660,
+      "openedAt": 1760701983,
+      "netMoney": 96.95,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000201,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760725086,
+      "openedAt": 1760706371,
+      "netMoney": -74.44,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000202,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760728707,
+      "openedAt": 1760714916,
+      "netMoney": -19.56,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000203,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760731742,
+      "openedAt": 1760726110,
+      "netMoney": -41.18,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000204,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760735347,
+      "openedAt": 1760724788,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000205,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760738890,
+      "openedAt": 1760730989,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000206,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760742919,
+      "openedAt": 1760735849,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000207,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760745852,
+      "openedAt": 1760731727,
+      "netMoney": 91.73,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000208,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760748870,
+      "openedAt": 1760729846,
+      "netMoney": 94.55,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000209,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760753416,
+      "openedAt": 1760749317,
+      "netMoney": -25.62,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000210,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760756945,
+      "openedAt": 1760739162,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000211,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760760595,
+      "openedAt": 1760758942,
+      "netMoney": -59.18,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000212,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760763919,
+      "openedAt": 1760754353,
+      "netMoney": 25.96,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000213,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760768412,
+      "openedAt": 1760757058,
+      "netMoney": -7.41,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000214,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760771332,
+      "openedAt": 1760754878,
+      "netMoney": -8.89,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000215,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760775480,
+      "openedAt": 1760774241,
+      "netMoney": -38.18,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000216,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760779345,
+      "openedAt": 1760775452,
+      "netMoney": 1.24,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000217,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760781226,
+      "openedAt": 1760762459,
+      "netMoney": 83.52,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000218,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760785062,
+      "openedAt": 1760780663,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000219,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760789632,
+      "openedAt": 1760777442,
+      "netMoney": 120.42,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000220,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760793737,
+      "openedAt": 1760781602,
+      "netMoney": -47.13,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000221,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760796040,
+      "openedAt": 1760781526,
+      "netMoney": -51,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000222,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760799528,
+      "openedAt": 1760791472,
+      "netMoney": -68.62,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000223,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760802985,
+      "openedAt": 1760790736,
+      "netMoney": 9.87,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000224,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760808097,
+      "openedAt": 1760787789,
+      "netMoney": -54.95,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000225,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760810719,
+      "openedAt": 1760804592,
+      "netMoney": -80.05,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000226,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760813623,
+      "openedAt": 1760804052,
+      "netMoney": -57.36,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000227,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760818481,
+      "openedAt": 1760802493,
+      "netMoney": -49.41,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000228,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760821439,
+      "openedAt": 1760807415,
+      "netMoney": -78.89,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000229,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760824470,
+      "openedAt": 1760817461,
+      "netMoney": -54.87,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000230,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760829742,
+      "openedAt": 1760816106,
+      "netMoney": 116.23,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000231,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760832692,
+      "openedAt": 1760813228,
+      "netMoney": 27.57,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000232,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760835497,
+      "openedAt": 1760817046,
+      "netMoney": -20.07,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000233,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760839318,
+      "openedAt": 1760830102,
+      "netMoney": 64.13,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000234,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760843692,
+      "openedAt": 1760833118,
+      "netMoney": -34.74,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000235,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760847247,
+      "openedAt": 1760836137,
+      "netMoney": 63.01,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000236,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760850542,
+      "openedAt": 1760836015,
+      "netMoney": -20.43,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000237,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760853589,
+      "openedAt": 1760851117,
+      "netMoney": -77.78,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000238,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760858122,
+      "openedAt": 1760842446,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000239,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760861474,
+      "openedAt": 1760852588,
+      "netMoney": 113.55,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000240,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760864917,
+      "openedAt": 1760853501,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000241,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760869007,
+      "openedAt": 1760849558,
+      "netMoney": 31.54,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000242,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760872661,
+      "openedAt": 1760867876,
+      "netMoney": -52.61,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000243,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760875054,
+      "openedAt": 1760871373,
+      "netMoney": -8.9,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000244,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760880078,
+      "openedAt": 1760864855,
+      "netMoney": -54.62,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000245,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760882608,
+      "openedAt": 1760875319,
+      "netMoney": -44.15,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000246,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760886767,
+      "openedAt": 1760880634,
+      "netMoney": 27.38,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000247,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760889890,
+      "openedAt": 1760880933,
+      "netMoney": -44.36,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000248,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760893158,
+      "openedAt": 1760879204,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000249,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760897661,
+      "openedAt": 1760892289,
+      "netMoney": 14.12,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000250,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760900893,
+      "openedAt": 1760892467,
+      "netMoney": -43.27,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000251,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760903982,
+      "openedAt": 1760887334,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000252,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760907632,
+      "openedAt": 1760888905,
+      "netMoney": -18.96,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000253,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760912203,
+      "openedAt": 1760902854,
+      "netMoney": -1.72,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000254,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760915962,
+      "openedAt": 1760910779,
+      "netMoney": 54.2,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000255,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760918924,
+      "openedAt": 1760899615,
+      "netMoney": -57.86,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000256,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760922499,
+      "openedAt": 1760921268,
+      "netMoney": -79.14,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000257,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760926591,
+      "openedAt": 1760925183,
+      "netMoney": 63.15,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000258,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760929356,
+      "openedAt": 1760914038,
+      "netMoney": 49.2,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000259,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760934002,
+      "openedAt": 1760915484,
+      "netMoney": 6.64,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000260,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760937780,
+      "openedAt": 1760930342,
+      "netMoney": 62.7,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000261,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760941255,
+      "openedAt": 1760934456,
+      "netMoney": 106.55,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000262,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760943617,
+      "openedAt": 1760923639,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000263,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760948519,
+      "openedAt": 1760929000,
+      "netMoney": -47.44,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000264,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760951123,
+      "openedAt": 1760943555,
+      "netMoney": 59.76,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000265,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760955478,
+      "openedAt": 1760938869,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000266,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760959063,
+      "openedAt": 1760943434,
+      "netMoney": 10.87,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000267,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760961515,
+      "openedAt": 1760949394,
+      "netMoney": 114.82,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000268,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760965326,
+      "openedAt": 1760963034,
+      "netMoney": 69.68,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000269,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760968979,
+      "openedAt": 1760952194,
+      "netMoney": 2.75,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000270,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760973708,
+      "openedAt": 1760970317,
+      "netMoney": -46.23,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000271,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760976118,
+      "openedAt": 1760958267,
+      "netMoney": -87.45,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000272,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760979764,
+      "openedAt": 1760974564,
+      "netMoney": -24.16,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000273,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760984511,
+      "openedAt": 1760981105,
+      "netMoney": -38.52,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000274,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760986907,
+      "openedAt": 1760972283,
+      "netMoney": -81.09,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000275,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760990490,
+      "openedAt": 1760987142,
+      "netMoney": -38.86,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000276,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760994541,
+      "openedAt": 1760993033,
+      "netMoney": 38.2,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000277,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760998871,
+      "openedAt": 1760994661,
+      "netMoney": 84.5,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000278,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1761001306,
+      "openedAt": 1760988539,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000279,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1761006000,
+      "openedAt": 1760985986,
+      "netMoney": -52.64,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000280,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1761009339,
+      "openedAt": 1761006319,
+      "netMoney": -84.93,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000281,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1761012924,
+      "openedAt": 1761006563,
+      "netMoney": 89.67,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000282,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1761015903,
+      "openedAt": 1761004485,
+      "netMoney": -5.65,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000283,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1761020199,
+      "openedAt": 1761010288,
+      "netMoney": -2.27,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000284,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1761024198,
+      "openedAt": 1761004857,
+      "netMoney": -46.93,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000285,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1761026439,
+      "openedAt": 1761015960,
+      "netMoney": -10.43,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000286,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1761030025,
+      "openedAt": 1761021350,
+      "netMoney": 69.53,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000287,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1761033417,
+      "openedAt": 1761015510,
+      "netMoney": 9.12,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000288,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1761038588,
+      "openedAt": 1761033255,
+      "netMoney": -1.37,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000289,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1761041135,
+      "openedAt": 1761030224,
+      "netMoney": 74,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000290,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1761045618,
+      "openedAt": 1761027898,
+      "netMoney": 20.38,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000291,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1761049159,
+      "openedAt": 1761039076,
+      "netMoney": 90.31,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000292,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1761052412,
+      "openedAt": 1761047581,
+      "netMoney": 24.13,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000293,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1761055743,
+      "openedAt": 1761053490,
+      "netMoney": 2.36,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000294,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1761058850,
+      "openedAt": 1761045193,
+      "netMoney": 32.96,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000295,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1761062932,
+      "openedAt": 1761044561,
+      "netMoney": -54.91,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000296,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1761067108,
+      "openedAt": 1761056506,
+      "netMoney": 86.71,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000297,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1761069281,
+      "openedAt": 1761057156,
+      "netMoney": -1.94,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000298,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1761073418,
+      "openedAt": 1761056827,
+      "netMoney": -37.79,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000299,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1761077266,
+      "openedAt": 1761065807,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000300,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1761081475,
+      "openedAt": 1761060921,
+      "netMoney": 24.18,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000301,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1761085334,
+      "openedAt": 1761065139,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000302,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1761088781,
+      "openedAt": 1761077806,
+      "netMoney": 60.69,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000303,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1761092559,
+      "openedAt": 1761080622,
+      "netMoney": -6.79,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000304,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1761094797,
+      "openedAt": 1761084596,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000305,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1761099358,
+      "openedAt": 1761095908,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000306,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1761102895,
+      "openedAt": 1761101708,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000307,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1761106133,
+      "openedAt": 1761086436,
+      "netMoney": 19.27,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000308,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1761110096,
+      "openedAt": 1761108726,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000309,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1761113987,
+      "openedAt": 1761106264,
+      "netMoney": 11.68,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000310,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1761116867,
+      "openedAt": 1761113499,
+      "netMoney": 5.87,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000311,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1761121296,
+      "openedAt": 1761119717,
+      "netMoney": 14.32,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000312,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1761124884,
+      "openedAt": 1761117719,
+      "netMoney": 72.39,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000313,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1761128358,
+      "openedAt": 1761122896,
+      "netMoney": 84.12,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000314,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1761130715,
+      "openedAt": 1761117204,
+      "netMoney": -4.95,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000315,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1761134027,
+      "openedAt": 1761126755,
+      "netMoney": 79.31,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000316,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1761138237,
+      "openedAt": 1761125061,
+      "netMoney": 48.9,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000317,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1761142844,
+      "openedAt": 1761123086,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000318,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1761146447,
+      "openedAt": 1761134654,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000319,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1761149464,
+      "openedAt": 1761138003,
+      "netMoney": 120.55,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000320,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1761152573,
+      "openedAt": 1761137634,
+      "netMoney": 63.97,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000321,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1761155805,
+      "openedAt": 1761141189,
+      "netMoney": 9.75,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000322,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1761160447,
+      "openedAt": 1761157282,
+      "netMoney": 17.15,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000323,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1761163409,
+      "openedAt": 1761161183,
+      "netMoney": 55.47,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000324,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1761166550,
+      "openedAt": 1761154899,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000325,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1761170346,
+      "openedAt": 1761158869,
+      "netMoney": -72.08,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000326,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1761173981,
+      "openedAt": 1761159798,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000327,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1761177246,
+      "openedAt": 1761161557,
+      "netMoney": 116.37,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000328,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1761182474,
+      "openedAt": 1761166347,
+      "netMoney": -34.19,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000329,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1761185893,
+      "openedAt": 1761173898,
+      "netMoney": 83.09,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000330,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1761189406,
+      "openedAt": 1761183307,
+      "netMoney": 61.7,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000331,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1761192269,
+      "openedAt": 1761175352,
+      "netMoney": 28.72,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000332,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1761195817,
+      "openedAt": 1761194805,
+      "netMoney": -0.53,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000333,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1761199776,
+      "openedAt": 1761192719,
+      "netMoney": -16.59,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000334,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1761202897,
+      "openedAt": 1761198705,
+      "netMoney": 30.02,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000335,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1761206825,
+      "openedAt": 1761199763,
+      "netMoney": 55.3,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000336,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1761210048,
+      "openedAt": 1761208805,
+      "netMoney": 110.25,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000337,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1761213427,
+      "openedAt": 1761201366,
+      "netMoney": 62.39,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000338,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1761217087,
+      "openedAt": 1761213728,
+      "netMoney": 38.85,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000339,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1761221665,
+      "openedAt": 1761204896,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000340,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1761224584,
+      "openedAt": 1761211824,
+      "netMoney": 84.71,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000341,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1761228791,
+      "openedAt": 1761220357,
+      "netMoney": 50.08,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000342,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1761232218,
+      "openedAt": 1761222270,
+      "netMoney": -1.48,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000343,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1761235517,
+      "openedAt": 1761229699,
+      "netMoney": -42.7,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000344,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1761239039,
+      "openedAt": 1761231575,
+      "netMoney": 115.92,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000345,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1761242153,
+      "openedAt": 1761230746,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000346,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1761246404,
+      "openedAt": 1761226563,
+      "netMoney": -80.16,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000347,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1761250660,
+      "openedAt": 1761241636,
+      "netMoney": 103.99,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000348,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1761254001,
+      "openedAt": 1761249570,
+      "netMoney": 33.04,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000349,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1761256966,
+      "openedAt": 1761252923,
+      "netMoney": 66.82,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000350,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1761261408,
+      "openedAt": 1761248609,
+      "netMoney": -32.73,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000351,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1761265116,
+      "openedAt": 1761256729,
+      "netMoney": -14.92,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000352,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1761268311,
+      "openedAt": 1761250938,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000353,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1761272504,
+      "openedAt": 1761255001,
+      "netMoney": 82.72,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000354,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1761275929,
+      "openedAt": 1761272892,
+      "netMoney": 95.38,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000355,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1761278458,
+      "openedAt": 1761266969,
+      "netMoney": 64.64,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000356,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1761281859,
+      "openedAt": 1761263512,
+      "netMoney": -60.57,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000357,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1761286123,
+      "openedAt": 1761268547,
+      "netMoney": 36.76,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000358,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1761289805,
+      "openedAt": 1761283736,
+      "netMoney": 3.17,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000359,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1761293223,
+      "openedAt": 1761277081,
+      "netMoney": 99.26,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000360,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1761296691,
+      "openedAt": 1761278974,
+      "netMoney": -66.68,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000361,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1761300131,
+      "openedAt": 1761282683,
+      "netMoney": -3.07,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000362,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1761304727,
+      "openedAt": 1761302940,
+      "netMoney": 27.44,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000363,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1761308343,
+      "openedAt": 1761307056,
+      "netMoney": -62.79,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000364,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1761311028,
+      "openedAt": 1761290663,
+      "netMoney": -57.4,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000365,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1761315277,
+      "openedAt": 1761298549,
+      "netMoney": -36.42,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000366,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1761317861,
+      "openedAt": 1761304058,
+      "netMoney": -82.63,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000367,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1761322589,
+      "openedAt": 1761318444,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000368,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1761326001,
+      "openedAt": 1761307850,
+      "netMoney": 3.37,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000369,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1761328845,
+      "openedAt": 1761322125,
+      "netMoney": 7.38,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000370,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1761333593,
+      "openedAt": 1761328564,
+      "netMoney": -36.98,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000371,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1761337219,
+      "openedAt": 1761333610,
+      "netMoney": -82.67,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000372,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1761339893,
+      "openedAt": 1761321267,
+      "netMoney": -48.34,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000373,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1761344568,
+      "openedAt": 1761342620,
+      "netMoney": -7.45,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000374,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1761346576,
+      "openedAt": 1761337058,
+      "netMoney": -75.13,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000375,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1761350652,
+      "openedAt": 1761340752,
+      "netMoney": -13.33,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000376,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1761355098,
+      "openedAt": 1761345108,
+      "netMoney": -17.78,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000377,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1761358350,
+      "openedAt": 1761340423,
+      "netMoney": -10.99,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000378,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1761360894,
+      "openedAt": 1761340347,
+      "netMoney": 78.66,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000379,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1761364942,
+      "openedAt": 1761344481,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000380,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1761368992,
+      "openedAt": 1761366686,
+      "netMoney": -20.69,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000381,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1761372001,
+      "openedAt": 1761356813,
+      "netMoney": 60.42,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000382,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1761376939,
+      "openedAt": 1761361984,
+      "netMoney": 54.31,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000383,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1761378874,
+      "openedAt": 1761376769,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000384,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1761382912,
+      "openedAt": 1761377952,
+      "netMoney": 19.45,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000385,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1761386386,
+      "openedAt": 1761376833,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000386,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1761391000,
+      "openedAt": 1761377275,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000387,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1761394662,
+      "openedAt": 1761375246,
+      "netMoney": -86.63,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000388,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1761396854,
+      "openedAt": 1761376485,
+      "netMoney": -77.63,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000389,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1761400983,
+      "openedAt": 1761392327,
+      "netMoney": -29.61,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000390,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1761405764,
+      "openedAt": 1761386938,
+      "netMoney": -25.76,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000391,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1761407675,
+      "openedAt": 1761398279,
+      "netMoney": -62.66,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000392,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1761411480,
+      "openedAt": 1761397533,
+      "netMoney": -68.68,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000393,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1761416261,
+      "openedAt": 1761401545,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000394,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1761419329,
+      "openedAt": 1761413035,
+      "netMoney": 104.49,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000395,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1761422358,
+      "openedAt": 1761419995,
+      "netMoney": 51.09,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000396,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1761426637,
+      "openedAt": 1761406325,
+      "netMoney": 12.26,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000397,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1761429859,
+      "openedAt": 1761416297,
+      "netMoney": -72.07,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000398,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1761434129,
+      "openedAt": 1761418560,
+      "netMoney": 95.83,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000399,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1761436778,
+      "openedAt": 1761427676,
+      "netMoney": 48.69,
+      "r": null,
+      "selftest": false
+     }
+    ]
+   }
+  },
+  {
+   "name": "decimals-stress",
+   "expected": {
+    "statistics": {
+     "wins": 124,
+     "losses": 126,
+     "breakevens": 0,
+     "winRatePct": 49.6,
+     "grossWin": 6146.94,
+     "grossLoss": 6358.19,
+     "profitFactor": 0.97,
+     "biggestWin": {
+      "symbol": "GBPUSD",
+      "at": 1760536576,
+      "atIso": "2025-10-15T13:56:16.000Z",
+      "netMoney": 99.31,
+      "r": null,
+      "native": {
+       "unit": "pips",
+       "value": 94.9
+      }
+     },
+     "biggestLoss": {
+      "symbol": "GBPJPY",
+      "at": 1760000746,
+      "atIso": "2025-10-09T09:05:46.000Z",
+      "netMoney": -100,
+      "r": null,
+      "native": {
+       "unit": "pips",
+       "value": -0.3
+      }
+     },
+     "streaks": {
+      "maxWins": 2,
+      "maxLosses": 2,
+      "currentType": "win",
+      "currentCount": 1
+     },
+     "pairs": [
+      {
+       "symbol": "GBPUSD",
+       "count": 49,
+       "sharePct": 19.6
+      },
+      {
+       "symbol": "EURUSD",
+       "count": 44,
+       "sharePct": 17.6
+      },
+      {
+       "symbol": "GBPJPY",
+       "count": 42,
+       "sharePct": 16.8
+      },
+      {
+       "symbol": "USDJPY",
+       "count": 39,
+       "sharePct": 15.6
+      },
+      {
+       "symbol": "XAUUSD",
+       "count": 39,
+       "sharePct": 15.6
+      },
+      {
+       "symbol": "AUDUSD",
+       "count": 37,
+       "sharePct": 14.8
+      }
+     ],
+     "mostTradedPair": {
+      "symbol": "GBPUSD",
+      "count": 49,
+      "sharePct": 19.6
+     }
+    },
+    "maxDrawdown": 397.7,
+    "moneyTotal": -211.25,
+    "rTotal": 0,
+    "rCount": 0,
+    "trades": [
+     {
+      "ticket": 9000000,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760000746,
+      "openedAt": 1759982358,
+      "netMoney": -100,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000001,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760004131,
+      "openedAt": 1759993980,
+      "netMoney": -20.81,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000002,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760008174,
+      "openedAt": 1759989657,
+      "netMoney": 58.38,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000003,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760011395,
+      "openedAt": 1760008494,
+      "netMoney": -62.43,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000004,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760015770,
+      "openedAt": 1759996656,
+      "netMoney": 16.76,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000005,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760018288,
+      "openedAt": 1760009932,
+      "netMoney": 95.95,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000006,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760022725,
+      "openedAt": 1760014126,
+      "netMoney": -24.86,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000007,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760025221,
+      "openedAt": 1760021921,
+      "netMoney": 54.33,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000008,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760029672,
+      "openedAt": 1760018400,
+      "netMoney": -66.48,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000009,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760032884,
+      "openedAt": 1760030047,
+      "netMoney": 12.71,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000010,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760036239,
+      "openedAt": 1760024002,
+      "netMoney": 91.9,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000011,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760040947,
+      "openedAt": 1760034958,
+      "netMoney": -28.91,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000012,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760043592,
+      "openedAt": 1760030931,
+      "netMoney": 50.28,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000013,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760046841,
+      "openedAt": 1760044121,
+      "netMoney": -70.53,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000014,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760050907,
+      "openedAt": 1760032112,
+      "netMoney": 8.66,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000015,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760055389,
+      "openedAt": 1760037061,
+      "netMoney": 87.85,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000016,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760058582,
+      "openedAt": 1760045364,
+      "netMoney": -32.96,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000017,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760061914,
+      "openedAt": 1760045783,
+      "netMoney": 46.23,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000018,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760066215,
+      "openedAt": 1760064508,
+      "netMoney": -74.58,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000019,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760069083,
+      "openedAt": 1760064684,
+      "netMoney": 4.61,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000020,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760073667,
+      "openedAt": 1760059464,
+      "netMoney": 83.8,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000021,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760075829,
+      "openedAt": 1760057381,
+      "netMoney": -37.01,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000022,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760079537,
+      "openedAt": 1760076250,
+      "netMoney": 42.18,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000023,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760083300,
+      "openedAt": 1760069430,
+      "netMoney": -78.63,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000024,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760088062,
+      "openedAt": 1760079440,
+      "netMoney": 0.56,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000025,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760091278,
+      "openedAt": 1760079492,
+      "netMoney": 79.75,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000026,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760094480,
+      "openedAt": 1760093700,
+      "netMoney": -41.06,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000027,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760098525,
+      "openedAt": 1760096412,
+      "netMoney": 38.13,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000028,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760102152,
+      "openedAt": 1760099241,
+      "netMoney": -82.68,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000029,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760104780,
+      "openedAt": 1760089039,
+      "netMoney": -3.49,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000030,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760108197,
+      "openedAt": 1760094526,
+      "netMoney": 75.7,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000031,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760112594,
+      "openedAt": 1760111020,
+      "netMoney": -45.11,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000032,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760115434,
+      "openedAt": 1760095568,
+      "netMoney": 34.08,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000033,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760120399,
+      "openedAt": 1760111015,
+      "netMoney": -86.73,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000034,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760122665,
+      "openedAt": 1760110430,
+      "netMoney": -7.54,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000035,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760127503,
+      "openedAt": 1760123117,
+      "netMoney": 71.65,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000036,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760130426,
+      "openedAt": 1760127606,
+      "netMoney": -49.16,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000037,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760134329,
+      "openedAt": 1760129827,
+      "netMoney": 30.03,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000038,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760138517,
+      "openedAt": 1760131171,
+      "netMoney": -90.78,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000039,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760141465,
+      "openedAt": 1760125229,
+      "netMoney": -11.59,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000040,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760144535,
+      "openedAt": 1760143462,
+      "netMoney": 67.6,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000041,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760147945,
+      "openedAt": 1760137854,
+      "netMoney": -53.21,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000042,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760151245,
+      "openedAt": 1760149717,
+      "netMoney": 25.98,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000043,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760155044,
+      "openedAt": 1760153557,
+      "netMoney": -94.83,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000044,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760158685,
+      "openedAt": 1760142109,
+      "netMoney": -15.64,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000045,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760162503,
+      "openedAt": 1760154407,
+      "netMoney": 63.55,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000046,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760165961,
+      "openedAt": 1760164699,
+      "netMoney": -57.26,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000047,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760169745,
+      "openedAt": 1760150203,
+      "netMoney": 21.93,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000048,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760173914,
+      "openedAt": 1760162060,
+      "netMoney": -98.88,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000049,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760177123,
+      "openedAt": 1760156718,
+      "netMoney": -19.69,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000050,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760180322,
+      "openedAt": 1760169783,
+      "netMoney": 59.5,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000051,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760184461,
+      "openedAt": 1760172002,
+      "netMoney": -61.31,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000052,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760188525,
+      "openedAt": 1760169334,
+      "netMoney": 17.88,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000053,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760191811,
+      "openedAt": 1760184720,
+      "netMoney": 97.07,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000054,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760195017,
+      "openedAt": 1760189350,
+      "netMoney": -23.74,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000055,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760198795,
+      "openedAt": 1760194971,
+      "netMoney": 55.45,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000056,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760203011,
+      "openedAt": 1760191954,
+      "netMoney": -65.36,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000057,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760206565,
+      "openedAt": 1760190661,
+      "netMoney": 13.83,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000058,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760210416,
+      "openedAt": 1760199091,
+      "netMoney": 93.02,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000059,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760212435,
+      "openedAt": 1760203572,
+      "netMoney": -27.79,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000060,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760216529,
+      "openedAt": 1760204741,
+      "netMoney": 51.4,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000061,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760220128,
+      "openedAt": 1760217114,
+      "netMoney": -69.41,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000062,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760223783,
+      "openedAt": 1760205919,
+      "netMoney": 9.78,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000063,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760227792,
+      "openedAt": 1760211981,
+      "netMoney": 88.97,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000064,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760231150,
+      "openedAt": 1760220632,
+      "netMoney": -31.84,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000065,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760235614,
+      "openedAt": 1760230613,
+      "netMoney": 47.35,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000066,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760237850,
+      "openedAt": 1760217983,
+      "netMoney": -73.46,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000067,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760241507,
+      "openedAt": 1760222978,
+      "netMoney": 5.73,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000068,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760245858,
+      "openedAt": 1760230503,
+      "netMoney": 84.92,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000069,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760249587,
+      "openedAt": 1760247487,
+      "netMoney": -35.89,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000070,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760253754,
+      "openedAt": 1760237802,
+      "netMoney": 43.3,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000071,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760257213,
+      "openedAt": 1760236841,
+      "netMoney": -77.51,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000072,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760260124,
+      "openedAt": 1760251311,
+      "netMoney": 1.68,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000073,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760264212,
+      "openedAt": 1760251522,
+      "netMoney": 80.87,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000074,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760268139,
+      "openedAt": 1760258314,
+      "netMoney": -39.94,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000075,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760270965,
+      "openedAt": 1760261658,
+      "netMoney": 39.25,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000076,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760274434,
+      "openedAt": 1760269942,
+      "netMoney": -81.56,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000077,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760277463,
+      "openedAt": 1760258424,
+      "netMoney": -2.37,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000078,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760281613,
+      "openedAt": 1760269027,
+      "netMoney": 76.82,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000079,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760285127,
+      "openedAt": 1760280851,
+      "netMoney": -43.99,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000080,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760289584,
+      "openedAt": 1760284578,
+      "netMoney": 35.2,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000081,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760292790,
+      "openedAt": 1760288495,
+      "netMoney": -85.61,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000082,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760296978,
+      "openedAt": 1760290696,
+      "netMoney": -6.42,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000083,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760300329,
+      "openedAt": 1760287512,
+      "netMoney": 72.77,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000084,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760302934,
+      "openedAt": 1760301771,
+      "netMoney": -48.04,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000085,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760306861,
+      "openedAt": 1760306132,
+      "netMoney": 31.15,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000086,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760310813,
+      "openedAt": 1760302096,
+      "netMoney": -89.66,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000087,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760314279,
+      "openedAt": 1760294348,
+      "netMoney": -10.47,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000088,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760317826,
+      "openedAt": 1760305429,
+      "netMoney": 68.72,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000089,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760322151,
+      "openedAt": 1760312926,
+      "netMoney": -52.09,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000090,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760325427,
+      "openedAt": 1760305929,
+      "netMoney": 27.1,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000091,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760329243,
+      "openedAt": 1760321046,
+      "netMoney": -93.71,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000092,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760331969,
+      "openedAt": 1760323524,
+      "netMoney": -14.52,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000093,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760335806,
+      "openedAt": 1760325781,
+      "netMoney": 64.67,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000094,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760339768,
+      "openedAt": 1760332419,
+      "netMoney": -56.14,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000095,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760342982,
+      "openedAt": 1760333839,
+      "netMoney": 23.05,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000096,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760346177,
+      "openedAt": 1760333900,
+      "netMoney": -97.76,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000097,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760349761,
+      "openedAt": 1760345042,
+      "netMoney": -18.57,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000098,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760353501,
+      "openedAt": 1760334842,
+      "netMoney": 60.62,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000099,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760357357,
+      "openedAt": 1760351499,
+      "netMoney": -60.19,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000100,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760361078,
+      "openedAt": 1760356800,
+      "netMoney": 19,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000101,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760364327,
+      "openedAt": 1760354839,
+      "netMoney": 98.19,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000102,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760368042,
+      "openedAt": 1760360754,
+      "netMoney": -22.62,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000103,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760372197,
+      "openedAt": 1760365335,
+      "netMoney": 56.57,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000104,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760376184,
+      "openedAt": 1760368509,
+      "netMoney": -64.24,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000105,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760378635,
+      "openedAt": 1760359037,
+      "netMoney": 14.95,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000106,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760382757,
+      "openedAt": 1760377132,
+      "netMoney": 94.14,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000107,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760386020,
+      "openedAt": 1760374795,
+      "netMoney": -26.67,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000108,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760389515,
+      "openedAt": 1760374298,
+      "netMoney": 52.52,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000109,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760392547,
+      "openedAt": 1760387408,
+      "netMoney": -68.29,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000110,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760397130,
+      "openedAt": 1760380242,
+      "netMoney": 10.9,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000111,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760400029,
+      "openedAt": 1760395097,
+      "netMoney": 90.09,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000112,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760403201,
+      "openedAt": 1760386095,
+      "netMoney": -30.72,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000113,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760408225,
+      "openedAt": 1760390207,
+      "netMoney": 48.47,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000114,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760411681,
+      "openedAt": 1760402998,
+      "netMoney": -72.34,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000115,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760414562,
+      "openedAt": 1760406064,
+      "netMoney": 6.85,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000116,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760418832,
+      "openedAt": 1760408655,
+      "netMoney": 86.04,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000117,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760422369,
+      "openedAt": 1760412166,
+      "netMoney": -34.77,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000118,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760425855,
+      "openedAt": 1760418049,
+      "netMoney": 44.42,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000119,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760428808,
+      "openedAt": 1760412967,
+      "netMoney": -76.39,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000120,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760433379,
+      "openedAt": 1760425053,
+      "netMoney": 2.8,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000121,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760436109,
+      "openedAt": 1760432896,
+      "netMoney": 81.99,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000122,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760440074,
+      "openedAt": 1760423776,
+      "netMoney": -38.82,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000123,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760443786,
+      "openedAt": 1760439392,
+      "netMoney": 40.37,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000124,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760446472,
+      "openedAt": 1760432282,
+      "netMoney": -80.44,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000125,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760450165,
+      "openedAt": 1760441303,
+      "netMoney": -1.25,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000126,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760454747,
+      "openedAt": 1760445998,
+      "netMoney": 77.94,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000127,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760457781,
+      "openedAt": 1760441307,
+      "netMoney": -42.87,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000128,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760461048,
+      "openedAt": 1760448971,
+      "netMoney": 36.32,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000129,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760465074,
+      "openedAt": 1760463823,
+      "netMoney": -84.49,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000130,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760468043,
+      "openedAt": 1760457187,
+      "netMoney": -5.3,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000131,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760472253,
+      "openedAt": 1760460354,
+      "netMoney": 73.89,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000132,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760475552,
+      "openedAt": 1760473404,
+      "netMoney": -46.92,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000133,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760479263,
+      "openedAt": 1760459256,
+      "netMoney": 32.27,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000134,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760483233,
+      "openedAt": 1760464009,
+      "netMoney": -88.54,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000135,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760486597,
+      "openedAt": 1760474740,
+      "netMoney": -9.35,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000136,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760491110,
+      "openedAt": 1760475268,
+      "netMoney": 69.84,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000137,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760494008,
+      "openedAt": 1760489226,
+      "netMoney": -50.97,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000138,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760498586,
+      "openedAt": 1760496163,
+      "netMoney": 28.22,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000139,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760501572,
+      "openedAt": 1760487552,
+      "netMoney": -92.59,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000140,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760504854,
+      "openedAt": 1760492295,
+      "netMoney": -13.4,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000141,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760509033,
+      "openedAt": 1760508047,
+      "netMoney": 65.79,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000142,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760512230,
+      "openedAt": 1760508940,
+      "netMoney": -55.02,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000143,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760515194,
+      "openedAt": 1760496281,
+      "netMoney": 24.17,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000144,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760520022,
+      "openedAt": 1760502433,
+      "netMoney": -96.64,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000145,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760523187,
+      "openedAt": 1760506399,
+      "netMoney": -17.45,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000146,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760525780,
+      "openedAt": 1760523291,
+      "netMoney": 61.74,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000147,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760530884,
+      "openedAt": 1760523352,
+      "netMoney": -59.07,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000148,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760533210,
+      "openedAt": 1760531918,
+      "netMoney": 20.12,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000149,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760536576,
+      "openedAt": 1760525224,
+      "netMoney": 99.31,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000150,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760541323,
+      "openedAt": 1760538016,
+      "netMoney": -21.5,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000151,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760543688,
+      "openedAt": 1760533479,
+      "netMoney": 57.69,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000152,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760547389,
+      "openedAt": 1760527862,
+      "netMoney": -63.12,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000153,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760552359,
+      "openedAt": 1760538027,
+      "netMoney": 16.07,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000154,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760555368,
+      "openedAt": 1760537649,
+      "netMoney": 95.26,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000155,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760558551,
+      "openedAt": 1760551821,
+      "netMoney": -25.55,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000156,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760562091,
+      "openedAt": 1760546759,
+      "netMoney": 53.64,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000157,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760565611,
+      "openedAt": 1760548995,
+      "netMoney": -67.17,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000158,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760569559,
+      "openedAt": 1760555875,
+      "netMoney": 12.02,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000159,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760574060,
+      "openedAt": 1760556355,
+      "netMoney": 91.21,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000160,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760576746,
+      "openedAt": 1760574894,
+      "netMoney": -29.6,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000161,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760580637,
+      "openedAt": 1760568325,
+      "netMoney": 49.59,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000162,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760583948,
+      "openedAt": 1760580243,
+      "netMoney": -71.22,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000163,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760587445,
+      "openedAt": 1760580264,
+      "netMoney": 7.97,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000164,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760590993,
+      "openedAt": 1760584470,
+      "netMoney": 87.16,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000165,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760595563,
+      "openedAt": 1760583566,
+      "netMoney": -33.65,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000166,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760598034,
+      "openedAt": 1760583402,
+      "netMoney": 45.54,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000167,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760602845,
+      "openedAt": 1760586336,
+      "netMoney": -75.27,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000168,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760605547,
+      "openedAt": 1760589049,
+      "netMoney": 3.92,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000169,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760609979,
+      "openedAt": 1760602775,
+      "netMoney": 83.11,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000170,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760612360,
+      "openedAt": 1760593644,
+      "netMoney": -37.7,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000171,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760615835,
+      "openedAt": 1760606368,
+      "netMoney": 41.49,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000172,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760620027,
+      "openedAt": 1760614700,
+      "netMoney": -79.32,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000173,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760623250,
+      "openedAt": 1760617081,
+      "netMoney": -0.13,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000174,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760627078,
+      "openedAt": 1760621165,
+      "netMoney": 79.06,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000175,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760630016,
+      "openedAt": 1760621395,
+      "netMoney": -41.75,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000176,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760634955,
+      "openedAt": 1760634066,
+      "netMoney": 37.44,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000177,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760637885,
+      "openedAt": 1760637066,
+      "netMoney": -83.37,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000178,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760641072,
+      "openedAt": 1760623628,
+      "netMoney": -4.18,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000179,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760644471,
+      "openedAt": 1760641527,
+      "netMoney": 75.01,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000180,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760648905,
+      "openedAt": 1760634338,
+      "netMoney": -45.8,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000181,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760651771,
+      "openedAt": 1760646755,
+      "netMoney": 33.39,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000182,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760655245,
+      "openedAt": 1760634655,
+      "netMoney": -87.42,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000183,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760658874,
+      "openedAt": 1760652190,
+      "netMoney": -8.23,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000184,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760663427,
+      "openedAt": 1760651743,
+      "netMoney": 70.96,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000185,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760666275,
+      "openedAt": 1760662226,
+      "netMoney": -49.85,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000186,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760670969,
+      "openedAt": 1760666211,
+      "netMoney": 29.34,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000187,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760674676,
+      "openedAt": 1760665192,
+      "netMoney": -91.47,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000188,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760677725,
+      "openedAt": 1760674546,
+      "netMoney": -12.28,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000189,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760681394,
+      "openedAt": 1760666017,
+      "netMoney": 66.91,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000190,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760685498,
+      "openedAt": 1760666723,
+      "netMoney": -53.9,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000191,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760688737,
+      "openedAt": 1760670997,
+      "netMoney": 25.29,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000192,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760692903,
+      "openedAt": 1760674368,
+      "netMoney": -95.52,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000193,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760695984,
+      "openedAt": 1760695366,
+      "netMoney": -16.33,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000194,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760698740,
+      "openedAt": 1760689287,
+      "netMoney": 62.86,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000195,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760702833,
+      "openedAt": 1760695603,
+      "netMoney": -57.95,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000196,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760705965,
+      "openedAt": 1760686003,
+      "netMoney": 21.24,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000197,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760709440,
+      "openedAt": 1760700644,
+      "netMoney": -99.57,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000198,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760713398,
+      "openedAt": 1760712015,
+      "netMoney": -20.38,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000199,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760716622,
+      "openedAt": 1760709650,
+      "netMoney": 58.81,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000200,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760720590,
+      "openedAt": 1760702763,
+      "netMoney": -62,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000201,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760724845,
+      "openedAt": 1760714014,
+      "netMoney": 17.19,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000202,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760728466,
+      "openedAt": 1760710466,
+      "netMoney": 96.38,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000203,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760731069,
+      "openedAt": 1760716724,
+      "netMoney": -24.43,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000204,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760735062,
+      "openedAt": 1760727731,
+      "netMoney": 54.76,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000205,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760739176,
+      "openedAt": 1760733897,
+      "netMoney": -66.05,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000206,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760742293,
+      "openedAt": 1760738415,
+      "netMoney": 13.14,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000207,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760746139,
+      "openedAt": 1760744681,
+      "netMoney": 92.33,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000208,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760750557,
+      "openedAt": 1760744119,
+      "netMoney": -28.48,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000209,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760752978,
+      "openedAt": 1760737650,
+      "netMoney": 50.71,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000210,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760756207,
+      "openedAt": 1760747912,
+      "netMoney": -70.1,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000211,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760759946,
+      "openedAt": 1760747184,
+      "netMoney": 9.09,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000212,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760763806,
+      "openedAt": 1760748746,
+      "netMoney": 88.28,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000213,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760767097,
+      "openedAt": 1760750061,
+      "netMoney": -32.53,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000214,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760771502,
+      "openedAt": 1760761475,
+      "netMoney": 46.66,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000215,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760774774,
+      "openedAt": 1760760852,
+      "netMoney": -74.15,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000216,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760778313,
+      "openedAt": 1760762832,
+      "netMoney": 5.04,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000217,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760782677,
+      "openedAt": 1760763849,
+      "netMoney": 84.23,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000218,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760785189,
+      "openedAt": 1760781779,
+      "netMoney": -36.58,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000219,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760790148,
+      "openedAt": 1760778217,
+      "netMoney": 42.61,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000220,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760792728,
+      "openedAt": 1760778688,
+      "netMoney": -78.2,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000221,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760797219,
+      "openedAt": 1760784986,
+      "netMoney": 0.99,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000222,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760800705,
+      "openedAt": 1760795061,
+      "netMoney": 80.18,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000223,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760804579,
+      "openedAt": 1760798098,
+      "netMoney": -40.63,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000224,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760807801,
+      "openedAt": 1760803742,
+      "netMoney": 38.56,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000225,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760811100,
+      "openedAt": 1760797217,
+      "netMoney": -82.25,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000226,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760813992,
+      "openedAt": 1760808648,
+      "netMoney": -3.06,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000227,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760818766,
+      "openedAt": 1760806192,
+      "netMoney": 76.13,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000228,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760821281,
+      "openedAt": 1760811257,
+      "netMoney": -44.68,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000229,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760824761,
+      "openedAt": 1760806015,
+      "netMoney": 34.51,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000230,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760828930,
+      "openedAt": 1760816582,
+      "netMoney": -86.3,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000231,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760833058,
+      "openedAt": 1760818661,
+      "netMoney": -7.11,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000232,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760835985,
+      "openedAt": 1760822973,
+      "netMoney": 72.08,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000233,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760839151,
+      "openedAt": 1760834524,
+      "netMoney": -48.73,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000234,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760842739,
+      "openedAt": 1760833969,
+      "netMoney": 30.46,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000235,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760846388,
+      "openedAt": 1760835956,
+      "netMoney": -90.35,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000236,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760850433,
+      "openedAt": 1760833056,
+      "netMoney": -11.16,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000237,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760854037,
+      "openedAt": 1760846131,
+      "netMoney": 68.03,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000238,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760857141,
+      "openedAt": 1760855835,
+      "netMoney": -52.78,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000239,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760862056,
+      "openedAt": 1760852229,
+      "netMoney": 26.41,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000240,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760864435,
+      "openedAt": 1760845764,
+      "netMoney": -94.4,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000241,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760867775,
+      "openedAt": 1760857247,
+      "netMoney": -15.21,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000242,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760872082,
+      "openedAt": 1760857294,
+      "netMoney": 63.98,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000243,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760875186,
+      "openedAt": 1760855172,
+      "netMoney": -56.83,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000244,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760879853,
+      "openedAt": 1760867024,
+      "netMoney": 22.36,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000245,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760882142,
+      "openedAt": 1760863891,
+      "netMoney": -98.45,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000246,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760887223,
+      "openedAt": 1760880235,
+      "netMoney": -19.26,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000247,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760890443,
+      "openedAt": 1760884871,
+      "netMoney": 59.93,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000248,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760892916,
+      "openedAt": 1760886315,
+      "netMoney": -60.88,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000249,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760897837,
+      "openedAt": 1760887704,
+      "netMoney": 18.31,
+      "r": null,
+      "selftest": false
+     }
+    ]
+   }
+  },
+  {
+   "name": "with-intents",
+   "expected": {
+    "statistics": {
+     "wins": 12,
+     "losses": 15,
+     "breakevens": 3,
+     "winRatePct": 44.4,
+     "grossWin": 942.53,
+     "grossLoss": 509.68,
+     "profitFactor": 1.85,
+     "biggestWin": {
+      "symbol": "GBPJPY",
+      "at": 1760001039,
+      "atIso": "2025-10-09T09:10:39.000Z",
+      "netMoney": 120.68,
+      "r": null,
+      "native": {
+       "unit": "pips",
+       "value": 0.03
+      }
+     },
+     "biggestLoss": {
+      "symbol": "AUDUSD",
+      "at": 1760022880,
+      "atIso": "2025-10-09T15:14:40.000Z",
+      "netMoney": -82.81,
+      "r": -3.312,
+      "native": {
+       "unit": "pips",
+       "value": -44.9
+      }
+     },
+     "streaks": {
+      "maxWins": 3,
+      "maxLosses": 6,
+      "currentType": "win",
+      "currentCount": 2
+     },
+     "pairs": [
+      {
+       "symbol": "USDJPY",
+       "count": 8,
+       "sharePct": 26.7
+      },
+      {
+       "symbol": "GBPUSD",
+       "count": 7,
+       "sharePct": 23.3
+      },
+      {
+       "symbol": "EURUSD",
+       "count": 5,
+       "sharePct": 16.7
+      },
+      {
+       "symbol": "AUDUSD",
+       "count": 4,
+       "sharePct": 13.3
+      },
+      {
+       "symbol": "XAUUSD",
+       "count": 4,
+       "sharePct": 13.3
+      },
+      {
+       "symbol": "GBPJPY",
+       "count": 2,
+       "sharePct": 6.7
+      }
+     ],
+     "mostTradedPair": {
+      "symbol": "USDJPY",
+      "count": 8,
+      "sharePct": 26.7
+     }
+    },
+    "maxDrawdown": 217.05,
+    "moneyTotal": 432.85,
+    "rTotal": 3.437,
+    "rCount": 25,
+    "trades": [
+     {
+      "ticket": 9000000,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760001039,
+      "openedAt": 1759995988,
+      "netMoney": 120.68,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000001,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760005172,
+      "openedAt": 1759984680,
+      "netMoney": -17.29,
+      "r": -0.576,
+      "selftest": false
+     },
+     {
+      "ticket": 9000002,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760008273,
+      "openedAt": 1760005858,
+      "netMoney": -25.65,
+      "r": -0.733,
+      "selftest": false
+     },
+     {
+      "ticket": 9000003,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760011790,
+      "openedAt": 1760007580,
+      "netMoney": 24.88,
+      "r": 0.995,
+      "selftest": false
+     },
+     {
+      "ticket": 9000004,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760014679,
+      "openedAt": 1759997492,
+      "netMoney": 113.42,
+      "r": 3.781,
+      "selftest": false
+     },
+     {
+      "ticket": 9000005,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760019493,
+      "openedAt": 1760001987,
+      "netMoney": 98.68,
+      "r": 2.819,
+      "selftest": false
+     },
+     {
+      "ticket": 9000006,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760022880,
+      "openedAt": 1760007908,
+      "netMoney": -82.81,
+      "r": -3.312,
+      "selftest": false
+     },
+     {
+      "ticket": 9000007,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760026005,
+      "openedAt": 1760022865,
+      "netMoney": 75.76,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000008,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760029188,
+      "openedAt": 1760023147,
+      "netMoney": 0,
+      "r": 0,
+      "selftest": false
+     },
+     {
+      "ticket": 9000009,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760034120,
+      "openedAt": 1760029667,
+      "netMoney": 0,
+      "r": 0,
+      "selftest": false
+     },
+     {
+      "ticket": 9000010,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760036232,
+      "openedAt": 1760016033,
+      "netMoney": -0.74,
+      "r": -0.025,
+      "selftest": false
+     },
+     {
+      "ticket": 9000011,
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "at": 1760040878,
+      "openedAt": 1760034145,
+      "netMoney": -56.39,
+      "r": -1.611,
+      "selftest": false
+     },
+     {
+      "ticket": 9000012,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760044287,
+      "openedAt": 1760029731,
+      "netMoney": -17.44,
+      "r": -0.698,
+      "selftest": false
+     },
+     {
+      "ticket": 9000013,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760048387,
+      "openedAt": 1760031448,
+      "netMoney": -34.86,
+      "r": -1.162,
+      "selftest": false
+     },
+     {
+      "ticket": 9000014,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760050627,
+      "openedAt": 1760039231,
+      "netMoney": -6.14,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000015,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760054774,
+      "openedAt": 1760053264,
+      "netMoney": -40.62,
+      "r": -1.625,
+      "selftest": false
+     },
+     {
+      "ticket": 9000016,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760057903,
+      "openedAt": 1760049572,
+      "netMoney": 46.55,
+      "r": 1.552,
+      "selftest": false
+     },
+     {
+      "ticket": 9000017,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760061555,
+      "openedAt": 1760054635,
+      "netMoney": -22.12,
+      "r": -0.632,
+      "selftest": false
+     },
+     {
+      "ticket": 9000018,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760065966,
+      "openedAt": 1760058033,
+      "netMoney": 55.69,
+      "r": 2.228,
+      "selftest": false
+     },
+     {
+      "ticket": 9000019,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760069395,
+      "openedAt": 1760056724,
+      "netMoney": -79.62,
+      "r": -2.654,
+      "selftest": false
+     },
+     {
+      "ticket": 9000020,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760072423,
+      "openedAt": 1760053407,
+      "netMoney": -52.27,
+      "r": -1.493,
+      "selftest": false
+     },
+     {
+      "ticket": 9000021,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760076059,
+      "openedAt": 1760064638,
+      "netMoney": 67.99,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000022,
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "at": 1760080668,
+      "openedAt": 1760073892,
+      "netMoney": -57.96,
+      "r": -1.932,
+      "selftest": false
+     },
+     {
+      "ticket": 9000023,
+      "symbol": "EURUSD",
+      "direction": "LONG",
+      "at": 1760083627,
+      "openedAt": 1760067701,
+      "netMoney": -12.07,
+      "r": -0.345,
+      "selftest": false
+     },
+     {
+      "ticket": 9000024,
+      "symbol": "AUDUSD",
+      "direction": "LONG",
+      "at": 1760087561,
+      "openedAt": 1760073602,
+      "netMoney": 103.13,
+      "r": 4.125,
+      "selftest": false
+     },
+     {
+      "ticket": 9000025,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760090061,
+      "openedAt": 1760072572,
+      "netMoney": -3.7,
+      "r": -0.123,
+      "selftest": false
+     },
+     {
+      "ticket": 9000026,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "at": 1760095393,
+      "openedAt": 1760075137,
+      "netMoney": 50.17,
+      "r": 1.433,
+      "selftest": false
+     },
+     {
+      "ticket": 9000027,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "at": 1760098308,
+      "openedAt": 1760092718,
+      "netMoney": 0,
+      "r": 0,
+      "selftest": false
+     },
+     {
+      "ticket": 9000028,
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "at": 1760101434,
+      "openedAt": 1760089329,
+      "netMoney": 65.71,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000029,
+      "symbol": "USDJPY",
+      "direction": "SHORT",
+      "at": 1760104525,
+      "openedAt": 1760101115,
+      "netMoney": 119.87,
+      "r": 3.425,
+      "selftest": false
+     }
+    ]
+   }
+  },
+  {
+   "name": "one-missing-result",
+   "expected": {
+    "statistics": {
+     "wins": 2,
+     "losses": 0,
+     "breakevens": 1,
+     "winRatePct": 100,
+     "grossWin": 12,
+     "grossLoss": 0,
+     "profitFactor": null,
+     "biggestWin": {
+      "symbol": "AUDUSD",
+      "at": 1760012186,
+      "atIso": "2025-10-09T12:16:26.000Z",
+      "netMoney": 7,
+      "r": null,
+      "native": {
+       "unit": "pips",
+       "value": 90.4
+      }
+     },
+     "biggestLoss": null,
+     "streaks": {
+      "maxWins": 1,
+      "maxLosses": 0,
+      "currentType": "win",
+      "currentCount": 1
+     },
+     "pairs": [
+      {
+       "symbol": "GBPJPY",
+       "count": 2,
+       "sharePct": 50
+      },
+      {
+       "symbol": "AUDUSD",
+       "count": 1,
+       "sharePct": 25
+      },
+      {
+       "symbol": "USDJPY",
+       "count": 1,
+       "sharePct": 25
+      }
+     ],
+     "mostTradedPair": {
+      "symbol": "GBPJPY",
+      "count": 2,
+      "sharePct": 50
+     }
+    },
+    "maxDrawdown": 0,
+    "moneyTotal": 12,
+    "rTotal": 0,
+    "rCount": 0,
+    "trades": [
+     {
+      "ticket": 9000000,
+      "symbol": "GBPJPY",
+      "direction": "SHORT",
+      "at": 1760001331,
+      "openedAt": 1759989617,
+      "netMoney": 5,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000001,
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "at": 1760004414,
+      "openedAt": 1759993581,
+      "netMoney": null,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000002,
+      "symbol": "USDJPY",
+      "direction": "LONG",
+      "at": 1760008372,
+      "openedAt": 1760002060,
+      "netMoney": 0,
+      "r": null,
+      "selftest": false
+     },
+     {
+      "ticket": 9000003,
+      "symbol": "AUDUSD",
+      "direction": "SHORT",
+      "at": 1760012186,
+      "openedAt": 1760006667,
+      "netMoney": 7,
+      "r": null,
+      "selftest": false
+     }
+    ]
+   }
+  }
+ ]
+}
