@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "date": "2026-10-21",
+  "rules": "v1",
+  "rows": [
+    {
+      "key": "M9-B-CHERRY",
+      "label": "M9-B-CHERRY",
+      "rank": 1,
+      "score": 43.69,
+      "n": 41,
+      "net": -26.22,
+      "retPct": -0.052,
+      "qualified": true,
+      "why": [],
+      "comp": {
+        "ret": 0.491,
+        "pf": 0.493,
+        "dd": 0.506,
+        "win": 0,
+        "cred": 0.804
+      }
+    },
+    {
+      "key": "M9-B-D.CHERRY",
+      "label": "M9-B-D.CHERRY",
+      "rank": 2,
+      "score": 40.12,
+      "n": 15,
+      "net": -491.61,
+      "retPct": -0.983,
+      "qualified": true,
+      "why": [],
+      "comp": {
+        "ret": 0.336,
+        "pf": 0,
+        "dd": 0.803,
+        "win": 0,
+        "cred": 0.6
+      }
+    },
+    {
+      "key": "M9-C-D.CHERRY",
+      "label": "M9-C-D.CHERRY",
+      "rank": 3,
+      "score": 35.87,
+      "n": 14,
+      "net": -795.64,
+      "retPct": -1.591,
+      "qualified": true,
+      "why": [],
+      "comp": {
+        "ret": 0.235,
+        "pf": 0,
+        "dd": 0.656,
+        "win": 0,
+        "cred": 0.583
+      }
+    },
+    {
+      "key": "M9-C-CHERRY",
+      "label": "M9-C-CHERRY",
+      "rank": 4,
+      "score": 19.8,
+      "n": 47,
+      "net": -1771.28,
+      "retPct": -3.543,
+      "qualified": true,
+      "why": [],
+      "comp": {
+        "ret": 0,
+        "pf": 0.271,
+        "dd": 0.102,
+        "win": 0.36,
+        "cred": 0.825
+      }
+    },
+    {
+      "key": "M9-L-Mix",
+      "label": "M9-L-Mix",
+      "rank": null,
+      "score": null,
+      "n": 0,
+      "net": 0,
+      "retPct": null,
+      "qualified": false,
+      "why": [
+        "needs 3 closes, has 0",
+        "needs 1 active days, has 0"
+      ],
+      "comp": null
+    },
+    {
+      "key": "M9-P-SINGLE",
+      "label": "M9-P-SINGLE",
+      "rank": null,
+      "score": null,
+      "n": 0,
+      "net": 0,
+      "retPct": null,
+      "qualified": false,
+      "why": [
+        "needs 3 closes, has 0",
+        "needs 1 active days, has 0"
+      ],
+      "comp": null
+    },
+    {
+      "key": "M9-S-B",
+      "label": "M9-S-B",
+      "rank": null,
+      "score": null,
+      "n": 0,
+      "net": 0,
+      "retPct": null,
+      "qualified": false,
+      "why": [
+        "needs 3 closes, has 0",
+        "needs 1 active days, has 0"
+      ],
+      "comp": null
+    },
+    {
+      "key": "M9-Y-SINGLE",
+      "label": "M9-Y-SINGLE",
+      "rank": null,
+      "score": null,
+      "n": 0,
+      "net": 0,
+      "retPct": null,
+      "qualified": false,
+      "why": [
+        "needs 3 closes, has 0",
+        "needs 1 active days, has 0"
+      ],
+      "comp": null
+    }
+  ],
+  "crown": null,
+  "withheld": []
+}

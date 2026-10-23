@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "date": "2026-10-22",
+  "key": "M9-P-SINGLE",
+  "label": "M9-P-SINGLE",
+  "status": "ok",
+  "reasons": [],
+  "source": "ledger",
+  "currency": "EUR",
+  "funding": 50000,
+  "n": 4,
+  "wins": 3,
+  "losses": 0,
+  "breakevens": 1,
+  "winRatePct": 100,
+  "grossWin": 271.21,
+  "grossLoss": 0,
+  "net": 271.21,
+  "profitFactor": null,
+  "retPct": 0.542,
+  "maxDrawdown": 0,
+  "ddPct": 0,
+  "streaks": {
+    "maxWins": 3,
+    "maxLosses": 0
+  },
+  "r": {
+    "count": 4,
+    "sum": 1.362
+  },
+  "best": {
+    "symbol": "GBPUSD",
+    "net": 236.53,
+    "r": 0.952
+  },
+  "worst": null,
+  "pairs": [
+    {
+      "symbol": "GBPUSD",
+      "n": 4,
+      "net": 271.21
+    }
+  ],
+  "chain": {
+    "ok": true,
+    "gap": 0
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "schema": 1,
+  "rules": "v1",
+  "awards": [
+    {
+      "kind": "day",
+      "period": "2026-10-12",
+      "start": "2026-10-12",
+      "end": "2026-10-12",
+      "key": "M9-C-CHERRY",
+      "label": "M9-C-CHERRY",
+      "score": 67.65,
+      "net": 649.87,
+      "n": 44,
+      "partialPeriod": false,
+      "basis": "backfilled"
+    },
+    {
+      "kind": "day",
+      "period": "2026-10-13",
+      "start": "2026-10-13",
+      "end": "2026-10-13",
+      "key": "M9-C-CHERRY",
+      "label": "M9-C-CHERRY",
+      "score": 71.4,
+      "net": 626,
+      "n": 38,
+      "partialPeriod": false,
+      "basis": "backfilled"
+    },
+    {
+      "kind": "day",
+      "period": "2026-10-14",
+      "start": "2026-10-14",
+      "end": "2026-10-14",
+      "key": "M9-C-D.CHERRY",
+      "label": "M9-C-D.CHERRY",
+      "score": 62.34,
+      "net": 80.6,
+      "n": 36,
+      "partialPeriod": false,
+      "basis": "backfilled"
+    },
+    {
+      "kind": "day",
+      "period": "2026-10-15",
+      "start": "2026-10-15",
+      "end": "2026-10-15",
+      "key": "M9-C-CHERRY",
+      "label": "M9-C-CHERRY",
+      "score": 81.16,
+      "net": 5593.13,
+      "n": 93,
+      "partialPeriod": false,
+      "basis": "backfilled"
+    },
+    {
+      "kind": "day",
+      "period": "2026-10-16",
+      "start": "2026-10-16",
+      "end": "2026-10-16",
+      "key": "M9-C-D.CHERRY",
+      "label": "M9-C-D.CHERRY",
+      "score": 80.25,
+      "net": 1375.14,
+      "n": 37,
+      "partialPeriod": false,
+      "basis": "backfilled"
+    },
+    {
+      "kind": "day",
+      "period": "2026-10-18",
+      "start": "2026-10-18",
+      "end": "2026-10-18",
+      "key": "M9-B-CHERRY",
+      "label": "M9-B-CHERRY",
+      "score": 57.4,
+      "net": 274.51,
+      "n": 4,
+      "partialPeriod": false,
+      "basis": "backfilled"
+    },
+    {
+      "kind": "week",
+      "period": "2026-W42",
+      "start": "2026-10-12",
+      "end": "2026-10-18",
+      "key": "M9-C-D.CHERRY",
+      "label": "M9-C-D.CHERRY",
+      "score": 79.79,
+      "net": 2940.54,
+      "n": 154,
+      "partialPeriod": false,
+      "basis": "backfilled"
+    },
+    {
+      "kind": "day",
+      "period": "2026-10-19",
+      "start": "2026-10-19",
+      "end": "2026-10-19",
+      "key": "M9-C-D.CHERRY",
+      "label": "M9-C-D.CHERRY",
+      "score": 61.19,
+      "net": 13.09,
+      "n": 19,
+      "partialPeriod": false,
+      "basis": "backfilled"
+    },
+    {
+      "kind": "day",
+      "period": "2026-10-20",
+      "start": "2026-10-20",
+      "end": "2026-10-20",
+      "key": "M9-B-D.CHERRY",
+      "label": "M9-B-D.CHERRY",
+      "score": 60.32,
+      "net": 236.33,
+      "n": 28,
+      "partialPeriod": false,
+      "basis": "backfilled"
+    },
+    {
+      "kind": "day",
+      "period": "2026-10-22",
+      "start": "2026-10-22",
+      "end": "2026-10-22",
+      "key": "M9-L-Mix",
+      "label": "M9-L-Mix",
+      "score": 86.17,
+      "net": 1908.27,
+      "n": 31,
+      "partialPeriod": false,
+      "basis": "backfilled"
+    }
+  ],
+  "periods": [
+    {
+      "kind": "week",
+      "period": "2026-W41",
+      "start": "2026-10-07",
+      "end": "2026-10-11",
+      "partialPeriod": true,
+      "basis": "backfilled",
+      "crown": null
+    },
+    {
+      "kind": "week",
+      "period": "2026-W42",
+      "start": "2026-10-12",
+      "end": "2026-10-18",
+      "partialPeriod": false,
+      "basis": "backfilled",
+      "crown": {
+        "key": "M9-C-D.CHERRY",
+        "label": "M9-C-D.CHERRY",
+        "score": 79.79,
+        "net": 2940.54
+      }
+    }
+  ],
+  "tally": [
+    {
+      "key": "M9-C-D.CHERRY",
+      "label": "M9-C-D.CHERRY",
+      "day": 3,
+      "week": 1,
+      "month": 0,
+      "points": 8,
+      "streak": {
+        "cur": 0,
+        "best": 1,
+        "bestFrom": "2026-10-14",
+        "bestTo": "2026-10-14"
+      }
+    },
+    {
+      "key": "M9-C-CHERRY",
+      "label": "M9-C-CHERRY",
+      "day": 3,
+      "week": 0,
+      "month": 0,
+      "points": 3,
+      "streak": {
+        "cur": 0,
+        "best": 2,
+        "bestFrom": "2026-10-12",
+        "bestTo": "2026-10-13"
+      }
+    },
+    {
+      "key": "M9-B-CHERRY",
+      "label": "M9-B-CHERRY",
+      "day": 1,
+      "week": 0,
+      "month": 0,
+      "points": 1,
+      "streak": {
+        "cur": 0,
+        "best": 1,
+        "bestFrom": "2026-10-18",
+        "bestTo": "2026-10-18"
+      }
+    },
+    {
+      "key": "M9-B-D.CHERRY",
+      "label": "M9-B-D.CHERRY",
+      "day": 1,
+      "week": 0,
+      "month": 0,
+      "points": 1,
+      "streak": {
+        "cur": 0,
+        "best": 1,
+        "bestFrom": "2026-10-20",
+        "bestTo": "2026-10-20"
+      }
+    },
+    {
+      "key": "M9-L-Mix",
+      "label": "M9-L-Mix",
+      "day": 1,
+      "week": 0,
+      "month": 0,
+      "points": 1,
+      "streak": {
+        "cur": 1,
+        "best": 1,
+        "bestFrom": "2026-10-22",
+        "bestTo": "2026-10-22"
+      }
+    },
+    {
+      "key": "M9-P-SINGLE",
+      "label": "M9-P-SINGLE",
+      "day": 0,
+      "week": 0,
+      "month": 0,
+      "points": 0,
+      "streak": {
+        "cur": 0,
+        "best": 0,
+        "bestFrom": null,
+        "bestTo": null
+      }
+    },
+    {
+      "key": "M9-S-B",
+      "label": "M9-S-B",
+      "day": 0,
+      "week": 0,
+      "month": 0,
+      "points": 0,
+      "streak": {
+        "cur": 0,
+        "best": 0,
+        "bestFrom": null,
+        "bestTo": null
+      }
+    },
+    {
+      "key": "M9-Y-SINGLE",
+      "label": "M9-Y-SINGLE",
+      "day": 0,
+      "week": 0,
+      "month": 0,
+      "points": 0,
+      "streak": {
+        "cur": 0,
+        "best": 0,
+        "bestFrom": null,
+        "bestTo": null
+      }
+    }
+  ]
+}

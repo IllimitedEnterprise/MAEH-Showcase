@@ -1,0 +1,366 @@
+{
+  "schema": 1,
+  "key": "M9-B-D.CHERRY",
+  "label": "M9-B-D.CHERRY",
+  "fundedDate": "2026-10-07",
+  "asOf": "2026-10-22",
+  "rules": "v1",
+  "totals": {
+    "days": 16,
+    "activeDays": 14,
+    "n": 340,
+    "wins": 101,
+    "losses": 148,
+    "breakevens": 91,
+    "winRatePct": 40.6,
+    "net": -2651.28,
+    "grossWin": 10459.67,
+    "grossLoss": 13110.95,
+    "profitFactor": 0.8,
+    "retPct": -5.303,
+    "maxDrawdown": 3497.92,
+    "ddPct": 6.996,
+    "streaks": {
+      "maxWins": 7,
+      "maxLosses": 8
+    }
+  },
+  "bestDay": {
+    "date": "2026-10-22",
+    "net": 624.82
+  },
+  "worstDay": {
+    "date": "2026-10-09",
+    "net": -1088.36
+  },
+  "crowns": {
+    "day": 1,
+    "week": 0,
+    "month": 0,
+    "points": 1,
+    "streak": {
+      "cur": 0,
+      "best": 1,
+      "bestFrom": "2026-10-20",
+      "bestTo": "2026-10-20"
+    },
+    "awards": [
+      {
+        "kind": "day",
+        "period": "2026-10-20"
+      }
+    ]
+  },
+  "form": [
+    {
+      "date": "2026-10-07",
+      "status": "ok",
+      "n": 5,
+      "net": -328.81,
+      "score": 45.7,
+      "rank": 3,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-08",
+      "status": "ok",
+      "n": 41,
+      "net": -1003.38,
+      "score": 31.04,
+      "rank": 4,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-09",
+      "status": "ok",
+      "n": 45,
+      "net": -1088.36,
+      "score": 29.94,
+      "rank": 3,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-10",
+      "status": "quiet",
+      "n": 0,
+      "net": 0,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-11",
+      "status": "ok",
+      "n": 1,
+      "net": 190.01,
+      "score": 52.96,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-12",
+      "status": "ok",
+      "n": 24,
+      "net": -655.21,
+      "score": 35.68,
+      "rank": 4,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-13",
+      "status": "ok",
+      "n": 17,
+      "net": 292.07,
+      "score": 60.83,
+      "rank": 4,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-14",
+      "status": "ok",
+      "n": 36,
+      "net": 191.11,
+      "score": 58.18,
+      "rank": 2,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-15",
+      "status": "ok",
+      "n": 33,
+      "net": -482.37,
+      "score": 40.17,
+      "rank": 4,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-16",
+      "status": "ok",
+      "n": 39,
+      "net": 367.11,
+      "score": 58.64,
+      "rank": 3,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-17",
+      "status": "quiet",
+      "n": 0,
+      "net": 0,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-18",
+      "status": "ok",
+      "n": 2,
+      "net": -52.25,
+      "score": 50.36,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-19",
+      "status": "ok",
+      "n": 22,
+      "net": -450.74,
+      "score": 43.63,
+      "rank": 2,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-20",
+      "status": "ok",
+      "n": 28,
+      "net": 236.33,
+      "score": 60.32,
+      "rank": 1,
+      "crowned": true
+    },
+    {
+      "date": "2026-10-21",
+      "status": "ok",
+      "n": 15,
+      "net": -491.61,
+      "score": 40.12,
+      "rank": 2,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-22",
+      "status": "ok",
+      "n": 32,
+      "net": 624.82,
+      "score": 65.47,
+      "rank": 3,
+      "crowned": false
+    }
+  ],
+  "pairs": [
+    {
+      "symbol": "USDCAD",
+      "n": 56,
+      "net": -1478.3
+    },
+    {
+      "symbol": "GBPJPY",
+      "n": 46,
+      "net": 2644.09
+    },
+    {
+      "symbol": "AUDNZD",
+      "n": 45,
+      "net": -620.82
+    },
+    {
+      "symbol": "EURJPY",
+      "n": 45,
+      "net": 41.07
+    },
+    {
+      "symbol": "GBPUSD",
+      "n": 45,
+      "net": -1548.51
+    },
+    {
+      "symbol": "USDJPY",
+      "n": 45,
+      "net": -539.26
+    },
+    {
+      "symbol": "EURGBP",
+      "n": 41,
+      "net": -675.96
+    },
+    {
+      "symbol": "AUDJPY",
+      "n": 7,
+      "net": 9.6
+    },
+    {
+      "symbol": "GBPAUD",
+      "n": 7,
+      "net": -189.06
+    },
+    {
+      "symbol": "GBPNZD",
+      "n": 1,
+      "net": -133.95
+    },
+    {
+      "symbol": "NZDCAD",
+      "n": 1,
+      "net": -85.18
+    },
+    {
+      "symbol": "NZDUSD",
+      "n": 1,
+      "net": -75
+    }
+  ],
+  "hours": {
+    "basis": "entry-of-closes",
+    "buckets": [
+      {
+        "h": "00:00",
+        "n": 30
+      },
+      {
+        "h": "01:00",
+        "n": 5
+      },
+      {
+        "h": "02:00",
+        "n": 11
+      },
+      {
+        "h": "03:00",
+        "n": 18
+      },
+      {
+        "h": "04:00",
+        "n": 19
+      },
+      {
+        "h": "05:00",
+        "n": 8
+      },
+      {
+        "h": "06:00",
+        "n": 9
+      },
+      {
+        "h": "07:00",
+        "n": 9
+      },
+      {
+        "h": "08:00",
+        "n": 29
+      },
+      {
+        "h": "09:00",
+        "n": 19
+      },
+      {
+        "h": "10:00",
+        "n": 17
+      },
+      {
+        "h": "11:00",
+        "n": 15
+      },
+      {
+        "h": "12:00",
+        "n": 16
+      },
+      {
+        "h": "13:00",
+        "n": 17
+      },
+      {
+        "h": "14:00",
+        "n": 21
+      },
+      {
+        "h": "15:00",
+        "n": 16
+      },
+      {
+        "h": "16:00",
+        "n": 20
+      },
+      {
+        "h": "17:00",
+        "n": 7
+      },
+      {
+        "h": "18:00",
+        "n": 10
+      },
+      {
+        "h": "19:00",
+        "n": 19
+      },
+      {
+        "h": "20:00",
+        "n": 4
+      },
+      {
+        "h": "21:00",
+        "n": 3
+      },
+      {
+        "h": "22:00",
+        "n": 3
+      },
+      {
+        "h": "23:00",
+        "n": 0
+      }
+    ],
+    "earlier": 15,
+    "unknown": 0,
+    "total": 340
+  }
+}

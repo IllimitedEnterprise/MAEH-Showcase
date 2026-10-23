@@ -1,0 +1,245 @@
+{
+  "schema": 1,
+  "date": "2026-10-15",
+  "key": "M9-C-D.CHERRY",
+  "trades": [
+    {
+      "i": 1,
+      "symbol": "AUDNZD",
+      "side": "short",
+      "net": 13.03,
+      "r": 0.071
+    },
+    {
+      "i": 2,
+      "symbol": "USDJPY",
+      "side": "short",
+      "net": 200.91,
+      "r": 0.673
+    },
+    {
+      "i": 3,
+      "symbol": "USDJPY",
+      "side": "short",
+      "net": 127.33,
+      "r": 0.347
+    },
+    {
+      "i": 4,
+      "symbol": "USDCAD",
+      "side": "short",
+      "net": 45.27,
+      "r": 0.273
+    },
+    {
+      "i": 5,
+      "symbol": "AUDNZD",
+      "side": "short",
+      "net": 137.71,
+      "r": 1.477
+    },
+    {
+      "i": 6,
+      "symbol": "USDJPY",
+      "side": "short",
+      "net": 241.03,
+      "r": 2.172
+    },
+    {
+      "i": 7,
+      "symbol": "EURGBP",
+      "side": "long",
+      "net": 55.69,
+      "r": 0.139
+    },
+    {
+      "i": 8,
+      "symbol": "EURGBP",
+      "side": "long",
+      "net": 82.86,
+      "r": 0.225
+    },
+    {
+      "i": 9,
+      "symbol": "EURGBP",
+      "side": "long",
+      "net": 55.52,
+      "r": 0.379
+    },
+    {
+      "i": 10,
+      "symbol": "USDCAD",
+      "side": "short",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 11,
+      "symbol": "EURGBP",
+      "side": "long",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 12,
+      "symbol": "USDJPY",
+      "side": "short",
+      "net": -155.82,
+      "r": -1.002
+    },
+    {
+      "i": 13,
+      "symbol": "USDCAD",
+      "side": "short",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 14,
+      "symbol": "EURGBP",
+      "side": "long",
+      "net": -31.89,
+      "r": -0.772
+    },
+    {
+      "i": 15,
+      "symbol": "EURJPY",
+      "side": "long",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 16,
+      "symbol": "USDCAD",
+      "side": "short",
+      "net": 80.33,
+      "r": 0.141
+    },
+    {
+      "i": 17,
+      "symbol": "USDJPY",
+      "side": "short",
+      "net": -21.46,
+      "r": -1
+    },
+    {
+      "i": 18,
+      "symbol": "GBPUSD",
+      "side": "long",
+      "net": 326,
+      "r": 0.618
+    },
+    {
+      "i": 19,
+      "symbol": "GBPUSD",
+      "side": "long",
+      "net": 338.48,
+      "r": 0.632
+    },
+    {
+      "i": 20,
+      "symbol": "AUDNZD",
+      "side": "short",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 21,
+      "symbol": "USDCAD",
+      "side": "long",
+      "net": -74.75,
+      "r": -1
+    },
+    {
+      "i": 22,
+      "symbol": "USDCAD",
+      "side": "long",
+      "net": -98.62,
+      "r": -1
+    },
+    {
+      "i": 23,
+      "symbol": "AUDNZD",
+      "side": "long",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 24,
+      "symbol": "USDCAD",
+      "side": "short",
+      "net": -92.34,
+      "r": -1
+    },
+    {
+      "i": 25,
+      "symbol": "AUDNZD",
+      "side": "short",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 26,
+      "symbol": "AUDNZD",
+      "side": "short",
+      "net": -173.43,
+      "r": -0.999
+    },
+    {
+      "i": 27,
+      "symbol": "GBPUSD",
+      "side": "short",
+      "net": 134.04,
+      "r": 0.558
+    },
+    {
+      "i": 28,
+      "symbol": "USDCAD",
+      "side": "long",
+      "net": 52.17,
+      "r": 0.417
+    },
+    {
+      "i": 29,
+      "symbol": "GBPUSD",
+      "side": "short",
+      "net": -22.3,
+      "r": -1
+    },
+    {
+      "i": 30,
+      "symbol": "AUDNZD",
+      "side": "short",
+      "net": 299.87,
+      "r": 0.677
+    },
+    {
+      "i": 31,
+      "symbol": "GBPJPY",
+      "side": "long",
+      "net": 9.03,
+      "r": 0.028
+    },
+    {
+      "i": 32,
+      "symbol": "EURGBP",
+      "side": "long",
+      "net": -345.64,
+      "r": -1.003
+    },
+    {
+      "i": 33,
+      "symbol": "GBPUSD",
+      "side": "short",
+      "net": -186.36,
+      "r": -0.999
+    },
+    {
+      "i": 34,
+      "symbol": "EURJPY",
+      "side": "long",
+      "net": -143.19,
+      "r": -0.992
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "date": "2026-10-22",
+  "key": "M9-L-Mix",
+  "label": "M9-L-Mix",
+  "status": "ok",
+  "reasons": [],
+  "source": "ledger",
+  "currency": "EUR",
+  "funding": 50000,
+  "n": 31,
+  "wins": 21,
+  "losses": 4,
+  "breakevens": 6,
+  "winRatePct": 84,
+  "grossWin": 2129.64,
+  "grossLoss": 221.37,
+  "net": 1908.27,
+  "profitFactor": 9.62,
+  "retPct": 3.817,
+  "maxDrawdown": 216.04,
+  "ddPct": 0.432,
+  "streaks": {
+    "maxWins": 15,
+    "maxLosses": 2
+  },
+  "r": {
+    "count": 31,
+    "sum": 7.747
+  },
+  "best": {
+    "symbol": "GBPJPY",
+    "net": 264.57,
+    "r": 1.05
+  },
+  "worst": {
+    "symbol": "AUDUSD",
+    "net": -87.52,
+    "r": -0.98
+  },
+  "pairs": [
+    {
+      "symbol": "GBPJPY",
+      "n": 5,
+      "net": 574.44
+    },
+    {
+      "symbol": "AUDUSD",
+      "n": 4,
+      "net": -110.07
+    },
+    {
+      "symbol": "EURJPY",
+      "n": 4,
+      "net": 507.77
+    },
+    {
+      "symbol": "EURUSD",
+      "n": 4,
+      "net": 0
+    },
+    {
+      "symbol": "GBPUSD",
+      "n": 3,
+      "net": 274.8
+    },
+    {
+      "symbol": "USDCHF",
+      "n": 3,
+      "net": 157.8
+    },
+    {
+      "symbol": "USDJPY",
+      "n": 3,
+      "net": 423.2
+    },
+    {
+      "symbol": "AUDJPY",
+      "n": 2,
+      "net": 71
+    },
+    {
+      "symbol": "USDCAD",
+      "n": 2,
+      "net": 60.18
+    },
+    {
+      "symbol": "NZDUSD",
+      "n": 1,
+      "net": -50.85
+    }
+  ],
+  "chain": {
+    "ok": true,
+    "gap": 0
+  }
+}

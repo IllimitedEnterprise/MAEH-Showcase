@@ -1,0 +1,224 @@
+{
+  "schema": 1,
+  "date": "2026-10-22",
+  "key": "M9-L-Mix",
+  "trades": [
+    {
+      "i": 1,
+      "symbol": "GBPJPY",
+      "side": "short",
+      "net": 56.91,
+      "r": 0.297
+    },
+    {
+      "i": 2,
+      "symbol": "AUDJPY",
+      "side": "short",
+      "net": 71,
+      "r": 0.334
+    },
+    {
+      "i": 3,
+      "symbol": "GBPJPY",
+      "side": "short",
+      "net": 117.76,
+      "r": 0.574
+    },
+    {
+      "i": 4,
+      "symbol": "USDCHF",
+      "side": "short",
+      "net": 127.51,
+      "r": 1.269
+    },
+    {
+      "i": 5,
+      "symbol": "USDCAD",
+      "side": "short",
+      "net": 38.63,
+      "r": 0.597
+    },
+    {
+      "i": 6,
+      "symbol": "EURJPY",
+      "side": "short",
+      "net": 64.26,
+      "r": 0.479
+    },
+    {
+      "i": 7,
+      "symbol": "AUDUSD",
+      "side": "short",
+      "net": 53.34,
+      "r": 0.637
+    },
+    {
+      "i": 8,
+      "symbol": "USDCHF",
+      "side": "short",
+      "net": 30.29,
+      "r": 0.394
+    },
+    {
+      "i": 9,
+      "symbol": "USDCAD",
+      "side": "short",
+      "net": 21.55,
+      "r": 0.33
+    },
+    {
+      "i": 10,
+      "symbol": "EURJPY",
+      "side": "short",
+      "net": 233.29,
+      "r": 1.17
+    },
+    {
+      "i": 11,
+      "symbol": "GBPUSD",
+      "side": "long",
+      "net": 29.35,
+      "r": 0.311
+    },
+    {
+      "i": 12,
+      "symbol": "USDJPY",
+      "side": "short",
+      "net": 224.35,
+      "r": 0.952
+    },
+    {
+      "i": 13,
+      "symbol": "USDJPY",
+      "side": "short",
+      "net": 105.94,
+      "r": 0.335
+    },
+    {
+      "i": 14,
+      "symbol": "USDJPY",
+      "side": "short",
+      "net": 92.91,
+      "r": 0.145
+    },
+    {
+      "i": 15,
+      "symbol": "GBPJPY",
+      "side": "short",
+      "net": 264.57,
+      "r": 1.05
+    },
+    {
+      "i": 16,
+      "symbol": "USDCHF",
+      "side": "short",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 17,
+      "symbol": "AUDJPY",
+      "side": "short",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 18,
+      "symbol": "EURUSD",
+      "side": "short",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 19,
+      "symbol": "EURJPY",
+      "side": "short",
+      "net": 215.55,
+      "r": 0.358
+    },
+    {
+      "i": 20,
+      "symbol": "EURUSD",
+      "side": "short",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 21,
+      "symbol": "GBPJPY",
+      "side": "short",
+      "net": 74.46,
+      "r": 0.136
+    },
+    {
+      "i": 22,
+      "symbol": "GBPUSD",
+      "side": "short",
+      "net": 9.81,
+      "r": 0.026
+    },
+    {
+      "i": 23,
+      "symbol": "GBPUSD",
+      "side": "short",
+      "net": 235.64,
+      "r": 0.951
+    },
+    {
+      "i": 24,
+      "symbol": "AUDUSD",
+      "side": "short",
+      "net": -87.52,
+      "r": -0.98
+    },
+    {
+      "i": 25,
+      "symbol": "NZDUSD",
+      "side": "short",
+      "net": -50.85,
+      "r": -0.934
+    },
+    {
+      "i": 26,
+      "symbol": "EURUSD",
+      "side": "short",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 27,
+      "symbol": "EURUSD",
+      "side": "short",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 28,
+      "symbol": "AUDUSD",
+      "side": "short",
+      "net": -77.67,
+      "r": -0.945
+    },
+    {
+      "i": 29,
+      "symbol": "AUDUSD",
+      "side": "long",
+      "net": 1.78,
+      "r": 0.033
+    },
+    {
+      "i": 30,
+      "symbol": "GBPJPY",
+      "side": "long",
+      "net": 60.74,
+      "r": 0.255
+    },
+    {
+      "i": 31,
+      "symbol": "EURJPY",
+      "side": "short",
+      "net": -5.33,
+      "r": -0.027
+    }
+  ]
+}

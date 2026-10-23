@@ -1,0 +1,269 @@
+{
+  "schema": 1,
+  "date": "2026-10-22",
+  "rules": "v1",
+  "day": {
+    "rows": [
+      {
+        "key": "M9-L-Mix",
+        "rank": 1,
+        "score": 86.17,
+        "n": 31,
+        "net": 1908.27
+      },
+      {
+        "key": "M9-C-D.CHERRY",
+        "rank": 2,
+        "score": 85.58,
+        "n": 31,
+        "net": 2082.56
+      },
+      {
+        "key": "M9-B-D.CHERRY",
+        "rank": 3,
+        "score": 65.47,
+        "n": 32,
+        "net": 624.82
+      },
+      {
+        "key": "M9-Y-SINGLE",
+        "rank": 4,
+        "score": 60.44,
+        "n": 4,
+        "net": 493.58
+      },
+      {
+        "key": "M9-P-SINGLE",
+        "rank": 5,
+        "score": 59.6,
+        "n": 4,
+        "net": 271.21
+      },
+      {
+        "key": "M9-C-CHERRY",
+        "rank": 6,
+        "score": 58.51,
+        "n": 59,
+        "net": 400.2
+      },
+      {
+        "key": "M9-B-CHERRY",
+        "rank": 7,
+        "score": 54.77,
+        "n": 61,
+        "net": 97.87
+      },
+      {
+        "key": "M9-S-B",
+        "rank": null,
+        "score": 58.33,
+        "n": 2,
+        "net": 2295.07
+      }
+    ],
+    "crown": {
+      "key": "M9-L-Mix",
+      "label": "M9-L-Mix",
+      "score": 86.17,
+      "net": 1908.27
+    }
+  },
+  "week": {
+    "period": "2026-W43",
+    "through": "2026-10-22",
+    "complete": false,
+    "rows": [
+      {
+        "key": "M9-C-D.CHERRY",
+        "rank": 1,
+        "score": 58.82,
+        "n": 93,
+        "net": 626.26
+      },
+      {
+        "key": "M9-B-D.CHERRY",
+        "rank": 2,
+        "score": 52.92,
+        "n": 97,
+        "net": -81.2
+      },
+      {
+        "key": "M9-B-CHERRY",
+        "rank": 3,
+        "score": 32.38,
+        "n": 236,
+        "net": -2129.91
+      },
+      {
+        "key": "M9-C-CHERRY",
+        "rank": 4,
+        "score": 22.49,
+        "n": 234,
+        "net": -4728.68
+      },
+      {
+        "key": "M9-L-Mix",
+        "rank": null,
+        "score": 68.18,
+        "n": 31,
+        "net": 1908.27
+      },
+      {
+        "key": "M9-P-SINGLE",
+        "rank": null,
+        "score": 52.89,
+        "n": 4,
+        "net": 271.21
+      },
+      {
+        "key": "M9-Y-SINGLE",
+        "rank": null,
+        "score": 53.02,
+        "n": 4,
+        "net": 493.58
+      },
+      {
+        "key": "M9-S-B",
+        "rank": null,
+        "score": 52.16,
+        "n": 2,
+        "net": 2295.07
+      }
+    ],
+    "leader": {
+      "key": "M9-C-D.CHERRY",
+      "label": "M9-C-D.CHERRY",
+      "score": 58.82,
+      "net": 626.26
+    },
+    "crown": null
+  },
+  "month": {
+    "period": "2026-10",
+    "through": "2026-10-22",
+    "complete": false,
+    "rows": [
+      {
+        "key": "M9-C-D.CHERRY",
+        "rank": 1,
+        "score": 57.35,
+        "n": 336,
+        "net": 393.12
+      },
+      {
+        "key": "M9-C-CHERRY",
+        "rank": 2,
+        "score": 49.09,
+        "n": 669,
+        "net": 1748.55
+      },
+      {
+        "key": "M9-B-D.CHERRY",
+        "rank": 3,
+        "score": 42.45,
+        "n": 340,
+        "net": -2651.28
+      },
+      {
+        "key": "M9-B-CHERRY",
+        "rank": 4,
+        "score": 41.97,
+        "n": 708,
+        "net": -2409.58
+      },
+      {
+        "key": "M9-L-Mix",
+        "rank": null,
+        "score": 57.35,
+        "n": 31,
+        "net": 1908.27
+      },
+      {
+        "key": "M9-P-SINGLE",
+        "rank": null,
+        "score": 51,
+        "n": 4,
+        "net": 271.21
+      },
+      {
+        "key": "M9-Y-SINGLE",
+        "rank": null,
+        "score": 51.02,
+        "n": 4,
+        "net": 493.58
+      },
+      {
+        "key": "M9-S-B",
+        "rank": null,
+        "score": 50.62,
+        "n": 2,
+        "net": 2295.07
+      }
+    ],
+    "leader": {
+      "key": "M9-C-D.CHERRY",
+      "label": "M9-C-D.CHERRY",
+      "score": 57.35,
+      "net": 393.12
+    },
+    "crown": null
+  },
+  "tally": [
+    {
+      "key": "M9-C-D.CHERRY",
+      "points": 8,
+      "day": 3,
+      "week": 1,
+      "month": 0
+    },
+    {
+      "key": "M9-C-CHERRY",
+      "points": 3,
+      "day": 3,
+      "week": 0,
+      "month": 0
+    },
+    {
+      "key": "M9-B-CHERRY",
+      "points": 1,
+      "day": 1,
+      "week": 0,
+      "month": 0
+    },
+    {
+      "key": "M9-B-D.CHERRY",
+      "points": 1,
+      "day": 1,
+      "week": 0,
+      "month": 0
+    },
+    {
+      "key": "M9-L-Mix",
+      "points": 1,
+      "day": 1,
+      "week": 0,
+      "month": 0
+    },
+    {
+      "key": "M9-P-SINGLE",
+      "points": 0,
+      "day": 0,
+      "week": 0,
+      "month": 0
+    },
+    {
+      "key": "M9-S-B",
+      "points": 0,
+      "day": 0,
+      "week": 0,
+      "month": 0
+    },
+    {
+      "key": "M9-Y-SINGLE",
+      "points": 0,
+      "day": 0,
+      "week": 0,
+      "month": 0
+    }
+  ]
+}

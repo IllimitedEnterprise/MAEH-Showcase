@@ -1,0 +1,231 @@
+{
+  "schema": 1,
+  "date": "2026-10-09",
+  "rules": "v1",
+  "day": {
+    "rows": [
+      {
+        "key": "M9-B-CHERRY",
+        "rank": 1,
+        "score": 38.77,
+        "n": 66,
+        "net": -646.21
+      },
+      {
+        "key": "M9-C-CHERRY",
+        "rank": 2,
+        "score": 37.33,
+        "n": 38,
+        "net": -865.37
+      },
+      {
+        "key": "M9-B-D.CHERRY",
+        "rank": 3,
+        "score": 29.94,
+        "n": 45,
+        "net": -1088.36
+      },
+      {
+        "key": "M9-C-D.CHERRY",
+        "rank": 4,
+        "score": 23.63,
+        "n": 44,
+        "net": -1560.31
+      }
+    ],
+    "crown": null
+  },
+  "week": {
+    "period": "2026-W41",
+    "through": "2026-10-09",
+    "complete": false,
+    "rows": [
+      {
+        "key": "M9-C-CHERRY",
+        "rank": 1,
+        "score": 44.05,
+        "n": 80,
+        "net": -1678.44
+      },
+      {
+        "key": "M9-B-CHERRY",
+        "rank": 2,
+        "score": 43.23,
+        "n": 112,
+        "net": -1271.08
+      },
+      {
+        "key": "M9-C-D.CHERRY",
+        "rank": 3,
+        "score": 33.05,
+        "n": 86,
+        "net": -3164.05
+      },
+      {
+        "key": "M9-B-D.CHERRY",
+        "rank": 4,
+        "score": 32.77,
+        "n": 91,
+        "net": -2420.55
+      },
+      {
+        "key": "M9-L-Mix",
+        "rank": null,
+        "score": null,
+        "n": 0,
+        "net": 0
+      },
+      {
+        "key": "M9-P-SINGLE",
+        "rank": null,
+        "score": null,
+        "n": 0,
+        "net": 0
+      },
+      {
+        "key": "M9-S-B",
+        "rank": null,
+        "score": null,
+        "n": 0,
+        "net": 0
+      },
+      {
+        "key": "M9-Y-SINGLE",
+        "rank": null,
+        "score": null,
+        "n": 0,
+        "net": 0
+      }
+    ],
+    "leader": {
+      "key": "M9-C-CHERRY",
+      "label": "M9-C-CHERRY",
+      "score": 44.05,
+      "net": -1678.44
+    },
+    "crown": null
+  },
+  "month": {
+    "period": "2026-10",
+    "through": "2026-10-09",
+    "complete": false,
+    "rows": [
+      {
+        "key": "M9-B-CHERRY",
+        "rank": null,
+        "score": 49.14,
+        "n": 112,
+        "net": -1271.08
+      },
+      {
+        "key": "M9-B-D.CHERRY",
+        "rank": null,
+        "score": 45.4,
+        "n": 91,
+        "net": -2420.55
+      },
+      {
+        "key": "M9-C-D.CHERRY",
+        "rank": null,
+        "score": 46.9,
+        "n": 86,
+        "net": -3164.05
+      },
+      {
+        "key": "M9-C-CHERRY",
+        "rank": null,
+        "score": 50.49,
+        "n": 80,
+        "net": -1678.44
+      },
+      {
+        "key": "M9-L-Mix",
+        "rank": null,
+        "score": null,
+        "n": 0,
+        "net": 0
+      },
+      {
+        "key": "M9-P-SINGLE",
+        "rank": null,
+        "score": null,
+        "n": 0,
+        "net": 0
+      },
+      {
+        "key": "M9-S-B",
+        "rank": null,
+        "score": null,
+        "n": 0,
+        "net": 0
+      },
+      {
+        "key": "M9-Y-SINGLE",
+        "rank": null,
+        "score": null,
+        "n": 0,
+        "net": 0
+      }
+    ],
+    "leader": null,
+    "crown": null
+  },
+  "tally": [
+    {
+      "key": "M9-B-CHERRY",
+      "points": 0,
+      "day": 0,
+      "week": 0,
+      "month": 0
+    },
+    {
+      "key": "M9-B-D.CHERRY",
+      "points": 0,
+      "day": 0,
+      "week": 0,
+      "month": 0
+    },
+    {
+      "key": "M9-C-CHERRY",
+      "points": 0,
+      "day": 0,
+      "week": 0,
+      "month": 0
+    },
+    {
+      "key": "M9-C-D.CHERRY",
+      "points": 0,
+      "day": 0,
+      "week": 0,
+      "month": 0
+    },
+    {
+      "key": "M9-L-Mix",
+      "points": 0,
+      "day": 0,
+      "week": 0,
+      "month": 0
+    },
+    {
+      "key": "M9-P-SINGLE",
+      "points": 0,
+      "day": 0,
+      "week": 0,
+      "month": 0
+    },
+    {
+      "key": "M9-S-B",
+      "points": 0,
+      "day": 0,
+      "week": 0,
+      "month": 0
+    },
+    {
+      "key": "M9-Y-SINGLE",
+      "points": 0,
+      "day": 0,
+      "week": 0,
+      "month": 0
+    }
+  ]
+}

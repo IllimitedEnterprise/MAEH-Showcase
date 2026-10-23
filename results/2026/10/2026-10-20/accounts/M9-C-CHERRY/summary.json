@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "date": "2026-10-20",
+  "key": "M9-C-CHERRY",
+  "label": "M9-C-CHERRY",
+  "status": "ok",
+  "reasons": [],
+  "source": "ledger",
+  "currency": "EUR",
+  "funding": 50000,
+  "n": 77,
+  "wins": 35,
+  "losses": 30,
+  "breakevens": 12,
+  "winRatePct": 53.8,
+  "grossWin": 2601.04,
+  "grossLoss": 3851.63,
+  "net": -1250.59,
+  "profitFactor": 0.68,
+  "retPct": -2.501,
+  "maxDrawdown": 1308.92,
+  "ddPct": 2.618,
+  "streaks": {
+    "maxWins": 6,
+    "maxLosses": 8
+  },
+  "r": {
+    "count": 77,
+    "sum": -14.634
+  },
+  "best": {
+    "symbol": "GBPUSD",
+    "net": 217.11,
+    "r": 0.648
+  },
+  "worst": {
+    "symbol": "GBPUSD",
+    "net": -511.28,
+    "r": -1.012
+  },
+  "pairs": [
+    {
+      "symbol": "USDCHF",
+      "n": 10,
+      "net": 195.8
+    },
+    {
+      "symbol": "GBPAUD",
+      "n": 7,
+      "net": -28.2
+    },
+    {
+      "symbol": "GBPUSD",
+      "n": 7,
+      "net": 262.26
+    },
+    {
+      "symbol": "EURUSD",
+      "n": 6,
+      "net": -105.22
+    },
+    {
+      "symbol": "EURCAD",
+      "n": 5,
+      "net": -80.88
+    },
+    {
+      "symbol": "NZDCAD",
+      "n": 5,
+      "net": -195.18
+    },
+    {
+      "symbol": "USDCAD",
+      "n": 5,
+      "net": -27.09
+    },
+    {
+      "symbol": "AUDNZD",
+      "n": 4,
+      "net": -353.9
+    },
+    {
+      "symbol": "EURAUD",
+      "n": 4,
+      "net": 143.46
+    },
+    {
+      "symbol": "EURGBP",
+      "n": 4,
+      "net": -184.71
+    },
+    {
+      "symbol": "GBPNZD",
+      "n": 4,
+      "net": -251.23
+    },
+    {
+      "symbol": "NZDUSD",
+      "n": 4,
+      "net": -66.88
+    },
+    {
+      "symbol": "USDJPY",
+      "n": 4,
+      "net": 42.18
+    },
+    {
+      "symbol": "AUDJPY",
+      "n": 3,
+      "net": -202.96
+    },
+    {
+      "symbol": "EURJPY",
+      "n": 3,
+      "net": -283.6
+    },
+    {
+      "symbol": "GBPJPY",
+      "n": 2,
+      "net": -114.44
+    }
+  ],
+  "chain": {
+    "ok": true,
+    "gap": 0
+  }
+}

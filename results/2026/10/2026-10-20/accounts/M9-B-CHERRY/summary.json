@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "date": "2026-10-20",
+  "key": "M9-B-CHERRY",
+  "label": "M9-B-CHERRY",
+  "status": "ok",
+  "reasons": [],
+  "source": "ledger",
+  "currency": "EUR",
+  "funding": 50000,
+  "n": 76,
+  "wins": 29,
+  "losses": 30,
+  "breakevens": 17,
+  "winRatePct": 49.2,
+  "grossWin": 2108.43,
+  "grossLoss": 2334.34,
+  "net": -225.91,
+  "profitFactor": 0.9,
+  "retPct": -0.452,
+  "maxDrawdown": 651.1,
+  "ddPct": 1.302,
+  "streaks": {
+    "maxWins": 5,
+    "maxLosses": 6
+  },
+  "r": {
+    "count": 76,
+    "sum": -11.441
+  },
+  "best": {
+    "symbol": "GBPUSD",
+    "net": 223.34,
+    "r": 1.13
+  },
+  "worst": {
+    "symbol": "GBPNZD",
+    "net": -304.39,
+    "r": -0.994
+  },
+  "pairs": [
+    {
+      "symbol": "USDCHF",
+      "n": 11,
+      "net": -211.82
+    },
+    {
+      "symbol": "GBPAUD",
+      "n": 7,
+      "net": -29.47
+    },
+    {
+      "symbol": "GBPUSD",
+      "n": 7,
+      "net": 767.4
+    },
+    {
+      "symbol": "EURAUD",
+      "n": 5,
+      "net": 87.91
+    },
+    {
+      "symbol": "EURCAD",
+      "n": 5,
+      "net": -130.32
+    },
+    {
+      "symbol": "EURUSD",
+      "n": 5,
+      "net": -58.84
+    },
+    {
+      "symbol": "GBPNZD",
+      "n": 5,
+      "net": -440.63
+    },
+    {
+      "symbol": "NZDCAD",
+      "n": 5,
+      "net": -169.34
+    },
+    {
+      "symbol": "USDCAD",
+      "n": 5,
+      "net": 109.83
+    },
+    {
+      "symbol": "AUDNZD",
+      "n": 4,
+      "net": -100.1
+    },
+    {
+      "symbol": "USDJPY",
+      "n": 4,
+      "net": -25.45
+    },
+    {
+      "symbol": "AUDJPY",
+      "n": 3,
+      "net": -20.29
+    },
+    {
+      "symbol": "EURGBP",
+      "n": 3,
+      "net": 164.37
+    },
+    {
+      "symbol": "EURJPY",
+      "n": 3,
+      "net": -222.96
+    },
+    {
+      "symbol": "GBPJPY",
+      "n": 2,
+      "net": -46.82
+    },
+    {
+      "symbol": "NZDUSD",
+      "n": 2,
+      "net": 100.62
+    }
+  ],
+  "chain": {
+    "ok": true,
+    "gap": 0
+  }
+}

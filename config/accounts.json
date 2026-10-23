@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "accounts": [
+    {
+      "label": "M9-B-CHERRY",
+      "key": "M9-B-CHERRY",
+      "fundedDate": "2026-10-07"
+    },
+    {
+      "label": "M9-C-CHERRY",
+      "key": "M9-C-CHERRY",
+      "fundedDate": "2026-10-07"
+    },
+    {
+      "label": "M9-B-D.CHERRY",
+      "key": "M9-B-D.CHERRY",
+      "fundedDate": "2026-10-07"
+    },
+    {
+      "label": "M9-C-D.CHERRY",
+      "key": "M9-C-D.CHERRY",
+      "fundedDate": "2026-10-07"
+    },
+    {
+      "label": "M9-L-Mix",
+      "key": "M9-L-Mix",
+      "fundedDate": "2026-10-21"
+    },
+    {
+      "label": "M9-P-SINGLE",
+      "key": "M9-P-SINGLE",
+      "fundedDate": "2026-10-21"
+    },
+    {
+      "label": "M9-S-B",
+      "key": "M9-S-B",
+      "fundedDate": "2026-10-21"
+    },
+    {
+      "label": "M9-Y-SINGLE",
+      "key": "M9-Y-SINGLE",
+      "fundedDate": "2026-10-21"
+    }
+  ]
+}

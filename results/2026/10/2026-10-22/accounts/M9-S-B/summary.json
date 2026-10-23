@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "date": "2026-10-22",
+  "key": "M9-S-B",
+  "label": "M9-S-B",
+  "status": "ok",
+  "reasons": [],
+  "source": "ledger",
+  "currency": "EUR",
+  "funding": 50000,
+  "n": 2,
+  "wins": 2,
+  "losses": 0,
+  "breakevens": 0,
+  "winRatePct": 100,
+  "grossWin": 2295.07,
+  "grossLoss": 0,
+  "net": 2295.07,
+  "profitFactor": null,
+  "retPct": 4.59,
+  "maxDrawdown": 0,
+  "ddPct": 0,
+  "streaks": {
+    "maxWins": 2,
+    "maxLosses": 0
+  },
+  "r": {
+    "count": 2,
+    "sum": 1.315
+  },
+  "best": {
+    "symbol": "XAGUSD",
+    "net": 1290.47,
+    "r": 0.775
+  },
+  "worst": null,
+  "pairs": [
+    {
+      "symbol": "XAGUSD",
+      "n": 2,
+      "net": 2295.07
+    }
+  ],
+  "chain": {
+    "ok": true,
+    "gap": 0
+  }
+}

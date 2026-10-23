@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "date": "2026-10-22",
+  "key": "M9-B-CHERRY",
+  "label": "M9-B-CHERRY",
+  "status": "ok",
+  "reasons": [],
+  "source": "ledger",
+  "currency": "EUR",
+  "funding": 50000,
+  "n": 61,
+  "wins": 22,
+  "losses": 24,
+  "breakevens": 15,
+  "winRatePct": 47.8,
+  "grossWin": 2099.33,
+  "grossLoss": 2001.46,
+  "net": 97.87,
+  "profitFactor": 1.05,
+  "retPct": 0.196,
+  "maxDrawdown": 778.05,
+  "ddPct": 1.556,
+  "streaks": {
+    "maxWins": 5,
+    "maxLosses": 6
+  },
+  "r": {
+    "count": 61,
+    "sum": -3.365
+  },
+  "best": {
+    "symbol": "GBPJPY",
+    "net": 291.2,
+    "r": 2.212
+  },
+  "worst": {
+    "symbol": "USDCHF",
+    "net": -388.45,
+    "r": -0.931
+  },
+  "pairs": [
+    {
+      "symbol": "GBPJPY",
+      "n": 9,
+      "net": 431.37
+    },
+    {
+      "symbol": "GBPAUD",
+      "n": 5,
+      "net": -353.97
+    },
+    {
+      "symbol": "GBPUSD",
+      "n": 5,
+      "net": -105.42
+    },
+    {
+      "symbol": "USDJPY",
+      "n": 5,
+      "net": 280.03
+    },
+    {
+      "symbol": "AUDJPY",
+      "n": 4,
+      "net": -10.75
+    },
+    {
+      "symbol": "EURJPY",
+      "n": 4,
+      "net": 408.37
+    },
+    {
+      "symbol": "EURUSD",
+      "n": 4,
+      "net": 0
+    },
+    {
+      "symbol": "GBPNZD",
+      "n": 4,
+      "net": -41.18
+    },
+    {
+      "symbol": "USDCHF",
+      "n": 4,
+      "net": -229.57
+    },
+    {
+      "symbol": "AUDNZD",
+      "n": 3,
+      "net": -72.4
+    },
+    {
+      "symbol": "EURCAD",
+      "n": 3,
+      "net": 73.69
+    },
+    {
+      "symbol": "EURGBP",
+      "n": 3,
+      "net": -181.38
+    },
+    {
+      "symbol": "USDCAD",
+      "n": 3,
+      "net": -35.64
+    },
+    {
+      "symbol": "NZDCAD",
+      "n": 2,
+      "net": -39.95
+    },
+    {
+      "symbol": "NZDUSD",
+      "n": 2,
+      "net": -55.31
+    },
+    {
+      "symbol": "EURAUD",
+      "n": 1,
+      "net": 29.98
+    }
+  ],
+  "chain": {
+    "ok": true,
+    "gap": 0
+  }
+}

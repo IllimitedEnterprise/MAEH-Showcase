@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "date": "2026-10-22",
+  "key": "M9-Y-SINGLE",
+  "trades": [
+    {
+      "i": 1,
+      "symbol": "EURJPY",
+      "side": "short",
+      "net": 68.77,
+      "r": 0.529
+    },
+    {
+      "i": 2,
+      "symbol": "EURJPY",
+      "side": "short",
+      "net": 216.86,
+      "r": 1.035
+    },
+    {
+      "i": 3,
+      "symbol": "EURJPY",
+      "side": "short",
+      "net": 213.28,
+      "r": 0.337
+    },
+    {
+      "i": 4,
+      "symbol": "EURJPY",
+      "side": "short",
+      "net": -5.33,
+      "r": -0.027
+    }
+  ]
+}

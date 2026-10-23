@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "date": "2026-10-10",
+  "rules": "v1",
+  "rows": [
+    {
+      "key": "M9-B-CHERRY",
+      "label": "M9-B-CHERRY",
+      "rank": null,
+      "score": null,
+      "n": 0,
+      "net": 0,
+      "retPct": null,
+      "qualified": false,
+      "why": [
+        "needs 3 closes, has 0",
+        "needs 1 active days, has 0"
+      ],
+      "comp": null
+    },
+    {
+      "key": "M9-B-D.CHERRY",
+      "label": "M9-B-D.CHERRY",
+      "rank": null,
+      "score": null,
+      "n": 0,
+      "net": 0,
+      "retPct": null,
+      "qualified": false,
+      "why": [
+        "needs 3 closes, has 0",
+        "needs 1 active days, has 0"
+      ],
+      "comp": null
+    },
+    {
+      "key": "M9-C-CHERRY",
+      "label": "M9-C-CHERRY",
+      "rank": null,
+      "score": null,
+      "n": 0,
+      "net": 0,
+      "retPct": null,
+      "qualified": false,
+      "why": [
+        "needs 3 closes, has 0",
+        "needs 1 active days, has 0"
+      ],
+      "comp": null
+    },
+    {
+      "key": "M9-C-D.CHERRY",
+      "label": "M9-C-D.CHERRY",
+      "rank": null,
+      "score": null,
+      "n": 0,
+      "net": 0,
+      "retPct": null,
+      "qualified": false,
+      "why": [
+        "needs 3 closes, has 0",
+        "needs 1 active days, has 0"
+      ],
+      "comp": null
+    }
+  ],
+  "crown": null,
+  "withheld": []
+}

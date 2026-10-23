@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "date": "2026-10-18",
+  "key": "M9-C-CHERRY",
+  "trades": [
+    {
+      "i": 1,
+      "symbol": "EURAUD",
+      "side": "long",
+      "net": -16.58,
+      "r": -0.018
+    },
+    {
+      "i": 2,
+      "symbol": "EURCAD",
+      "side": "long",
+      "net": -596.9,
+      "r": -1.01
+    },
+    {
+      "i": 3,
+      "symbol": "EURCAD",
+      "side": "long",
+      "net": -490.37,
+      "r": -1.006
+    },
+    {
+      "i": 4,
+      "symbol": "USDCAD",
+      "side": "short",
+      "net": 94.38,
+      "r": 0.415
+    },
+    {
+      "i": 5,
+      "symbol": "USDCAD",
+      "side": "short",
+      "net": 40.64,
+      "r": 0.208
+    },
+    {
+      "i": 6,
+      "symbol": "GBPAUD",
+      "side": "long",
+      "net": -281.51,
+      "r": -1.029
+    },
+    {
+      "i": 7,
+      "symbol": "USDCAD",
+      "side": "long",
+      "net": -157.54,
+      "r": -0.993
+    },
+    {
+      "i": 8,
+      "symbol": "EURUSD",
+      "side": "short",
+      "net": 164.82,
+      "r": 0.539
+    },
+    {
+      "i": 9,
+      "symbol": "EURJPY",
+      "side": "short",
+      "net": 148.3,
+      "r": 0.812
+    },
+    {
+      "i": 10,
+      "symbol": "EURGBP",
+      "side": "long",
+      "net": -123.83,
+      "r": -1.054
+    },
+    {
+      "i": 11,
+      "symbol": "EURAUD",
+      "side": "long",
+      "net": -8.3,
+      "r": -0.05
+    },
+    {
+      "i": 12,
+      "symbol": "EURAUD",
+      "side": "long",
+      "net": -218.25,
+      "r": -1.048
+    },
+    {
+      "i": 13,
+      "symbol": "USDCAD",
+      "side": "short",
+      "net": 21.67,
+      "r": 0.148
+    },
+    {
+      "i": 14,
+      "symbol": "EURUSD",
+      "side": "short",
+      "net": 282.19,
+      "r": 0.759
+    }
+  ]
+}

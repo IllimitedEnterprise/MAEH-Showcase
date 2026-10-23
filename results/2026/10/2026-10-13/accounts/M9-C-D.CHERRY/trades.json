@@ -1,0 +1,154 @@
+{
+  "schema": 1,
+  "date": "2026-10-13",
+  "key": "M9-C-D.CHERRY",
+  "trades": [
+    {
+      "i": 1,
+      "symbol": "EURJPY",
+      "side": "short",
+      "net": 208.94,
+      "r": 1.47
+    },
+    {
+      "i": 2,
+      "symbol": "EURJPY",
+      "side": "short",
+      "net": 53.51,
+      "r": 0.18
+    },
+    {
+      "i": 3,
+      "symbol": "AUDNZD",
+      "side": "long",
+      "net": -42.03,
+      "r": -0.944
+    },
+    {
+      "i": 4,
+      "symbol": "EURJPY",
+      "side": "long",
+      "net": 26.54,
+      "r": 0.184
+    },
+    {
+      "i": 5,
+      "symbol": "USDJPY",
+      "side": "long",
+      "net": -307.78,
+      "r": -0.978
+    },
+    {
+      "i": 6,
+      "symbol": "USDJPY",
+      "side": "short",
+      "net": 59.36,
+      "r": 0.625
+    },
+    {
+      "i": 7,
+      "symbol": "GBPJPY",
+      "side": "short",
+      "net": -11.02,
+      "r": -0.045
+    },
+    {
+      "i": 8,
+      "symbol": "GBPJPY",
+      "side": "short",
+      "net": -168.38,
+      "r": -1.013
+    },
+    {
+      "i": 9,
+      "symbol": "EURJPY",
+      "side": "short",
+      "net": 171.08,
+      "r": 0.954
+    },
+    {
+      "i": 10,
+      "symbol": "USDCAD",
+      "side": "short",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 11,
+      "symbol": "GBPJPY",
+      "side": "long",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 12,
+      "symbol": "USDCAD",
+      "side": "long",
+      "net": -167.98,
+      "r": -0.988
+    },
+    {
+      "i": 13,
+      "symbol": "USDCAD",
+      "side": "long",
+      "net": -18.19,
+      "r": -1
+    },
+    {
+      "i": 14,
+      "symbol": "EURJPY",
+      "side": "long",
+      "net": 114.07,
+      "r": 0.502
+    },
+    {
+      "i": 15,
+      "symbol": "EURGBP",
+      "side": "long",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 16,
+      "symbol": "USDCAD",
+      "side": "short",
+      "net": 156.54,
+      "r": 1.45
+    },
+    {
+      "i": 17,
+      "symbol": "USDCAD",
+      "side": "short",
+      "net": 60.98,
+      "r": 0.313
+    },
+    {
+      "i": 18,
+      "symbol": "AUDJPY",
+      "side": "long",
+      "net": 98,
+      "r": null
+    },
+    {
+      "i": 19,
+      "symbol": "USDCAD",
+      "side": "short",
+      "net": 212.58,
+      "r": 1.066
+    },
+    {
+      "i": 20,
+      "symbol": "USDJPY",
+      "side": "long",
+      "net": 0,
+      "r": 0
+    },
+    {
+      "i": 21,
+      "symbol": "AUDNZD",
+      "side": "long",
+      "net": 1.5,
+      "r": 0.031
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "date": "2026-10-16",
+  "key": "M9-C-CHERRY",
+  "label": "M9-C-CHERRY",
+  "status": "ok",
+  "reasons": [],
+  "source": "ledger",
+  "currency": "EUR",
+  "funding": 50000,
+  "n": 92,
+  "wins": 57,
+  "losses": 25,
+  "breakevens": 10,
+  "winRatePct": 69.5,
+  "grossWin": 6231.76,
+  "grossLoss": 3919.94,
+  "net": 2311.82,
+  "profitFactor": 1.59,
+  "retPct": 4.624,
+  "maxDrawdown": 1905.57,
+  "ddPct": 3.811,
+  "streaks": {
+    "maxWins": 24,
+    "maxLosses": 5
+  },
+  "r": {
+    "count": 92,
+    "sum": 3.213
+  },
+  "best": {
+    "symbol": "USDCHF",
+    "net": 446.12,
+    "r": 1.407
+  },
+  "worst": {
+    "symbol": "EURJPY",
+    "net": -498.29,
+    "r": -1.038
+  },
+  "pairs": [
+    {
+      "symbol": "AUDJPY",
+      "n": 10,
+      "net": 159.07
+    },
+    {
+      "symbol": "NZDUSD",
+      "n": 10,
+      "net": 235.98
+    },
+    {
+      "symbol": "EURUSD",
+      "n": 8,
+      "net": -7.85
+    },
+    {
+      "symbol": "NZDCAD",
+      "n": 8,
+      "net": 265.13
+    },
+    {
+      "symbol": "USDJPY",
+      "n": 8,
+      "net": -471.74
+    },
+    {
+      "symbol": "GBPJPY",
+      "n": 7,
+      "net": 1273.25
+    },
+    {
+      "symbol": "EURAUD",
+      "n": 6,
+      "net": -369.77
+    },
+    {
+      "symbol": "GBPNZD",
+      "n": 6,
+      "net": 474.99
+    },
+    {
+      "symbol": "GBPAUD",
+      "n": 5,
+      "net": -362.92
+    },
+    {
+      "symbol": "GBPUSD",
+      "n": 5,
+      "net": 254.16
+    },
+    {
+      "symbol": "USDCAD",
+      "n": 5,
+      "net": 118
+    },
+    {
+      "symbol": "AUDNZD",
+      "n": 4,
+      "net": 205.66
+    },
+    {
+      "symbol": "EURGBP",
+      "n": 4,
+      "net": 216.02
+    },
+    {
+      "symbol": "EURJPY",
+      "n": 4,
+      "net": -272.08
+    },
+    {
+      "symbol": "USDCHF",
+      "n": 2,
+      "net": 593.92
+    }
+  ],
+  "chain": {
+    "ok": true,
+    "gap": 0
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "date": "2026-10-18",
+  "key": "M9-B-D.CHERRY",
+  "trades": [
+    {
+      "i": 1,
+      "symbol": "EURGBP",
+      "side": "long",
+      "net": -73.92,
+      "r": -1.154
+    },
+    {
+      "i": 2,
+      "symbol": "USDCAD",
+      "side": "short",
+      "net": 21.67,
+      "r": 0.675
+    }
+  ]
+}

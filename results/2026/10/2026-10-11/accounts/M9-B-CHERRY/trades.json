@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "date": "2026-10-11",
+  "key": "M9-B-CHERRY",
+  "trades": [
+    {
+      "i": 1,
+      "symbol": "EURJPY",
+      "side": "short",
+      "net": 179.28,
+      "r": null
+    },
+    {
+      "i": 2,
+      "symbol": "NZDCAD",
+      "side": "long",
+      "net": -120.59,
+      "r": null
+    }
+  ]
+}

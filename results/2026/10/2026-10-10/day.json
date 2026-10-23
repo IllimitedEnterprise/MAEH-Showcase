@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "seq": 4,
+  "date": "2026-10-10",
+  "zone": "Europe/Berlin",
+  "window": {
+    "startUtc": "2026-10-09T22:00:00Z",
+    "endUtc": "2026-10-10T22:00:00Z",
+    "startOff": "+02:00",
+    "endOff": "+02:00",
+    "hours": 24
+  },
+  "kind": "backfilled",
+  "status": "complete",
+  "capturedAt": "2026-10-23T06:03:09Z",
+  "rules": "v1",
+  "accounts": {
+    "M9-B-CHERRY": "quiet",
+    "M9-C-CHERRY": "quiet",
+    "M9-B-D.CHERRY": "quiet",
+    "M9-C-D.CHERRY": "quiet",
+    "M9-L-Mix": "prefunding",
+    "M9-P-SINGLE": "prefunding",
+    "M9-S-B": "prefunding",
+    "M9-Y-SINGLE": "prefunding"
+  },
+  "files": {
+    "README.md": {
+      "sha256": "4381820c2a32618820d0d31822b0a1714e69f641d82699166f4032df5ed408a8",
+      "bytes": 804
+    },
+    "accounts/M9-B-CHERRY/hours.json": {
+      "sha256": "73e044175f9ce58bb5760e364a6e464561a9747667b21e3436e3987a4c72a1ca",
+      "bytes": 1844
+    },
+    "accounts/M9-B-CHERRY/summary.json": {
+      "sha256": "54e15d0fa6454dde3d2d96b3e028420e9601b0b5d68bef9d345359b38c258006",
+      "bytes": 557
+    },
+    "accounts/M9-B-CHERRY/summary.md": {
+      "sha256": "29dfcd3e4d97d018f6f26570981c37c140ee3cf67014afbfc104884694b2406d",
+      "bytes": 284
+    },
+    "accounts/M9-B-CHERRY/trades.csv": {
+      "sha256": "2cd3d36985cabb6730e885c67b15806764b49fcd685434610960f2c578419cdb",
+      "bytes": 20
+    },
+    "accounts/M9-B-CHERRY/trades.json": {
+      "sha256": "4cecd87950c081c5269a8f145df80ad013f3d1cb7f0e329edf2ddf7d4f18cdf2",
+      "bytes": 82
+    },
+    "accounts/M9-B-D.CHERRY/hours.json": {
+      "sha256": "42448027e232549e6ddc13db5d3bdf9473d3f21330df01d4bba326bacc9f7d08",
+      "bytes": 1846
+    },
+    "accounts/M9-B-D.CHERRY/summary.json": {
+      "sha256": "a701c3d15ecb518a04b38b9c045092c31b006d4abae572928563606bbe1c694e",
+      "bytes": 561
+    },
+    "accounts/M9-B-D.CHERRY/summary.md": {
+      "sha256": "3ac06d916c4776c7626dc2df158773a0f1e28b6356c9ed36f766b614ec8308ba",
+      "bytes": 286
+    },
+    "accounts/M9-B-D.CHERRY/trades.csv": {
+      "sha256": "2cd3d36985cabb6730e885c67b15806764b49fcd685434610960f2c578419cdb",
+      "bytes": 20
+    },
+    "accounts/M9-B-D.CHERRY/trades.json": {
+      "sha256": "14c30ba50507869e4e9f20724d93bcf37e9772a3964742553b1162393c5a345c",
+      "bytes": 84
+    },
+    "accounts/M9-C-CHERRY/hours.json": {
+      "sha256": "45673ce97561cbd99c92cd837b225744b2dea6cf9b5b95051c90dc11a9155ae5",
+      "bytes": 1844
+    },
+    "accounts/M9-C-CHERRY/summary.json": {
+      "sha256": "660f05d02afdd5091274851ffda1a6de521e207ea42dbd64402ec83801b6ee24",
+      "bytes": 557
+    },
+    "accounts/M9-C-CHERRY/summary.md": {
+      "sha256": "fbb8ca1c6f3fb8ee4439091959c4174810a7a61ec3899d6411b915a490fbb540",
+      "bytes": 284
+    },
+    "accounts/M9-C-CHERRY/trades.csv": {
+      "sha256": "2cd3d36985cabb6730e885c67b15806764b49fcd685434610960f2c578419cdb",
+      "bytes": 20
+    },
+    "accounts/M9-C-CHERRY/trades.json": {
+      "sha256": "4313fee066ee220df9912c950f26e80c1dbfb0776d48237b672830635cbcc21a",
+      "bytes": 82
+    },
+    "accounts/M9-C-D.CHERRY/hours.json": {
+      "sha256": "2f4da892210452e6e1c4fbdb28548a80f2929d2654e190c51c1b6d4400a60f68",
+      "bytes": 1846
+    },
+    "accounts/M9-C-D.CHERRY/summary.json": {
+      "sha256": "72609f3848708aca63a980da76a4ee3196fbd60c81bc5d9d9b488238e32163a9",
+      "bytes": 561
+    },
+    "accounts/M9-C-D.CHERRY/summary.md": {
+      "sha256": "cca6f2af1cbc94186a00b8e5b4eeca2f3e7f5b5d3327eca19b8a6d8ba9de8292",
+      "bytes": 286
+    },
+    "accounts/M9-C-D.CHERRY/trades.csv": {
+      "sha256": "2cd3d36985cabb6730e885c67b15806764b49fcd685434610960f2c578419cdb",
+      "bytes": 20
+    },
+    "accounts/M9-C-D.CHERRY/trades.json": {
+      "sha256": "8bc6316ba645d70a30b851955a63ba5b8e7e639c971008d1f7415c9049161b4b",
+      "bytes": 84
+    },
+    "desk.json": {
+      "sha256": "520de6e4545894ed1ef7b639b8f166c0a4251116495efaaaffd772d8ac6161f4",
+      "bytes": 2918
+    },
+    "stars.json": {
+      "sha256": "5c6469cbc8bb77ccd50e183553da8b5a12952b7a995c1c13d8a162488ff45778",
+      "bytes": 1330
+    }
+  },
+  "prev": {
+    "seq": 3,
+    "date": "2026-10-09",
+    "sha256": "093d0f055a5af393a11473e71a0097c91ef17b3308aa551af267f095f33ce71b"
+  }
+}

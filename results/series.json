@@ -1,0 +1,934 @@
+{
+  "schema": 1,
+  "seasonStart": "2026-10-07",
+  "days": [
+    {
+      "date": "2026-10-07",
+      "desk": {
+        "n": 20,
+        "net": -1272.26,
+        "cum": -1272.26
+      },
+      "accounts": {
+        "M9-B-CHERRY": {
+          "status": "ok",
+          "n": 5,
+          "net": -136.41,
+          "cum": -136.41
+        },
+        "M9-C-CHERRY": {
+          "status": "ok",
+          "n": 5,
+          "net": -269.02,
+          "cum": -269.02
+        },
+        "M9-B-D.CHERRY": {
+          "status": "ok",
+          "n": 5,
+          "net": -328.81,
+          "cum": -328.81
+        },
+        "M9-C-D.CHERRY": {
+          "status": "ok",
+          "n": 5,
+          "net": -538.02,
+          "cum": -538.02
+        },
+        "M9-L-Mix": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-P-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-S-B": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-Y-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "desk": {
+        "n": 156,
+        "net": -3101.61,
+        "cum": -4373.87
+      },
+      "accounts": {
+        "M9-B-CHERRY": {
+          "status": "ok",
+          "n": 41,
+          "net": -488.46,
+          "cum": -624.87
+        },
+        "M9-C-CHERRY": {
+          "status": "ok",
+          "n": 37,
+          "net": -544.05,
+          "cum": -813.07
+        },
+        "M9-B-D.CHERRY": {
+          "status": "ok",
+          "n": 41,
+          "net": -1003.38,
+          "cum": -1332.19
+        },
+        "M9-C-D.CHERRY": {
+          "status": "ok",
+          "n": 37,
+          "net": -1065.72,
+          "cum": -1603.74
+        },
+        "M9-L-Mix": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-P-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-S-B": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-Y-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "desk": {
+        "n": 193,
+        "net": -4160.25,
+        "cum": -8534.12
+      },
+      "accounts": {
+        "M9-B-CHERRY": {
+          "status": "ok",
+          "n": 66,
+          "net": -646.21,
+          "cum": -1271.08
+        },
+        "M9-C-CHERRY": {
+          "status": "ok",
+          "n": 38,
+          "net": -865.37,
+          "cum": -1678.44
+        },
+        "M9-B-D.CHERRY": {
+          "status": "ok",
+          "n": 45,
+          "net": -1088.36,
+          "cum": -2420.55
+        },
+        "M9-C-D.CHERRY": {
+          "status": "ok",
+          "n": 44,
+          "net": -1560.31,
+          "cum": -3164.05
+        },
+        "M9-L-Mix": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-P-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-S-B": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-Y-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "desk": {
+        "n": 0,
+        "net": 0,
+        "cum": -8534.12
+      },
+      "accounts": {
+        "M9-B-CHERRY": {
+          "status": "quiet",
+          "n": 0,
+          "net": 0,
+          "cum": -1271.08
+        },
+        "M9-C-CHERRY": {
+          "status": "quiet",
+          "n": 0,
+          "net": 0,
+          "cum": -1678.44
+        },
+        "M9-B-D.CHERRY": {
+          "status": "quiet",
+          "n": 0,
+          "net": 0,
+          "cum": -2420.55
+        },
+        "M9-C-D.CHERRY": {
+          "status": "quiet",
+          "n": 0,
+          "net": 0,
+          "cum": -3164.05
+        },
+        "M9-L-Mix": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-P-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-S-B": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-Y-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        }
+      }
+    },
+    {
+      "date": "2026-10-11",
+      "desk": {
+        "n": 7,
+        "net": 429.08,
+        "cum": -8105.04
+      },
+      "accounts": {
+        "M9-B-CHERRY": {
+          "status": "ok",
+          "n": 2,
+          "net": 58.69,
+          "cum": -1212.39
+        },
+        "M9-C-CHERRY": {
+          "status": "ok",
+          "n": 1,
+          "net": 190.01,
+          "cum": -1488.43
+        },
+        "M9-B-D.CHERRY": {
+          "status": "ok",
+          "n": 1,
+          "net": 190.01,
+          "cum": -2230.54
+        },
+        "M9-C-D.CHERRY": {
+          "status": "ok",
+          "n": 3,
+          "net": -9.63,
+          "cum": -3173.68
+        },
+        "M9-L-Mix": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-P-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-S-B": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-Y-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        }
+      }
+    },
+    {
+      "date": "2026-10-12",
+      "desk": {
+        "n": 140,
+        "net": -327.76,
+        "cum": -8432.8
+      },
+      "accounts": {
+        "M9-B-CHERRY": {
+          "status": "ok",
+          "n": 52,
+          "net": -483.62,
+          "cum": -1696.01
+        },
+        "M9-C-CHERRY": {
+          "status": "ok",
+          "n": 44,
+          "net": 649.87,
+          "cum": -838.56
+        },
+        "M9-B-D.CHERRY": {
+          "status": "ok",
+          "n": 24,
+          "net": -655.21,
+          "cum": -2885.75
+        },
+        "M9-C-D.CHERRY": {
+          "status": "ok",
+          "n": 20,
+          "net": 161.2,
+          "cum": -3012.48
+        },
+        "M9-L-Mix": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-P-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-S-B": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-Y-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        }
+      }
+    },
+    {
+      "date": "2026-10-13",
+      "desk": {
+        "n": 115,
+        "net": 1786.68,
+        "cum": -6646.12
+      },
+      "accounts": {
+        "M9-B-CHERRY": {
+          "status": "ok",
+          "n": 39,
+          "net": 420.89,
+          "cum": -1275.12
+        },
+        "M9-C-CHERRY": {
+          "status": "ok",
+          "n": 38,
+          "net": 626,
+          "cum": -212.56
+        },
+        "M9-B-D.CHERRY": {
+          "status": "ok",
+          "n": 17,
+          "net": 292.07,
+          "cum": -2593.68
+        },
+        "M9-C-D.CHERRY": {
+          "status": "ok",
+          "n": 21,
+          "net": 447.72,
+          "cum": -2564.76
+        },
+        "M9-L-Mix": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-P-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-S-B": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-Y-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        }
+      }
+    },
+    {
+      "date": "2026-10-14",
+      "desk": {
+        "n": 216,
+        "net": -592.61,
+        "cum": -7238.73
+      },
+      "accounts": {
+        "M9-B-CHERRY": {
+          "status": "ok",
+          "n": 71,
+          "net": -790.44,
+          "cum": -2065.56
+        },
+        "M9-C-CHERRY": {
+          "status": "ok",
+          "n": 73,
+          "net": -73.88,
+          "cum": -286.44
+        },
+        "M9-B-D.CHERRY": {
+          "status": "ok",
+          "n": 36,
+          "net": 191.11,
+          "cum": -2402.57
+        },
+        "M9-C-D.CHERRY": {
+          "status": "ok",
+          "n": 36,
+          "net": 80.6,
+          "cum": -2484.16
+        },
+        "M9-L-Mix": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-P-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-S-B": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-Y-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        }
+      }
+    },
+    {
+      "date": "2026-10-15",
+      "desk": {
+        "n": 256,
+        "net": 7384.62,
+        "cum": 145.89
+      },
+      "accounts": {
+        "M9-B-CHERRY": {
+          "status": "ok",
+          "n": 96,
+          "net": 1420.39,
+          "cum": -645.17
+        },
+        "M9-C-CHERRY": {
+          "status": "ok",
+          "n": 93,
+          "net": 5593.13,
+          "cum": 5306.69
+        },
+        "M9-B-D.CHERRY": {
+          "status": "ok",
+          "n": 33,
+          "net": -482.37,
+          "cum": -2884.94
+        },
+        "M9-C-D.CHERRY": {
+          "status": "ok",
+          "n": 34,
+          "net": 853.47,
+          "cum": -1630.69
+        },
+        "M9-L-Mix": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-P-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-S-B": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-Y-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        }
+      }
+    },
+    {
+      "date": "2026-10-16",
+      "desk": {
+        "n": 264,
+        "net": 4145.06,
+        "cum": 4290.95
+      },
+      "accounts": {
+        "M9-B-CHERRY": {
+          "status": "ok",
+          "n": 96,
+          "net": 90.99,
+          "cum": -554.18
+        },
+        "M9-C-CHERRY": {
+          "status": "ok",
+          "n": 92,
+          "net": 2311.82,
+          "cum": 7618.51
+        },
+        "M9-B-D.CHERRY": {
+          "status": "ok",
+          "n": 39,
+          "net": 367.11,
+          "cum": -2517.83
+        },
+        "M9-C-D.CHERRY": {
+          "status": "ok",
+          "n": 37,
+          "net": 1375.14,
+          "cum": -255.55
+        },
+        "M9-L-Mix": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-P-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-S-B": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-Y-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        }
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "desk": {
+        "n": 0,
+        "net": 0,
+        "cum": 4290.95
+      },
+      "accounts": {
+        "M9-B-CHERRY": {
+          "status": "quiet",
+          "n": 0,
+          "net": 0,
+          "cum": -554.18
+        },
+        "M9-C-CHERRY": {
+          "status": "quiet",
+          "n": 0,
+          "net": 0,
+          "cum": 7618.51
+        },
+        "M9-B-D.CHERRY": {
+          "status": "quiet",
+          "n": 0,
+          "net": 0,
+          "cum": -2517.83
+        },
+        "M9-C-D.CHERRY": {
+          "status": "quiet",
+          "n": 0,
+          "net": 0,
+          "cum": -255.55
+        },
+        "M9-L-Mix": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-P-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-S-B": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-Y-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        }
+      }
+    },
+    {
+      "date": "2026-10-18",
+      "desk": {
+        "n": 26,
+        "net": -896.61,
+        "cum": 3394.34
+      },
+      "accounts": {
+        "M9-B-CHERRY": {
+          "status": "ok",
+          "n": 4,
+          "net": 274.51,
+          "cum": -279.67
+        },
+        "M9-C-CHERRY": {
+          "status": "ok",
+          "n": 14,
+          "net": -1141.28,
+          "cum": 6477.23
+        },
+        "M9-B-D.CHERRY": {
+          "status": "ok",
+          "n": 2,
+          "net": -52.25,
+          "cum": -2570.08
+        },
+        "M9-C-D.CHERRY": {
+          "status": "ok",
+          "n": 6,
+          "net": 22.41,
+          "cum": -233.14
+        },
+        "M9-L-Mix": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-P-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-S-B": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-Y-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        }
+      }
+    },
+    {
+      "date": "2026-10-19",
+      "desk": {
+        "n": 150,
+        "net": -4520.31,
+        "cum": -1125.97
+      },
+      "accounts": {
+        "M9-B-CHERRY": {
+          "status": "ok",
+          "n": 58,
+          "net": -1975.65,
+          "cum": -2255.32
+        },
+        "M9-C-CHERRY": {
+          "status": "ok",
+          "n": 51,
+          "net": -2107.01,
+          "cum": 4370.22
+        },
+        "M9-B-D.CHERRY": {
+          "status": "ok",
+          "n": 22,
+          "net": -450.74,
+          "cum": -3020.82
+        },
+        "M9-C-D.CHERRY": {
+          "status": "ok",
+          "n": 19,
+          "net": 13.09,
+          "cum": -220.05
+        },
+        "M9-L-Mix": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-P-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-S-B": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-Y-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        }
+      }
+    },
+    {
+      "date": "2026-10-20",
+      "desk": {
+        "n": 210,
+        "net": -1913.92,
+        "cum": -3039.89
+      },
+      "accounts": {
+        "M9-B-CHERRY": {
+          "status": "ok",
+          "n": 76,
+          "net": -225.91,
+          "cum": -2481.23
+        },
+        "M9-C-CHERRY": {
+          "status": "ok",
+          "n": 77,
+          "net": -1250.59,
+          "cum": 3119.63
+        },
+        "M9-B-D.CHERRY": {
+          "status": "ok",
+          "n": 28,
+          "net": 236.33,
+          "cum": -2784.49
+        },
+        "M9-C-D.CHERRY": {
+          "status": "ok",
+          "n": 29,
+          "net": -673.75,
+          "cum": -893.8
+        },
+        "M9-L-Mix": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-P-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-S-B": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        },
+        "M9-Y-SINGLE": {
+          "status": "prefunding",
+          "n": 0,
+          "net": null,
+          "cum": null
+        }
+      }
+    },
+    {
+      "date": "2026-10-21",
+      "desk": {
+        "n": 117,
+        "net": -3084.75,
+        "cum": -6124.64
+      },
+      "accounts": {
+        "M9-B-CHERRY": {
+          "status": "ok",
+          "n": 41,
+          "net": -26.22,
+          "cum": -2507.45
+        },
+        "M9-C-CHERRY": {
+          "status": "ok",
+          "n": 47,
+          "net": -1771.28,
+          "cum": 1348.35
+        },
+        "M9-B-D.CHERRY": {
+          "status": "ok",
+          "n": 15,
+          "net": -491.61,
+          "cum": -3276.1
+        },
+        "M9-C-D.CHERRY": {
+          "status": "ok",
+          "n": 14,
+          "net": -795.64,
+          "cum": -1689.44
+        },
+        "M9-L-Mix": {
+          "status": "quiet",
+          "n": 0,
+          "net": 0,
+          "cum": 0
+        },
+        "M9-P-SINGLE": {
+          "status": "quiet",
+          "n": 0,
+          "net": 0,
+          "cum": 0
+        },
+        "M9-S-B": {
+          "status": "quiet",
+          "n": 0,
+          "net": 0,
+          "cum": 0
+        },
+        "M9-Y-SINGLE": {
+          "status": "quiet",
+          "n": 0,
+          "net": 0,
+          "cum": 0
+        }
+      }
+    },
+    {
+      "date": "2026-10-22",
+      "desk": {
+        "n": 224,
+        "net": 8173.58,
+        "cum": 2048.94
+      },
+      "accounts": {
+        "M9-B-CHERRY": {
+          "status": "ok",
+          "n": 61,
+          "net": 97.87,
+          "cum": -2409.58
+        },
+        "M9-C-CHERRY": {
+          "status": "ok",
+          "n": 59,
+          "net": 400.2,
+          "cum": 1748.55
+        },
+        "M9-B-D.CHERRY": {
+          "status": "ok",
+          "n": 32,
+          "net": 624.82,
+          "cum": -2651.28
+        },
+        "M9-C-D.CHERRY": {
+          "status": "ok",
+          "n": 31,
+          "net": 2082.56,
+          "cum": 393.12
+        },
+        "M9-L-Mix": {
+          "status": "ok",
+          "n": 31,
+          "net": 1908.27,
+          "cum": 1908.27
+        },
+        "M9-P-SINGLE": {
+          "status": "ok",
+          "n": 4,
+          "net": 271.21,
+          "cum": 271.21
+        },
+        "M9-S-B": {
+          "status": "ok",
+          "n": 2,
+          "net": 2295.07,
+          "cum": 2295.07
+        },
+        "M9-Y-SINGLE": {
+          "status": "ok",
+          "n": 4,
+          "net": 493.58,
+          "cum": 493.58
+        }
+      }
+    }
+  ]
+}

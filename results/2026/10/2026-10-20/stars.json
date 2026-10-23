@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "date": "2026-10-20",
+  "rules": "v1",
+  "rows": [
+    {
+      "key": "M9-B-D.CHERRY",
+      "label": "M9-B-D.CHERRY",
+      "rank": 1,
+      "score": 60.32,
+      "n": 28,
+      "net": 236.33,
+      "retPct": 0.473,
+      "qualified": true,
+      "why": [],
+      "comp": {
+        "ret": 0.579,
+        "pf": 0.572,
+        "dd": 0.809,
+        "win": 0.613,
+        "cred": 0.737
+      }
+    },
+    {
+      "key": "M9-B-CHERRY",
+      "label": "M9-B-CHERRY",
+      "rank": 2,
+      "score": 51.69,
+      "n": 76,
+      "net": -225.91,
+      "retPct": -0.452,
+      "qualified": true,
+      "why": [],
+      "comp": {
+        "ret": 0.425,
+        "pf": 0.462,
+        "dd": 0.74,
+        "win": 0.48,
+        "cred": 0.884
+      }
+    },
+    {
+      "key": "M9-C-D.CHERRY",
+      "label": "M9-C-D.CHERRY",
+      "rank": 3,
+      "score": 45.14,
+      "n": 29,
+      "net": -673.75,
+      "retPct": -1.347,
+      "qualified": true,
+      "why": [],
+      "comp": {
+        "ret": 0.275,
+        "pf": 0.356,
+        "dd": 0.65,
+        "win": 0.605,
+        "cred": 0.744
+      }
+    },
+    {
+      "key": "M9-C-CHERRY",
+      "label": "M9-C-CHERRY",
+      "rank": 4,
+      "score": 33.52,
+      "n": 77,
+      "net": -1250.59,
+      "retPct": -2.501,
+      "qualified": true,
+      "why": [],
+      "comp": {
+        "ret": 0.083,
+        "pf": 0.361,
+        "dd": 0.476,
+        "win": 0.595,
+        "cred": 0.885
+      }
+    }
+  ],
+  "crown": {
+    "key": "M9-B-D.CHERRY",
+    "label": "M9-B-D.CHERRY",
+    "score": 60.32,
+    "net": 236.33
+  },
+  "withheld": []
+}

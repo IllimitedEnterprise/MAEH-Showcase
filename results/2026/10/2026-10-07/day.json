@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "seq": 1,
+  "date": "2026-10-07",
+  "zone": "Europe/Berlin",
+  "window": {
+    "startUtc": "2026-10-06T22:00:00Z",
+    "endUtc": "2026-10-07T22:00:00Z",
+    "startOff": "+02:00",
+    "endOff": "+02:00",
+    "hours": 24
+  },
+  "kind": "backfilled",
+  "status": "complete",
+  "capturedAt": "2026-10-23T06:02:03Z",
+  "rules": "v1",
+  "accounts": {
+    "M9-B-CHERRY": "ok",
+    "M9-C-CHERRY": "ok",
+    "M9-B-D.CHERRY": "ok",
+    "M9-C-D.CHERRY": "ok",
+    "M9-L-Mix": "prefunding",
+    "M9-P-SINGLE": "prefunding",
+    "M9-S-B": "prefunding",
+    "M9-Y-SINGLE": "prefunding"
+  },
+  "files": {
+    "README.md": {
+      "sha256": "acaa51674ab8b42ef6e9559f140fcde4a05da22cf419b6aa8ba3ede498f76888",
+      "bytes": 827
+    },
+    "accounts/M9-B-CHERRY/hours.json": {
+      "sha256": "9c534f5301557df95db3f81594a5fef571309a3ee246799e8b94e976a46745b0",
+      "bytes": 1844
+    },
+    "accounts/M9-B-CHERRY/summary.json": {
+      "sha256": "94e3dcc0db20b4d379674734763843d362230c6670f97b541dca32fd25a6f803",
+      "bytes": 1056
+    },
+    "accounts/M9-B-CHERRY/summary.md": {
+      "sha256": "2a8a41be2535f7567e430bb0efe972e2029b7d077f307475757dc0b9e3919f4d",
+      "bytes": 458
+    },
+    "accounts/M9-B-CHERRY/trades.csv": {
+      "sha256": "4edfb9d21d588c9227062c338f9964f0897016f2125a9f5842e0a713ce1ec80f",
+      "bytes": 129
+    },
+    "accounts/M9-B-CHERRY/trades.json": {
+      "sha256": "071ca4ecd1b9b0c704608ed577e7c030dcacaed4e209a49164a07c97645bbe92",
+      "bytes": 639
+    },
+    "accounts/M9-B-D.CHERRY/hours.json": {
+      "sha256": "807ac9a39fca951e4af66fc348f6aca9f6d8c7be04214c55f07d26b861f50146",
+      "bytes": 1846
+    },
+    "accounts/M9-B-D.CHERRY/summary.json": {
+      "sha256": "1ab73df2700f73fa91901cfdc0ac808806a85254aa2946fba7bbc19edb959e2e",
+      "bytes": 1060
+    },
+    "accounts/M9-B-D.CHERRY/summary.md": {
+      "sha256": "9218f04638aa03aec871221df9f6ea6e9b3135624b19f7c46881cccfedc3ba36",
+      "bytes": 462
+    },
+    "accounts/M9-B-D.CHERRY/trades.csv": {
+      "sha256": "3779b2c70fa085a2e96f4b262215c9e2098ee57ee9408402b6c2163183e00bcf",
+      "bytes": 132
+    },
+    "accounts/M9-B-D.CHERRY/trades.json": {
+      "sha256": "0f06f3fa6f806c9b62a0d2e09b98c6634bf2f10b275f944e863d47f62f058eb3",
+      "bytes": 644
+    },
+    "accounts/M9-C-CHERRY/hours.json": {
+      "sha256": "52d45c6cd92e0e5de2e930b234754564d6e09d7d5695d468244880e70b1fc220",
+      "bytes": 1844
+    },
+    "accounts/M9-C-CHERRY/summary.json": {
+      "sha256": "093458fd57e4dfc1a26234a7091cc631082e5c7340b77961828cd4d5d5dbafa6",
+      "bytes": 1059
+    },
+    "accounts/M9-C-CHERRY/summary.md": {
+      "sha256": "ae42060c1a41e2b7a09689fa18af2911f001c486f39d2d6665b63c556189d65a",
+      "bytes": 460
+    },
+    "accounts/M9-C-CHERRY/trades.csv": {
+      "sha256": "6524105dbd93b173f4b4311a42307cadf30408ab542aa0fa06c1e7fff8fa682e",
+      "bytes": 130
+    },
+    "accounts/M9-C-CHERRY/trades.json": {
+      "sha256": "0ccc82ef6e4fef4df6dc68ff4087c2ce053bfe25c80879f8e00056eabae077d6",
+      "bytes": 641
+    },
+    "accounts/M9-C-D.CHERRY/hours.json": {
+      "sha256": "106cbb7c45cd51af64db75bc4bd7917dfa407f34f97d7c4f60e06da24cab6344",
+      "bytes": 1846
+    },
+    "accounts/M9-C-D.CHERRY/summary.json": {
+      "sha256": "7b65cb70c23525092948b1ca42388d887438e5aedcd7ec45ce64ced0b81d6959",
+      "bytes": 1062
+    },
+    "accounts/M9-C-D.CHERRY/summary.md": {
+      "sha256": "d7fb8fcd45aea3db4e21e4cf437da1a1808bc3535bcb1efd0f383615b27d8bf7",
+      "bytes": 464
+    },
+    "accounts/M9-C-D.CHERRY/trades.csv": {
+      "sha256": "a4388684e7978b7f10a4ceb1d15e7fb6215a8be1a1dabfc67c8ac949317dd8d8",
+      "bytes": 132
+    },
+    "accounts/M9-C-D.CHERRY/trades.json": {
+      "sha256": "7171314a47e0da9bc58fa0daca0098e016415506d59aab03ef70d09487c38bde",
+      "bytes": 644
+    },
+    "desk.json": {
+      "sha256": "7dc7572b2191a6489467cf9dee0edcec27808e1a70ea232a616f006f6ce4a1b7",
+      "bytes": 3044
+    },
+    "stars.json": {
+      "sha256": "a81605e504743a6678d70ee3eb02e5a8a2c7c4c2a98b5babf1a432288d873fad",
+      "bytes": 1458
+    }
+  },
+  "prev": null
+}

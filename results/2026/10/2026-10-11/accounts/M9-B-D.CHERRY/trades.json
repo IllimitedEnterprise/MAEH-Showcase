@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "date": "2026-10-11",
+  "key": "M9-B-D.CHERRY",
+  "trades": [
+    {
+      "i": 1,
+      "symbol": "EURJPY",
+      "side": "short",
+      "net": 190.01,
+      "r": null
+    }
+  ]
+}

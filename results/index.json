@@ -1,0 +1,215 @@
+{
+  "schema": 1,
+  "zone": "Europe/Berlin",
+  "seasonStart": "2026-10-07",
+  "tip": {
+    "seq": 16,
+    "date": "2026-10-22",
+    "sha256": "f9735eeeb1d7de378441cf2cf1daf66ed754afb84e1005dbb7a2227ece84f7fe"
+  },
+  "days": [
+    {
+      "date": "2026-10-07",
+      "seq": 1,
+      "kind": "backfilled",
+      "status": "complete",
+      "sha256": "d92e0f7b14812f5b87206c306232ccacf43c3ba1503adf33679e66408031a574",
+      "n": 20,
+      "net": -1272.26,
+      "crown": null
+    },
+    {
+      "date": "2026-10-08",
+      "seq": 2,
+      "kind": "backfilled",
+      "status": "complete",
+      "sha256": "c690d2d57083270f6ddc9e5cafbe50cc28e1c015380ea65a7d69a12890cf8d31",
+      "n": 156,
+      "net": -3101.61,
+      "crown": null
+    },
+    {
+      "date": "2026-10-09",
+      "seq": 3,
+      "kind": "backfilled",
+      "status": "complete",
+      "sha256": "093d0f055a5af393a11473e71a0097c91ef17b3308aa551af267f095f33ce71b",
+      "n": 193,
+      "net": -4160.25,
+      "crown": null
+    },
+    {
+      "date": "2026-10-10",
+      "seq": 4,
+      "kind": "backfilled",
+      "status": "complete",
+      "sha256": "f420951b3d1467ebc84c37715c2866d29f16950d3765560578142322225cb2cc",
+      "n": 0,
+      "net": 0,
+      "crown": null
+    },
+    {
+      "date": "2026-10-11",
+      "seq": 5,
+      "kind": "backfilled",
+      "status": "complete",
+      "sha256": "0c575af2396bed92ef60d1df40dbff2410178331b825884d590b2bc51e7d1a0e",
+      "n": 7,
+      "net": 429.08,
+      "crown": null
+    },
+    {
+      "date": "2026-10-12",
+      "seq": 6,
+      "kind": "backfilled",
+      "status": "complete",
+      "sha256": "d625e3434c0891b22fb80b012601a0af928b5b83d6816bc40e04931e9fb29761",
+      "n": 140,
+      "net": -327.76,
+      "crown": "M9-C-CHERRY"
+    },
+    {
+      "date": "2026-10-13",
+      "seq": 7,
+      "kind": "backfilled",
+      "status": "complete",
+      "sha256": "222e785bdd085b51e438f5c52d6d4c5b08b5fd056ea337910cd3ee8fcaaada44",
+      "n": 115,
+      "net": 1786.68,
+      "crown": "M9-C-CHERRY"
+    },
+    {
+      "date": "2026-10-14",
+      "seq": 8,
+      "kind": "backfilled",
+      "status": "complete",
+      "sha256": "96d908328834b19bfaf45db2c386a7377c30f41a7d17a2b11c7407385ba37be5",
+      "n": 216,
+      "net": -592.61,
+      "crown": "M9-C-D.CHERRY"
+    },
+    {
+      "date": "2026-10-15",
+      "seq": 9,
+      "kind": "backfilled",
+      "status": "complete",
+      "sha256": "0a2106796f1e99b03671f8a1835c822520422d3060a9fd3b99e0824410dae35e",
+      "n": 256,
+      "net": 7384.62,
+      "crown": "M9-C-CHERRY"
+    },
+    {
+      "date": "2026-10-16",
+      "seq": 10,
+      "kind": "backfilled",
+      "status": "complete",
+      "sha256": "e18e26b5f6526b5b121040b69bd6665da6aa205e9edd4d3fd5b3a53af2495cd7",
+      "n": 264,
+      "net": 4145.06,
+      "crown": "M9-C-D.CHERRY"
+    },
+    {
+      "date": "2026-10-17",
+      "seq": 11,
+      "kind": "backfilled",
+      "status": "complete",
+      "sha256": "a067f8cbcb6eb6beac8f6fb7fecd793f0aa469cb7aa7df44f9286a5c1ff1800a",
+      "n": 0,
+      "net": 0,
+      "crown": null
+    },
+    {
+      "date": "2026-10-18",
+      "seq": 12,
+      "kind": "backfilled",
+      "status": "complete",
+      "sha256": "c51b9de07d5e3cf24af19e82e278ff414371fdf19b4ab68ed2eed49d780eecbc",
+      "n": 26,
+      "net": -896.61,
+      "crown": "M9-B-CHERRY"
+    },
+    {
+      "date": "2026-10-19",
+      "seq": 13,
+      "kind": "backfilled",
+      "status": "complete",
+      "sha256": "863d91502037e088f69fbf8cbc616dc2ca48db98da0c45d79b6f40629a2de53a",
+      "n": 150,
+      "net": -4520.31,
+      "crown": "M9-C-D.CHERRY"
+    },
+    {
+      "date": "2026-10-20",
+      "seq": 14,
+      "kind": "backfilled",
+      "status": "complete",
+      "sha256": "48cfde1bdcc8a142b527f331bbd8c5dfb506eb4a225eb199fc2f6b4b988f78c0",
+      "n": 210,
+      "net": -1913.92,
+      "crown": "M9-B-D.CHERRY"
+    },
+    {
+      "date": "2026-10-21",
+      "seq": 15,
+      "kind": "backfilled",
+      "status": "complete",
+      "sha256": "4dbbe8d3c1b34a271e591313631d6a2daf176a6a43978ab54c7d742db46a78d7",
+      "n": 117,
+      "net": -3084.75,
+      "crown": null
+    },
+    {
+      "date": "2026-10-22",
+      "seq": 16,
+      "kind": "backfilled",
+      "status": "complete",
+      "sha256": "f9735eeeb1d7de378441cf2cf1daf66ed754afb84e1005dbb7a2227ece84f7fe",
+      "n": 224,
+      "net": 8173.58,
+      "crown": "M9-L-Mix"
+    }
+  ],
+  "gaps": [],
+  "accounts": [
+    {
+      "key": "M9-B-CHERRY",
+      "label": "M9-B-CHERRY",
+      "fundedDate": "2026-10-07"
+    },
+    {
+      "key": "M9-C-CHERRY",
+      "label": "M9-C-CHERRY",
+      "fundedDate": "2026-10-07"
+    },
+    {
+      "key": "M9-B-D.CHERRY",
+      "label": "M9-B-D.CHERRY",
+      "fundedDate": "2026-10-07"
+    },
+    {
+      "key": "M9-C-D.CHERRY",
+      "label": "M9-C-D.CHERRY",
+      "fundedDate": "2026-10-07"
+    },
+    {
+      "key": "M9-L-Mix",
+      "label": "M9-L-Mix",
+      "fundedDate": "2026-10-21"
+    },
+    {
+      "key": "M9-P-SINGLE",
+      "label": "M9-P-SINGLE",
+      "fundedDate": "2026-10-21"
+    },
+    {
+      "key": "M9-S-B",
+      "label": "M9-S-B",
+      "fundedDate": "2026-10-21"
+    },
+    {
+      "key": "M9-Y-SINGLE",
+      "label": "M9-Y-SINGLE",
+      "fundedDate": "2026-10-21"
+    }
+  ]
+}

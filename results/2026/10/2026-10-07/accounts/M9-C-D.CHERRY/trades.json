@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "date": "2026-10-07",
+  "key": "M9-C-D.CHERRY",
+  "trades": [
+    {
+      "i": 1,
+      "symbol": "GBPNZD",
+      "side": "short",
+      "net": -247.75,
+      "r": null
+    },
+    {
+      "i": 2,
+      "symbol": "NZDUSD",
+      "side": "long",
+      "net": 0,
+      "r": null
+    },
+    {
+      "i": 3,
+      "symbol": "USDCAD",
+      "side": "long",
+      "net": 21.3,
+      "r": null
+    },
+    {
+      "i": 4,
+      "symbol": "GBPAUD",
+      "side": "short",
+      "net": -190.24,
+      "r": null
+    },
+    {
+      "i": 5,
+      "symbol": "NZDCAD",
+      "side": "long",
+      "net": -121.33,
+      "r": null
+    }
+  ]
+}

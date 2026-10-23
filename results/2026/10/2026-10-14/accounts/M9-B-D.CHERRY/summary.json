@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "date": "2026-10-14",
+  "key": "M9-B-D.CHERRY",
+  "label": "M9-B-D.CHERRY",
+  "status": "ok",
+  "reasons": [],
+  "source": "ledger",
+  "currency": "EUR",
+  "funding": 50000,
+  "n": 36,
+  "wins": 15,
+  "losses": 16,
+  "breakevens": 5,
+  "winRatePct": 48.4,
+  "grossWin": 1388.41,
+  "grossLoss": 1197.3,
+  "net": 191.11,
+  "profitFactor": 1.16,
+  "retPct": 0.382,
+  "maxDrawdown": 506.76,
+  "ddPct": 1.014,
+  "streaks": {
+    "maxWins": 4,
+    "maxLosses": 7
+  },
+  "r": {
+    "count": 36,
+    "sum": -2.151
+  },
+  "best": {
+    "symbol": "GBPJPY",
+    "net": 446.59,
+    "r": 1.662
+  },
+  "worst": {
+    "symbol": "USDJPY",
+    "net": -254.89,
+    "r": -1.003
+  },
+  "pairs": [
+    {
+      "symbol": "AUDNZD",
+      "n": 9,
+      "net": -28.58
+    },
+    {
+      "symbol": "EURGBP",
+      "n": 7,
+      "net": -10.51
+    },
+    {
+      "symbol": "EURJPY",
+      "n": 6,
+      "net": -282.77
+    },
+    {
+      "symbol": "USDJPY",
+      "n": 6,
+      "net": -121.79
+    },
+    {
+      "symbol": "GBPJPY",
+      "n": 5,
+      "net": 612.79
+    },
+    {
+      "symbol": "USDCAD",
+      "n": 2,
+      "net": 47.12
+    },
+    {
+      "symbol": "GBPUSD",
+      "n": 1,
+      "net": -25.15
+    }
+  ],
+  "chain": {
+    "ok": true,
+    "gap": 0
+  }
+}

@@ -1,0 +1,630 @@
+{
+  "schema": 1,
+  "rules": "v1",
+  "asOf": "2026-10-22",
+  "day": {
+    "date": "2026-10-22",
+    "rows": [
+      {
+        "key": "M9-L-Mix",
+        "label": "M9-L-Mix",
+        "rank": 1,
+        "score": 86.17,
+        "n": 31,
+        "net": 1908.27,
+        "retPct": 3.817,
+        "qualified": true,
+        "why": [],
+        "comp": {
+          "ret": 1,
+          "pf": 1,
+          "dd": 0.914,
+          "win": 1,
+          "cred": 0.756
+        }
+      },
+      {
+        "key": "M9-C-D.CHERRY",
+        "label": "M9-C-D.CHERRY",
+        "rank": 2,
+        "score": 85.58,
+        "n": 31,
+        "net": 2082.56,
+        "retPct": 4.165,
+        "qualified": true,
+        "why": [],
+        "comp": {
+          "ret": 1,
+          "pf": 1,
+          "dd": 0.882,
+          "win": 1,
+          "cred": 0.756
+        }
+      },
+      {
+        "key": "M9-B-D.CHERRY",
+        "label": "M9-B-D.CHERRY",
+        "rank": 3,
+        "score": 65.47,
+        "n": 32,
+        "net": 624.82,
+        "retPct": 1.25,
+        "qualified": true,
+        "why": [],
+        "comp": {
+          "ret": 0.708,
+          "pf": 0.691,
+          "dd": 0.856,
+          "win": 0.45,
+          "cred": 0.762
+        }
+      },
+      {
+        "key": "M9-Y-SINGLE",
+        "label": "M9-Y-SINGLE",
+        "rank": 4,
+        "score": 60.44,
+        "n": 4,
+        "net": 493.58,
+        "retPct": 0.987,
+        "qualified": true,
+        "why": [],
+        "comp": {
+          "ret": 0.665,
+          "pf": 1,
+          "dd": 0.998,
+          "win": 1,
+          "cred": 0.286
+        }
+      },
+      {
+        "key": "M9-P-SINGLE",
+        "label": "M9-P-SINGLE",
+        "rank": 5,
+        "score": 59.6,
+        "n": 4,
+        "net": 271.21,
+        "retPct": 0.542,
+        "qualified": true,
+        "why": [],
+        "comp": {
+          "ret": 0.59,
+          "pf": 1,
+          "dd": 1,
+          "win": 1,
+          "cred": 0.286
+        }
+      },
+      {
+        "key": "M9-C-CHERRY",
+        "label": "M9-C-CHERRY",
+        "rank": 6,
+        "score": 58.51,
+        "n": 59,
+        "net": 400.2,
+        "retPct": 0.8,
+        "qualified": true,
+        "why": [],
+        "comp": {
+          "ret": 0.633,
+          "pf": 0.547,
+          "dd": 0.347,
+          "win": 1,
+          "cred": 0.855
+        }
+      },
+      {
+        "key": "M9-B-CHERRY",
+        "label": "M9-B-CHERRY",
+        "rank": 7,
+        "score": 54.77,
+        "n": 61,
+        "net": 97.87,
+        "retPct": 0.196,
+        "qualified": true,
+        "why": [],
+        "comp": {
+          "ret": 0.533,
+          "pf": 0.518,
+          "dd": 0.689,
+          "win": 0.445,
+          "cred": 0.859
+        }
+      },
+      {
+        "key": "M9-S-B",
+        "label": "M9-S-B",
+        "rank": null,
+        "score": 58.33,
+        "n": 2,
+        "net": 2295.07,
+        "retPct": 4.59,
+        "qualified": false,
+        "why": [
+          "needs 3 closes, has 2"
+        ],
+        "comp": {
+          "ret": 1,
+          "pf": 1,
+          "dd": 1,
+          "win": 1,
+          "cred": 0.167
+        }
+      }
+    ],
+    "crown": {
+      "key": "M9-L-Mix",
+      "label": "M9-L-Mix",
+      "score": 86.17,
+      "net": 1908.27
+    }
+  },
+  "week": {
+    "kind": "week",
+    "period": "2026-W43",
+    "start": "2026-10-19",
+    "end": "2026-10-25",
+    "through": "2026-10-22",
+    "complete": false,
+    "provisional": true,
+    "rows": [
+      {
+        "key": "M9-C-D.CHERRY",
+        "label": "M9-C-D.CHERRY",
+        "rank": 1,
+        "score": 58.82,
+        "n": 93,
+        "net": 626.26,
+        "retPct": 1.253,
+        "qualified": true,
+        "why": [],
+        "comp": {
+          "ret": 0.604,
+          "pf": 0.55,
+          "dd": 0.593,
+          "win": 0.84,
+          "cred": 0.699
+        }
+      },
+      {
+        "key": "M9-B-D.CHERRY",
+        "label": "M9-B-D.CHERRY",
+        "rank": 2,
+        "score": 52.92,
+        "n": 97,
+        "net": -81.2,
+        "retPct": -0.162,
+        "qualified": true,
+        "why": [],
+        "comp": {
+          "ret": 0.486,
+          "pf": 0.489,
+          "dd": 0.788,
+          "win": 0.345,
+          "cred": 0.708
+        }
+      },
+      {
+        "key": "M9-B-CHERRY",
+        "label": "M9-B-CHERRY",
+        "rank": 3,
+        "score": 32.38,
+        "n": 236,
+        "net": -2129.91,
+        "retPct": -4.26,
+        "qualified": true,
+        "why": [],
+        "comp": {
+          "ret": 0.145,
+          "pf": 0.401,
+          "dd": 0.465,
+          "win": 0.263,
+          "cred": 0.855
+        }
+      },
+      {
+        "key": "M9-C-CHERRY",
+        "label": "M9-C-CHERRY",
+        "rank": 4,
+        "score": 22.49,
+        "n": 234,
+        "net": -4728.68,
+        "retPct": -9.457,
+        "qualified": true,
+        "why": [],
+        "comp": {
+          "ret": 0,
+          "pf": 0.361,
+          "dd": 0,
+          "win": 0.705,
+          "cred": 0.854
+        }
+      },
+      {
+        "key": "M9-L-Mix",
+        "label": "M9-L-Mix",
+        "rank": null,
+        "score": 68.18,
+        "n": 31,
+        "net": 1908.27,
+        "retPct": 3.817,
+        "qualified": false,
+        "why": [
+          "joined after the period began",
+          "needs 2 active days, has 1"
+        ],
+        "comp": {
+          "ret": 0.818,
+          "pf": 1,
+          "dd": 0.957,
+          "win": 1,
+          "cred": 0.437
+        }
+      },
+      {
+        "key": "M9-P-SINGLE",
+        "label": "M9-P-SINGLE",
+        "rank": null,
+        "score": 52.89,
+        "n": 4,
+        "net": 271.21,
+        "retPct": 0.542,
+        "qualified": false,
+        "why": [
+          "joined after the period began",
+          "needs 10 closes, has 4",
+          "needs 2 active days, has 1"
+        ],
+        "comp": {
+          "ret": 0.545,
+          "pf": 1,
+          "dd": 1,
+          "win": 1,
+          "cred": 0.091
+        }
+      },
+      {
+        "key": "M9-Y-SINGLE",
+        "label": "M9-Y-SINGLE",
+        "rank": null,
+        "score": 53.02,
+        "n": 4,
+        "net": 493.58,
+        "retPct": 0.987,
+        "qualified": false,
+        "why": [
+          "joined after the period began",
+          "needs 10 closes, has 4",
+          "needs 2 active days, has 1"
+        ],
+        "comp": {
+          "ret": 0.582,
+          "pf": 1,
+          "dd": 0.999,
+          "win": 1,
+          "cred": 0.091
+        }
+      },
+      {
+        "key": "M9-S-B",
+        "label": "M9-S-B",
+        "rank": null,
+        "score": 52.16,
+        "n": 2,
+        "net": 2295.07,
+        "retPct": 4.59,
+        "qualified": false,
+        "why": [
+          "joined after the period began",
+          "needs 10 closes, has 2",
+          "needs 2 active days, has 1"
+        ],
+        "comp": {
+          "ret": 0.883,
+          "pf": 1,
+          "dd": 1,
+          "win": 1,
+          "cred": 0.048
+        }
+      }
+    ],
+    "leader": {
+      "key": "M9-C-D.CHERRY",
+      "label": "M9-C-D.CHERRY",
+      "score": 58.82,
+      "net": 626.26
+    },
+    "crown": null
+  },
+  "month": {
+    "kind": "month",
+    "period": "2026-10",
+    "start": "2026-10-07",
+    "end": "2026-10-31",
+    "through": "2026-10-22",
+    "complete": false,
+    "provisional": true,
+    "rows": [
+      {
+        "key": "M9-C-D.CHERRY",
+        "label": "M9-C-D.CHERRY",
+        "rank": 1,
+        "score": 57.35,
+        "n": 336,
+        "net": 393.12,
+        "retPct": 0.786,
+        "qualified": true,
+        "why": [],
+        "comp": {
+          "ret": 0.533,
+          "pf": 0.507,
+          "dd": 0.654,
+          "win": 0.813,
+          "cred": 0.737
+        }
+      },
+      {
+        "key": "M9-C-CHERRY",
+        "label": "M9-C-CHERRY",
+        "rank": 2,
+        "score": 49.09,
+        "n": 669,
+        "net": 1748.55,
+        "retPct": 3.497,
+        "qualified": true,
+        "why": [],
+        "comp": {
+          "ret": 0.646,
+          "pf": 0.518,
+          "dd": 0.029,
+          "win": 0.802,
+          "cred": 0.848
+        }
+      },
+      {
+        "key": "M9-B-D.CHERRY",
+        "label": "M9-B-D.CHERRY",
+        "rank": 3,
+        "score": 42.45,
+        "n": 340,
+        "net": -2651.28,
+        "retPct": -5.303,
+        "qualified": true,
+        "why": [],
+        "comp": {
+          "ret": 0.279,
+          "pf": 0.42,
+          "dd": 0.65,
+          "win": 0.265,
+          "cred": 0.739
+        }
+      },
+      {
+        "key": "M9-B-CHERRY",
+        "label": "M9-B-CHERRY",
+        "rank": 4,
+        "score": 41.97,
+        "n": 708,
+        "net": -2409.58,
+        "retPct": -4.819,
+        "qualified": true,
+        "why": [],
+        "comp": {
+          "ret": 0.299,
+          "pf": 0.462,
+          "dd": 0.597,
+          "win": 0.297,
+          "cred": 0.855
+        }
+      },
+      {
+        "key": "M9-L-Mix",
+        "label": "M9-L-Mix",
+        "rank": null,
+        "score": 57.35,
+        "n": 31,
+        "net": 1908.27,
+        "retPct": 3.817,
+        "qualified": false,
+        "why": [
+          "joined after the period began",
+          "needs 5 active days, has 1"
+        ],
+        "comp": {
+          "ret": 0.659,
+          "pf": 1,
+          "dd": 0.978,
+          "win": 1,
+          "cred": 0.205
+        }
+      },
+      {
+        "key": "M9-P-SINGLE",
+        "label": "M9-P-SINGLE",
+        "rank": null,
+        "score": 51,
+        "n": 4,
+        "net": 271.21,
+        "retPct": 0.542,
+        "qualified": false,
+        "why": [
+          "joined after the period began",
+          "needs 30 closes, has 4",
+          "needs 5 active days, has 1"
+        ],
+        "comp": {
+          "ret": 0.523,
+          "pf": 1,
+          "dd": 1,
+          "win": 1,
+          "cred": 0.032
+        }
+      },
+      {
+        "key": "M9-Y-SINGLE",
+        "label": "M9-Y-SINGLE",
+        "rank": null,
+        "score": 51.02,
+        "n": 4,
+        "net": 493.58,
+        "retPct": 0.987,
+        "qualified": false,
+        "why": [
+          "joined after the period began",
+          "needs 30 closes, has 4",
+          "needs 5 active days, has 1"
+        ],
+        "comp": {
+          "ret": 0.541,
+          "pf": 1,
+          "dd": 0.999,
+          "win": 1,
+          "cred": 0.032
+        }
+      },
+      {
+        "key": "M9-S-B",
+        "label": "M9-S-B",
+        "rank": null,
+        "score": 50.62,
+        "n": 2,
+        "net": 2295.07,
+        "retPct": 4.59,
+        "qualified": false,
+        "why": [
+          "joined after the period began",
+          "needs 30 closes, has 2",
+          "needs 5 active days, has 1"
+        ],
+        "comp": {
+          "ret": 0.691,
+          "pf": 1,
+          "dd": 1,
+          "win": 1,
+          "cred": 0.016
+        }
+      }
+    ],
+    "leader": {
+      "key": "M9-C-D.CHERRY",
+      "label": "M9-C-D.CHERRY",
+      "score": 57.35,
+      "net": 393.12
+    },
+    "crown": null
+  },
+  "tally": [
+    {
+      "key": "M9-C-D.CHERRY",
+      "label": "M9-C-D.CHERRY",
+      "day": 3,
+      "week": 1,
+      "month": 0,
+      "points": 8,
+      "streak": {
+        "cur": 0,
+        "best": 1,
+        "bestFrom": "2026-10-14",
+        "bestTo": "2026-10-14"
+      }
+    },
+    {
+      "key": "M9-C-CHERRY",
+      "label": "M9-C-CHERRY",
+      "day": 3,
+      "week": 0,
+      "month": 0,
+      "points": 3,
+      "streak": {
+        "cur": 0,
+        "best": 2,
+        "bestFrom": "2026-10-12",
+        "bestTo": "2026-10-13"
+      }
+    },
+    {
+      "key": "M9-B-CHERRY",
+      "label": "M9-B-CHERRY",
+      "day": 1,
+      "week": 0,
+      "month": 0,
+      "points": 1,
+      "streak": {
+        "cur": 0,
+        "best": 1,
+        "bestFrom": "2026-10-18",
+        "bestTo": "2026-10-18"
+      }
+    },
+    {
+      "key": "M9-B-D.CHERRY",
+      "label": "M9-B-D.CHERRY",
+      "day": 1,
+      "week": 0,
+      "month": 0,
+      "points": 1,
+      "streak": {
+        "cur": 0,
+        "best": 1,
+        "bestFrom": "2026-10-20",
+        "bestTo": "2026-10-20"
+      }
+    },
+    {
+      "key": "M9-L-Mix",
+      "label": "M9-L-Mix",
+      "day": 1,
+      "week": 0,
+      "month": 0,
+      "points": 1,
+      "streak": {
+        "cur": 1,
+        "best": 1,
+        "bestFrom": "2026-10-22",
+        "bestTo": "2026-10-22"
+      }
+    },
+    {
+      "key": "M9-P-SINGLE",
+      "label": "M9-P-SINGLE",
+      "day": 0,
+      "week": 0,
+      "month": 0,
+      "points": 0,
+      "streak": {
+        "cur": 0,
+        "best": 0,
+        "bestFrom": null,
+        "bestTo": null
+      }
+    },
+    {
+      "key": "M9-S-B",
+      "label": "M9-S-B",
+      "day": 0,
+      "week": 0,
+      "month": 0,
+      "points": 0,
+      "streak": {
+        "cur": 0,
+        "best": 0,
+        "bestFrom": null,
+        "bestTo": null
+      }
+    },
+    {
+      "key": "M9-Y-SINGLE",
+      "label": "M9-Y-SINGLE",
+      "day": 0,
+      "week": 0,
+      "month": 0,
+      "points": 0,
+      "streak": {
+        "cur": 0,
+        "best": 0,
+        "bestFrom": null,
+        "bestTo": null
+      }
+    }
+  ]
+}

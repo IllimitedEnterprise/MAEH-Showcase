@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "date": "2026-10-18",
+  "key": "M9-B-CHERRY",
+  "trades": [
+    {
+      "i": 1,
+      "symbol": "EURAUD",
+      "side": "long",
+      "net": -16.58,
+      "r": -0.032
+    },
+    {
+      "i": 2,
+      "symbol": "EURAUD",
+      "side": "long",
+      "net": -8.3,
+      "r": -0.074
+    },
+    {
+      "i": 3,
+      "symbol": "USDCAD",
+      "side": "short",
+      "net": 21.67,
+      "r": 0.675
+    },
+    {
+      "i": 4,
+      "symbol": "EURUSD",
+      "side": "short",
+      "net": 277.72,
+      "r": 0.965
+    }
+  ]
+}

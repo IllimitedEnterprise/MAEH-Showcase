@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "date": "2026-10-10",
+  "key": "M9-B-CHERRY",
+  "label": "M9-B-CHERRY",
+  "status": "quiet",
+  "reasons": [],
+  "source": "ledger",
+  "currency": "EUR",
+  "funding": 50000,
+  "n": 0,
+  "wins": 0,
+  "losses": 0,
+  "breakevens": 0,
+  "winRatePct": null,
+  "grossWin": 0,
+  "grossLoss": 0,
+  "net": 0,
+  "profitFactor": null,
+  "retPct": 0,
+  "maxDrawdown": 0,
+  "ddPct": 0,
+  "streaks": {
+    "maxWins": 0,
+    "maxLosses": 0
+  },
+  "r": null,
+  "best": null,
+  "worst": null,
+  "pairs": [],
+  "chain": {
+    "ok": true,
+    "gap": 0
+  }
+}

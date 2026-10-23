@@ -1,0 +1,356 @@
+{
+  "schema": 1,
+  "key": "M9-L-Mix",
+  "label": "M9-L-Mix",
+  "fundedDate": "2026-10-21",
+  "asOf": "2026-10-22",
+  "rules": "v1",
+  "totals": {
+    "days": 2,
+    "activeDays": 1,
+    "n": 31,
+    "wins": 21,
+    "losses": 4,
+    "breakevens": 6,
+    "winRatePct": 84,
+    "net": 1908.27,
+    "grossWin": 2129.64,
+    "grossLoss": 221.37,
+    "profitFactor": 9.62,
+    "retPct": 3.817,
+    "maxDrawdown": 216.04,
+    "ddPct": 0.432,
+    "streaks": {
+      "maxWins": 15,
+      "maxLosses": 2
+    }
+  },
+  "bestDay": {
+    "date": "2026-10-22",
+    "net": 1908.27
+  },
+  "worstDay": {
+    "date": "2026-10-22",
+    "net": 1908.27
+  },
+  "crowns": {
+    "day": 1,
+    "week": 0,
+    "month": 0,
+    "points": 1,
+    "streak": {
+      "cur": 1,
+      "best": 1,
+      "bestFrom": "2026-10-22",
+      "bestTo": "2026-10-22"
+    },
+    "awards": [
+      {
+        "kind": "day",
+        "period": "2026-10-22"
+      }
+    ]
+  },
+  "form": [
+    {
+      "date": "2026-10-07",
+      "status": "prefunding",
+      "n": 0,
+      "net": null,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-08",
+      "status": "prefunding",
+      "n": 0,
+      "net": null,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-09",
+      "status": "prefunding",
+      "n": 0,
+      "net": null,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-10",
+      "status": "prefunding",
+      "n": 0,
+      "net": null,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-11",
+      "status": "prefunding",
+      "n": 0,
+      "net": null,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-12",
+      "status": "prefunding",
+      "n": 0,
+      "net": null,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-13",
+      "status": "prefunding",
+      "n": 0,
+      "net": null,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-14",
+      "status": "prefunding",
+      "n": 0,
+      "net": null,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-15",
+      "status": "prefunding",
+      "n": 0,
+      "net": null,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-16",
+      "status": "prefunding",
+      "n": 0,
+      "net": null,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-17",
+      "status": "prefunding",
+      "n": 0,
+      "net": null,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-18",
+      "status": "prefunding",
+      "n": 0,
+      "net": null,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-19",
+      "status": "prefunding",
+      "n": 0,
+      "net": null,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-20",
+      "status": "prefunding",
+      "n": 0,
+      "net": null,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-21",
+      "status": "quiet",
+      "n": 0,
+      "net": 0,
+      "score": null,
+      "rank": null,
+      "crowned": false
+    },
+    {
+      "date": "2026-10-22",
+      "status": "ok",
+      "n": 31,
+      "net": 1908.27,
+      "score": 86.17,
+      "rank": 1,
+      "crowned": true
+    }
+  ],
+  "pairs": [
+    {
+      "symbol": "GBPJPY",
+      "n": 5,
+      "net": 574.44
+    },
+    {
+      "symbol": "AUDUSD",
+      "n": 4,
+      "net": -110.07
+    },
+    {
+      "symbol": "EURJPY",
+      "n": 4,
+      "net": 507.77
+    },
+    {
+      "symbol": "EURUSD",
+      "n": 4,
+      "net": 0
+    },
+    {
+      "symbol": "GBPUSD",
+      "n": 3,
+      "net": 274.8
+    },
+    {
+      "symbol": "USDCHF",
+      "n": 3,
+      "net": 157.8
+    },
+    {
+      "symbol": "USDJPY",
+      "n": 3,
+      "net": 423.2
+    },
+    {
+      "symbol": "AUDJPY",
+      "n": 2,
+      "net": 71
+    },
+    {
+      "symbol": "USDCAD",
+      "n": 2,
+      "net": 60.18
+    },
+    {
+      "symbol": "NZDUSD",
+      "n": 1,
+      "net": -50.85
+    }
+  ],
+  "hours": {
+    "basis": "entry-of-closes",
+    "buckets": [
+      {
+        "h": "00:00",
+        "n": 0
+      },
+      {
+        "h": "01:00",
+        "n": 0
+      },
+      {
+        "h": "02:00",
+        "n": 0
+      },
+      {
+        "h": "03:00",
+        "n": 1
+      },
+      {
+        "h": "04:00",
+        "n": 6
+      },
+      {
+        "h": "05:00",
+        "n": 0
+      },
+      {
+        "h": "06:00",
+        "n": 0
+      },
+      {
+        "h": "07:00",
+        "n": 1
+      },
+      {
+        "h": "08:00",
+        "n": 7
+      },
+      {
+        "h": "09:00",
+        "n": 2
+      },
+      {
+        "h": "10:00",
+        "n": 1
+      },
+      {
+        "h": "11:00",
+        "n": 0
+      },
+      {
+        "h": "12:00",
+        "n": 3
+      },
+      {
+        "h": "13:00",
+        "n": 3
+      },
+      {
+        "h": "14:00",
+        "n": 2
+      },
+      {
+        "h": "15:00",
+        "n": 0
+      },
+      {
+        "h": "16:00",
+        "n": 1
+      },
+      {
+        "h": "17:00",
+        "n": 0
+      },
+      {
+        "h": "18:00",
+        "n": 2
+      },
+      {
+        "h": "19:00",
+        "n": 0
+      },
+      {
+        "h": "20:00",
+        "n": 0
+      },
+      {
+        "h": "21:00",
+        "n": 1
+      },
+      {
+        "h": "22:00",
+        "n": 0
+      },
+      {
+        "h": "23:00",
+        "n": 0
+      }
+    ],
+    "earlier": 0,
+    "unknown": 1,
+    "total": 31
+  }
+}

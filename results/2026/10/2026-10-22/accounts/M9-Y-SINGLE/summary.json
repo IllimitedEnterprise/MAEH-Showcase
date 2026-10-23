@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "date": "2026-10-22",
+  "key": "M9-Y-SINGLE",
+  "label": "M9-Y-SINGLE",
+  "status": "ok",
+  "reasons": [],
+  "source": "ledger",
+  "currency": "EUR",
+  "funding": 50000,
+  "n": 4,
+  "wins": 3,
+  "losses": 1,
+  "breakevens": 0,
+  "winRatePct": 75,
+  "grossWin": 498.91,
+  "grossLoss": 5.33,
+  "net": 493.58,
+  "profitFactor": 93.6,
+  "retPct": 0.987,
+  "maxDrawdown": 5.33,
+  "ddPct": 0.011,
+  "streaks": {
+    "maxWins": 3,
+    "maxLosses": 1
+  },
+  "r": {
+    "count": 4,
+    "sum": 1.874
+  },
+  "best": {
+    "symbol": "EURJPY",
+    "net": 216.86,
+    "r": 1.035
+  },
+  "worst": {
+    "symbol": "EURJPY",
+    "net": -5.33,
+    "r": -0.027
+  },
+  "pairs": [
+    {
+      "symbol": "EURJPY",
+      "n": 4,
+      "net": 493.58
+    }
+  ],
+  "chain": {
+    "ok": true,
+    "gap": 0
+  }
+}

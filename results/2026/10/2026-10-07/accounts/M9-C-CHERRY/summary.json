@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "date": "2026-10-07",
+  "key": "M9-C-CHERRY",
+  "label": "M9-C-CHERRY",
+  "status": "ok",
+  "reasons": [],
+  "source": "ledger",
+  "currency": "EUR",
+  "funding": 50000,
+  "n": 5,
+  "wins": 1,
+  "losses": 3,
+  "breakevens": 1,
+  "winRatePct": 25,
+  "grossWin": 10.65,
+  "grossLoss": 279.67,
+  "net": -269.02,
+  "profitFactor": 0.04,
+  "retPct": -0.538,
+  "maxDrawdown": 269.02,
+  "ddPct": 0.538,
+  "streaks": {
+    "maxWins": 1,
+    "maxLosses": 2
+  },
+  "r": null,
+  "best": {
+    "symbol": "USDCAD",
+    "net": 10.65,
+    "r": null
+  },
+  "worst": {
+    "symbol": "GBPNZD",
+    "net": -123.88,
+    "r": null
+  },
+  "pairs": [
+    {
+      "symbol": "GBPAUD",
+      "n": 1,
+      "net": -95.12
+    },
+    {
+      "symbol": "GBPNZD",
+      "n": 1,
+      "net": -123.88
+    },
+    {
+      "symbol": "NZDCAD",
+      "n": 1,
+      "net": -60.67
+    },
+    {
+      "symbol": "NZDUSD",
+      "n": 1,
+      "net": 0
+    },
+    {
+      "symbol": "USDCAD",
+      "n": 1,
+      "net": 10.65
+    }
+  ],
+  "chain": {
+    "ok": true,
+    "gap": 0
+  }
+}

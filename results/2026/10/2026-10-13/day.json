@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "seq": 7,
+  "date": "2026-10-13",
+  "zone": "Europe/Berlin",
+  "window": {
+    "startUtc": "2026-10-12T22:00:00Z",
+    "endUtc": "2026-10-13T22:00:00Z",
+    "startOff": "+02:00",
+    "endOff": "+02:00",
+    "hours": 24
+  },
+  "kind": "backfilled",
+  "status": "complete",
+  "capturedAt": "2026-10-23T06:03:09Z",
+  "rules": "v1",
+  "accounts": {
+    "M9-B-CHERRY": "ok",
+    "M9-C-CHERRY": "ok",
+    "M9-B-D.CHERRY": "ok",
+    "M9-C-D.CHERRY": "ok",
+    "M9-L-Mix": "prefunding",
+    "M9-P-SINGLE": "prefunding",
+    "M9-S-B": "prefunding",
+    "M9-Y-SINGLE": "prefunding"
+  },
+  "files": {
+    "README.md": {
+      "sha256": "9effc9412d4d0a0f144f068542161ca467911e3d6f7229d6529202a76c034c1f",
+      "bytes": 814
+    },
+    "accounts/M9-B-CHERRY/hours.json": {
+      "sha256": "954088994274604cbadb4c6a82bccf4507a8a616f455a0c3a614209b2697aaec",
+      "bytes": 1845
+    },
+    "accounts/M9-B-CHERRY/summary.json": {
+      "sha256": "4fe2bbdbe90d27edaca155ac59b222e3a5b8cb78cc536894ab2cc0d1cb090044",
+      "bytes": 1746
+    },
+    "accounts/M9-B-CHERRY/summary.md": {
+      "sha256": "e490a7d1df28aedeab94f754eff10aa16bb3ec71a315c83bae632c515a0e9573",
+      "bytes": 675
+    },
+    "accounts/M9-B-CHERRY/trades.csv": {
+      "sha256": "20a06debec7bc5392ceeeff141e2a7cbca6eb0bdeb1af2ee1be7948980d8b681",
+      "bytes": 1027
+    },
+    "accounts/M9-B-CHERRY/trades.json": {
+      "sha256": "cac097729274866595c57a10cb65f7b612896096453896c1cff632eb52607808",
+      "bytes": 4400
+    },
+    "accounts/M9-B-D.CHERRY/hours.json": {
+      "sha256": "ed372ed0e1cd0fcc8a09ec3f35c35e7069939b34ee575c02538678f1b1f0ec5a",
+      "bytes": 1847
+    },
+    "accounts/M9-B-D.CHERRY/summary.json": {
+      "sha256": "60fcad76f071665c702b1c3d1c5cbe822827da54240ffd18bbc30e9bcf2d1bd1",
+      "bytes": 1173
+    },
+    "accounts/M9-B-D.CHERRY/summary.md": {
+      "sha256": "87ec8a6bcbc0d506b11afcc665c194641caadc78b1ee8cee73fe968e955d199b",
+      "bytes": 513
+    },
+    "accounts/M9-B-D.CHERRY/trades.csv": {
+      "sha256": "c8954659d01c1e183de14405403f49d44e6c4e1548988ad72acdb523d0b4872b",
+      "bytes": 452
+    },
+    "accounts/M9-B-D.CHERRY/trades.json": {
+      "sha256": "1f82e8b5ac98070890a9e2487ff4de2d454ed23f6d5784ac618e4a6a5ce5b376",
+      "bytes": 1958
+    },
+    "accounts/M9-C-CHERRY/hours.json": {
+      "sha256": "5c993b35715bc6c85e0affcb336dd3ccccdb6d8178dd0397be813dd2997e8764",
+      "bytes": 1845
+    },
+    "accounts/M9-C-CHERRY/summary.json": {
+      "sha256": "fcc39700239e9e70bdb39468a41751e11ee4d342c5ea951edfe697681ff9c94f",
+      "bytes": 1674
+    },
+    "accounts/M9-C-CHERRY/summary.md": {
+      "sha256": "eca885f7e6f3ee2474b379bcd45680373a20a063564d5730b90a7f836f3590cf",
+      "bytes": 656
+    },
+    "accounts/M9-C-CHERRY/trades.csv": {
+      "sha256": "15de55490c6d87c76f7d98befd0c345d0309aed2a8c763724f8c57936a89ed4c",
+      "bytes": 1036
+    },
+    "accounts/M9-C-CHERRY/trades.json": {
+      "sha256": "cf42123173cf305ccbe8fc3a5c0bdd93ce071d39ce2a5848a271ad680b689ad0",
+      "bytes": 4340
+    },
+    "accounts/M9-C-D.CHERRY/hours.json": {
+      "sha256": "aa36906ca42f1243befcac82d024e89d0f3917dd0b7f8baf4efa994d8f1c572d",
+      "bytes": 1847
+    },
+    "accounts/M9-C-D.CHERRY/summary.json": {
+      "sha256": "f39ad9f48a19034231f1f466f7d510f346772e1750b0125c089c695eec4fa49b",
+      "bytes": 1247
+    },
+    "accounts/M9-C-D.CHERRY/summary.md": {
+      "sha256": "7eca4a30f4781c0fd749f6ab4939d3e00f27ce13c49fbbb44378382e98bf7426",
+      "bytes": 540
+    },
+    "accounts/M9-C-D.CHERRY/trades.csv": {
+      "sha256": "1b8cd37791e49c1e570742d52cb43258c90ef5b99cbc00b6bbdff8a2b059a601",
+      "bytes": 575
+    },
+    "accounts/M9-C-D.CHERRY/trades.json": {
+      "sha256": "80cf5f9b9350833ee8356069fa70cf798f99c6bef314f53f987498053237cc14",
+      "bytes": 2435
+    },
+    "desk.json": {
+      "sha256": "8b06441066f0e8bafaf6245393373d04a65e3a077925c6ec98bc7418bd26f0fb",
+      "bytes": 3046
+    },
+    "stars.json": {
+      "sha256": "c5bfff289c23614cae764cf3629b02ea6ffc4796e585857e5bb464a31ebe0134",
+      "bytes": 1567
+    }
+  },
+  "prev": {
+    "seq": 6,
+    "date": "2026-10-12",
+    "sha256": "d625e3434c0891b22fb80b012601a0af928b5b83d6816bc40e04931e9fb29761"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "date": "2026-10-12",
+  "key": "M9-C-CHERRY",
+  "label": "M9-C-CHERRY",
+  "status": "ok",
+  "reasons": [],
+  "source": "ledger",
+  "currency": "EUR",
+  "funding": 50000,
+  "n": 44,
+  "wins": 22,
+  "losses": 16,
+  "breakevens": 6,
+  "winRatePct": 57.9,
+  "grossWin": 1842.73,
+  "grossLoss": 1192.86,
+  "net": 649.87,
+  "profitFactor": 1.54,
+  "retPct": 1.3,
+  "maxDrawdown": 557.75,
+  "ddPct": 1.115,
+  "streaks": {
+    "maxWins": 5,
+    "maxLosses": 5
+  },
+  "r": {
+    "count": 42,
+    "sum": -2.337
+  },
+  "best": {
+    "symbol": "USDCHF",
+    "net": 239.46,
+    "r": 0.704
+  },
+  "worst": {
+    "symbol": "GBPJPY",
+    "net": -176.72,
+    "r": -1.005
+  },
+  "pairs": [
+    {
+      "symbol": "EURCAD",
+      "n": 5,
+      "net": 514.42
+    },
+    {
+      "symbol": "EURGBP",
+      "n": 5,
+      "net": 13.1
+    },
+    {
+      "symbol": "EURUSD",
+      "n": 5,
+      "net": 294.52
+    },
+    {
+      "symbol": "AUDJPY",
+      "n": 3,
+      "net": -166.91
+    },
+    {
+      "symbol": "AUDNZD",
+      "n": 3,
+      "net": 115.76
+    },
+    {
+      "symbol": "GBPUSD",
+      "n": 3,
+      "net": 279.17
+    },
+    {
+      "symbol": "NZDUSD",
+      "n": 3,
+      "net": -100.07
+    },
+    {
+      "symbol": "USDCAD",
+      "n": 3,
+      "net": -251.12
+    },
+    {
+      "symbol": "USDJPY",
+      "n": 3,
+      "net": 9.57
+    },
+    {
+      "symbol": "EURJPY",
+      "n": 2,
+      "net": -10.6
+    },
+    {
+      "symbol": "GBPAUD",
+      "n": 2,
+      "net": 68.52
+    },
+    {
+      "symbol": "GBPNZD",
+      "n": 2,
+      "net": -126.67
+    },
+    {
+      "symbol": "NZDCAD",
+      "n": 2,
+      "net": -55.86
+    },
+    {
+      "symbol": "EURAUD",
+      "n": 1,
+      "net": 3.3
+    },
+    {
+      "symbol": "GBPJPY",
+      "n": 1,
+      "net": -176.72
+    },
+    {
+      "symbol": "USDCHF",
+      "n": 1,
+      "net": 239.46
+    }
+  ],
+  "chain": {
+    "ok": true,
+    "gap": 0
+  }
+}

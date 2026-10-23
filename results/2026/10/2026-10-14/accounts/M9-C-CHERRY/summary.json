@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "date": "2026-10-14",
+  "key": "M9-C-CHERRY",
+  "label": "M9-C-CHERRY",
+  "status": "ok",
+  "reasons": [],
+  "source": "ledger",
+  "currency": "EUR",
+  "funding": 50000,
+  "n": 73,
+  "wins": 41,
+  "losses": 23,
+  "breakevens": 9,
+  "winRatePct": 64.1,
+  "grossWin": 3275.23,
+  "grossLoss": 3349.11,
+  "net": -73.88,
+  "profitFactor": 0.98,
+  "retPct": -0.148,
+  "maxDrawdown": 1028.75,
+  "ddPct": 2.058,
+  "streaks": {
+    "maxWins": 8,
+    "maxLosses": 3
+  },
+  "r": {
+    "count": 73,
+    "sum": -0.079
+  },
+  "best": {
+    "symbol": "GBPJPY",
+    "net": 446.59,
+    "r": 1.263
+  },
+  "worst": {
+    "symbol": "GBPUSD",
+    "net": -485.25,
+    "r": -1.005
+  },
+  "pairs": [
+    {
+      "symbol": "AUDNZD",
+      "n": 9,
+      "net": 271.07
+    },
+    {
+      "symbol": "GBPNZD",
+      "n": 8,
+      "net": -594.76
+    },
+    {
+      "symbol": "EURGBP",
+      "n": 7,
+      "net": 118.59
+    },
+    {
+      "symbol": "EURJPY",
+      "n": 6,
+      "net": -360.97
+    },
+    {
+      "symbol": "GBPJPY",
+      "n": 6,
+      "net": 565.74
+    },
+    {
+      "symbol": "AUDJPY",
+      "n": 5,
+      "net": 290.44
+    },
+    {
+      "symbol": "USDCHF",
+      "n": 5,
+      "net": -17.81
+    },
+    {
+      "symbol": "EURAUD",
+      "n": 4,
+      "net": 199.89
+    },
+    {
+      "symbol": "USDJPY",
+      "n": 4,
+      "net": -191.53
+    },
+    {
+      "symbol": "EURCAD",
+      "n": 3,
+      "net": -113.22
+    },
+    {
+      "symbol": "EURUSD",
+      "n": 3,
+      "net": 31.12
+    },
+    {
+      "symbol": "GBPAUD",
+      "n": 3,
+      "net": -49.34
+    },
+    {
+      "symbol": "NZDCAD",
+      "n": 3,
+      "net": 201.8
+    },
+    {
+      "symbol": "NZDUSD",
+      "n": 3,
+      "net": -121.08
+    },
+    {
+      "symbol": "GBPUSD",
+      "n": 2,
+      "net": -352.2
+    },
+    {
+      "symbol": "USDCAD",
+      "n": 2,
+      "net": 48.38
+    }
+  ],
+  "chain": {
+    "ok": true,
+    "gap": 0
+  }
+}
