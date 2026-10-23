@@ -76,6 +76,10 @@ test("the job prompt passes both scans, is ASCII, and names the skill", () => {
   assert.deepEqual(scanForThreats(PROMPT, "strict"), []);
   assert.ok(!/[^\x09\x0A\x20-\x7E]/.test(PROMPT));
   assert.match(PROMPT, /maeh-showcase skill/);
+  /* a scheduled job cannot load a repository's skill by name, so the prompt points at the file */
+  assert.match(PROMPT, /\.agents\/skills\/maeh-showcase\/SKILL\.md/);
+  assert.ok(existsSync(`${root}.agents/skills/maeh-showcase/SKILL.md`) && existsSync(`${root}.agents/skills/maeh-showcase/references/runbook.md`));
+  assert.match(PROMPT, /references\/runbook\.md/);
   assert.match(PROMPT, /Frozen files are never edited/);
   assert.ok(!PROMPT.includes('"'), "it is passed on a command line inside double quotes");
 });
@@ -102,7 +106,9 @@ test("the setup guide points at files that exist and at the right job settings",
   assert.match(SETUP, /hermes skills trust/);
   assert.match(SETUP, /hermes cron create "0 1 \* \* \*"/);
   assert.match(SETUP, /--script maeh-showcase-nightly\.py/);
-  assert.match(SETUP, /--skill maeh-showcase/);
+  const createBlock = /## 5\. Create the job[\s\S]*?```powershell\n([\s\S]*?)\n```/.exec(SETUP)?.[1] ?? "";
+  assert.match(createBlock, /--workdir/);
+  assert.ok(!/--skill/.test(createBlock), "the job must not name a skill: Hermes cannot resolve a repository skill for a scheduled job");
   assert.match(SETUP, /timezone: Europe\/Berlin/);
   const season = JSON.parse(read("config/season.json"));
   assert.deepEqual(season.healthWakeDays, ["Mon", "Wed", "Sat"]);

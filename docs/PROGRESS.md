@@ -139,6 +139,16 @@ message), the job's last-run record said `noop`, and the repository was untouche
 01:00 on 2026-10-24, which freezes 2026-10-23. The wake and failure drills (section 7 of the setup guide) have
 not been run, and Hermes's `timezone` was left unset (the settle guard makes a one-hour drift harmless).
 
+A wake drill followed, with the owner's agreement, because the first real night falls on a Saturday, a
+health-check day, and would otherwise have been the first time the agent woke, unattended. The script's gate
+woke the agent; it read the skill and its runbook from the working folder, ran only read-only checks
+(`nightly --status`, `verify --all`, the CI and Pages status, the scheduler), reported in a few short lines,
+and changed nothing: the tree hashes of `results/` and `stars/` and the commit were the same afterwards, and the
+`force-wake` file had been removed. The drill also found a defect in the setup: **a scheduled job cannot load a
+repository's skill by name**, so the report opened with "Skill(s) not found: maeh-showcase" (the agent coped by
+opening the file itself). The job no longer names a skill and its prompt points at the skill file instead; the
+setup guide and its test say so.
+
 ## Verification
 
 ```

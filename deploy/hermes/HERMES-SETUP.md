@@ -72,6 +72,12 @@ hermes skills list | Select-String maeh-showcase
 The skill is scanned each time it changes; a "dangerous" verdict quarantines it. At the time
 of writing the verdict is "safe".
 
+A scheduled job cannot load a repository's skill by name: the first wake drill showed Hermes
+reporting `maeh-showcase` as "not found" when the job asked for it with `--skill`. So the job in
+the next step has no `--skill`; its prompt tells the agent to open the skill file in its working
+folder, and the agent reads it from there. Trusting the repository still matters for any
+interactive Hermes session opened inside it.
+
 ## 5. Create the job
 
 Use the same delivery target as your MCC Check Up (`hermes cron list` shows it). `--pin` fixes
@@ -81,7 +87,6 @@ the model that is the Hermes default today, so a later model change does not sil
 hermes cron create "0 1 * * *" "<the prompt below>" `
   --name maeh-showcase-nightly `
   --workdir "<the folder of this checkout>" `
-  --skill maeh-showcase `
   --script maeh-showcase-nightly.py `
   --deliver <your target> `
   --failure-deliver <your target> `
@@ -91,7 +96,7 @@ hermes cron create "0 1 * * *" "<the prompt below>" `
 ### The job prompt
 
 ```text
-The MAEH Showcase nightly script has just run and its output is shown above. You were woken because it needs a person: an attention line, a problem outcome, or a scheduled health-check day. Follow the maeh-showcase skill: triage the outcome with its runbook, do only what the runbook allows, run the verification commands afterwards, and finish with a report of at most ten lines saying what happened, what you did and what the owner needs to decide. Frozen files are never edited.
+The MAEH Showcase nightly script has just run and its output is shown above. You were woken because it needs a person: an attention line, a problem outcome, or a scheduled health-check day. Open .agents/skills/maeh-showcase/SKILL.md in your working folder and follow the maeh-showcase skill it describes: triage the outcome with its runbook (references/runbook.md, next to it), do only what the runbook allows, run the verification commands afterwards, and finish with a report of at most ten lines saying what happened, what you did and what the owner needs to decide. Frozen files are never edited.
 ```
 
 ## 6. First run and checks
@@ -138,7 +143,8 @@ every file; it needs nothing but Node, so anyone can run it on a fresh clone.
 
 - **The job never fires.** `hermes cron status`; if the gateway is down, start it
   (`hermes gateway`), and make it start at logon.
-- **"The skill was not found."** The repository is not trusted: `hermes skills trust`.
+- **The agent's report starts with "Skill(s) not found: maeh-showcase".** The job still has a `--skill`;
+  remove it with `hermes cron edit <id> --clear-skills`. The prompt already points the agent at the skill file.
 - **The agent is woken every night.** Read the attention line in the run record; a health-check
   day always wakes it, and so does any problem.
 - **The push fails.** `gh auth status`; then `node scripts/nightly.mjs --retry-push`.
