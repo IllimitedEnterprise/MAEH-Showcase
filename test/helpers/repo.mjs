@@ -1,7 +1,7 @@
 /* A throwaway repository for end-to-end tests of the nightly job: real git, the real hooks, a
  * bare remote, a private state folder and a harness var folder with ledgers. */
 
-import { copyFileSync, cpSync, existsSync, mkdirSync, mkdtempSync, rmSync, utimesSync, writeFileSync } from "node:fs";
+import { chmodSync, copyFileSync, cpSync, existsSync, mkdirSync, mkdtempSync, readdirSync, rmSync, utimesSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -43,6 +43,8 @@ export function makeRepo({ seasonStart = "2026-10-20", healthWakeDays = [], seed
   }, null, 2)}\n`);
   copyFileSync(real("config", "rules.v1.json"), join(root, "config", "rules.v1.json"));
   cpSync(real(".githooks"), join(root, ".githooks"), { recursive: true });
+  /* git runs a hook only if it is executable on Linux and macOS; Windows ignores the bit. */
+  for (const hook of readdirSync(join(root, ".githooks"))) chmodSync(join(root, ".githooks", hook), 0o755);
   copyFileSync(real(".gitattributes"), join(root, ".gitattributes"));
 
   const info = gitAvailable();

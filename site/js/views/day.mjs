@@ -82,7 +82,7 @@ ${pageHead({
 <div class="hero-main">
 <p class="eyebrow">Desk net for the day</p>
 <p class="hero-figure ${toneClass(desk.net)}"><span class="sr-only">Desk net: </span>${moneyHtml(desk.net)}<span class="unit">EUR</span></p>
-<p class="hero-caption">${int(desk.n)} closes · ${pct(desk.winRatePct)} won · profit factor ${profitFactor(desk.profitFactor, desk.grossWin)}${desk.best ? html` · best <a href="${href({ name: "account", key: desk.best.key })}">${core.index.accounts.find((a) => a.key === desk.best.key)?.label ?? desk.best.key}</a>` : ""}</p>
+<p class="hero-caption">${desk.n === 0 ? "No trade closed on this day." : html`${int(desk.n)} closes · ${pct(desk.winRatePct)} won · profit factor ${profitFactor(desk.profitFactor, desk.grossWin)}${desk.best ? html` · best <a href="${href({ name: "account", key: desk.best.key })}">${core.index.accounts.find((a) => a.key === desk.best.key)?.label ?? desk.best.key}</a>` : ""}`}</p>
 </div>
 ${starCard(core, stars, date)}
 </div>

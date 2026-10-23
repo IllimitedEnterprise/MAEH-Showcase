@@ -1,0 +1,14 @@
+# The workflows pin every action to a commit. Dependabot proposes newer pinned versions, one pull
+# request at a time, and CI runs on each before anyone merges it.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore"
+    labels:
+      - dependencies
