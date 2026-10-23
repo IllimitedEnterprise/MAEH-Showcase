@@ -224,7 +224,7 @@ function accountMarkdown(report) {
     "", "## Crowns", "",
     `Day crowns ${report.crowns.day}, week crowns ${report.crowns.week}, month crowns ${report.crowns.month}: ${report.crowns.points} points. Current day-crown streak ${report.crowns.streak.cur}; best ${report.crowns.streak.best}${report.crowns.streak.bestFrom ? ` (${report.crowns.streak.bestFrom} to ${report.crowns.streak.bestTo})` : ""}.`,
     "", "## Recent form", "", "| Date | Status | Closes | Net | Score | Rank | Crown |", "|---|---|---:|---:|---:|---:|---|",
-    ...report.form.slice(-14).reverse().map((day) => `| ${day.date} | ${day.status} | ${day.n} | ${day.net === null ? "-" : signed(day.net)} | ${cell(day.score)} | ${cell(day.rank)} | ${day.crowned ? "Star" : ""} |`),
+    ...report.form.filter((day) => day.status !== "prefunding").slice(-14).reverse().map((day) => `| ${day.date} | ${day.status} | ${day.n} | ${day.net === null ? "-" : signed(day.net)} | ${cell(day.score)} | ${cell(day.rank)} | ${day.crowned ? "Star" : ""} |`),
     "", "## Pairs", "", report.pairs.length ? report.pairs.map((pair) => `${pair.symbol} x${pair.n} (${signed(pair.net)})`).join(", ") : "None yet.", "",
     "## When it enters", "", `Trades per local entry hour, over every frozen day (${report.hours.total} closes; ${report.hours.earlier} opened on an earlier day, ${report.hours.unknown} with no entry record).`, "",
     report.hours.buckets.filter((bucket) => bucket.n > 0).map((bucket) => `${bucket.h} x${bucket.n}`).join(", ") || "None yet.", "",

@@ -25,18 +25,6 @@ Day crowns 1, week crowns 0, month crowns 0: 1 points. Current day-crown streak 
 |---|---|---:|---:|---:|---:|---|
 | 2026-10-22 | ok | 31 | +1908.27 | 86.17 | 1 | Star |
 | 2026-10-21 | quiet | 0 | 0.00 | - | - |  |
-| 2026-10-20 | prefunding | 0 | - | - | - |  |
-| 2026-10-19 | prefunding | 0 | - | - | - |  |
-| 2026-10-18 | prefunding | 0 | - | - | - |  |
-| 2026-10-17 | prefunding | 0 | - | - | - |  |
-| 2026-10-16 | prefunding | 0 | - | - | - |  |
-| 2026-10-15 | prefunding | 0 | - | - | - |  |
-| 2026-10-14 | prefunding | 0 | - | - | - |  |
-| 2026-10-13 | prefunding | 0 | - | - | - |  |
-| 2026-10-12 | prefunding | 0 | - | - | - |  |
-| 2026-10-11 | prefunding | 0 | - | - | - |  |
-| 2026-10-10 | prefunding | 0 | - | - | - |  |
-| 2026-10-09 | prefunding | 0 | - | - | - |  |
 
 ## Pairs
 
