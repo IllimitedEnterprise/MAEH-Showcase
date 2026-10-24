@@ -177,6 +177,12 @@ more than most. Two things deal with it, both exercised by injecting the failure
 | `workflows` | every action pinned and vetted, the token read-only, nothing user-controlled reaches a shell |
 | `site-browser` | **a real Chrome or Edge** draws the pages at nine widths (390 to 1440 px) in both themes and finds no sideways scroll, no box overflowing itself, no hero figure running into the Star card, no console message and no failed request; a 503 injected into one script is survived once and given up on cleanly when permanent; the chain and per-day verifiers, deep links, keyboard stepping and the theme switch work; the fixture seasons above are drawn at phone, tablet and desktop widths; every control has an accessible name; reduced motion, reduced transparency and forced colours each change what they should. Opt-in (`MAEH_BROWSER_TESTS=1`) so `node --test` stays instant; CI runs it on one Linux leg |
 
+**A test that reads the real season must never name its size.** The season grows by a day every night, and the
+nightly push runs the whole suite on the new data; a test that says "16 days" turns CI and the Pages deploy red
+the first night it is wrong, and the public page stops updating. Expectations are therefore worked out from the
+loaded data, and only the first sixteen days, which were sealed from the ledgers and cannot change, are named.
+A day that must be "not frozen" is the day before the season began, never a future date.
+
 Two layout bugs, the hero figure running into the Star card between about 900 and 1100 px and a commit hash
 spilling out of its card on a phone, were found only by probing more widths than the first inspection used.
 They are exactly what `site-browser` now keeps from coming back.

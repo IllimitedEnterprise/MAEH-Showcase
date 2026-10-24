@@ -73,7 +73,9 @@ test("the calendar draws every month it can be asked for", async () => {
     audit(hash, markup);
   }
   const { markup } = await draw("#/calendar/2026-10");
-  assert.equal((markup.match(/class="cal-cell tone-/g) ?? []).length, 16, "one link per frozen day");
+  /* worked out from the data: the season grows by a day every night, and this must not need editing */
+  const inOctober = core.index.days.filter((day) => day.date.startsWith("2026-10")).length;
+  assert.equal((markup.match(/class="cal-cell tone-/g) ?? []).length, inOctober, "one link per frozen day");
   assert.match(markup, /aria-label="Thursday 22 October 2026: \+8173\.58, 224 closes, Star M9-L-Mix"/);
   assert.match(markup, /aria-label="Saturday 10 October 2026: no closes"/);
   const empty = (await draw("#/calendar/2026-09")).markup;
@@ -152,9 +154,10 @@ test("a raw file is escaped, never executed", async () => {
 });
 
 test("an unknown day or file is a page that says so, not a crash", async () => {
-  const day = await draw("#/day/2026-12-01");
+  /* the day before the season began can never be frozen (a later date would be, one night, and break this) */
+  const day = await draw("#/day/2026-10-06");
   assert.match(day.markup, /Nothing is frozen for this day/);
-  audit("#/day/2026-12-01", day.markup);
+  audit("#/day/2026-10-06", day.markup);
   const file = await draw("#/day/2026-10-22/file/accounts/M9-B-CHERRY/secret.json");
   assert.match(file.markup, /No such file/);
   audit("missing file", file.markup);
@@ -175,7 +178,10 @@ test("every account page draws", async () => {
 test("the account page for an account funded late shows only the days it existed", async () => {
   const { markup } = await draw("#/account/M9-L-Mix");
   const formCard = markup.match(/id="acct-form-h"[\s\S]*?<\/section>/)[0];
-  assert.equal((formCard.match(/<tr class="/g) ?? []).length, 2, "10-21 (no closes) and 10-22; the days before funding are not listed");
+  const funded = core.reports["M9-L-Mix"].fundedDate;
+  assert.equal(funded, "2026-10-21");
+  const since = core.index.days.filter((day) => day.date >= funded).length;
+  assert.equal((formCard.match(/<tr class="/g) ?? []).length, since, "one row for each frozen day from the funding date on; the days before it are not listed");
   assert.ok(!/Not funded yet/.test(markup));
   assert.match(markup, /funded Wed 21 Oct 2026/);
 });
@@ -188,7 +194,7 @@ test("every Stars tab draws", async () => {
     assert.match(markup, /aria-current="page"/);
   }
   const week = (await draw("#/stars/week")).markup;
-  assert.match(week, /Not yet crowned/, "an unfinished week shows a standing, not a crown");
+  assert.equal(/Not yet crowned/.test(week), !core.leaderboard.week.complete, "an unfinished week shows a standing, not a crown; a finished one shows its Star (the unfinished state is also tested on a small season in site-states)");
   const all = (await draw("#/stars/all")).markup;
   assert.match(all, /Crown tally/);
   assert.match(all, /Every Star awarded/);
@@ -202,7 +208,7 @@ test("the integrity page draws, and its verifiers agree with the repository", as
   assert.equal(chain.ok, true);
   assert.equal(chain.rows.length, core.index.days.length);
   audit("chain result", `<h1>x</h1>${chainResultHtml(chain)}`);
-  assert.match(String(chainResultHtml(chain)), /All 16 days check out/);
+  assert.match(String(chainResultHtml(chain)), new RegExp(`All ${core.index.days.length} days check out`));
 
   const entry = dayEntry(core, "2026-10-22");
   const progress = [];

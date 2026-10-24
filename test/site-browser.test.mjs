@@ -1,7 +1,10 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { PROBE, findChrome, withBrowser } from "./helpers/chrome.mjs";
 import { createSiteServer } from "../scripts/lib/site.mjs";
+import { longDate } from "../site/js/lib/fmt.mjs";
 import { SEASONS, makeFixtureSite } from "./helpers/fixture-site.mjs";
 import { REPO } from "./helpers/site-data.mjs";
 
@@ -25,6 +28,10 @@ async function serving(run, root = REPO) {
 }
 
 const ROUTES = ["#/", "#/calendar", "#/day/2026-10-22", "#/account/M9-B-D.CHERRY", "#/stars/week", "#/integrity"];
+
+/* The season grows by a day every night, so what the real pages should say about its end is read from the
+ * catalogue, never written down here. Only the first sixteen days (sealed, immutable) are named. */
+const FROZEN = JSON.parse(readFileSync(join(REPO, "results", "index.json"), "utf8")).days.map((day) => day.date);
 
 async function matrix(origin, { widths, routes, theme }) {
   const problems = [];
@@ -168,8 +175,8 @@ test("the verifiers, deep links, keyboard stepping and the theme switch work in 
       await page.emulate(1280);
       await page.visit(`${origin}/#/integrity`);
       const chain = await page.evaluate(`(async () => { document.querySelector('[data-action="verify-chain"]').click(); for (let i = 0; i < 120; i++) { await new Promise(r => setTimeout(r, 250)); const t = document.querySelector('#chain-result .verify-ok, #chain-result .verify-bad'); if (t) return t.textContent.trim(); } return 'timed out'; })()`);
-      assert.match(chain, /^All 16 days check out/);
-      assert.equal(await page.evaluate("document.querySelectorAll('#chain-result tbody tr').length"), 16);
+      assert.match(chain, new RegExp(`^All ${FROZEN.length} days check out`));
+      assert.equal(await page.evaluate("document.querySelectorAll('#chain-result tbody tr').length"), FROZEN.length);
 
       await page.visit(`${origin}/#/day/2026-10-22`);
       const files = await page.evaluate(`(async () => { document.querySelector('[data-action="verify-day"]').click(); for (let i = 0; i < 200; i++) { await new Promise(r => setTimeout(r, 250)); const t = document.querySelector('#verify-result'); if (t && /files match|do not match|Could not/.test(t.textContent)) return t.textContent.trim(); } return 'timed out'; })()`);
@@ -186,9 +193,9 @@ test("the verifiers, deep links, keyboard stepping and the theme switch work in 
         const home = await press('Home'); const end = await press('End'); const left = await press('ArrowLeft'); const esc = await press('Escape');
         return JSON.stringify({ home, end, left, esc, table: !!document.querySelector('#desk-curve-table table') });
       })()`));
-      assert.match(keys.home, /^Wednesday 7 October 2026/);
-      assert.match(keys.end, /^Thursday 22 October 2026/);
-      assert.match(keys.left, /^Wednesday 21 October 2026/);
+      assert.ok(keys.home.startsWith(longDate(FROZEN[0])), `Home goes to the first day, ${longDate(FROZEN[0])}`);
+      assert.ok(keys.end.startsWith(longDate(FROZEN.at(-1))), `End goes to the latest day, ${longDate(FROZEN.at(-1))}`);
+      assert.ok(keys.left.startsWith(longDate(FROZEN.at(-2))), `ArrowLeft steps back to ${longDate(FROZEN.at(-2))}`);
       assert.equal(keys.esc, null, "Escape hides the tooltip");
       assert.equal(keys.table, true, "every chart has a table twin");
 

@@ -149,11 +149,32 @@ repository's skill by name**, so the report opened with "Skill(s) not found: mae
 opening the file itself). The job no longer names a skill and its prompt points at the skill file instead; the
 setup guide and its test say so.
 
+## The first real night
+
+Hermes started the job on time at 01:00 on 2026-10-24. The harness was in its quarter-hour self-refresh, so the
+script waited (a few short waits, about three minutes in all), then froze 2026-10-23 with 8 of 8 account-days clean,
+committed and pushed. Because it was a Saturday the gate woke the agent, which ran the health check, found the
+data sound, and reported within twelve minutes that **CI and Pages had failed**: six site tests had the season's
+size written into them ("16 days"), so the new day broke the build and the dashboard stayed on the 22nd. The
+data and the chain were never affected (the frozen-data job passed); only the public page was stale until the
+tests were fixed.
+
+- **The tests now work out what they expect from the data.** Only the first sixteen days, which were sealed from
+  the ledgers and can never change, are named.
+- **The same mistake was hunted down before it could recur.** The real season was copied and grown to 91 days
+  with synthetic nights (through 5 January 2027, so across the month, year and ISO week 53 changes, with partial
+  and unverified days, a wholly quiet Sunday and the 25-hour day) and the whole suite and the real-browser tests
+  were run on it. It found one more time bomb: a test that used 2026-12-01 as "a day that is not frozen", which
+  would have turned red on 2 December. It now uses the day before the season began, which can never be frozen.
+- The nightly's own behaviour on the real night matched the rehearsal: the wait for a quiet harness, the commit
+  of only new files, the push, the balance anchors saved for the next night's check, and the agent woken once,
+  with no "skill not found" notice now that the job points at the skill file.
+
 ## Verification
 
 ```
-node scripts/verify.mjs --all       OK: 16 day(s)
-node scripts/rank.mjs --check       OK: 16 day(s); derived files match a rebuild
+node scripts/verify.mjs --all       OK: <n> day(s)
+node scripts/rank.mjs --check       OK: <n> day(s); derived files match a rebuild
 node scripts/verify.mjs --history   OK: every blob in history scanned, none secret-shaped
 node --test "test/**/*.test.mjs"    all tests pass (also in a clean git environment)
 MAEH_BROWSER_TESTS=1 node --test test/site-browser.test.mjs    real-browser checks (opt-in, one CI leg)
@@ -161,8 +182,8 @@ MAEH_BROWSER_TESTS=1 node --test test/site-browser.test.mjs    real-browser chec
 
 ## Still to do
 
-1. Watch the first real night, 01:00 on 2026-10-24: `node scripts/nightly.mjs --status` should then show 17
-   frozen days, and the site should gain the 23rd. Optionally run the two drills in the setup guide.
+1. The failure drill in the setup guide (section 7) has not been run; it needs a deliberately broken Node path in
+   Hermes's environment, so it waits for the owner. The wake drill has been run.
 2. Firefox and Safari have not been tried (neither was available where this was built). The real-browser
    checks ran in Chrome, locally and on the CI runner, and once by hand in Edge (`MAEH_CHROME` points the test
    driver at another Chromium-based browser); all six passed in each.

@@ -7,6 +7,8 @@ import { parseCsv } from "../site/js/lib/csv.mjs";
 import { DataError, createData, dayDir, dayFile, loadCore, loadDay, loadFile, sha256Hex } from "../site/js/lib/data.mjs";
 import { accountKeys, accountSeries, dailyBars, dayEntry, deskSeries, entityClass, entitySlot, lastDays, missingDates, monthsAvailable, neighbours, seasonTotals, shiftMonth, standings } from "../site/js/lib/model.mjs";
 import { barPath, barsChart, chartTable, curveChart, hoursChart, sparkline } from "../site/js/charts/draw.mjs";
+import { longDate } from "../site/js/lib/fmt.mjs";
+import { dayNumber } from "../site/js/charts/geometry.mjs";
 import { LEAKS, fsFetch } from "./helpers/site-data.mjs";
 
 test("html escapes every interpolated value and trusts only its own templates", () => {
@@ -106,8 +108,18 @@ test("day paths follow the repository layout", () => {
 const data = createData({ fetchImpl: fsFetch(), build: "test" });
 const core = await loadCore(data);
 
+/* The season grows by one day every night, and a test that pins today's size breaks the build tomorrow.
+ * So the expectations below are worked out from the loaded data; only the first sixteen days, which were
+ * sealed from the close ledgers and can never change, are named. */
+const DAYS = core.index.days.map((day) => day.date);
+const LATEST = DAYS.at(-1);
+const SEALED_FIRST_SIXTEEN = Array.from({ length: 16 }, (_, index) => `2026-10-${String(7 + index).padStart(2, "0")}`);
+
 test("the real committed data loads, and every account has a report", () => {
-  assert.equal(core.index.days.length, 16);
+  assert.ok(DAYS.length >= 16);
+  assert.deepEqual(DAYS.slice(0, 16), SEALED_FIRST_SIXTEEN);
+  assert.equal(core.index.tip.seq, DAYS.length, "the chain has one link per frozen day");
+  assert.equal(core.index.tip.date, LATEST);
   assert.equal(accountKeys(core).length, 8);
   assert.deepEqual(Object.keys(core.reports).sort(), [...accountKeys(core)].sort());
 });
@@ -140,28 +152,31 @@ test("every frozen day's every file matches its manifest in the way the browser 
 
 test("model: totals, series, neighbours and months agree with the files", () => {
   const totals = seasonTotals(core);
-  assert.equal(totals.frozen, 16);
+  assert.equal(totals.frozen, DAYS.length);
   assert.equal(totals.start, "2026-10-07");
-  assert.equal(totals.end, "2026-10-22");
+  assert.equal(totals.end, LATEST);
   assert.equal(totals.closes, Object.values(core.reports).reduce((sum, report) => sum + report.totals.n, 0), "the home page and the eight account reports count the same closes");
   const desk = deskSeries(core);
   assert.equal(desk.at(-1).value, totals.net, "the last cumulative is the season net");
   assert.deepEqual(neighbours(core, "2026-10-07"), { prev: null, next: "2026-10-08" });
-  assert.deepEqual(neighbours(core, "2026-10-22"), { prev: "2026-10-21", next: null });
-  assert.deepEqual(monthsAvailable(core), ["2026-10"]);
+  assert.deepEqual(neighbours(core, "2026-10-22"), { prev: "2026-10-21", next: DAYS[DAYS.indexOf("2026-10-22") + 1] ?? null });
+  assert.deepEqual(neighbours(core, LATEST), { prev: DAYS.at(-2), next: null });
+  assert.deepEqual(monthsAvailable(core), [...new Set(DAYS.map((date) => date.slice(0, 7)))].sort());
   assert.equal(shiftMonth("2026-12", 1), "2027-01");
   assert.equal(shiftMonth("2026-01", -1), "2025-12");
-  assert.deepEqual(missingDates(core), []);
-  assert.equal(lastDays(desk, 7).length, 7);
-  assert.equal(lastDays(desk, 99).length, 16);
+  const everyDate = [];
+  for (let n = dayNumber(DAYS[0]); n <= dayNumber(LATEST); n += 1) everyDate.push(n);
+  assert.equal(missingDates(core).length, everyDate.length - DAYS.length, "a gap is named, and nothing else is");
+  assert.equal(lastDays(desk, 7).length, DAYS.filter((date) => dayNumber(date) > dayNumber(LATEST) - 7).length);
+  assert.equal(lastDays(desk, 9999).length, DAYS.length);
   const unfunded = accountSeries(core, "M9-L-Mix");
   assert.equal(unfunded[0].date, "2026-10-21", "no zeros are invented before the account existed");
-  assert.equal(dailyBars(core).length, 16);
+  assert.equal(dailyBars(core).length, DAYS.length);
   assert.equal(entitySlot(core, "M9-B-CHERRY"), 1);
   assert.equal(entityClass(core, "M9-Y-SINGLE"), "ent-8");
   assert.equal(entityClass(core, "nobody"), "ent-x");
   assert.equal(standings(core, "week").kind, "week");
-  assert.equal(standings(core, "day").date, "2026-10-22");
+  assert.equal(standings(core, "day").date, LATEST);
 });
 
 test("the season net the home page shows is the sum of the eight accounts' own totals", () => {
@@ -181,12 +196,12 @@ test("curve: one series is ink with a gain/loss wash and a labelled end", () => 
   assert.equal((text.match(/class="line line-ink/g) ?? []).length, 1);
   assert.equal((text.match(/class="wash"/g) ?? []).length, 2, "gain above zero, loss below");
   assert.match(text, /class="end-label"/);
-  assert.equal(model.count, 16);
-  const point = model.at(15);
-  assert.equal(point.date, "2026-10-22");
+  assert.equal(model.count, DAYS.length);
+  const point = model.at(DAYS.length - 1);
+  assert.equal(point.date, LATEST);
   assert.ok(Number.isFinite(point.x) && Number.isFinite(point.tipY));
-  assert.match(String(point.tip), /Thursday 22 October 2026/);
-  assert.match(point.speak, /October 2026/);
+  assert.ok(String(point.tip).includes(longDate(LATEST)), `the tooltip names ${longDate(LATEST)}`);
+  assert.ok(point.speak.includes(longDate(LATEST).split(" ").slice(-2).join(" ")), "the spoken label names the month and year");
 });
 
 test("curve: several series each wear their own account colour, and an isolated one dims the rest", () => {
@@ -199,7 +214,7 @@ test("curve: several series each wear their own account colour, and an isolated 
   assert.ok(!/class="wash"/.test(text), "no wash when several lines overlap");
   const isolated = String(curveChart({ uid, title: "t", description: "d", series, width: 720, isolated: "M9-S-B" }).markup);
   assert.equal((isolated.match(/is-dim/g) ?? []).length, 7);
-  const tip = String(all.model.at(15).tip);
+  const tip = String(all.model.at(DAYS.length - 1).tip);
   const values = [...tip.matchAll(/class="tip-value">([^<]+)</g)].map((m) => m[1]);
   assert.equal(values.length, 8, "one tooltip lists every series at that day");
   const numbers = values.map((v) => Number(v.replace("−", "-").replace(/,/g, "")));
