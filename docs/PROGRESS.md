@@ -191,9 +191,12 @@ MAEH_BROWSER_TESTS=1 node --test test/site-browser.test.mjs    real-browser chec
 1. **The failure drill, done in two halves.** The half that lives in this project was run for real against the
    copy of the shim that Hermes runs, in a bare environment: with no Node anywhere it looks it printed "no Node 22 or
    newer was found; set MAEH_NODE", and with no repository "the MAEH Showcase repository was not found; set
-   MAEH_SHOWCASE_REPO", each with the wake gate on and exit code 0 so Hermes reads it. The runbook now tells the
-   agent what to do with those two messages (report them, leave Hermes's configuration alone). The half that has
-   not been run is Hermes waking the agent on such a message, which needs Hermes's own environment changed.
+   MAEH_SHOWCASE_REPO", each with the wake gate on and exit code 0 so Hermes reads it. Doing it for real also
+   showed that the setup guide's first version of this drill could never have worked (pointing `MAEH_NODE` at a
+   missing file is skipped, not fatal, because the shim goes on to look elsewhere); the guide now describes the
+   bare-environment drill and a test pins the skipping. The runbook tells the agent what to do with the two
+   messages (report them, leave Hermes's configuration alone). Hermes waking the agent has been shown by the wake
+   drill; a wake carrying these particular messages would need a real fault, so it has not been seen.
 2. **Firefox and Safari have not been run** (neither was available where this was built, and the real-browser
    tests drive Chromium). They ran in Chrome, locally and on the CI runner, and once by hand in Edge
    (`MAEH_CHROME` points the test driver at another Chromium-based browser); all six passed in each. What is kept

@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { delimiter, join } from "node:path";
+import { delimiter, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { hermesWakes } from "./helpers/hermes.mjs";
 
@@ -119,6 +119,16 @@ test("no usable Node: wake and say what to set", skip, () => {
     assert.match(result.stdout, /no Node 22 or newer was found; set MAEH_NODE/);
     assert.equal(hermesWakes(result.stdout), true);
   } finally { repo.cleanup(); rmSync(empty, { recursive: true, force: true }); }
+});
+
+test("a MAEH_NODE that points nowhere is skipped, not fatal, so it is not how to drill the failure", skip, () => {
+  const repo = fakeRepo('console.log(JSON.stringify({wakeAgent:false,outcome:"noop",frozen:[],pushed:false,attention:[]}));');
+  try {
+    const result = runShim(repo, { MAEH_NODE: join(tmpdir(), "no-such-node.exe"), PATH: `${dirname(process.execPath)}${delimiter}${process.env.PATH ?? ""}` });
+    assert.equal(result.status, 0);
+    assert.equal(hermesWakes(result.stdout), false, "the shim went on to the next place it looks for Node");
+    assert.doesNotMatch(result.stdout, /was found/);
+  } finally { repo.cleanup(); }
 });
 
 test("whatever the script prints is reduced to printable ASCII", skip, () => {

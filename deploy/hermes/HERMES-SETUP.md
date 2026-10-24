@@ -117,9 +117,13 @@ ends with the JSON line, unaltered.
 - **Wake drill.** Create an empty file named `force-wake` in `%LOCALAPPDATA%\MAEH-Showcase\`,
   then `hermes cron run <id>`. The script wakes the agent once and removes the file. The agent
   should run the health check and report.
-- **Failure drill.** Temporarily set `MAEH_NODE` to a path that does not exist in Hermes's
-  environment, run the job, and confirm the agent is woken with "no Node 22 or newer was found".
-  Put it back afterwards.
+- **Failure drill (changes nothing in Hermes).** Run the shim by hand in a bare environment, the way
+  `test/shim.test.mjs` does: no Node on `PATH`, and `LOCALAPPDATA` and `ProgramFiles` pointing at an
+  empty folder, so the shim finds no Node anywhere. It should print `ATTENTION no Node 22 or newer was
+  found; set MAEH_NODE`, then a JSON line with `"wakeAgent": true`, and exit 0 so Hermes reads the
+  gate. Pointing `MAEH_NODE` at a path that does not exist is not enough: the shim skips it and looks
+  on `PATH`, in Hermes's own tools folder and in Program Files. The wake drill above shows Hermes
+  waking the agent on a message like this one.
 - **Pause and resume.** `hermes cron pause <id>` and `hermes cron resume <id>`.
 
 ## 7b. A day that was missed
