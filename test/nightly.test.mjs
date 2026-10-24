@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { createHarness } from "../scripts/lib/harness.mjs";
 import { saveAccountsMap } from "../scripts/lib/ledger.mjs";
@@ -92,6 +92,14 @@ test("on a health-check day the agent is woken even though the night was clean",
   assert.equal(result.final.outcome, "frozen");
   assert.deepEqual(result.final.attention, []);
   assert.equal(result.final.wakeAgent, true);
+}));
+
+test("--status says when the last run was, so a stale record cannot pass for a fresh one", skip, () => withRepo({ healthWakeDays: ["Fri"] }, async (repo) => {
+  writeFileSync(join(repo.state, "last-run.json"), JSON.stringify({ at: "2026-10-24T01:03:35.123Z", exit: 0, outcome: "frozen", frozen: ["2026-10-23"], attention: [], pushed: true }));
+  const result = await night(repo, { argv: { status: true } });
+  assert.match(result.text, /last run: 2026-10-24 01:03 UTC, exit 0, outcome frozen, froze 2026-10-23/);
+  rmSync(join(repo.state, "last-run.json"));
+  assert.match((await night(repo, { argv: { status: true } })).text, /last run: none recorded/);
 }));
 
 test("--status looks and touches nothing, and never wakes the agent", skip, () => withRepo({ healthWakeDays: ["Fri"] }, async (repo) => {

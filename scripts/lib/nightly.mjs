@@ -120,7 +120,7 @@ export async function runNightly(options) {
     say(due.length ? `pending: ${due.slice(0, 6).join(", ")}${due.length > 6 ? " ..." : ""}` : "pending: none");
     if (git.remotes().includes("origin")) say(`unpushed commits: ${git.unpushed("origin", "main") ?? "unknown"}`);
     const lastRun = readJson(lastRunFile(ctx), null);
-    say(lastRun ? `last run: exit ${lastRun.exit}, ${lastRun.outcome}, frozen ${lastRun.frozen.join(", ") || "nothing"}` : "last run: none recorded");
+    say(lastRun ? `last run: ${String(lastRun.at ?? "").slice(0, 16).replace("T", " ")} UTC, exit ${lastRun.exit}, outcome ${lastRun.outcome}, froze ${lastRun.frozen.join(", ") || "nothing"}` : "last run: none recorded");
     return finish(0, "status");
   }
 

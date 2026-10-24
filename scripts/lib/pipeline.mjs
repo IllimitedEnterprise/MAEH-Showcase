@@ -36,11 +36,29 @@ export function readJson(file, fallback) {
   }
 }
 
-export function writeJsonAtomic(file, value) {
+/* Windows refuses a rename for a moment when something else (a virus scan, an indexer) has the target open. */
+const TRANSIENT = new Set(["EPERM", "EBUSY", "EACCES"]);
+const pause = (ms) => Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
+
+/* Write to a temporary name, then rename over the real one, so a reader never sees half a file. A refused rename
+ * is tried again a few times (40 ms, then double each time); if it never goes through, the temporary file is
+ * removed and the error is raised. `rename` and `wait` are replaceable only so a test can refuse the rename. */
+export function writeJsonAtomic(file, value, { rename = renameSync, wait = pause } = {}) {
   mkdirSync(dirname(file), { recursive: true });
   const temp = `${file}.tmp-${process.pid}`;
   writeFileSync(temp, `${JSON.stringify(value, null, 2)}\n`, "utf8");
-  renameSync(temp, file);
+  for (let attempt = 0; ; attempt += 1) {
+    try {
+      rename(temp, file);
+      return;
+    } catch (error) {
+      if (!TRANSIENT.has(error.code) || attempt >= 5) {
+        rmSync(temp, { force: true });
+        throw error;
+      }
+      wait(40 * 2 ** attempt);
+    }
+  }
 }
 
 /* Read every published account for one day.

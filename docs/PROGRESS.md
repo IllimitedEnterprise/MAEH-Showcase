@@ -166,6 +166,10 @@ tests were fixed.
   and unverified days, a wholly quiet Sunday and the 25-hour day) and the whole suite and the real-browser tests
   were run on it. It found one more time bomb: a test that used 2026-12-01 as "a day that is not frozen", which
   would have turned red on 2 December. It now uses the day before the season began, which can never be frozen.
+- **One small thing did not match: the last-run record was not updated** (the balance anchors were). The cause
+  was not proven; a rename that Windows refuses for a moment is the likeliest. The state files now retry a
+  refused rename a few times, and `--status` prints when the last run was, so a stale record cannot pass for a
+  fresh one. The next night will show whether the record updates.
 - The nightly's own behaviour on the real night matched the rehearsal: the wait for a quiet harness, the commit
   of only new files, the push, the balance anchors saved for the next night's check, and the agent woken once,
   with no "skill not found" notice now that the job points at the skill file.
