@@ -36,6 +36,7 @@ Read the attention text. The usual causes and what to do:
 - Not on the `main` branch, or uncommitted changes in `results` or `stars`: report them. Leave the working tree exactly as it is.
 - No frozen days yet: the history comes from a one-time backfill, not from this job. Report it.
 - git, node or the settings could not be found: report which one.
+- The scheduler's shim says `no Node 22 or newer was found; set MAEH_NODE` or `the MAEH Showcase repository was not found; set MAEH_SHOWCASE_REPO`: the job did not run at all, so nothing was frozen tonight. Report the exact message. The fix is a setting in the owner's Hermes environment, so leave Hermes's own configuration alone and do not try to work around it.
 
 ## Unlisted account
 

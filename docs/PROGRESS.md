@@ -169,7 +169,9 @@ tests were fixed.
 - **One small thing did not match: the last-run record was not updated** (the balance anchors were). The cause
   was not proven; a rename that Windows refuses for a moment is the likeliest. The state files now retry a
   refused rename a few times, and `--status` prints when the last run was, so a stale record cannot pass for a
-  fresh one. The next night will show whether the record updates.
+  fresh one. Two quiet runs of the installed shim, in a bare scheduler-like environment against the real state
+  folder, replaced the record both times and left no temporary file, so the write works there; the next real night
+  shows whether the original miss was a one-off.
 - The nightly's own behaviour on the real night matched the rehearsal: the wait for a quiet harness, the commit
   of only new files, the push, the balance anchors saved for the next night's check, and the agent woken once,
   with no "skill not found" notice now that the job points at the skill file.
@@ -186,8 +188,16 @@ MAEH_BROWSER_TESTS=1 node --test test/site-browser.test.mjs    real-browser chec
 
 ## Still to do
 
-1. The failure drill in the setup guide (section 7) has not been run; it needs a deliberately broken Node path in
-   Hermes's environment, so it waits for the owner. The wake drill has been run.
-2. Firefox and Safari have not been tried (neither was available where this was built). The real-browser
-   checks ran in Chrome, locally and on the CI runner, and once by hand in Edge (`MAEH_CHROME` points the test
-   driver at another Chromium-based browser); all six passed in each.
+1. **The failure drill, done in two halves.** The half that lives in this project was run for real against the
+   copy of the shim that Hermes runs, in a bare environment: with no Node anywhere it looks it printed "no Node 22 or
+   newer was found; set MAEH_NODE", and with no repository "the MAEH Showcase repository was not found; set
+   MAEH_SHOWCASE_REPO", each with the wake gate on and exit code 0 so Hermes reads it. The runbook now tells the
+   agent what to do with those two messages (report them, leave Hermes's configuration alone). The half that has
+   not been run is Hermes waking the agent on such a message, which needs Hermes's own environment changed.
+2. **Firefox and Safari have not been run** (neither was available where this was built, and the real-browser
+   tests drive Chromium). They ran in Chrome, locally and on the CI runner, and once by hand in Edge
+   (`MAEH_CHROME` points the test driver at another Chromium-based browser); all six passed in each. What is kept
+   honest without them: a static audit found that the site's own code needs nothing newer than Safari 15.4
+   (March 2022) and Firefox 92, with two guarded enhancements (container-query sizing of the hero figure needs
+   Safari 16 or Firefox 110 and falls back; `100dvh` falls back to `100vh`), and `site-compat` fails the build if
+   a change would raise that floor. That is a reading of the source, not a run.

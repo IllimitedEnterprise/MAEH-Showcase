@@ -113,6 +113,11 @@ raw file stay byte for byte what was frozen.
   for every control and chart, a polite live region that announces page changes and chart steps.
 - `prefers-reduced-motion` removes every transition; `prefers-reduced-transparency` and `forced-colors`
   have their own fallbacks; print drops the chrome.
+- **Browsers.** The real-browser tests drive Chrome and Edge. The site's own code asks nothing newer than Safari
+  15.4 (March 2022) and Firefox 92; the two newer things it uses are guarded and fall back (container-query
+  sizing of the hero figure, and `100dvh` after `100vh`), and `backdrop-filter` carries its `-webkit-` prefix and
+  a solid fallback. `site-compat` keeps that floor from rising unnoticed. Firefox and Safari themselves have not
+  been run.
 
 ## Security
 
@@ -169,6 +174,7 @@ more than most. Two things deal with it, both exercised by injecting the failure
 | `site-lib`, `site-core` | formatting, scales, routes, the Markdown renderer, the loader, the model, every chart builder |
 | `site-views` | **every route and every file of every frozen day** is drawn from the real committed data and audited: balanced markup, unique ids, resolvable links, no `NaN`, `null` or `undefined`, only escaped text; the hash and chain checkers catch a tampered file and a broken link |
 | `site-states` | small seasons built with the project's own freeze code (`test/helpers/fixture-site.mjs`): none, one night, a gap, a partial day, an unverified account, a quiet day, the 25-hour and 23-hour days. Every page of each is drawn and audited like the real ones, plus the wording of a count of one, the notice, the calendar flag, and the hours chart on a day with a repeated or missing hour |
+| `site-compat` | the floor the site's own code asks of a browser stays at Safari 15.4 and Firefox 92: no lookbehind, `:has()`, nesting, `color-mix()`, `toSorted()` and the like; container-query units only inside their `@supports` guard; every `dvh` after a `vh` fallback; every `backdrop-filter` with its `-webkit-` twin and a solid fallback. A reading of the source, not a run in those browsers |
 | `site-contrast` | colour contrast on every surface, and the validated palette unchanged |
 | `site-csp` | the policy, forbidden APIs, where `innerHTML` may be set, every import and class resolves |
 | `site-fonts` | the bundled fonts are the recorded files |
