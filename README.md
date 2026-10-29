@@ -1,3 +1,4 @@
+**(Warning: Uptime was rather faulty, a lot of wrong things weren't right one too many times.. Working on it. -T. )**
 # MAEH Showcase
 
 **Eight demo trading accounts. Every night at 01:00 the previous day's results are checked and frozen
